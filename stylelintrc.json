@@ -1,0 +1,194 @@
+{
+    "extends": ["stylelint-config-standard-scss", "stylelint-config-prettier-scss", "stylelint-config-tailwindcss"],
+    "plugins": ["stylelint-order"],
+    "rules": {
+        "color-function-notation": "modern",
+        "alpha-value-notation": "percentage",
+        "no-descending-specificity": null,
+        "at-rule-no-unknown": null,
+        "scss/at-rule-no-unknown": [true, { "ignoreAtRules": ["tailwind"] }],
+        "scss/dollar-variable-pattern": null,
+        "scss/percent-placeholder-pattern": null,
+        "scss/selector-no-redundant-nesting-selector": true,
+        "scss/at-extend-no-missing-placeholder": true,
+        "order/order": ["custom-properties", "dollar-variables", "declarations", "rules", "at-rules"],
+        "order/properties-order": [
+            {
+                "groupName": "positioning",
+                "emptyLineBefore": "always",
+                "noEmptyLineBetween": true,
+                "properties": ["position", "top", "right", "bottom", "left", "z-index"]
+            },
+            {
+                "groupName": "box-model",
+                "emptyLineBefore": "always",
+                "noEmptyLineBetween": true,
+                "properties": [
+                    "display",
+                    "flex",
+                    "flex-grow",
+                    "flex-shrink",
+                    "flex-basis",
+                    "flex-flow",
+                    "flex-direction",
+                    "flex-wrap",
+                    "grid",
+                    "grid-area",
+                    "grid-template",
+                    "grid-template-areas",
+                    "grid-template-rows",
+                    "grid-template-columns",
+                    "grid-row",
+                    "grid-row-start",
+                    "grid-row-end",
+                    "grid-column",
+                    "grid-column-start",
+                    "grid-column-end",
+                    "grid-auto-rows",
+                    "grid-auto-columns",
+                    "grid-auto-flow",
+                    "gap",
+                    "row-gap",
+                    "column-gap",
+                    "box-sizing",
+                    "width",
+                    "min-width",
+                    "max-width",
+                    "height",
+                    "min-height",
+                    "max-height",
+                    "margin",
+                    "margin-top",
+                    "margin-right",
+                    "margin-bottom",
+                    "margin-left",
+                    "padding",
+                    "padding-top",
+                    "padding-right",
+                    "padding-bottom",
+                    "padding-left",
+                    "overflow",
+                    "overflow-x",
+                    "overflow-y"
+                ]
+            },
+            {
+                "groupName": "typography",
+                "emptyLineBefore": "always",
+                "noEmptyLineBetween": true,
+                "properties": [
+                    "font",
+                    "font-family",
+                    "font-size",
+                    "font-weight",
+                    "font-style",
+                    "font-variant",
+                    "font-feature-settings",
+                    "line-height",
+                    "letter-spacing",
+                    "text-align",
+                    "text-decoration",
+                    "text-transform",
+                    "vertical-align",
+                    "white-space",
+                    "word-break",
+                    "hyphens"
+                ]
+            },
+            {
+                "groupName": "visual",
+                "emptyLineBefore": "always",
+                "noEmptyLineBetween": true,
+                "properties": [
+                    "color",
+                    "background",
+                    "background-color",
+                    "background-image",
+                    "background-size",
+                    "background-position",
+                    "background-repeat",
+                    "background-origin",
+                    "background-clip",
+                    "background-attachment",
+                    "border",
+                    "border-width",
+                    "border-style",
+                    "border-color",
+                    "border-top",
+                    "border-right",
+                    "border-bottom",
+                    "border-left",
+                    "border-radius",
+                    "outline",
+                    "box-shadow",
+                    "opacity"
+                ]
+            },
+            {
+                "groupName": "transforms-animations",
+                "emptyLineBefore": "always",
+                "noEmptyLineBetween": true,
+                "properties": [
+                    "transform",
+                    "transform-origin",
+                    "transform-style",
+                    "perspective",
+                    "perspective-origin",
+                    "transition",
+                    "transition-property",
+                    "transition-duration",
+                    "transition-timing-function",
+                    "transition-delay",
+                    "animation",
+                    "animation-name",
+                    "animation-duration",
+                    "animation-timing-function",
+                    "animation-delay",
+                    "animation-iteration-count",
+                    "animation-direction",
+                    "animation-fill-mode",
+                    "animation-play-state"
+                ]
+            },
+            {
+                "groupName": "interactivity",
+                "emptyLineBefore": "always",
+                "noEmptyLineBetween": true,
+                "properties": ["cursor", "pointer-events", "user-select", "resize", "touch-action"]
+            },
+            {
+                "groupName": "misc",
+                "emptyLineBefore": "always",
+                "noEmptyLineBetween": true,
+                "properties": ["appearance", "will-change", "contain"]
+            }
+        ]
+    },
+    "overrides": [
+        {
+            "files": ["**/*.scss"],
+            "customSyntax": "postcss-scss"
+        },
+        {
+            "files": ["**/*.vue"],
+            "customSyntax": "postcss-html"
+        }
+    ],
+    "ignoreFiles": [
+        "**/*.min.css",
+        "node_modules/**/*",
+        "vendor/**/*",
+        "public/**/*",
+        "storage/**/*",
+        "node_modules/",
+        "vendor/",
+        "public/",
+        "storage/",
+        "resources/scss/app.css",
+        "**/*.min.css",
+        "*.log",
+        ".stylelintcache",
+        ".DS_Store"
+    ]
+}
+

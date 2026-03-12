@@ -1,0 +1,44 @@
+{
+    "$schema": "https://www.schemastore.org/package.json",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite"
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "^4.2.1",
+        "@types/node": "^25.4.0",
+        "@types/tailwindcss": "^3.0.11",
+        "@vitejs/plugin-vue": "^6.0.5",
+        "autoprefixer": "^10.4.27",
+        "axios": "^1.11.0",
+        "concurrently": "^9.0.1",
+        "dayjs": "^1.11.20",
+        "eslint-plugin-vue": "^10.8.0",
+        "globals": "^17.4.0",
+        "laravel-vite-plugin": "^2.0.0",
+        "postcss": "^8.5.8",
+        "prettier": "^3.8.1",
+        "prettier-plugin-tailwindcss": "^0.7.2",
+        "sass-embedded": "^1.98.0",
+        "stylelint": "^17.4.0",
+        "stylelint-config-prettier-scss": "^1.0.0",
+        "stylelint-config-standard-scss": "^17.0.0",
+        "stylelint-config-tailwindcss": "^1.0.1",
+        "stylelint-order": "^8.0.0",
+        "stylelint-scss": "^7.0.0",
+        "tailwindcss": "^3.4.19",
+        "vite": "^7.0.7",
+        "vite-plugin-checker": "^0.12.0",
+        "vite-plugin-manifest-sri": "^0.2.0",
+        "vite-tsconfig-paths": "^6.1.1",
+        "vitest": "^4.1.0",
+        "vue": "^3.5.30",
+        "vue-tsc": "^3.2.5"
+    },
+    "dependencies": {
+        "typescript-eslint": "^8.57.0",
+        "vue-eslint-parser": "^10.4.0"
+    }
+}

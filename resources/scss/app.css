@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@theme {
+  --color-primary: #3490dc;
+  --color-secondary: #ffed4a;
+  --color-tertiary: #e3342f;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+html,
+body {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  font-size: 42px;
+}
+
+.custom-test {
+  @apply text-white bg-amber-200;
+}
+
+/*# sourceMappingURL=app.css.map */
