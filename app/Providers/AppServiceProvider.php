@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
             $defaults = [
                 'locale' => app()->getLocale(),
                 'description' => '',
-                'title' => 'KG',
+                'title' => 'KGSPlayground',
                 'keywords' => 'kevin gallarin, kgdev, frontend, developer',
             ];
 
