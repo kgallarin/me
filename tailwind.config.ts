@@ -20,6 +20,7 @@ module.exports = {
             },
 
             fontFamily: {
+                acumin: ['Acumin Pro Wide', 'sans-serif'],
             },
         },
     },

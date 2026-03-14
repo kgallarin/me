@@ -34,7 +34,7 @@ const props = defineProps({
 <template>
     <div :class="`container ${props.containerWidth} ${props.containerHeight} relative flex justify-center items-center rounded-lg`">
         <motion.div
-            :class="`absolute ${props.spinnerWidth} ${props.spinnerHeight} rounded-full will-change-transform border-4 border-solid ${props.spinnerColorBorder} ${props.spinnerTrailColor}`"
+            :class="`absolute ${props.spinnerWidth} ${props.spinnerHeight} rounded-full will-change-transform border-2 border-solid ${props.spinnerColorBorder} ${props.spinnerTrailColor}`"
             :animate="{ transform: 'rotate(360deg)' }"
             :transition="{
                 duration: 14.5,

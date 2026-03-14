@@ -30,6 +30,8 @@ export default defineConfig([
             'array-bracket-spacing': ['warn', 'never'],
             'no-trailing-spaces': 'warn',
             'no-undef': 'warn',
+            'object-curly-spacing': ['error', 'always'],
+            'object-property-newline': ['error', { allowAllPropertiesOnSameLine: true }],
             quotes: ['warn', 'single'],
             'space-in-parens': ['warn', 'never'],
             'space-infix-ops': 'warn',

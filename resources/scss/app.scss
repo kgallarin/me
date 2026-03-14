@@ -1,3 +1,6 @@
+@use "general";
+@use "font-book";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,6 +9,8 @@
   --color-primary: #3490dc;
   --color-secondary: #ffed4a;
   --color-tertiary: #e3342f;
+
+  --font-acumin: 'Acumin Pro Wide', sans-serif;
 
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
@@ -17,6 +22,7 @@
 html,
 body {
     //background-color: #000;
+    font-family: 'Acumin Pro Wide', sans-serif;
     min-width: 320px;
     scroll-behavior: smooth;
     font-size: 42px;
