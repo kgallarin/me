@@ -6,7 +6,6 @@
     <meta name="csrf-token" content="{{ Session::token() }}">
     <meta name="description" content="{{ $description ?? ($appHeaders['description'] ?? '') }}">
     <meta name="keywords" content="{{ $keywords ?? ($appHeaders['keywords'] ?? '') }}">
-    <link rel="icon" href="{{ URL::asset('favicon.ico') }}" sizes="any">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ URL::asset('apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ URL::asset('favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ URL::asset('favicon-16x16.png') }}">

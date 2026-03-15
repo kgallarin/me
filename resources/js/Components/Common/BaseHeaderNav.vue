@@ -26,7 +26,7 @@
       <nav>
         <ul class="flex gap-8 text-md">
           <li v-for="item in nav" :key="item.label">
-            <a href="#" class="text-white nav-link hover:text-gray-300">
+            <a href="#" class="text-white font-normal font-acumin nav-link hover:text-gray-300">
               {{ item.label }}
             </a>
           </li>
