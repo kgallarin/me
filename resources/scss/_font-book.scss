@@ -1,6 +1,13 @@
 @font-face {
     font-family: 'Acumin Pro Wide';
     src: url('../fonts/acumin-pro-wide.otf') format('opentype');
-    font-weight: normal;
+    font-weight: 400;
     font-style: normal;
+}
+
+@font-face {
+  font-family: 'Acumin Pro Wide';
+  src: url('../fonts/acumin-pro-wide-thin.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
 }

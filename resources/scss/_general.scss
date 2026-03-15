@@ -1,3 +1,14 @@
+//text shadows
+@layer utilities {
+  .text-shadow-thickens {
+    text-shadow: 0 0 0 rgba(0, 0, 0, 1);
+  }
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+
+
 .nav-link {
   @apply text-gray-800 font-acumin;
 }

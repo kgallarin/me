@@ -13,18 +13,18 @@
 </script>
 
 <template>
-  <header class="p-1 bg-[#171717] ">
-    <div class="header-inner max-w-screen-xl mx-auto flex justify-between items-center">
+  <header class="bg-[#171717]">
+    <div class="h-16 header-inner max-w-screen-xl mx-auto flex justify-between items-center">
       <brand-logo
-        spinner-width="w-4"
-        spinner-height="h-4"
-        container-width="w-4"
-        container-height="h-4"
+        spinner-width="w-11"
+        spinner-height="h-11"
+        container-width="w-11"
+        container-height="h-11"
       />
 
       <!-- nav starts-->
       <nav>
-        <ul class="flex gap-4 text-[12px]">
+        <ul class="flex gap-8 text-md">
           <li v-for="item in nav" :key="item.label">
             <a href="#" class="text-white nav-link hover:text-gray-300">
               {{ item.label }}

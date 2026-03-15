@@ -19,15 +19,15 @@
   --breakpoint-2xl: 1536px;
 }
 
-html,
-body {
-    //background-color: #000;
-    font-family: 'Acumin Pro Wide', sans-serif;
+@layer base {
+  html,
+  body {;
     min-width: 320px;
     scroll-behavior: smooth;
-    font-size: 42px;
-}
+    font-size: 16px;
+  }
 
-.custom-test {
-  @apply text-white bg-amber-200;
+  .custom-test {
+    @apply text-white bg-amber-200;
+  }
 }
