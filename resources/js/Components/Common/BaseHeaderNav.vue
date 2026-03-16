@@ -14,7 +14,7 @@
 
 <template>
   <header class="bg-[#171717]">
-    <div class="h-16 header-inner max-w-screen-xl mx-auto flex justify-between items-center">
+    <div class="h-16 header-inner md:px-8 lg:max-w-screen-lg xl:max-w-screen-xl mx-auto flex justify-between items-center">
       <brand-logo
         spinner-width="w-11"
         spinner-height="h-11"

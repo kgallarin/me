@@ -1,6 +1,5 @@
 <script setup lang="ts">
   import BaseHeaderNav from '@/Components/Common/BaseHeaderNav.vue';
-  import Home from '@/Components/Pages/Home/index.vue';
 
   const nav = [
     {
