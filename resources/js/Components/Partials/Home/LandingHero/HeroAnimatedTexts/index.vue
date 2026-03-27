@@ -22,7 +22,7 @@
     class="relative z-30 mx-auto flex flex-col font-light xs:-mt-8 xs:w-[420px] sm:mt-44 sm:w-[500px] md:mt-56 md:w-[700px] lg:mb-8 lg:mt-auto"
   >
     <hero-image-text-shard
-      class="2xs:text-base text-base sm:mx-auto sm:w-[240px] md:w-auto md:text-xl lg:w-[400px] lg:text-2xl"
+      class="whitespace-nowrap text-base 2xs:text-base sm:mx-auto sm:w-[240px] md:w-auto md:text-xl lg:w-[400px] lg:text-2xl"
       text-left="Mockup Tools"
       text-right="S/CSS"
       text-left-classes="justify-self-center"
@@ -35,7 +35,7 @@
     />
 
     <hero-image-text-shard
-      class="2xs:text-base font-light xs:mb-12 sm:-ml-16 sm:mb-0 md:-ml-8 md:text-xl lg:-ml-10 lg:text-4xl"
+      class="whitespace-nowrap font-light 2xs:text-base xs:mb-12 sm:-ml-16 sm:mb-0 md:-ml-8 md:text-xl lg:-ml-10 lg:text-4xl"
       text-left="Photoshop"
       text-right="TS/JavaScript"
       :animate-left-in-pixels="isDesktop ? 140 : isTabletMobile ? 80 : 90"
@@ -46,7 +46,7 @@
     />
 
     <hero-image-text-shard
-      class="2xs:text-base sm:-ml-8 md:-ml-5 md:text-xl lg:-ml-20 lg:text-3xl"
+      class="whitespace-nowrap 2xs:text-base sm:-ml-8 md:-ml-5 md:text-xl lg:-ml-20 lg:text-3xl"
       text-left="User Experience"
       text-right="<html lang=['en', 'fil']>"
       :animate-left-in-pixels="isDesktop ? 150 : isTabletMobile ? 130 : 80"
@@ -57,7 +57,7 @@
     />
 
     <hero-image-text-shard
-      class="2xs:text-base sm:-ml-24 sm:w-[660px] md:mx-auto md:-ml-10 md:w-[768px] md:text-lg lg:-ml-36 lg:w-[900px] lg:text-5xl"
+      class="whitespace-nowrap 2xs:text-base sm:-ml-24 sm:w-[660px] md:mx-auto md:-ml-10 md:w-[768px] md:text-lg lg:-ml-36 lg:w-[900px] lg:text-5xl"
       text-left="Animation"
       text-right="Web/Mobile"
       text-left-classes="justify-self-center"
@@ -70,7 +70,7 @@
     />
 
     <hero-image-text-shard
-      class="2xs:text-base sm:-ml-20 md:mx-auto md:-ml-10 md:w-[658px] md:text-lg lg:-ml-40 lg:w-[900px] lg:text-3xl"
+      class="whitespace-nowrap 2xs:text-base sm:-ml-20 md:mx-auto md:-ml-10 md:w-[658px] md:text-lg lg:-ml-40 lg:w-[900px] lg:text-3xl"
       text-left="Communication"
       text-right="Structure,Testing"
       text-left-classes="justify-self-center"
@@ -83,7 +83,7 @@
     />
 
     <hero-image-text-shard
-      class="2xs:text-base sm:-ml-28 md:mx-auto md:-ml-20 md:w-[730px] md:text-lg lg:-ml-52 lg:w-[980px] lg:text-4xl"
+      class="whitespace-nowrap 2xs:text-base sm:-ml-28 md:mx-auto md:-ml-20 md:w-[730px] md:text-lg lg:-ml-52 lg:w-[980px] lg:text-4xl"
       text-left="Detail Oriented"
       text-right="Forms, GraphQL"
       text-left-classes="justify-self-center"
@@ -96,7 +96,7 @@
     />
 
     <hero-image-text-shard
-      class="2xs:text-base sm:-ml-36 sm:w-[680px] md:mx-auto md:-ml-28 md:w-[768px] md:text-lg lg:-ml-72 lg:w-[1090px] lg:text-4xl"
+      class="whitespace-nowrap 2xs:text-base sm:-ml-36 sm:w-[680px] md:mx-auto md:-ml-28 md:w-[768px] md:text-lg lg:-ml-72 lg:w-[1090px] lg:text-4xl"
       text-left="Responsive"
       text-right="Laravel/PHP"
       text-left-classes="justify-self-center"

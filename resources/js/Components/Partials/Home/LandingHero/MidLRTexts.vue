@@ -9,12 +9,12 @@
       <p
         class="shadow-thickens mr-auto hidden text-left font-light md:inline-block md:text-sm lg:w-3/4 lg:text-xl xl:w-5/6"
       >
-        an eye for design, feel<span class="md:hidden xl:inline-block">and attention to detail</span>
+        an eye for design, feels<span class="md:hidden xl:inline-block">and attention to detail</span>
       </p>
     </div>
 
     <div>
-      <h3 class="font-proxima-bold 2xs:text-xl text-right xs:text-2xl sm:text-4xl md:mb-1 lg:mb-3 xl:text-6xl">
+      <h3 class="text-right font-proxima-bold 2xs:text-xl xs:text-2xl sm:text-4xl md:mb-1 lg:mb-3 xl:text-6xl">
         {{ '<coding />' }}
       </h3>
       <p
