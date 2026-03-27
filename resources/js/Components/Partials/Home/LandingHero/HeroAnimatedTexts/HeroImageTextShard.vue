@@ -1,6 +1,7 @@
 <script setup lang="ts">
-  import { ref } from 'vue';
   import { motion } from 'motion-v';
+
+  import { ref } from 'vue';
 
   defineProps({
     textLeft: {
@@ -58,39 +59,42 @@
 </script>
 
 <template>
-  <div class="grid justify-items-stretch grid-cols-2 gap-4 mb-2">
-    <div
-      class="relative cursor-pointer"
-    >
-
+  <div class="mb-2 grid grid-cols-2 justify-items-stretch gap-4">
+    <div class="relative cursor-pointer">
       <div
-        class="hover-me-baby absolute z-10 inset-0"
+        class="hover-me-baby absolute inset-0 z-10"
         @mouseover="handleMouseOverLeft"
         @mouseleave="handleMouseLeaveLeft"
       ></div>
 
       <motion.div
-        :class="[textLeftClasses, 'justify-self-end']"
-        :initial="{ x: 0 }"
-        :animate="{ x: isHoveredLeft ? -animateLeftInPixels : 0 }"
+        :class="[textLeftClasses, 'justify-self-end', 'font-light']"
+        :initial="{ x: 0, color: '', fontWeight: 300 }"
+        :animate="{
+          x: isHoveredLeft ? -animateLeftInPixels : 0,
+          color: isHoveredLeft ? '#060606' : '#E5E4E2',
+          fontWeight: isHoveredLeft ? 700 : 300,
+        }"
         :transition="{ duration: 0.8, ease: 'easeOut' }"
       >
         {{ textLeft }}
       </motion.div>
     </div>
-    <div
-      class="relative cursor-pointer"
-    >
+    <div class="relative cursor-pointer">
       <div
-        class="hover-me-baby absolute z-40 inset-0"
+        class="hover-me-baby absolute inset-0 z-40"
         @mouseover="handleMouseOverRight"
         @mouseleave="handleMouseLeaveRight"
       ></div>
 
       <motion.div
-        :class="[textRightClasses, 'justify-self-start']"
-        :initial="{ x: 0 }"
-        :animate="{ x: isHoveredRight ? animateRightInPixels : 0 }"
+        :class="[textRightClasses, 'justify-self-start', 'font-light']"
+        :initial="{ x: 0, color: '', fontWeight: 300 }"
+        :animate="{
+          x: isHoveredRight ? animateRightInPixels : 0,
+          color: isHoveredRight ? '#060606' : '#E5E4E2',
+          fontWeight: isHoveredRight ? 700 : 300,
+        }"
         :transition="{ duration: 0.8, ease: 'easeOut' }"
       >
         {{ textRight }}

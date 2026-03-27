@@ -1,6 +1,8 @@
 <script setup lang="ts">
-  import { ref } from 'vue';
   import { motion } from 'motion-v';
+
+  import { ref } from 'vue';
+
   import HeroAnimatedTexts from '@/Components/Partials/Home/LandingHero/HeroAnimatedTexts/index.vue';
 
   const currentHover = ref<'none' | 'left' | 'right'>('none');
@@ -28,25 +30,37 @@
 </script>
 
 <template>
-  <div class="text-black justify-center align-center flex flex-col w-full relative overflow-hidden h-[700px]">
+  <div
+    class="align-center relative flex w-full flex-col justify-center overflow-hidden text-black xs:h-[342px] sm:h-[400px] md:h-auto lg:h-[700px]"
+  >
     <!-- Background Images for Split Effect -->
-    <div class="absolute inset-0 w-full h-full z-40 overflow-hidden pointer-events-none">
+    <div class="pointer-events-none absolute inset-0 z-40 h-full w-full overflow-hidden">
       <!-- Perceptive -->
       <motion.div
-        class="absolute inset-0 w-full h-full bg-contain bg-center bg-no-repeat"
+        class="absolute inset-0 h-full w-full bg-contain bg-center bg-no-repeat"
         :style="{ backgroundImage: `url('/images/kg_art_2.png')` }"
         :animate="{
-          clipPath: currentHover === 'right' ? 'inset(0 100% 0 0)' : (currentHover === 'left' ? 'inset(0 0% 0 0)' : 'inset(0 50% 0 0)'),
+          clipPath:
+            currentHover === 'right'
+              ? 'inset(0 100% 0 0)'
+              : currentHover === 'left'
+                ? 'inset(0 0% 0 0)'
+                : 'inset(0 50% 0 0)',
         }"
         :transition="{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }"
       />
 
       <!-- Coding -->
       <motion.div
-        class="absolute inset-0 w-full h-full bg-contain bg-center bg-no-repeat"
+        class="absolute inset-0 h-full w-full bg-contain bg-center bg-no-repeat"
         :style="{ backgroundImage: `url('/images/kg_art_1.png')` }"
         :animate="{
-          clipPath: currentHover === 'left' ? 'inset(0 0 0 100%)' : (currentHover === 'right' ? 'inset(0 0 0 0%)' : 'inset(0 0 0 50%)'),
+          clipPath:
+            currentHover === 'left'
+              ? 'inset(0 0 0 100%)'
+              : currentHover === 'right'
+                ? 'inset(0 0 0 0%)'
+                : 'inset(0 0 0 50%)',
         }"
         :transition="{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }"
       />

@@ -1,6 +1,8 @@
 <script setup lang="ts">
-  import { NavLink } from '@/Types/Props';
   import { PropType } from 'vue';
+
+  import { NavLink } from '@/Types/Props';
+
   import BrandLogo from '@/Components/Motion/BrandLogo.vue';
 
   defineProps({
@@ -14,19 +16,16 @@
 
 <template>
   <header class="bg-[#171717]">
-    <div class="h-16 header-inner md:px-8 lg:max-w-screen-lg xl:max-w-screen-xl mx-auto flex justify-between items-center">
-      <brand-logo
-        spinner-width="w-11"
-        spinner-height="h-11"
-        container-width="w-11"
-        container-height="h-11"
-      />
+    <div
+      class="header-inner mx-auto flex h-16 items-center justify-between md:px-8 lg:max-w-screen-lg xl:max-w-screen-xl"
+    >
+      <brand-logo spinner-width="w-11" spinner-height="h-11" container-width="w-11" container-height="h-11" />
 
       <!-- nav starts-->
       <nav>
-        <ul class="flex gap-8 text-md">
+        <ul class="text-md flex gap-8">
           <li v-for="item in nav" :key="item.label">
-            <a href="#" class="text-white font-normal font-acumin nav-link hover:text-gray-300">
+            <a href="#" class="nav-link font-acumin font-normal text-white hover:text-gray-300">
               {{ item.label }}
             </a>
           </li>
@@ -37,7 +36,7 @@
 </template>
 
 <style scoped>
-    .header-inner {
-        @apply flex justify-between items-center;
-    }
+  .header-inner {
+    @apply flex items-center justify-between;
+  }
 </style>

@@ -8,6 +8,7 @@
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.2.1",
+        "@trivago/prettier-plugin-sort-imports": "^6.0.2",
         "@types/node": "^25.4.0",
         "@types/tailwindcss": "^3.0.11",
         "@vitejs/plugin-vue": "^6.0.5",
@@ -39,6 +40,8 @@
     },
     "dependencies": {
         "motion-v": "^2.0.0",
+        "pinia": "^3.0.4",
+        "pinia-plugin-persistedstate": "^4.7.1",
         "typescript-eslint": "^8.57.0",
         "vue-eslint-parser": "^10.4.0",
         "vue-router": "^4.6.4"
