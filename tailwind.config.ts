@@ -18,7 +18,14 @@ module.exports = {
       colors: {
         primary: 'var(--color-primary)',
         secondary: 'var(--color-secondary)',
-        tertiary: 'var(--color-tertiary)',
+
+        'yellow-primary': 'var(--color-yellow-primary)',
+
+        'teal-primary': 'var(--color-teal-primary)',
+        'teal-secondary': 'var(--color-teal-secondary)',
+
+        'gray-primary': 'var(--color-gray-primary)',
+        'gray-secondary': 'var(--color-gray-secondary)',
       },
 
       fontFamily: {

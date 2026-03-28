@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="bg-red-400">hello world</div>
+  <div class="p-4">
+    <p class="font-acumin text-lg text-primary">some of my projects</p>
+  </div>
 </template>
-
-<style scoped></style>

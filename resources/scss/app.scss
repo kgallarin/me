@@ -1,15 +1,12 @@
 @use "general";
 @use "font-book";
+@use "colors/theme_light";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @theme {
-  --color-primary: #3490dc;
-  --color-secondary: #ffed4a;
-  --color-tertiary: #e3342f;
-
   --font-acumin: 'Acumin Pro Wide', sans-serif;
 
   --breakpoint-sm: 640px;
@@ -21,7 +18,7 @@
 
 @layer base {
   html,
-  body {;
+  body {
     min-width: 320px;
     scroll-behavior: smooth;
     font-size: 16px;

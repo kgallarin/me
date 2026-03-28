@@ -1,0 +1,14 @@
+@use 'palette' as palette;
+
+.theme-light {
+	--color-primary: #{palette.$rich-black};
+	--color-secondary: #{palette.$bright-gray};
+
+	--color-yellow-primary: #{palette.$lemon-yellow};
+
+	--color-teal-primary: #{palette.$bright-cyan};
+	--color-teal-secondary: #{palette.$pastel-green};
+
+	--color-gray-primary: #{palette.$spanish-gray};
+	--color-gray-secondary: #{palette.$platinum-gray};
+}

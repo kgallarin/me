@@ -2,6 +2,7 @@
   import { ref } from 'vue';
 
   import LandingHero from '@/Components/Partials/Home/LandingHero/index.vue';
+  import Projects from '@/Components/Partials/Home/Projects/index.vue';
 
   const isHoveredRight = ref(false);
   const isHoveredLeft = ref(false);
@@ -27,4 +28,7 @@
     @hover-left="handleHoverLeft"
     @hover-leave="handleHoverLeave"
   />
+  <div class="container mx-auto max-w-screen-xl">
+    <projects />
+  </div>
 </template>
