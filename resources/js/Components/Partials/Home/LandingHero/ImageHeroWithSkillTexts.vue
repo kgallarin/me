@@ -31,7 +31,7 @@
 
 <template>
   <div
-    class="align-center relative flex w-full flex-col justify-center overflow-hidden text-black xs:h-[342px] sm:h-[400px] md:h-auto lg:h-[700px]"
+    class="align-center relative flex w-full flex-col justify-center overflow-hidden text-black xs:h-[285px] sm:h-[400px] md:h-auto lg:h-[700px]"
   >
     <!-- Background Images for Split Effect -->
     <div class="pointer-events-none absolute inset-0 z-40 h-full w-full overflow-hidden">

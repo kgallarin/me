@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { computed } from 'vue';
+  import { computed, ref } from 'vue';
 
   import { useAppStore } from '@/Store/Modules/App';
 
@@ -10,19 +10,34 @@
   const isDesktop = computed(() => appStore.isDesktop);
   const isTabletMobile = computed(() => appStore.isTabletMobile);
 
-  const handleHoverLeft = () => emit('hover-left');
-  const handleHoverRight = () => emit('hover-right');
-  const handleHoverLeave = () => emit('hover-leave');
+  const isAnyHoveredLeft = ref(false);
+  const isAnyHoveredRight = ref(false);
+
+  const handleHoverLeft = () => {
+    isAnyHoveredLeft.value = true;
+    isAnyHoveredRight.value = false;
+    emit('hover-left');
+  };
+  const handleHoverRight = () => {
+    isAnyHoveredRight.value = true;
+    isAnyHoveredLeft.value = false;
+    emit('hover-right');
+  };
+  const handleHoverLeave = () => {
+    isAnyHoveredLeft.value = false;
+    isAnyHoveredRight.value = false;
+    emit('hover-leave');
+  };
 
   const emit = defineEmits(['hover-left', 'hover-right', 'hover-leave']);
 </script>
 
 <template>
   <div
-    class="relative z-30 mx-auto flex flex-col font-light xs:-mt-8 xs:w-[420px] sm:mt-44 sm:w-[500px] md:mt-56 md:w-[700px] lg:mb-8 lg:mt-auto"
+    class="relative z-30 mx-auto flex flex-col font-light xs:-mt-2 xs:w-[420px] sm:mt-44 sm:w-[500px] md:mt-56 md:w-[700px] lg:mb-8 lg:mt-auto"
   >
     <hero-image-text-shard
-      class="whitespace-nowrap text-base 2xs:text-base sm:mx-auto sm:w-[240px] md:w-auto md:text-xl lg:w-[400px] lg:text-2xl"
+      class="whitespace-nowrap text-base 2xs:ml-10 2xs:w-[230px] 2xs:text-base xs:ml-16 xs:w-[280px] sm:mx-auto sm:w-[240px] md:w-auto md:text-xl lg:w-[400px] lg:text-2xl"
       text-left="Mockup Tools"
       text-right="S/CSS"
       text-left-classes="justify-self-center"
@@ -32,6 +47,8 @@
       @text-hover-left="handleHoverLeft"
       @text-hover-right="handleHoverRight"
       @text-hover-leave="handleHoverLeave"
+      :is-any-hovered-left="isAnyHoveredLeft"
+      :is-any-hovered-right="isAnyHoveredRight"
     />
 
     <hero-image-text-shard
@@ -43,6 +60,8 @@
       @text-hover-left="handleHoverLeft"
       @text-hover-right="handleHoverRight"
       @text-hover-leave="handleHoverLeave"
+      :is-any-hovered-left="isAnyHoveredLeft"
+      :is-any-hovered-right="isAnyHoveredRight"
     />
 
     <hero-image-text-shard
@@ -54,6 +73,8 @@
       @text-hover-left="handleHoverLeft"
       @text-hover-right="handleHoverRight"
       @text-hover-leave="handleHoverLeave"
+      :is-any-hovered-left="isAnyHoveredLeft"
+      :is-any-hovered-right="isAnyHoveredRight"
     />
 
     <hero-image-text-shard
@@ -67,6 +88,8 @@
       @text-hover-left="handleHoverLeft"
       @text-hover-right="handleHoverRight"
       @text-hover-leave="handleHoverLeave"
+      :is-any-hovered-left="isAnyHoveredLeft"
+      :is-any-hovered-right="isAnyHoveredRight"
     />
 
     <hero-image-text-shard
@@ -80,6 +103,8 @@
       @text-hover-left="handleHoverLeft"
       @text-hover-right="handleHoverRight"
       @text-hover-leave="handleHoverLeave"
+      :is-any-hovered-left="isAnyHoveredLeft"
+      :is-any-hovered-right="isAnyHoveredRight"
     />
 
     <hero-image-text-shard
@@ -93,6 +118,8 @@
       @text-hover-left="handleHoverLeft"
       @text-hover-right="handleHoverRight"
       @text-hover-leave="handleHoverLeave"
+      :is-any-hovered-left="isAnyHoveredLeft"
+      :is-any-hovered-right="isAnyHoveredRight"
     />
 
     <hero-image-text-shard
@@ -106,6 +133,8 @@
       @text-hover-left="handleHoverLeft"
       @text-hover-right="handleHoverRight"
       @text-hover-leave="handleHoverLeave"
+      :is-any-hovered-left="isAnyHoveredLeft"
+      :is-any-hovered-right="isAnyHoveredRight"
     />
   </div>
 </template>

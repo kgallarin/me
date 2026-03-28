@@ -30,6 +30,14 @@
       type: Number,
       default: 350,
     },
+    isAnyHoveredLeft: {
+      type: Boolean,
+      default: false,
+    },
+    isAnyHoveredRight: {
+      type: Boolean,
+      default: false,
+    },
   });
 
   const emit = defineEmits(['textHoverLeft', 'textHoverRight', 'textHoverLeave']);
@@ -69,11 +77,12 @@
 
       <motion.div
         :class="[textLeftClasses, 'justify-self-end', 'font-light']"
-        :initial="{ x: 0, color: '', fontWeight: 300 }"
+        :initial="{ x: 0, color: '', fontWeight: 300, opacity: 1 }"
         :animate="{
           x: isHoveredLeft ? -animateLeftInPixels : 0,
           color: isHoveredLeft ? '#060606' : '#E5E4E2',
           fontWeight: isHoveredLeft ? 700 : 300,
+          opacity: isAnyHoveredRight ? 0 : 1,
         }"
         :transition="{ duration: 0.8, ease: 'easeOut' }"
       >
@@ -89,11 +98,12 @@
 
       <motion.div
         :class="[textRightClasses, 'justify-self-start', 'font-light']"
-        :initial="{ x: 0, color: '', fontWeight: 300 }"
+        :initial="{ x: 0, color: '', fontWeight: 300, opacity: 1 }"
         :animate="{
           x: isHoveredRight ? animateRightInPixels : 0,
           color: isHoveredRight ? '#060606' : '#E5E4E2',
           fontWeight: isHoveredRight ? 700 : 300,
+          opacity: isAnyHoveredLeft ? 0 : 1,
         }"
         :transition="{ duration: 0.8, ease: 'easeOut' }"
       >
