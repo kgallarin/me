@@ -26,6 +26,7 @@ module.exports = {
 
         'gray-primary': 'var(--color-gray-primary)',
         'gray-secondary': 'var(--color-gray-secondary)',
+        'gray-lighter': 'var(--color-gray-lighter)',
       },
 
       fontFamily: {

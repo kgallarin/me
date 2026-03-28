@@ -28,7 +28,7 @@
     @hover-left="handleHoverLeft"
     @hover-leave="handleHoverLeave"
   />
-  <div class="container mx-auto max-w-screen-xl">
+  <div class="bg-gray-lighter">
     <projects />
   </div>
 </template>

@@ -40,6 +40,7 @@
   --color-teal-secondary: #b3f4d5;
   --color-gray-primary: #969a9b;
   --color-gray-secondary: #e5e4e2;
+  --color-gray-lighter: #f8f8f8 ;
 }
 
 @tailwind base;
