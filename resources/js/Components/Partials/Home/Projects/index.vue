@@ -1,7 +1,157 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import CustomCarouselSlider from '@/Components/Motion/CustomCarouselSlider.vue';
+
+  const images = import.meta.glob<{ default: string }>('/resources/images/projects/*.{png,jpg,jpeg,webp}', {
+    eager: true,
+  });
+
+  const getImageUrl = (name: string) => images[`/resources/images/projects/${name}`]?.default || '';
+
+  const projects = [
+    {
+      title: 'loomberryliving',
+      description:
+        'Curated list of products like bed sheets, pillows, and more. Admin panel for managing products, prices, quantity, colors and more...',
+      images: [getImageUrl('loomberryliving.png')],
+      icons: [
+        { icon: ['fab', 'html5'], color: 'text-orange-400' },
+        { icon: ['fab', 'tailwind-css'], color: 'text-teal-400' },
+        { icon: ['fab', 'laravel'], color: 'text-red-500' },
+        { icon: ['fab', 'typescript'], color: 'text-blue-500' },
+        { icon: ['fab', 'vuejs'], color: 'text-green-500' },
+      ],
+      carousel: {
+        autoplay: false,
+        showIndicators: false,
+        showArrows: false,
+      },
+    },
+    {
+      title: 'dating app',
+      description:
+        'A multiple templated website that allows users to create profiles, browse other profiles, and connect with others who share similar interests.',
+      images: [getImageUrl('dating-1.png'), getImageUrl('dating-3.png')],
+      icons: [
+        { icon: ['fab', 'html5'], color: 'text-orange-400' },
+        { icon: ['fab', 'bootstrap'], color: 'text-purple-400' },
+        { icon: ['fab', 'js'], color: 'text-yellow-400' },
+        { icon: ['fab', 'sass'], color: 'text-pink-400' },
+        { icon: ['fab', 'less'], color: 'text-blue-400' },
+      ],
+      carousel: {
+        autoplay: true,
+        showIndicators: true,
+      },
+    },
+    {
+      title: 'fliptrip',
+      description:
+        'Simplifies booking travel to off-the-beaten-path destinations in the Philippines. It connects travelers with local providers for accommodation, transportation, and tours, promoting sustainable community-based tourism.',
+      images: [getImageUrl('fliptrip.jpg')],
+      icons: [
+        { icon: ['fab', 'html5'], color: 'text-orange-400' },
+        { icon: ['fab', 'bootstrap'], color: 'text-purple-400' },
+        { icon: ['fab', 'js'], color: 'text-yellow-400' },
+        { icon: ['fab', 'sass'], color: 'text-pink-400' },
+        { icon: ['fab', 'less'], color: 'text-blue-400' },
+      ],
+      carousel: {
+        autoplay: false,
+        showIndicators: false,
+        showArrows: false,
+      },
+    },
+    {
+      title: 'horsepower',
+      description:
+        'Provides HR benefits, healthcare insurance/HMO, and administrative tools to freelancers, solopreneurs, and micro-SMEs. It acts as a one-stop-shop, helping local freelancers access benefits often missing from standard contract work.',
+      images: [getImageUrl('horsepower.jpeg')],
+      icons: [
+        { icon: ['fab', 'html5'], color: 'text-orange-400' },
+        { icon: ['fab', 'css3'], color: 'text-blue-500' },
+        { icon: ['fab', 'js'], color: 'text-yellow-400' },
+        { icon: ['fab', 'wordpress'], color: 'text-blue-500' },
+      ],
+      carousel: {
+        autoplay: false,
+        showIndicators: false,
+        showArrows: false,
+      },
+    },
+    {
+      title: 'e-moderators',
+      description:
+        'Website that recruits and employs people to work as online chat moderators, often for adult-oriented dating or chat platforms.',
+      images: [getImageUrl('e-moderators.png')],
+      icons: [
+        { icon: ['fab', 'html5'], color: 'text-orange-400' },
+        { icon: ['fab', 'sass'], color: 'text-pink-400' },
+        { icon: ['fab', 'js'], color: 'text-yellow-400' },
+        { icon: ['fab', 'vuejs'], color: 'text-green-500' },
+      ],
+      carousel: {
+        autoplay: false,
+        showIndicators: false,
+        showArrows: false,
+      },
+    },
+    {
+      title: 'online gambling websites',
+      description:
+        'Multiple online casino websites that caters to the needs of online gamblers. with heavy forms and complex user interfaces that changes every other day for promotions and occations.',
+      images: [getImageUrl('online-gambling.png')],
+      icons: [
+        { icon: ['fab', 'html5'], color: 'text-orange-400' },
+        { icon: ['fab', 'sass'], color: 'text-pink-400' },
+        { icon: ['fab', 'js'], color: 'text-yellow-400' },
+        { icon: ['fab', 'vuejs'], color: 'text-green-500' },
+      ],
+      carousel: {
+        autoplay: false,
+        showIndicators: false,
+        showArrows: false,
+      },
+    },
+  ];
+</script>
 
 <template>
-  <div class="mx-auto max-w-screen-xl px-8 py-4">
-    <p class="font-acumin text-lg text-primary">some of my projects</p>
+  <div class="mx-auto max-w-screen-xl p-8">
+    <div
+      class="headings font-lighter border-bright-gray font-proxima-bold relative my-8 mb-16 border-t text-center text-sm uppercase text-primary"
+    >
+      <h3 class="relative mx-auto -mt-2.5 max-w-fit bg-white px-4 font-proxima">selected projects</h3>
+    </div>
+
+    <div class="grid grid-cols-3 gap-4">
+      <div
+        v-for="project in projects"
+        :key="project.title"
+        class="card relative flex flex-col rounded-md bg-white p-1 shadow-md"
+      >
+        <custom-carousel-slider
+          :items="project.images"
+          aspect-ratio="max-h-[240px] min-h-[240px]"
+          :autoplay="project.carousel?.autoplay"
+          :show-indicators="project.carousel?.showIndicators"
+          :show-arrows="project.carousel?.showArrows"
+        />
+        <div class="relative bg-white p-4 text-primary">
+          <h2 class="mb-2 font-proxima text-lg font-semibold text-primary">{{ project.title }}</h2>
+          <p class="font-acumin text-xs font-light">
+            {{ project.description }}
+          </p>
+        </div>
+
+        <div class="mt-auto grid grid-cols-8 gap-1 p-4">
+          <font-awesome-icon
+            v-for="(tech, index) in project.icons"
+            :key="index"
+            :icon="tech.icon"
+            :class="['text-xl', tech.color]"
+          />
+        </div>
+      </div>
+    </div>
   </div>
 </template>

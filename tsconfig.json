@@ -1,38 +1,39 @@
 {
-    "compilerOptions": {
-        "target": "ESNext",
-        "module": "ESNext",
-        "declaration": true,
-        "strict": true,
-        "composite": true,
-        "moduleResolution": "bundler",
-        "esModuleInterop": true,
-        "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true,
-        "strictNullChecks": true,
-        "isolatedModules": true,
-        "resolveJsonModule": true,
-        "lib": ["ESNext", "DOM"],
-        "baseUrl": ".",
-        "tsBuildInfoFile": "./.tsbuildinfo",
-        "paths": {
-            "@/*": ["./resources/js/*"],
-            "~/*": ["./resources/*"],
-            "@images/*": ["./resources/images/*"],
-            "@scss/*": ["./resources/scss/*"]
-        },
-        "plugins": [
-            {
-                "name": "vite-tsconfig-paths"
-            }
-        ]
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "declaration": true,
+    "strict": true,
+    "composite": true,
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "strictNullChecks": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "lib": ["ESNext", "DOM"],
+    "types": ["vite/client"],
+    "baseUrl": ".",
+    "tsBuildInfoFile": "./.tsbuildinfo",
+    "paths": {
+      "@/*": ["./resources/js/*"],
+      "~/*": ["./resources/*"],
+      "@images/*": ["./resources/images/*"],
+      "@scss/*": ["./resources/scss/*"]
     },
-    "include": [
-        "vite.config.ts",
-        "tailwind.config.ts",
-        "resources/**/*.ts",
-        "resources/**/*.vue",
-        "resources/**/*.js",
-        "resources/**/*.scss"
+    "plugins": [
+      {
+        "name": "vite-tsconfig-paths"
+      }
     ]
+  },
+  "include": [
+    "vite.config.ts",
+    "tailwind.config.ts",
+    "resources/**/*.ts",
+    "resources/**/*.vue",
+    "resources/**/*.js",
+    "resources/**/*.scss"
+  ]
 }

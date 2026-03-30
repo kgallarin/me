@@ -28,7 +28,8 @@
     @hover-left="handleHoverLeft"
     @hover-leave="handleHoverLeave"
   />
-  <div class="bg-gray-lighter">
+  <!--  <div class="bg-gray-lighter">-->
+  <div class="bg-gray-lighter bg-[url('@images/backgrounds/leaves-4.png')] bg-blend-multiply">
     <projects />
   </div>
 </template>

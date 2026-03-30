@@ -25,7 +25,7 @@
       }"
       :transition="{ duration: 0.8, ease: 'easeOut' }"
     >
-      <h3 class="font-proxima-bold 2xs:text-lg xs:text-2xl sm:text-4xl md:mb-1 lg:mb-3 xl:text-6xl">perceptive</h3>
+      <h3 class="font-proxima font-bold 2xs:text-lg xs:text-2xl sm:text-4xl md:mb-1 lg:mb-3 xl:text-6xl">perceptive</h3>
       <p
         class="shadow-thickens mr-auto hidden text-left font-light md:inline-block md:text-sm lg:w-3/4 lg:text-xl xl:w-5/6 xl:pl-[3%]"
       >
@@ -41,7 +41,7 @@
       }"
       :transition="{ duration: 0.8, ease: 'easeOut' }"
     >
-      <h3 class="font-proxima-bold 2xs:text-lg xs:text-2xl sm:text-4xl md:mb-1 lg:mb-3 xl:text-6xl">
+      <h3 class="font-proxima font-bold 2xs:text-lg xs:text-2xl sm:text-4xl md:mb-1 lg:mb-3 xl:text-6xl">
         {{ '<coding />' }}
       </h3>
       <p

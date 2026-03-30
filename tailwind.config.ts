@@ -31,7 +31,7 @@ module.exports = {
 
       fontFamily: {
         acumin: ['Acumin Pro Wide', 'sans-serif'],
-        'proxima-bold': ['Proxima Nova Bold', 'sans-serif'],
+        proxima: ['Proxima Nova Bold', 'sans-serif'],
       },
     },
   },

@@ -1,9 +1,13 @@
+import DefaultLayout from '@/Layouts/Default/index.vue';
+
 import Home from '@/Components/Pages/Home/index.vue';
+
 // view:public routes
 const publicRoutes = [
   {
     path: '/',
     redirect: { name: 'home' },
+    component: DefaultLayout,
     guest: true,
     children: [
       {

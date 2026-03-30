@@ -1,4 +1,7 @@
 <script setup lang="ts">
+  import kgArt1 from '@images/me/kg_art_1.png';
+  import kgArt2 from '@images/me/kg_art_2.png';
+  import kgArt3 from '@images/me/kg_art_3.png';
   import { motion } from 'motion-v';
 
   import { ref } from 'vue';
@@ -6,23 +9,23 @@
   import HeroAnimatedTexts from '@/Components/Partials/Home/LandingHero/HeroAnimatedTexts/index.vue';
 
   const currentHover = ref<'none' | 'left' | 'right'>('none');
-  const currentImage = ref('kg_art_3');
+  const currentImage = ref(kgArt3);
 
   const handleHoverLeft = () => {
     currentHover.value = 'left';
-    currentImage.value = 'kg_art_2';
+    currentImage.value = kgArt2;
     emit('hover-left');
   };
 
   const handleHoverRight = () => {
     currentHover.value = 'right';
-    currentImage.value = 'kg_art_1';
+    currentImage.value = kgArt1;
     emit('hover-right');
   };
 
   const handleHoverLeave = () => {
     currentHover.value = 'none';
-    currentImage.value = 'kg_art_3';
+    currentImage.value = kgArt3;
     emit('hover-leave');
   };
 
@@ -31,14 +34,14 @@
 
 <template>
   <div
-    class="align-center relative flex w-full flex-col justify-center overflow-hidden text-black xs:h-[285px] sm:h-[400px] md:h-auto lg:h-[700px]"
+    class="align-center relative flex w-full flex-col justify-center overflow-hidden text-black xs:h-[285px] sm:h-[400px] md:h-auto lg:h-[800px]"
   >
     <!-- Background Images for Split Effect -->
     <div class="pointer-events-none absolute inset-0 z-40 h-full w-full overflow-hidden">
       <!-- Perceptive -->
       <motion.div
         class="absolute inset-0 h-full w-full bg-contain bg-center bg-no-repeat"
-        :style="{ backgroundImage: `url('/images/kg_art_2.png')` }"
+        :style="{ backgroundImage: `url(${kgArt2})` }"
         :animate="{
           clipPath:
             currentHover === 'right'
@@ -53,7 +56,7 @@
       <!-- Coding -->
       <motion.div
         class="absolute inset-0 h-full w-full bg-contain bg-center bg-no-repeat"
-        :style="{ backgroundImage: `url('/images/kg_art_1.png')` }"
+        :style="{ backgroundImage: `url(${kgArt1})` }"
         :animate="{
           clipPath:
             currentHover === 'left'

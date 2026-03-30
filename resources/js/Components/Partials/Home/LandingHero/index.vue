@@ -18,12 +18,12 @@
 </script>
 
 <template>
-  <div class="relative flex justify-between overflow-hidden border-b border-gray-300 font-acumin">
+  <div class="hero-main relative flex justify-between overflow-hidden border-b border-gray-300 font-acumin">
     <!-- Background Layers -->
     <swoosh-layered-bg
       container-classes="pointer-events-none absolute inset-0 z-0"
-      first-bg-classes="absolute inset-0 bg-[url('@images/swoosh_gray.png')] bg-right bg-no-repeat"
-      second-bg-classes="absolute inset-0 bg-[url('@images/swoosh_blue.png')] bg-right bg-no-repeat"
+      first-bg-classes="absolute inset-0 bg-[url('@images/backgrounds/swoosh_gray.png')] bg-right bg-no-repeat"
+      second-bg-classes="absolute inset-0 bg-[url('@images/backgrounds/swoosh_blue.png')] bg-right bg-no-repeat"
       :is-hovered-right="isHoveredRight"
       :is-hovered-left="isHoveredLeft"
       :animate-prop-bg1="{
@@ -38,8 +38,8 @@
 
     <swoosh-layered-bg
       container-classes="pointer-events-none absolute inset-0 z-0"
-      first-bg-classes="absolute inset-0 bg-[url('@images/swoosh_green.png')] bg-left bg-no-repeat"
-      second-bg-classes="absolute inset-0 bg-[url('@images/swoosh_yellow.png')] bg-left bg-no-repeat"
+      first-bg-classes="absolute inset-0 bg-[url('@images/backgrounds/swoosh_green.png')] bg-left bg-no-repeat"
+      second-bg-classes="absolute inset-0 bg-[url('@images/backgrounds/swoosh_yellow.png')] bg-left bg-no-repeat"
       :is-hovered-right="isHoveredRight"
       :is-hovered-left="isHoveredLeft"
       :animate-prop-bg1="{
@@ -64,4 +64,8 @@
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+  .hero-main {
+    box-shadow: 0 4px 6px #dadada;
+  }
+</style>
