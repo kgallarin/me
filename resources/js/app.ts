@@ -19,7 +19,7 @@ const app = createApp({
   render: () => h(App),
 });
 
-app.component('FontAwesomeIcon', FontAwesomeIcon);
+app.component('FaIcon', FontAwesomeIcon);
 app.use(store);
 app.use(router);
 app.config.globalProperties.$dayjs = dayjs;

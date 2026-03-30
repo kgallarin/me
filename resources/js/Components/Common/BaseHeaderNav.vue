@@ -14,29 +14,6 @@
   });
 
   const isOpen = ref(false);
-
-  const defaultNav = [
-    {
-      label: 'skills',
-      href: '/',
-      icon: '',
-    },
-    {
-      label: 'work',
-      href: '/',
-      icon: '',
-    },
-    {
-      label: 'kudos',
-      href: '/',
-      icon: '',
-    },
-    {
-      label: 'contact',
-      href: '/',
-      icon: '',
-    },
-  ];
 </script>
 
 <template>
@@ -51,7 +28,7 @@
       <!-- nav starts-->
       <nav class="hidden md:block">
         <ul class="text-md flex gap-8">
-          <li v-for="item in nav.length ? nav : defaultNav" :key="item.label">
+          <li v-for="item in nav" :key="item.label">
             <a href="#" class="nav-link flex items-center gap-2 font-acumin font-normal text-white hover:text-gray-300">
               <font-awesome-icon v-if="item.icon" :icon="['fas', item.icon]" class="text-sm" />
               {{ item.label }}

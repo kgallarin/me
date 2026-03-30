@@ -29,7 +29,7 @@
     {
       title: 'dating app',
       description:
-        'A multiple templated website that allows users to create profiles, browse other profiles, and connect with others who share similar interests.',
+        'A multiple templated website that allows users to create profiles, browse other profiles, and connect with others who share similar interests. Project includes heavy testing with Jest, Jasmine and Cypress for E2E',
       images: [getImageUrl('dating-1.png'), getImageUrl('dating-3.png')],
       icons: [
         { icon: ['fab', 'html5'], color: 'text-orange-400' },
@@ -41,6 +41,23 @@
       carousel: {
         autoplay: true,
         showIndicators: true,
+      },
+    },
+    {
+      title: 'e-moderators',
+      description:
+        'Website that recruits and employs people to work as online chat moderators, often for adult-oriented dating or chat platforms.',
+      images: [getImageUrl('e-moderators.png')],
+      icons: [
+        { icon: ['fab', 'html5'], color: 'text-orange-400' },
+        { icon: ['fab', 'sass'], color: 'text-pink-400' },
+        { icon: ['fab', 'js'], color: 'text-yellow-400' },
+        { icon: ['fab', 'vuejs'], color: 'text-green-500' },
+      ],
+      carousel: {
+        autoplay: false,
+        showIndicators: false,
+        showArrows: false,
       },
     },
     {
@@ -79,32 +96,15 @@
       },
     },
     {
-      title: 'e-moderators',
-      description:
-        'Website that recruits and employs people to work as online chat moderators, often for adult-oriented dating or chat platforms.',
-      images: [getImageUrl('e-moderators.png')],
-      icons: [
-        { icon: ['fab', 'html5'], color: 'text-orange-400' },
-        { icon: ['fab', 'sass'], color: 'text-pink-400' },
-        { icon: ['fab', 'js'], color: 'text-yellow-400' },
-        { icon: ['fab', 'vuejs'], color: 'text-green-500' },
-      ],
-      carousel: {
-        autoplay: false,
-        showIndicators: false,
-        showArrows: false,
-      },
-    },
-    {
       title: 'online gambling websites',
       description:
         'Multiple online casino websites that caters to the needs of online gamblers. with heavy forms and complex user interfaces that changes every other day for promotions and occations.',
       images: [getImageUrl('online-gambling.png')],
       icons: [
         { icon: ['fab', 'html5'], color: 'text-orange-400' },
+        { icon: ['fab', 'css3'], color: 'text-blue-500' },
         { icon: ['fab', 'sass'], color: 'text-pink-400' },
         { icon: ['fab', 'js'], color: 'text-yellow-400' },
-        { icon: ['fab', 'vuejs'], color: 'text-green-500' },
       ],
       carousel: {
         autoplay: false,
@@ -116,14 +116,14 @@
 </script>
 
 <template>
-  <div class="mx-auto max-w-screen-xl p-8">
+  <div class="mx-auto max-w-screen-xl px-4 py-6 pb-24 lg:py-8 lg:pb-32">
     <div
-      class="headings font-lighter border-bright-gray font-proxima-bold relative my-8 mb-16 border-t text-center text-sm uppercase text-primary"
+      class="headings font-lighter font-proxima-bold mb:8 relative my-4 border-t border-[#dddddd] text-center text-sm uppercase text-primary lg:my-8 lg:mb-16"
     >
-      <h3 class="relative mx-auto -mt-2.5 max-w-fit bg-white px-4 font-proxima">selected projects</h3>
+      <h3 class="relative mx-auto -mt-2.5 max-w-fit bg-gray-lighter px-12 font-proxima">selected projects</h3>
     </div>
 
-    <div class="grid grid-cols-3 gap-4">
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
       <div
         v-for="project in projects"
         :key="project.title"
@@ -144,7 +144,7 @@
         </div>
 
         <div class="mt-auto grid grid-cols-8 gap-1 p-4">
-          <font-awesome-icon
+          <fa-icon
             v-for="(tech, index) in project.icons"
             :key="index"
             :icon="tech.icon"

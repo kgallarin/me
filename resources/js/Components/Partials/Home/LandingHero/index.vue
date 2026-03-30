@@ -66,6 +66,6 @@
 
 <style scoped>
   .hero-main {
-    box-shadow: 0 4px 6px #dadada;
+    box-shadow: 0 1px 5px #dadada;
   }
 </style>
