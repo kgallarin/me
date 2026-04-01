@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import SwiperSlider from '@/Components/Motion/SwiperSlider.vue';
+  import Splider from '@/Components/Motion/Splider.vue';
 
   const socialImages = import.meta.glob<{ default: string }>('/resources/images/social_images/*.{png,jpg,jpeg,webp}', {
     eager: true,
@@ -33,13 +33,14 @@
     </section>
 
     <section class="image-gallery py-2">
-      <swiper-slider
+      <splider
         :items="images"
         :autoplay="true"
         :interval="8000"
         :show-indicators="true"
         :show-arrows="false"
         :items-to-show="8"
+        fixed-height="100px"
       />
     </section>
   </div>
@@ -47,21 +48,8 @@
 
 <style lang="scss">
   .image-gallery {
-    .swiper {
-      width: 100%;
-      height: 100px;
-
-      &-slide {
-        height: auto;
-        display: flex;
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
-        }
-      }
+    img {
+      @apply rounded-md border border-gray-300 p-[2px];
     }
   }
 </style>

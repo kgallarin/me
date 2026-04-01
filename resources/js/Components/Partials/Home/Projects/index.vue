@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import SwiperSlider from '@/Components/Motion/SwiperSlider.vue';
+  import Splider from '@/Components/Motion/Splider.vue';
 
   const images = import.meta.glob<{ default: string }>('/resources/images/projects/*.{png,jpg,jpeg,webp}', {
     eager: true,
@@ -23,7 +23,7 @@
       carousel: {
         autoplay: true,
         showIndicators: true,
-        showArrows: true,
+        showArrows: false,
       },
     },
     {
@@ -133,13 +133,14 @@
         :key="project.title"
         class="card relative flex flex-col rounded-md bg-white p-1 drop-shadow-md"
       >
-        <swiper-slider
+        <splider
           :items="project.images"
           aspect-ratio="max-h-[240px] min-h-[240px]"
           :autoplay="project.carousel?.autoplay"
           :show-indicators="project.carousel?.showIndicators"
           :show-arrows="project.carousel?.showArrows"
           :items-to-show="1"
+          fixed-height="250px"
         />
         <div class="relative bg-white p-4 text-primary">
           <h2 class="mb-2 font-proxima text-lg font-medium text-primary">{{ project.title }}</h2>
