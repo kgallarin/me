@@ -1,5 +1,6 @@
 import DefaultLayout from '@/Layouts/Default/index.vue';
 
+import About from '@/Components/Pages/About/index.vue';
 import Home from '@/Components/Pages/Home/index.vue';
 
 // view:public routes
@@ -17,6 +18,15 @@ const publicRoutes = [
         meta: {
           guest: true,
           title: 'Collection',
+        },
+      },
+      {
+        path: 'about',
+        name: 'about',
+        component: About,
+        meta: {
+          guest: true,
+          title: 'whoami',
         },
       },
     ],

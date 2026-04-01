@@ -1,0 +1,82 @@
+@import "@splidejs/splide/dist/css/splide-core.min.css";
+
+.splide-main {
+
+	&:hover {
+		.splide__arrows {
+			opacity: 1;
+		}
+	}
+
+	img {
+		cursor: grabbing;
+	}
+
+	.splide {
+		&__arrows {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			pointer-events: none;
+
+			z-index: 1;
+			opacity: 0;
+		}
+
+		&__arrow {
+			background-color: rgba(255, 255, 255, 0.3);
+			backdrop-filter: blur(4px);
+			border-radius: 50%;
+			padding: 10px;
+			opacity: 0.7;
+
+			height: 33px;
+			width: 33px;
+			pointer-events: auto;
+			transition: opacity 0.2s, background 0.2s;
+
+			&--prev {
+				svg {
+					transform: rotate(180deg);
+				}
+			}
+
+			svg {
+				fill: #fff;
+				width: 12px;
+				height: 12px;
+			}
+
+			&:hover {
+				opacity: 1;
+				background: rgba(0, 0, 0, 0.6);
+			}
+		}
+
+		&__pagination {
+			position: absolute;
+			width: 100%;
+			bottom:0;
+			&__page {
+				background: white;
+				opacity: 0.5;
+				width: 5px;
+				height: 5px;
+				margin: 0 3px;
+				border-radius: 100%;
+
+				&.is-active {
+					opacity: 1;
+					width: 16px;
+					border-radius: 4px;
+					background: white;
+					transform: none;
+				}
+			}
+		}
+	}
+}
+

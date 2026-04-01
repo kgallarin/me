@@ -18,6 +18,7 @@ module.exports = {
       colors: {
         primary: 'var(--color-primary)',
         secondary: 'var(--color-secondary)',
+        tertiary: 'var(--color-tertiary)',
 
         'yellow-primary': 'var(--color-yellow-primary)',
 
@@ -31,7 +32,7 @@ module.exports = {
 
       fontFamily: {
         acumin: ['Acumin Pro Wide', 'sans-serif'],
-        proxima: ['Proxima Nova Bold', 'sans-serif'],
+        proxima: ['Proxima Nova Bold', 'sans-serif', 'Helvetica Neue', 'Helvetica', 'Arial'],
       },
     },
   },
