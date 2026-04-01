@@ -5,22 +5,22 @@
   const defaultNav = [
     {
       label: 'skills',
-      href: '/',
+      to: 'home',
       icon: '',
     },
     {
-      label: 'work',
-      href: '/',
+      label: 'about',
+      to: 'about',
       icon: '',
     },
     {
       label: 'kudos',
-      href: '/',
+      to: 'home',
       icon: '',
     },
     {
       label: 'contact',
-      href: '/',
+      to: 'home',
       icon: '',
     },
   ];
@@ -29,7 +29,9 @@
 <template>
   <base-header-nav :nav="defaultNav" />
   <!-- add more layout components if necessary -->
-  <router-view />
+  <div class="min-h-[calc(100vh-155px)]">
+    <router-view />
+  </div>
 
   <base-footer :nav="defaultNav" />
 </template>

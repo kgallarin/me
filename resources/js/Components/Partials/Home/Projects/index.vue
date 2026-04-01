@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import CustomCarouselSlider from '@/Components/Motion/CustomCarouselSlider.vue';
+  import SwiperSlider from '@/Components/Motion/SwiperSlider.vue';
 
   const images = import.meta.glob<{ default: string }>('/resources/images/projects/*.{png,jpg,jpeg,webp}', {
     eager: true,
@@ -11,7 +11,7 @@
     {
       title: 'loomberryliving',
       description:
-        'Curated list of products like bed sheets, pillows, and more. Admin panel for managing products, prices, quantity, colors and more...',
+        'Curated list of products like bed sheets, pillows, and more. Admin panel for managing products, prices, quantity, colors and more. (soon)',
       images: [getImageUrl('loomberryliving.png')],
       icons: [
         { icon: ['fab', 'html5'], color: 'text-orange-400' },
@@ -21,9 +21,9 @@
         { icon: ['fab', 'vuejs'], color: 'text-green-500' },
       ],
       carousel: {
-        autoplay: false,
-        showIndicators: false,
-        showArrows: false,
+        autoplay: true,
+        showIndicators: true,
+        showArrows: true,
       },
     },
     {
@@ -33,14 +33,16 @@
       images: [getImageUrl('dating-1.png'), getImageUrl('dating-3.png')],
       icons: [
         { icon: ['fab', 'html5'], color: 'text-orange-400' },
-        { icon: ['fab', 'bootstrap'], color: 'text-purple-400' },
+        { icon: ['fab', 'tailwind-css'], color: 'text-teal-400' },
+        { icon: ['fab', 'typescript'], color: 'text-blue-500' },
         { icon: ['fab', 'js'], color: 'text-yellow-400' },
         { icon: ['fab', 'sass'], color: 'text-pink-400' },
-        { icon: ['fab', 'less'], color: 'text-blue-400' },
+        { icon: ['fab', 'css3'], color: 'text-blue-500' },
       ],
       carousel: {
         autoplay: true,
         showIndicators: true,
+        showArrows: true,
       },
     },
     {
@@ -51,13 +53,14 @@
       icons: [
         { icon: ['fab', 'html5'], color: 'text-orange-400' },
         { icon: ['fab', 'sass'], color: 'text-pink-400' },
+        { icon: ['fab', 'css3'], color: 'text-blue-500' },
         { icon: ['fab', 'js'], color: 'text-yellow-400' },
         { icon: ['fab', 'vuejs'], color: 'text-green-500' },
       ],
       carousel: {
-        autoplay: false,
-        showIndicators: false,
-        showArrows: false,
+        autoplay: true,
+        showIndicators: true,
+        showArrows: true,
       },
     },
     {
@@ -70,12 +73,13 @@
         { icon: ['fab', 'bootstrap'], color: 'text-purple-400' },
         { icon: ['fab', 'js'], color: 'text-yellow-400' },
         { icon: ['fab', 'sass'], color: 'text-pink-400' },
+        { icon: ['fab', 'css3'], color: 'text-blue-500' },
         { icon: ['fab', 'less'], color: 'text-blue-400' },
       ],
       carousel: {
-        autoplay: false,
-        showIndicators: false,
-        showArrows: false,
+        autoplay: true,
+        showIndicators: true,
+        showArrows: true,
       },
     },
     {
@@ -90,9 +94,9 @@
         { icon: ['fab', 'wordpress'], color: 'text-blue-500' },
       ],
       carousel: {
-        autoplay: false,
-        showIndicators: false,
-        showArrows: false,
+        autoplay: true,
+        showIndicators: true,
+        showArrows: true,
       },
     },
     {
@@ -107,9 +111,9 @@
         { icon: ['fab', 'js'], color: 'text-yellow-400' },
       ],
       carousel: {
-        autoplay: false,
-        showIndicators: false,
-        showArrows: false,
+        autoplay: true,
+        showIndicators: true,
+        showArrows: true,
       },
     },
   ];
@@ -127,17 +131,18 @@
       <div
         v-for="project in projects"
         :key="project.title"
-        class="card relative flex flex-col rounded-md bg-white p-1 shadow-md"
+        class="card relative flex flex-col rounded-md bg-white p-1 drop-shadow-md"
       >
-        <custom-carousel-slider
+        <swiper-slider
           :items="project.images"
           aspect-ratio="max-h-[240px] min-h-[240px]"
           :autoplay="project.carousel?.autoplay"
           :show-indicators="project.carousel?.showIndicators"
           :show-arrows="project.carousel?.showArrows"
+          :items-to-show="1"
         />
         <div class="relative bg-white p-4 text-primary">
-          <h2 class="mb-2 font-proxima text-lg font-semibold text-primary">{{ project.title }}</h2>
+          <h2 class="mb-2 font-proxima text-lg font-medium text-primary">{{ project.title }}</h2>
           <p class="font-acumin text-xs font-light">
             {{ project.description }}
           </p>

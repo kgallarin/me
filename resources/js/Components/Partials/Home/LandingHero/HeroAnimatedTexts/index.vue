@@ -67,7 +67,7 @@
     <hero-image-text-shard
       class="whitespace-nowrap 2xs:text-base sm:-ml-8 md:-ml-5 md:text-xl lg:-ml-20 lg:text-3xl"
       text-left="User Experience"
-      text-right="<html lang=['en', 'fil']>"
+      text-right="State Management"
       :animate-left-in-pixels="isDesktop ? 140 : isTabletMobile ? 130 : 80"
       :animate-right-in-pixels="isDesktop ? 150 : isTabletMobile ? 120 : 60"
       @text-hover-left="handleHoverLeft"

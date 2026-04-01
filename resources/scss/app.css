@@ -1,3 +1,4 @@
+@import "swiper/swiper-bundle.css";
 @layer utilities {
   .text-shadow-thickens {
     text-shadow: 0 0 0 rgb(0, 0, 0);
@@ -53,12 +54,53 @@
 .theme-light {
   --color-primary: #010303;
   --color-secondary: #efefef;
+  --color-tertiary: #333333;
   --color-yellow-primary: #fffa2a;
   --color-teal-primary: #04d4ff;
   --color-teal-secondary: #b3f4d5;
   --color-gray-primary: #969a9b;
   --color-gray-secondary: #e5e4e2;
   --color-gray-lighter: #f8f8f8 ;
+}
+
+.swiper-main .swiper-button-next,
+.swiper-main .swiper-button-prev {
+  --swiper-navigation-size: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  color: white;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.swiper-main .swiper-button-next::after,
+.swiper-main .swiper-button-prev::after {
+  font-weight: bold;
+}
+.swiper-main .swiper-button-next:hover,
+.swiper-main .swiper-button-prev:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.swiper-main .swiper-button-next svg,
+.swiper-main .swiper-button-prev svg {
+  height: 16px;
+}
+.swiper-main:hover .swiper-button-next,
+.swiper-main:hover .swiper-button-prev {
+  opacity: 1;
+}
+.swiper-main .swiper-pagination-bullet {
+  background: white;
+  opacity: 0.5;
+  width: 5px;
+  height: 5px;
+}
+.swiper-main .swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 16px;
+  border-radius: 4px;
 }
 
 @tailwind base;
@@ -73,6 +115,15 @@
   }
   .custom-test {
     @apply text-white bg-amber-200;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-primary font-proxima font-bold;
+    text-rendering: optimizelegibility;
   }
 }
 

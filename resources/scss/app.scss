@@ -2,6 +2,8 @@
 @use "font-book";
 @use "colors/theme_light";
 
+@use "vendor_overrides/swiper";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,5 +18,16 @@
 
   .custom-test {
     @apply text-white bg-amber-200;
+  }
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+    @apply text-primary font-proxima font-bold;
+
+		text-rendering: optimizelegibility;
   }
 }

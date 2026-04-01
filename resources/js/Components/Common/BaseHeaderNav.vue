@@ -19,20 +19,25 @@
 <template>
   <header class="bg-[#171717]">
     <div
-      class="header-inner mx-auto flex h-16 items-center justify-between px-4 md:px-8 lg:max-w-screen-lg xl:max-w-screen-xl"
+      class="header-inner mx-auto flex h-16 items-center justify-between px-4 md:px-8 lg:max-w-screen-lg lg:px-0 xl:max-w-screen-xl"
     >
       <div class="w-[36px] sm:w-[44px]">
-        <brand-logo />
+        <router-link :to="{ name: 'home' }">
+          <brand-logo />
+        </router-link>
       </div>
 
       <!-- nav starts-->
       <nav class="hidden md:block">
         <ul class="text-md flex gap-8">
           <li v-for="item in nav" :key="item.label">
-            <a href="#" class="nav-link flex items-center gap-2 font-acumin font-normal text-white hover:text-gray-300">
+            <router-link
+              :to="{ name: item.to }"
+              class="nav-link flex items-center gap-2 font-acumin font-normal text-white hover:text-gray-300"
+            >
               <font-awesome-icon v-if="item.icon" :icon="['fas', item.icon]" class="text-sm" />
               {{ item.label }}
-            </a>
+            </router-link>
           </li>
         </ul>
       </nav>
