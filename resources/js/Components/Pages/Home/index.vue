@@ -21,15 +21,19 @@
 </script>
 
 <template>
-  <landing-hero
-    :is-hovered-right="isHoveredRight"
-    :is-hovered-left="isHoveredLeft"
-    @hover-right="handleHoverRight"
-    @hover-left="handleHoverLeft"
-    @hover-leave="handleHoverLeave"
-  />
-  <!--  <div class="bg-gray-lighter">-->
-  <div class="bg-gray-lighter bg-[url('@images/backgrounds/leaves-4.png')] bg-blend-multiply">
-    <projects />
+  <div class="flex min-h-screen flex-col">
+    <landing-hero
+      :is-hovered-right="isHoveredRight"
+      :is-hovered-left="isHoveredLeft"
+      @hover-right="handleHoverRight"
+      @hover-left="handleHoverLeft"
+      @hover-leave="handleHoverLeave"
+    />
+    <!--  <div class="bg-gray-lighter">-->
+    <div
+      class="flex-1 bg-gray-lighter bg-[url('@images/backgrounds/leaves-4.png')] bg-blend-multiply shadow-custom-mid-inset"
+    >
+      <projects />
+    </div>
   </div>
 </template>

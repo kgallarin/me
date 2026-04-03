@@ -3,8 +3,6 @@
 
   import { useAppStore } from '@/Store/Modules/App';
 
-  import BaseHeaderNav from '@/Components/Common/BaseHeaderNav.vue';
-
   const appStore = useAppStore();
   const theme = computed(() => (appStore.theme === 0 ? 'light' : 'dark'));
 </script>

@@ -69,6 +69,9 @@
 .splide-main img {
   cursor: grabbing;
 }
+.splide-main .splide:hover .splide__arrows {
+  opacity: 1;
+}
 .splide-main .splide__arrows {
   position: absolute;
   top: 50%;
@@ -81,7 +84,7 @@
   opacity: 0;
 }
 .splide-main .splide__arrow {
-  background-color: rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(4px);
   border-radius: 50%;
   padding: 10px;
@@ -106,7 +109,7 @@
 .splide-main .splide__pagination {
   position: absolute;
   width: 100%;
-  bottom: 0;
+  bottom: 12px;
 }
 .splide-main .splide__pagination__page {
   background: white;

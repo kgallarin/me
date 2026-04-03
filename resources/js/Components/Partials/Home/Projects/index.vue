@@ -1,4 +1,7 @@
 <script setup lang="ts">
+  import { SplideSlide } from '@splidejs/vue-splide';
+
+  import Container from '@/Components/Common/Container.vue';
   import Splider from '@/Components/Motion/Splider.vue';
 
   const images = import.meta.glob<{ default: string }>('/resources/images/projects/*.{png,jpg,jpeg,webp}', {
@@ -60,7 +63,41 @@
       carousel: {
         autoplay: true,
         showIndicators: true,
-        showArrows: true,
+        showArrows: false,
+      },
+    },
+    {
+      title: 'online gambling websites',
+      description:
+        'Maintained and created multiple online casino websites that cater to the needs of online gamblers. With heavy forms and complex user interfaces that change frequently for promotions and occasions.',
+      images: [getImageUrl('online-gambling.png')],
+      icons: [
+        { icon: ['fab', 'html5'], color: 'text-orange-400' },
+        { icon: ['fab', 'css3'], color: 'text-blue-500' },
+        { icon: ['fab', 'sass'], color: 'text-pink-400' },
+        { icon: ['fab', 'js'], color: 'text-yellow-400' },
+      ],
+      carousel: {
+        autoplay: true,
+        showIndicators: true,
+        showArrows: false,
+      },
+    },
+    {
+      title: 'horsepower',
+      description:
+        'Provides HR benefits, healthcare insurance/HMO, and administrative tools to freelancers, solopreneurs, and micro-SMEs. It acts as a one-stop-shop, helping local freelancers access benefits often missing from standard contract work.',
+      images: [getImageUrl('horsepower.jpeg')],
+      icons: [
+        { icon: ['fab', 'html5'], color: 'text-orange-400' },
+        { icon: ['fab', 'css3'], color: 'text-blue-500' },
+        { icon: ['fab', 'js'], color: 'text-yellow-400' },
+        { icon: ['fab', 'wordpress'], color: 'text-blue-500' },
+      ],
+      carousel: {
+        autoplay: true,
+        showIndicators: true,
+        showArrows: false,
       },
     },
     {
@@ -79,85 +116,63 @@
       carousel: {
         autoplay: true,
         showIndicators: true,
-        showArrows: true,
-      },
-    },
-    {
-      title: 'horsepower',
-      description:
-        'Provides HR benefits, healthcare insurance/HMO, and administrative tools to freelancers, solopreneurs, and micro-SMEs. It acts as a one-stop-shop, helping local freelancers access benefits often missing from standard contract work.',
-      images: [getImageUrl('horsepower.jpeg')],
-      icons: [
-        { icon: ['fab', 'html5'], color: 'text-orange-400' },
-        { icon: ['fab', 'css3'], color: 'text-blue-500' },
-        { icon: ['fab', 'js'], color: 'text-yellow-400' },
-        { icon: ['fab', 'wordpress'], color: 'text-blue-500' },
-      ],
-      carousel: {
-        autoplay: true,
-        showIndicators: true,
-        showArrows: true,
-      },
-    },
-    {
-      title: 'online gambling websites',
-      description:
-        'Multiple online casino websites that caters to the needs of online gamblers. with heavy forms and complex user interfaces that changes every other day for promotions and occations.',
-      images: [getImageUrl('online-gambling.png')],
-      icons: [
-        { icon: ['fab', 'html5'], color: 'text-orange-400' },
-        { icon: ['fab', 'css3'], color: 'text-blue-500' },
-        { icon: ['fab', 'sass'], color: 'text-pink-400' },
-        { icon: ['fab', 'js'], color: 'text-yellow-400' },
-      ],
-      carousel: {
-        autoplay: true,
-        showIndicators: true,
-        showArrows: true,
+        showArrows: false,
       },
     },
   ];
 </script>
 
 <template>
-  <div class="mx-auto max-w-screen-xl px-4 py-6 pb-24 lg:py-8 lg:pb-32">
+  <container class="py-6 pb-24 lg:py-8 lg:pb-32">
     <div
       class="headings font-lighter font-proxima-bold mb:8 relative my-4 border-t border-[#dddddd] text-center text-sm uppercase text-primary lg:my-8 lg:mb-16"
     >
-      <h3 class="relative mx-auto -mt-2.5 max-w-fit bg-gray-lighter px-12 font-proxima">selected projects</h3>
+      <h3 class="font-xl relative mx-auto -mt-2.5 max-w-fit bg-gray-lighter px-12 font-proxima text-lg font-light">
+        selected projects
+      </h3>
     </div>
 
-    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-      <div
-        v-for="project in projects"
-        :key="project.title"
-        class="card relative flex flex-col rounded-md bg-white p-1 drop-shadow-md"
-      >
-        <splider
-          :items="project.images"
-          aspect-ratio="max-h-[240px] min-h-[240px]"
-          :autoplay="project.carousel?.autoplay"
-          :show-indicators="project.carousel?.showIndicators"
-          :show-arrows="project.carousel?.showArrows"
-          :items-to-show="1"
-          fixed-height="250px"
-        />
-        <div class="relative bg-white p-4 text-primary">
-          <h2 class="mb-2 font-proxima text-lg font-medium text-primary">{{ project.title }}</h2>
-          <p class="font-acumin text-xs font-light">
-            {{ project.description }}
-          </p>
-        </div>
-
-        <div class="mt-auto grid grid-cols-8 gap-1 p-4">
-          <fa-icon
-            v-for="(tech, index) in project.icons"
-            :key="index"
-            :icon="tech.icon"
-            :class="['text-xl', tech.color]"
+    <splider
+      :items-to-show="3"
+      :show-indicators="false"
+      :show-arrows="false"
+      :gap="16"
+      :interval="8000"
+      rewind
+      autoplay
+      :breakpoints="{
+        1024: { perPage: 2 },
+        640: { perPage: 1 },
+      }"
+    >
+      <splide-slide v-for="project in projects" :key="project.title" class="pb-12">
+        <div class="card relative flex h-full flex-col rounded-md bg-white p-1 drop-shadow-md">
+          <splider
+            :items="project.images"
+            aspect-ratio="max-h-[240px] min-h-[240px]"
+            :autoplay="project.carousel?.autoplay"
+            :show-indicators="project.carousel?.showIndicators"
+            :show-arrows="project.carousel?.showArrows"
+            :items-to-show="1"
+            fixed-height="250px"
           />
+          <div class="relative bg-white p-4 text-primary">
+            <h2 class="mb-2 font-proxima text-lg font-medium text-primary">{{ project.title }}</h2>
+            <p class="font-acumin text-xs font-light">
+              {{ project.description }}
+            </p>
+          </div>
+
+          <div class="mt-auto grid grid-cols-8 gap-1 p-4">
+            <fa-icon
+              v-for="(tech, index) in project.icons"
+              :key="index"
+              :icon="tech.icon"
+              :class="['text-xl', tech.color]"
+            />
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
+      </splide-slide>
+    </splider>
+  </container>
 </template>

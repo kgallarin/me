@@ -13,6 +13,12 @@
 	}
 
 	.splide {
+		&:hover {
+			.splide__arrows {
+				opacity: 1;
+			}
+		}
+
 		&__arrows {
 			position: absolute;
 			top: 50%;
@@ -27,7 +33,7 @@
 		}
 
 		&__arrow {
-			background-color: rgba(255, 255, 255, 0.3);
+			background: rgba(0, 0, 0, 0.1);
 			backdrop-filter: blur(4px);
 			border-radius: 50%;
 			padding: 10px;
@@ -59,7 +65,7 @@
 		&__pagination {
 			position: absolute;
 			width: 100%;
-			bottom:0;
+			bottom:12px;
 			&__page {
 				background: white;
 				opacity: 0.5;

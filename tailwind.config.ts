@@ -30,6 +30,10 @@ module.exports = {
         'gray-lighter': 'var(--color-gray-lighter)',
       },
 
+      boxShadow: {
+        'custom-mid-inset': 'inset 0px 1px 4px 0px rgba(0, 0, 0, 0.1);',
+      },
+
       fontFamily: {
         acumin: ['Acumin Pro Wide', 'sans-serif'],
         proxima: ['Proxima Nova Bold', 'sans-serif', 'Helvetica Neue', 'Helvetica', 'Arial'],

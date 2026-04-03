@@ -2,7 +2,7 @@
   import { Splide, SplideSlide } from '@splidejs/vue-splide';
 
   interface Props {
-    items: string[];
+    items?: string[];
     autoplay?: boolean;
     interval?: number;
     showArrows?: boolean;
@@ -12,9 +12,12 @@
     gap?: number;
     imageClasses?: string;
     fixedHeight?: string | null;
+    rewind?: boolean;
+    breakpoints?: Record<string, unknown>;
   }
 
   const props = withDefaults(defineProps<Props>(), {
+    items: () => [],
     autoplay: true,
     interval: 10000,
     showArrows: false,
@@ -24,28 +27,35 @@
     imageClasses: 'rounded-md',
     gap: 8,
     fixedHeight: null,
+    rewind: true,
+    breakpoints: () => ({}),
   });
 
   const options = {
-    type: props.items.length > props.itemsToShow ? 'loop' : 'slide',
+    type: 'slide',
     perPage: props.itemsToShow,
     gap: props.gap,
-    arrows: props.showArrows && props.items.length > props.itemsToShow,
-    pagination: props.showIndicators && props.items.length > props.itemsToShow,
-    autoplay: props.autoplay && props.items.length > props.itemsToShow,
+    arrows: props.showArrows,
+    pagination: props.showIndicators,
+    autoplay: props.autoplay,
     interval: props.interval,
     pauseOnHover: true,
     resetProgress: false,
     fixedHeight: props.fixedHeight,
+    rewind: props.rewind,
+    breakpoints: props.breakpoints,
   };
 </script>
 
 <template>
-  <div class="splide-main group relative w-full overflow-hidden rounded-lg" :class="aspectRatio">
+  <div class="splide-main group relative w-full overflow-hidden rounded-sm" :class="aspectRatio">
     <splide :options="options" class="h-full w-full">
-      <splide-slide v-for="(item, index) in items" :key="index" class="h-full w-full">
-        <img :src="item" :class="imageClasses" class="h-full w-full object-cover object-left" alt="Carousel Image" />
-      </splide-slide>
+      <slot v-if="$slots.default" />
+      <template v-else>
+        <splide-slide v-for="(item, index) in items" :key="index" class="h-full w-full">
+          <img :src="item" :class="imageClasses" class="h-full w-full object-cover object-left" alt="Carousel Image" />
+        </splide-slide>
+      </template>
     </splide>
   </div>
 </template>

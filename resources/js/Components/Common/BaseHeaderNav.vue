@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  import { FontAwesomeIcon as FaIcon } from '@fortawesome/vue-fontawesome';
+
   import { PropType, ref } from 'vue';
 
   import { NavLink } from '@/Types/Props';
@@ -35,7 +37,7 @@
               :to="{ name: item.to }"
               class="nav-link flex items-center gap-2 font-acumin font-normal text-white hover:text-gray-300"
             >
-              <font-awesome-icon v-if="item.icon" :icon="['fas', item.icon]" class="text-sm" />
+              <fa-icon v-if="item.icon" :icon="['fas', item.icon]" class="text-sm" />
               {{ item.label }}
             </router-link>
           </li>
@@ -43,7 +45,7 @@
       </nav>
 
       <button class="text-2xl text-white focus:outline-none md:hidden" aria-label="Open menu" @click="isOpen = !isOpen">
-        <font-awesome-icon :icon="['fas', 'bars']" />
+        <fa-icon :icon="['fas', 'bars']" />
       </button>
     </div>
   </header>
