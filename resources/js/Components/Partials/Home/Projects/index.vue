@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { SplideSlide } from '@splidejs/vue-splide';
 
-  import Container from '@/Components/Common/Container.vue';
+  import BaseContainer from '@/Components/Common/BaseContainer.vue';
   import Splider from '@/Components/Motion/Splider.vue';
 
   const images = import.meta.glob<{ default: string }>('/resources/images/projects/*.{png,jpg,jpeg,webp}', {
@@ -123,9 +123,9 @@
 </script>
 
 <template>
-  <container class="py-6 pb-24 lg:py-8 lg:pb-32">
+  <base-container class="pb-24 lg:pb-16 lg:pt-6">
     <div
-      class="headings font-lighter font-proxima-bold mb:8 relative my-4 border-t border-[#dddddd] text-center text-sm uppercase text-primary lg:my-8 lg:mb-16"
+      class="headings font-lighter font-proxima-bold relative border-t border-[#dddddd] text-center text-sm uppercase text-primary lg:my-8 lg:mb-14"
     >
       <h3 class="font-xl relative mx-auto -mt-2.5 max-w-fit bg-gray-lighter px-12 font-proxima text-lg font-light">
         selected projects
@@ -174,5 +174,5 @@
         </div>
       </splide-slide>
     </splider>
-  </container>
+  </base-container>
 </template>

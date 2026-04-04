@@ -1,102 +1,294 @@
 <script setup lang="ts">
-  import Container from '@/Components/Common/Container.vue';
+  import { type ChartData, type ChartOptions } from 'chart.js';
+  import { Context } from 'chartjs-plugin-datalabels';
+
+  import BaseBarChart from '@/Components/Common/BaseBarChart.vue';
+  import BaseContainer from '@/Components/Common/BaseContainer.vue';
   import Splider from '@/Components/Motion/Splider.vue';
 
   const socialImages = import.meta.glob<{ default: string }>('/resources/images/social_images/*.{png,jpg,jpeg,webp}', {
     eager: true,
   });
 
-  const images = Object.values(socialImages).map((image) => image.default);
+  const images = Object.values(socialImages).map((image) => (image as { default: string }).default);
+
+  const chartData: ChartData<'bar'> = {
+    labels: [
+      ['Vue', '90%'],
+      ['Form Handling', '90%'],
+      ['JS/TypeScript', '70%'],
+      ['State Management', '70%'],
+      ['Animation', '70%'],
+      ['Laravel/GraphQL', '40%'],
+    ],
+    datasets: [
+      {
+        backgroundColor: (context: {
+          chart: { ctx: CanvasRenderingContext2D; chartArea: { top: number; bottom: number } };
+          dataIndex: number;
+        }) => {
+          const { ctx, chartArea } = context.chart;
+          if (!chartArea) return '#21d4fd';
+
+          const index = context.dataIndex;
+          const gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top);
+
+          switch (index) {
+            case 0:
+              gradient.addColorStop(0, '#04d4ff');
+              gradient.addColorStop(1, '#9BDCE8FF');
+              break;
+            case 1:
+              gradient.addColorStop(0, '#996a5b');
+              gradient.addColorStop(1, '#D0A78CFF');
+              break;
+            case 2:
+              gradient.addColorStop(0, '#e7af30');
+              gradient.addColorStop(1, '#dec691');
+              break;
+            case 3:
+              gradient.addColorStop(0, '#43A677FF');
+              gradient.addColorStop(1, '#84CCA9FF');
+              break;
+            case 4:
+              gradient.addColorStop(0, '#333333');
+              gradient.addColorStop(1, '#fff');
+              break;
+            case 5:
+              gradient.addColorStop(0, '#e14949');
+              gradient.addColorStop(1, '#fff');
+              break;
+
+            default:
+              return gradient;
+          }
+
+          return gradient;
+        },
+        data: [92, 94, 88, 80, 78, 70],
+        borderRadius: 4,
+        barPercentage: 0.96,
+        categoryPercentage: 0.96,
+      },
+    ],
+  };
+
+  const chartOptions: ChartOptions<'bar'> & { plugins: { datalabels?: unknown } } = {
+    indexAxis: 'x' as const,
+    responsive: true,
+    maintainAspectRatio: true,
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        enabled: false,
+      },
+      datalabels: {
+        display: true,
+        color: '#fff',
+        offset: 0,
+        rotation: 0,
+        clip: false,
+        clamp: true,
+        textAlign: 'center' as const,
+        labels: {
+          title: {
+            display: true,
+            font: {
+              family: "'Acumin Pro Wide', sans-serif",
+              size: 16,
+              weight: 'lighter' as const,
+              lineHeight: 'normal',
+            },
+            color: '#fff',
+            formatter: (_value: number, context: Context) => {
+              const label = context.chart.data.labels?.[context.dataIndex];
+              return Array.isArray(label) ? (label[0] as string) : (label as string);
+            },
+            clamp: true,
+            anchor: 'start' as const,
+            align: 'end' as const,
+            offset: 30,
+          },
+          subtitle: {
+            display: true,
+            font: {
+              family: "'Proxima Nova', sans-serif, 'Helvetica Neue', Helvetica, Arial",
+              size: 42,
+              weight: 600,
+              lineHeight: 1.2,
+            },
+            color: '#fff',
+            clamp: true,
+            anchor: 'start' as const,
+            align: 'end' as const,
+            offset: 48, // Adjust this offset to position it below the title
+            formatter: (_value: number, context: Context) => {
+              const label = context.chart.data.labels?.[context.dataIndex];
+              return Array.isArray(label) ? (label[1] as string) : '';
+            },
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        grid: {
+          display: false,
+        },
+        border: {
+          display: false,
+        },
+        ticks: {
+          display: false,
+        },
+      },
+      y: {
+        display: true,
+        max: 100,
+        min: 60,
+        grid: {
+          display: true,
+        },
+        border: {
+          display: true,
+        },
+        ticks: {
+          padding: 15,
+          font: {
+            family: "'Proxima Nova', sans-serif, 'Helvetica Neue', Helvetica, Arial",
+            size: 15,
+          },
+          color: '#060606',
+          callback: (value: string | number) => {
+            if (value === 100) return 'Wizard';
+            if (value === 90) return 'Ninja';
+            if (value === 80) return 'Intermediate';
+            if (value === 70) return 'Geek';
+            if (value === 60) return 'Caveman';
+            return '';
+          },
+          stepSize: 5,
+        },
+      },
+    },
+  };
 </script>
 
 <template>
-  <section class="border-b border-gray-100">
-    <container class="py-0">
-      <div class="flex w-full items-center justify-between border-b border-gray-200">
-        <div class="w-5/12 text-balance text-primary">
-          <h1 class="font-acumin-bold mb-4 text-6xl tracking-tight text-tertiary">$ whoami</h1>
-          <p class="mb-4 font-acumin text-xl font-light">
-            I'm a frontend/software engineer from
-            <br />
-            ☀️ Manila, Philippines.
-          </p>
+  <!--  <section class="border-b border-gray-100">-->
+  <!--    <base-container class="py-16">-->
+  <!--      <div class="flex w-full items-center justify-between border-b border-gray-200">-->
+  <!--        <div class="w-5/12 text-balance text-primary">-->
+  <!--          <h1 class="font-acumin-bold mb-4 text-6xl tracking-tight text-tertiary">$ whoami</h1>-->
+  <!--          <p class="mb-4 font-acumin text-xl font-light">-->
+  <!--            I'm a frontend/software engineer from-->
+  <!--            <br />-->
+  <!--            ☀️ Manila, Philippines.-->
+  <!--          </p>-->
 
-          <p class="font-proxima text-base font-light leading-relaxed">
-            With over a decade of experience, I bridge the gap between design and development, delivering intuitive
-            client solutions with a natural instinct for the designer’s perspective. When I’m stepping away from the
-            syntax, I enjoy spending time working out, gaming occasionally, exploring places, listening to music,
-            cooking and learning new things.
-          </p>
-        </div>
+  <!--          <p class="font-proxima text-base font-light leading-relaxed">-->
+  <!--            With over a decade of experience, I bridge the gap between design and development, delivering intuitive-->
+  <!--            client solutions with a natural instinct for the designer’s perspective. When I’m stepping away from the-->
+  <!--            syntax, I enjoy spending time working out, gaming occasionally, exploring places, listening to music,-->
+  <!--            cooking and learning new things.-->
+  <!--          </p>-->
+  <!--        </div>-->
 
-        <div class="w-1/2 justify-self-end pt-8">
-          <img class="rounded-lg object-cover shadow-lg" src="@images/me/kg_about.png" alt="kevin gallarin" />
+  <!--        <div class="w-1/2 justify-self-end pt-8">-->
+  <!--          <img-->
+  <!--            class="rounded-lg object-cover shadow-lg"-->
+  <!--            src="@images/me/kg_about.png"-->
+  <!--            alt="kevin gallarin, skill pie"-->
+  <!--          />-->
+  <!--        </div>-->
+  <!--      </div>-->
+
+  <!--      <div class="image-gallery py-10">-->
+  <!--        <splider-->
+  <!--          :items="images"-->
+  <!--          :autoplay="true"-->
+  <!--          :interval="8000"-->
+  <!--          :show-indicators="true"-->
+  <!--          :show-arrows="false"-->
+  <!--          :items-to-show="8"-->
+  <!--          fixed-height="100px"-->
+  <!--        />-->
+  <!--      </div>-->
+  <!--    </base-container>-->
+  <!--  </section>-->
+
+  <!--  <section class="shadow-bottom bg-gray-lighter shadow-custom-mid-inset">-->
+  <!--    <base-container class="py-32">-->
+  <!--      <div class="flex w-full items-start justify-between">-->
+  <!--        <div>-->
+  <!--          <h3 class="mb-4 font-proxima text-3xl font-light">Perceptive side</h3>-->
+  <!--          <ul class="font-proxima font-light leading-8 text-tertiary">-->
+  <!--            <li></li>-->
+  <!--            <li>Animation Fluidity</li>-->
+  <!--            <li>Attention to details and typography</li>-->
+  <!--            <li>Communicating with artist's perspective</li>-->
+  <!--            <li>Design Feels</li>-->
+  <!--            <li>Eye on design</li>-->
+  <!--            <li>User Experience</li>-->
+  <!--          </ul>-->
+  <!--        </div>-->
+  <!--        <img class="w-[340px] object-cover" src="@images/me/kg_chart1.png" alt="" />-->
+
+  <!--        <div>-->
+  <!--          <h3 class="mb-4 font-proxima text-3xl font-light">Developer side</h3>-->
+  <!--          <ul class="font-proxima font-light leading-8 text-tertiary">-->
+  <!--            <li>Front-end development</li>-->
+  <!--            <li>HTML / S/CSS</li>-->
+  <!--            &lt;!&ndash;            <li>State Management</li>&ndash;&gt;-->
+  <!--            &lt;!&ndash;            <li>Automated testing: Component or E2E</li>&ndash;&gt;-->
+  <!--            <li>JavaScript / TypeScript</li>-->
+  <!--            <li>Laravel / GraphQL</li>-->
+  <!--            <li>Eating Pizza</li>-->
+  <!--            <li>Drinking Coffee</li>-->
+  <!--          </ul>-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--      &lt;!&ndash;      <p class="font-proxima text-base font-light leading-relaxed text-primary">&ndash;&gt;-->
+  <!--      &lt;!&ndash;        As a frontend/software engineer, I'm passionate about creating intuitive and user-friendly experiences.&ndash;&gt;-->
+  <!--      &lt;!&ndash;      </p>&ndash;&gt;-->
+  <!--    </base-container>-->
+  <!--  </section>-->
+
+  <!--  <section class="random-facts">-->
+  <!--    <base-container class="flex gap-10 py-24">-->
+  <!--      <div class="w-8/12 pr-20">-->
+  <!--        <img class="w-full" src="@images/me/ojophile2.png" alt="kevin gallarin audio" />-->
+  <!--      </div>-->
+  <!--      <div class="pt-8">-->
+  <!--        <h3 class="mb-4 font-proxima text-3xl font-light">Random Nuggets</h3>-->
+
+  <!--        <ul class="font-proxima font-light leading-loose text-tertiary">-->
+  <!--          <li>Workout and driving is my zen time</li>-->
+  <!--          <li>I love occasionally playing ARPGs</li>-->
+  <!--          <li>I'm a bit sensitive to aesthetics</li>-->
+  <!--          <li>I play guitar, and sing (in tune)</li>-->
+  <!--          <li>High-Fi audio enthusiast</li>-->
+  <!--          <li>Always keen to adventures</li>-->
+  <!--          <li>A bit of a clean freak</li>-->
+  <!--          <li>Always wants improvement</li>-->
+  <!--          <li>Loves cooking</li>-->
+  <!--          <li>I drink a lot of coffee</li>-->
+  <!--        </ul>-->
+  <!--      </div>-->
+  <!--    </base-container>-->
+  <!--  </section>-->
+
+  <section class="skills-chart shadow-bottom shadow-custom-mid-inset">
+    <base-container class="py-24">
+      <div class="w-full text-white">
+        <h2 class="mb-12 text-center font-proxima text-4xl font-light">My Skills</h2>
+        <div class="w-full">
+          <base-bar-chart :data="chartData" :options="chartOptions" />
         </div>
       </div>
-
-      <div class="image-gallery py-14">
-        <splider
-          :items="images"
-          :autoplay="true"
-          :interval="8000"
-          :show-indicators="true"
-          :show-arrows="false"
-          :items-to-show="8"
-          fixed-height="100px"
-        />
-      </div>
-    </container>
-  </section>
-
-  <section class="shadow-bottom bg-gray-lighter shadow-custom-mid-inset">
-    <container>
-      <div class="flex w-full items-start justify-between">
-        <div>
-          <h3 class="mb-4 font-proxima text-3xl font-light">Perceptive side</h3>
-          <ul class="font-proxima font-light leading-8 text-tertiary">
-            <li></li>
-            <li>Animation Fluidity</li>
-            <li>Attention to details and typography</li>
-            <li>Communicating with artist's perspective</li>
-            <li>Design Feels</li>
-            <li>Eye on design</li>
-            <li>User Experience</li>
-          </ul>
-        </div>
-        <img class="w-[340px] object-cover" src="@images/me/kg_chart1.png" alt="" />
-
-        <div>
-          <h3 class="mb-4 font-proxima text-3xl font-light">Developer side</h3>
-          <ul class="font-proxima font-light leading-8 text-tertiary">
-            <li>Front-end development</li>
-            <li>HTML / S/CSS</li>
-            <!--            <li>State Management</li>-->
-            <!--            <li>Automated testing: Component or E2E</li>-->
-            <li>JavaScript / TypeScript</li>
-            <li>Laravel / GraphQL</li>
-            <li>Eating Pizza</li>
-            <li>Drinking Coffee</li>
-          </ul>
-        </div>
-      </div>
-      <!--      <p class="font-proxima text-base font-light leading-relaxed text-primary">-->
-      <!--        As a frontend/software engineer, I'm passionate about creating intuitive and user-friendly experiences.-->
-      <!--      </p>-->
-    </container>
-  </section>
-
-  <section class="random-facts">
-    <container class="flex py-24">
-      <div class="w-1/2">
-        <img class="w-full" src="@images/me/ojophile.png" alt="kevin gallarin audio" />
-      </div>
-      <div></div>
-    </container>
-    <p class="py-32">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad adipisci aut blanditiis, consequatur,
-      dignissimos ducimus enim eum facere ipsa iusto laboriosam numquam perspiciatis quis ratione similique tempore
-      totam, vitae.
-    </p>
+    </base-container>
   </section>
 </template>
 

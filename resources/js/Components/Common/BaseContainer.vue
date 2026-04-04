@@ -10,7 +10,7 @@
 <template>
   <div
     class="lg:max-w-screen-lg"
-    :class="[{ 'shadow-bottom bg-gray-lighter': sandwich }, 'mx-auto max-w-screen-xl py-20']"
+    :class="[{ 'shadow-bottom bg-gray-lighter': sandwich }, 'mx-auto xl:max-w-screen-xl']"
   >
     <slot />
   </div>
