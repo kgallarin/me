@@ -51,7 +51,9 @@ const state = (): AppState => ({
 
 const getters = {
   isTabletMobile: (state: AppState) => state.breakpoints.greaterOrEqual('md').value, // < lg (phones + tablets)
+  isSmallerTablet: (state: AppState) => state.breakpoints.between('sm', 'md').value,
   isDesktop: (state: AppState) => state.breakpoints.greaterOrEqual('lg').value, // >= lg
+  isMobile: (state: AppState) => state.breakpoints.smallerOrEqual('sm').value,
   getScrollPosition: (state: AppState) => state.scrollPosition,
 };
 

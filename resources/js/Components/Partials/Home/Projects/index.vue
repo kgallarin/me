@@ -125,7 +125,7 @@
 <template>
   <base-container class="pb-24 lg:pb-16 lg:pt-6">
     <div
-      class="headings font-lighter font-proxima-bold relative border-t border-[#dddddd] text-center text-sm uppercase text-primary lg:my-8 lg:mb-14"
+      class="headings font-lighter font-proxima-bold relative my-8 mt-10 border-t border-[#dddddd] text-center text-sm uppercase text-primary lg:mb-14 lg:mt-8"
     >
       <h3 class="font-xl relative mx-auto -mt-2.5 max-w-fit bg-gray-lighter px-12 font-proxima text-lg font-light">
         selected projects
