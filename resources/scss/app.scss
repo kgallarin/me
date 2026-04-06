@@ -30,4 +30,8 @@
 
 		text-rendering: optimizelegibility;
   }
+
+	p, span, div {
+		@apply text-primary font-proxima font-light leading-loose;
+	}
 }

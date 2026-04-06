@@ -55,6 +55,20 @@ const getters = {
   isDesktop: (state: AppState) => state.breakpoints.greaterOrEqual('lg').value, // >= lg
   isMobile: (state: AppState) => state.breakpoints.smallerOrEqual('sm').value,
   getScrollPosition: (state: AppState) => state.scrollPosition,
+  queryBreakpoints:
+    (state: AppState) =>
+    <T>(desktopValue: T, tabletValue: T, mobileValue: T, smallerTabletValue?: T): T => {
+      if (state.breakpoints.greaterOrEqual('lg').value) {
+        return desktopValue;
+      }
+      if (state.breakpoints.between('sm', 'md').value) {
+        return smallerTabletValue !== undefined ? smallerTabletValue : tabletValue;
+      }
+      if (state.breakpoints.greaterOrEqual('md').value) {
+        return tabletValue;
+      }
+      return mobileValue;
+    },
 };
 
 const mutations = {

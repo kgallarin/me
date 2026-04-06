@@ -1,6 +1,8 @@
 <script setup lang="ts">
   import { Splide, SplideSlide } from '@splidejs/vue-splide';
 
+  import { computed } from 'vue';
+
   interface Props {
     items?: string[];
     autoplay?: boolean;
@@ -31,7 +33,7 @@
     breakpoints: () => ({}),
   });
 
-  const options = {
+  const options = computed(() => ({
     type: 'slide',
     perPage: props.itemsToShow,
     gap: props.gap,
@@ -44,7 +46,7 @@
     fixedHeight: props.fixedHeight,
     rewind: props.rewind,
     breakpoints: props.breakpoints,
-  };
+  }));
 </script>
 
 <template>

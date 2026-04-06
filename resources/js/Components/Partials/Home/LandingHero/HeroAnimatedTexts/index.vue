@@ -1,14 +1,11 @@
 <script setup lang="ts">
-  import { computed, ref } from 'vue';
+  import { ref } from 'vue';
 
   import { useAppStore } from '@/Store/Modules/App';
 
   import HeroImageTextShard from '@/Components/Partials/Home/LandingHero/HeroAnimatedTexts/HeroImageTextShard.vue';
 
   const appStore = useAppStore();
-
-  const isDesktop = computed(() => appStore.isDesktop);
-  const isTabletMobile = computed(() => appStore.isTabletMobile);
 
   const isAnyHoveredLeft = ref(false);
   const isAnyHoveredRight = ref(false);
@@ -42,8 +39,8 @@
       text-right="S/CSS"
       text-left-classes="justify-self-center"
       text-right-classes="justify-self-center"
-      :animate-left-in-pixels="isDesktop ? 140 : isTabletMobile ? 90 : 70"
-      :animate-right-in-pixels="isDesktop ? 50 : isTabletMobile ? 30 : 20"
+      :animate-left-in-pixels="appStore.queryBreakpoints(140, 90, 70)"
+      :animate-right-in-pixels="appStore.queryBreakpoints(50, 30, 20)"
       @text-hover-left="handleHoverLeft"
       @text-hover-right="handleHoverRight"
       @text-hover-leave="handleHoverLeave"
@@ -55,8 +52,8 @@
       class="whitespace-nowrap font-light 2xs:text-base xs:mb-12 sm:-ml-16 sm:mb-0 md:-ml-8 md:text-xl lg:-ml-10 lg:text-4xl"
       text-left="Photoshop"
       text-right="TS/JavaScript"
-      :animate-left-in-pixels="isDesktop ? 150 : isTabletMobile ? 80 : 90"
-      :animate-right-in-pixels="isDesktop ? 150 : isTabletMobile ? 80 : 50"
+      :animate-left-in-pixels="appStore.queryBreakpoints(150, 80, 90)"
+      :animate-right-in-pixels="appStore.queryBreakpoints(150, 80, 50)"
       @text-hover-left="handleHoverLeft"
       @text-hover-right="handleHoverRight"
       @text-hover-leave="handleHoverLeave"
@@ -68,8 +65,8 @@
       class="whitespace-nowrap 2xs:text-base sm:-ml-8 md:-ml-5 md:text-xl lg:-ml-20 lg:text-3xl"
       text-left="User Experience"
       text-right="State Management"
-      :animate-left-in-pixels="isDesktop ? 140 : isTabletMobile ? 130 : 80"
-      :animate-right-in-pixels="isDesktop ? 150 : isTabletMobile ? 120 : 60"
+      :animate-left-in-pixels="appStore.queryBreakpoints(140, 130, 80)"
+      :animate-right-in-pixels="appStore.queryBreakpoints(150, 120, 60)"
       @text-hover-left="handleHoverLeft"
       @text-hover-right="handleHoverRight"
       @text-hover-leave="handleHoverLeave"
@@ -83,8 +80,8 @@
       text-right="Web/Mobile"
       text-left-classes="justify-self-center"
       text-right-classes="justify-self-center"
-      :animate-left-in-pixels="isDesktop ? 180 : isTabletMobile ? 90 : 20"
-      :animate-right-in-pixels="isDesktop ? 190 : isTabletMobile ? 80 : 20"
+      :animate-left-in-pixels="appStore.queryBreakpoints(180, 90, 20)"
+      :animate-right-in-pixels="appStore.queryBreakpoints(190, 80, 20)"
       @text-hover-left="handleHoverLeft"
       @text-hover-right="handleHoverRight"
       @text-hover-leave="handleHoverLeave"
@@ -98,8 +95,8 @@
       text-right="Structure,Testing"
       text-left-classes="justify-self-center"
       text-right-classes="justify-self-end"
-      :animate-left-in-pixels="isDesktop ? 200 : isTabletMobile ? 110 : 50"
-      :animate-right-in-pixels="isDesktop ? 200 : isTabletMobile ? 110 : 20"
+      :animate-left-in-pixels="appStore.queryBreakpoints(200, 110, 50)"
+      :animate-right-in-pixels="appStore.queryBreakpoints(200, 110, 20)"
       @text-hover-left="handleHoverLeft"
       @text-hover-right="handleHoverRight"
       @text-hover-leave="handleHoverLeave"
@@ -113,8 +110,8 @@
       text-right="Forms, GraphQL"
       text-left-classes="justify-self-center"
       text-right-classes="justify-self-end"
-      :animate-left-in-pixels="isDesktop ? 240 : isTabletMobile ? 100 : 80"
-      :animate-right-in-pixels="isDesktop ? 270 : isTabletMobile ? 100 : 60"
+      :animate-left-in-pixels="appStore.queryBreakpoints(240, 100, 80)"
+      :animate-right-in-pixels="appStore.queryBreakpoints(270, 100, 60)"
       @text-hover-left="handleHoverLeft"
       @text-hover-right="handleHoverRight"
       @text-hover-leave="handleHoverLeave"
@@ -128,8 +125,8 @@
       text-right="Laravel/PHP"
       text-left-classes="justify-self-center"
       text-right-classes="justify-self-end"
-      :animate-left-in-pixels="isDesktop ? 150 : isTabletMobile ? 100 : 120"
-      :animate-right-in-pixels="isDesktop ? 150 : isTabletMobile ? 80 : 60"
+      :animate-left-in-pixels="appStore.queryBreakpoints(150, 100, 120)"
+      :animate-right-in-pixels="appStore.queryBreakpoints(150, 80, 60)"
       @text-hover-left="handleHoverLeft"
       @text-hover-right="handleHoverRight"
       @text-hover-leave="handleHoverLeave"

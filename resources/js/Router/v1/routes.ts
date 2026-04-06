@@ -2,6 +2,7 @@ import DefaultLayout from '@/Layouts/Default/index.vue';
 
 import About from '@/Components/Pages/About/index.vue';
 import Home from '@/Components/Pages/Home/index.vue';
+import Story from '@/Components/Pages/Story/index.vue';
 
 // view:public routes
 const publicRoutes = [
@@ -27,6 +28,15 @@ const publicRoutes = [
         meta: {
           guest: true,
           title: 'whoami',
+        },
+      },
+      {
+        path: 'story',
+        name: 'story',
+        component: Story,
+        meta: {
+          guest: true,
+          title: 'how',
         },
       },
     ],

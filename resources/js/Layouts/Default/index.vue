@@ -4,18 +4,18 @@
 
   const defaultNav = [
     {
-      label: 'skills',
-      to: 'home',
-      icon: '',
-    },
-    {
       label: 'about',
       to: 'about',
       icon: '',
     },
     {
       label: 'kudos',
-      to: 'home',
+      to: '',
+      icon: '',
+    },
+    {
+      label: 'story',
+      to: 'story',
       icon: '',
     },
     {

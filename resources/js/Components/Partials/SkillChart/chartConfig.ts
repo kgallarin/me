@@ -10,7 +10,7 @@ export const getChartData = (): ChartData<'bar'> => ({
     ['JS/TypeScript', '79%'],
     ['App State', '82%'],
     ['Animation', '78%'],
-    ['Laravel/GraphQL', '40%'],
+    ['Rest/GraphQL', '60%'],
   ],
   datasets: [
     {
@@ -56,7 +56,7 @@ export const getChartData = (): ChartData<'bar'> => ({
 
         return gradient;
       },
-      data: [88, 85, 79, 82, 78, 60],
+      data: [88, 85, 79, 82, 78, 70],
       borderRadius: 4,
       barPercentage: 0.96,
       categoryPercentage: 0.96,
@@ -66,10 +66,6 @@ export const getChartData = (): ChartData<'bar'> => ({
 
 export const getChartOptions = (): ChartOptions<'bar'> & { plugins: { datalabels?: unknown } } => {
   const appStore = useAppStore();
-  const isDesktop = appStore.isDesktop;
-  const isTabletMobile = appStore.isTabletMobile;
-  const isSmallerTablet = appStore.isSmallerTablet;
-  const isMobile = appStore.isMobile;
 
   return {
     indexAxis: 'x' as const,
@@ -94,8 +90,8 @@ export const getChartOptions = (): ChartOptions<'bar'> & { plugins: { datalabels
           title: {
             display: true,
             font: {
-              family: "'Acumin Pro Wide', sans-serif",
-              size: isDesktop ? 16 : isSmallerTablet ? 11 : isMobile ? 6 : 12,
+              family: 'Acumin Pro Wide, sans-serif',
+              size: appStore.queryBreakpoints(16, 12, 6, 11),
               weight: 'lighter' as const,
               lineHeight: 'normal',
             },
@@ -107,13 +103,13 @@ export const getChartOptions = (): ChartOptions<'bar'> & { plugins: { datalabels
             clamp: true,
             anchor: 'start' as const,
             align: 'end' as const,
-            offset: isDesktop ? 30 : isSmallerTablet ? 5 : isMobile ? 4 : 25,
+            offset: appStore.queryBreakpoints(30, 25, 4, 5),
           },
           subtitle: {
             display: true,
             font: {
-              family: "'Proxima Nova', sans-serif, 'Helvetica Neue', Helvetica, Arial",
-              size: isDesktop ? 42 : isSmallerTablet ? 24 : isMobile ? 18 : 32,
+              family: 'Proxima Nova, sans-serif, Helvetica Neue, Helvetica, Arial',
+              size: appStore.queryBreakpoints(42, 32, 18, 24),
               weight: 600,
               lineHeight: 1.2,
             },
@@ -121,7 +117,7 @@ export const getChartOptions = (): ChartOptions<'bar'> & { plugins: { datalabels
             clamp: true,
             anchor: 'start' as const,
             align: 'end' as const,
-            offset: isDesktop ? 48 : isSmallerTablet ? 20 : isMobile ? 15 : 40, // Adjust this offset to position it below the title
+            offset: appStore.queryBreakpoints(48, 40, 15, 20), // Adjust this offset to position it below the title
             formatter: (_value: number, context: Context) => {
               const label = context.chart.data.labels?.[context.dataIndex];
               return Array.isArray(label) ? (label[1] as string) : '';
@@ -153,11 +149,11 @@ export const getChartOptions = (): ChartOptions<'bar'> & { plugins: { datalabels
           display: true,
         },
         ticks: {
-          display: !isDesktop ? false : true,
-          padding: isMobile ? 5 : 14,
+          display: appStore.isDesktop,
+          padding: appStore.queryBreakpoints(14, 14, 5),
           font: {
-            family: "'Proxima Nova', sans-serif, 'Helvetica Neue', Helvetica, Arial",
-            size: isMobile ? 9 : 14,
+            family: 'Proxima Nova, sans-serif, Helvetica Neue, Helvetica, Arial',
+            size: appStore.queryBreakpoints(14, 14, 9),
           },
           color: '#060606',
           callback: (value: string | number): string => {
