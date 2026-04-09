@@ -9,18 +9,13 @@
       icon: '',
     },
     {
-      label: 'kudos',
-      to: '',
-      icon: '',
-    },
-    {
       label: 'story',
       to: 'story',
       icon: '',
     },
     {
       label: 'contact',
-      to: 'home',
+      to: 'contact',
       icon: '',
     },
   ];

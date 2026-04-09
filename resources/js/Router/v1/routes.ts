@@ -1,6 +1,7 @@
 import DefaultLayout from '@/Layouts/Default/index.vue';
 
 import About from '@/Components/Pages/About/index.vue';
+import Contact from '@/Components/Pages/Contact/index.vue';
 import Home from '@/Components/Pages/Home/index.vue';
 import Story from '@/Components/Pages/Story/index.vue';
 
@@ -34,6 +35,15 @@ const publicRoutes = [
         path: 'story',
         name: 'story',
         component: Story,
+        meta: {
+          guest: true,
+          title: 'how',
+        },
+      },
+      {
+        path: 'contact',
+        name: 'contact',
+        component: Contact,
         meta: {
           guest: true,
           title: 'how',

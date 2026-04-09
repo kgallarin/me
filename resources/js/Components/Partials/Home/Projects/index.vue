@@ -29,6 +29,27 @@
         showArrows: false,
       },
     },
+
+    {
+      title: 'hydropay',
+      link: 'https://optimail-dev.github.io/hydropay-frontend-2020',
+      description:
+        'A payment gateway that allows users to pay for their dating app subscriptions. It includes a dashboard for managing subscriptions, billing, and payment methods.',
+      images: [getImageUrl('hydropay.png'), getImageUrl('hydropay-2.png')],
+      icons: [
+        { icon: ['fab', 'html5'], color: 'text-orange-400' },
+        { icon: ['fab', 'tailwind-css'], color: 'text-teal-400' },
+        { icon: ['fab', 'typescript'], color: 'text-blue-500' },
+        { icon: ['fab', 'js'], color: 'text-yellow-400' },
+        { icon: ['fab', 'sass'], color: 'text-pink-400' },
+        { icon: ['fab', 'css3'], color: 'text-blue-500' },
+      ],
+      carousel: {
+        autoplay: true,
+        showIndicators: true,
+        showArrows: true,
+      },
+    },
     {
       title: 'dating app',
       description:
@@ -50,6 +71,7 @@
     },
     {
       title: 'e-moderators',
+      link: 'https://e-moderators.com/',
       description:
         'Website that recruits and employs people to work as online chat moderators, often for adult-oriented dating or chat platforms.',
       images: [getImageUrl('e-moderators.png')],
@@ -125,7 +147,7 @@
 <template>
   <base-container class="pb-24 lg:pb-16 lg:pt-6">
     <div
-      class="headings font-lighter font-proxima-bold relative my-8 mt-10 border-t border-[#dddddd] text-center text-sm uppercase text-primary lg:mb-14 lg:mt-8"
+      class="headings font-lighter relative my-8 mt-10 border-t border-[#dddddd] text-center text-sm uppercase text-primary lg:mb-14 lg:mt-8"
     >
       <h3 class="font-xl relative mx-auto -mt-2.5 max-w-fit bg-gray-lighter px-12 font-proxima text-lg font-light">
         selected projects
@@ -156,12 +178,12 @@
             :items-to-show="1"
             fixed-height="250px"
           />
-          <div class="relative bg-white p-4 text-primary">
+          <a :href="project.link" target="_blank" class="relative bg-white p-4 text-primary">
             <h2 class="mb-2 font-proxima text-lg font-medium text-primary">{{ project.title }}</h2>
             <p class="font-acumin text-xs font-light">
               {{ project.description }}
             </p>
-          </div>
+          </a>
 
           <div class="mt-auto grid grid-cols-8 gap-1 p-4">
             <fa-icon

@@ -21,7 +21,7 @@
 </script>
 
 <template>
-  <div class="flex min-h-screen flex-col">
+  <div class="flex min-h-[calc(100vh-150px)] flex-col">
     <landing-hero
       :is-hovered-right="isHoveredRight"
       :is-hovered-left="isHoveredLeft"

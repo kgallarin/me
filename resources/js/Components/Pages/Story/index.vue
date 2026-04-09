@@ -2,6 +2,7 @@
   import howMe from '@images/me/how-me.png';
 
   import BaseContainer from '@/Components/Common/BaseContainer.vue';
+  import BaseImage from '@/Components/Common/BaseImage.vue';
 
   const sections = {
     whyFrontend: {
@@ -167,8 +168,9 @@
         </div>
 
         <div class="w-full justify-self-end pt-8 md:w-1/2">
-          <img
-            class="rounded-md object-cover shadow-lg"
+          <base-image
+            class="object-cover shadow-lg"
+            rounded="rounded-md"
             :src="sections.whyFrontend.image.src"
             :alt="sections.whyFrontend.image.alt"
           />

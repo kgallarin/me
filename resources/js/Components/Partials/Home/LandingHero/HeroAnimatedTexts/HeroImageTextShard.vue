@@ -67,7 +67,7 @@
 </script>
 
 <template>
-  <div class="mb-2 grid grid-cols-2 justify-items-stretch gap-4">
+  <div class="text-shard mb-2 grid grid-cols-2 justify-items-stretch gap-4">
     <div class="relative cursor-pointer">
       <div
         class="hover-me-baby absolute inset-0 z-10"
@@ -112,3 +112,11 @@
     </div>
   </div>
 </template>
+
+<style lang="scss">
+  .text-shard {
+    div {
+      @apply leading-tight;
+    }
+  }
+</style>

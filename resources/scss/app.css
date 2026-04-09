@@ -7,6 +7,20 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
 }
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite linear;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
 .nav-link {
   @apply text-gray-800 font-acumin;
 }
@@ -19,37 +33,31 @@
   font-family: "Acumin Pro Wide";
   src: url("../fonts/Acumin/acumin-pro-wide-thin.otf") format("opentype");
   font-weight: 300;
-  font-style: normal;
 }
 @font-face {
   font-family: "Acumin Pro Wide";
   src: url("../fonts/Acumin/acumin-pro-wide.otf") format("opentype");
   font-weight: 400;
-  font-style: normal;
 }
 @font-face {
   font-family: "Proxima Nova";
   src: url("../fonts/ProximaNova/proxima-nova-light.ttf") format("truetype");
   font-weight: 300;
-  font-style: normal;
 }
 @font-face {
   font-family: "Proxima Nova";
   src: url("../fonts/ProximaNova/proxima-nova-regular.ttf") format("truetype");
   font-weight: 400;
-  font-style: normal;
 }
 @font-face {
   font-family: "Proxima Nova";
   src: url("../fonts/ProximaNova/proxima-nova-semibold.ttf") format("truetype");
   font-weight: 600;
-  font-style: normal;
 }
 @font-face {
   font-family: "Proxima Nova";
   src: url("../fonts/ProximaNova/proxima-nova-extrabold.ttf") format("truetype");
   font-weight: 700;
-  font-style: normal;
 }
 .theme-light {
   --color-primary: #010303;
@@ -149,7 +157,7 @@
     @apply text-primary font-proxima font-bold;
     text-rendering: optimizelegibility;
   }
-  p, span, div {
+  p, span {
     @apply text-primary font-proxima font-light leading-loose;
   }
 }

@@ -3,6 +3,8 @@
 
   import { computed } from 'vue';
 
+  import BaseImage from '@/Components/Common/BaseImage.vue';
+
   interface Props {
     items?: string[];
     autoplay?: boolean;
@@ -55,7 +57,13 @@
       <slot v-if="$slots.default" />
       <template v-else>
         <splide-slide v-for="(item, index) in items" :key="index" class="h-full w-full">
-          <img :src="item" :class="imageClasses" class="h-full w-full object-cover object-left" alt="Carousel Image" />
+          <base-image
+            :src="item"
+            :class="['h-full w-full object-cover object-left']"
+            :rounded="imageClasses"
+            alt="Carousel Image"
+            show-loader
+          />
         </splide-slide>
       </template>
     </splide>

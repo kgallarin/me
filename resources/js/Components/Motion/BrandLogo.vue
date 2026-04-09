@@ -1,6 +1,8 @@
 <script setup lang="ts">
   import { motion } from 'motion-v';
 
+  import BaseImage from '@/Components/Common/BaseImage.vue';
+
   const props = defineProps({
     spinnerTrailColor: {
       type: String,
