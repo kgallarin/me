@@ -3,6 +3,28 @@
 
   import BaseContainer from '@/Components/Common/BaseContainer.vue';
   import BaseImage from '@/Components/Common/BaseImage.vue';
+
+  const perceptiveSkills = [
+    'Animation Fluidity',
+    'Attention to details and typography',
+    "Communicating with artist's perspective",
+    'Design Feels',
+    'Eye on design',
+    'Finding beauty to everything',
+    'User Experience',
+  ];
+
+  const developerSkills = [
+    'Front-end development',
+    'Sass, LESS, S/CSS',
+    'State Management',
+    'Automated testing',
+    'Form Manipulation',
+    'JavaScript / TypeScript',
+    'Laravel / GraphQL',
+    'Eating Pizza',
+    'Drinking Coffee',
+  ];
 </script>
 
 <template>
@@ -12,13 +34,9 @@
         <div>
           <h3 class="mb-4 font-proxima text-3xl font-light">Perceptive side</h3>
           <ul class="font-proxima font-light leading-8 text-tertiary">
-            <li>Animation Fluidity</li>
-            <li>Attention to details and typography</li>
-            <li>Communicating with artist's perspective</li>
-            <li>Design Feels</li>
-            <li>Eye on design</li>
-            <li>Finding beauty to everything</li>
-            <li>User Experience</li>
+            <li v-for="(skill, index) in perceptiveSkills" :key="index">
+              {{ skill }}
+            </li>
           </ul>
         </div>
 
@@ -27,15 +45,9 @@
         <div class="w-full text-right md:w-auto">
           <h3 class="mb-4 font-proxima text-3xl font-light">Developer side</h3>
           <ul class="font-proxima font-light leading-8 text-tertiary">
-            <li>Front-end development</li>
-            <li>Sass, LESS, S/CSS</li>
-            <li>State Management</li>
-            <li>Automated testing</li>
-            <li>Form Manipulation</li>
-            <li>JavaScript / TypeScript</li>
-            <li>Laravel / GraphQL</li>
-            <li>Eating Pizza</li>
-            <li>Drinking Coffee</li>
+            <li v-for="(skill, index) in developerSkills" :key="index">
+              {{ skill }}
+            </li>
           </ul>
         </div>
       </div>

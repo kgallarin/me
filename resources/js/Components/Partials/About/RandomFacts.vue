@@ -3,6 +3,20 @@
 
   import BaseContainer from '@/Components/Common/BaseContainer.vue';
   import BaseImage from '@/Components/Common/BaseImage.vue';
+
+  const facts = [
+    'Workout and driving is my Zen time!',
+    'I love animals',
+    'I love occasionally playing ARPGs',
+    "I'm a bit sensitive to aesthetics",
+    'I play guitar, and can sing (in tune)',
+    'Analog/High-Fi audio enthusiast',
+    'Always keen to adventures',
+    'A bit of a clean freak',
+    'Always wants improvement',
+    'Loves cooking',
+    'I drink a lot of coffee',
+  ];
 </script>
 
 <template>
@@ -15,17 +29,9 @@
         <h3 class="mb-6 font-proxima text-3xl font-light">Random Nuggets</h3>
 
         <ul class="font-proxima font-light leading-10 text-tertiary">
-          <li>Workout and driving is my Zen time!</li>
-          <li>I am an animal lover</li>
-          <li>I love occasionally playing ARPGs</li>
-          <li>I'm a bit sensitive to aesthetics</li>
-          <li>I play guitar, and can sing (in tune)</li>
-          <li>Analog/High-Fi audio enthusiast</li>
-          <li>Always keen to adventures</li>
-          <li>A bit of a clean freak</li>
-          <li>Always wants improvement</li>
-          <li>Loves cooking</li>
-          <li>I drink a lot of coffee</li>
+          <li v-for="(fact, index) in facts" :key="index">
+            {{ fact }}
+          </li>
         </ul>
       </div>
     </base-container>

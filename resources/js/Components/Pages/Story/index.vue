@@ -36,6 +36,14 @@
     facts: {
       title: 'Facts',
       items: [
+        {
+          title: 'Full Name',
+          description: 'Kevin Morales Gallarin',
+        },
+        {
+          title: 'Nickname(s)',
+          description: 'Kevin, KG, my best friends call me Kilay (lived with it)',
+        },
         { title: 'Born and Raised', description: 'Manila, Philippines' },
         { title: 'Started my career as frontend', description: '2014 With my awesome thesis-mates in college!' },
         {
