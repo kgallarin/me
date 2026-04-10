@@ -1,6 +1,4 @@
 <script setup lang="ts">
-  import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-
   import { PropType } from 'vue';
 
   import { NavLink } from '@/Types/Props';
@@ -14,6 +12,12 @@
   });
 
   const year = new Date().getFullYear();
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 </script>
 
 <template>
@@ -21,6 +25,7 @@
     <a
       href="#"
       class="absolute -top-8 left-0 right-0 mx-auto flex h-16 w-16 items-center justify-center rounded-full border-t border-gray-secondary bg-gray-lighter md:-top-11 md:h-24 md:w-24"
+      @click.prevent="scrollToTop"
     >
       <fa-icon :icon="['fa', 'chevron-up']" class="relative -top-2 text-4xl text-black/30 md:-top-5" />
     </a>

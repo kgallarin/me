@@ -8,14 +8,14 @@
 
 <template>
   <div class="about-i">
-    <whoami />
+    <whoami animate-once animate-only-scroll-down />
 
-    <charted-skills />
+    <charted-skills animate-once animate-only-scroll-down />
 
-    <random-facts />
+    <random-facts animate-only-scroll-down />
 
-    <graphed-skills />
+    <graphed-skills animate-once animate-only-scroll-down />
 
-    <recommendations />
+    <recommendations animate-only-scroll-down />
   </div>
 </template>

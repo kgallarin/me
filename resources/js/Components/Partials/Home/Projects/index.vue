@@ -31,23 +31,22 @@
     },
 
     {
-      title: 'hydropay',
-      link: 'https://optimail-dev.github.io/hydropay-frontend-2020',
+      title: 'e-moderators',
+      link: 'https://e-moderators.com/',
       description:
-        'A payment gateway that allows users to pay for their dating app subscriptions. It includes a dashboard for managing subscriptions, billing, and payment methods.',
-      images: [getImageUrl('hydropay.png'), getImageUrl('hydropay-2.png')],
+        'Website that recruits and employs people to work as online chat moderators, often for adult-oriented dating or chat platforms.',
+      images: [getImageUrl('e-moderators.png')],
       icons: [
         { icon: ['fab', 'html5'], color: 'text-orange-400' },
-        { icon: ['fab', 'tailwind-css'], color: 'text-teal-400' },
-        { icon: ['fab', 'typescript'], color: 'text-blue-500' },
-        { icon: ['fab', 'js'], color: 'text-yellow-400' },
         { icon: ['fab', 'sass'], color: 'text-pink-400' },
         { icon: ['fab', 'css3'], color: 'text-blue-500' },
+        { icon: ['fab', 'js'], color: 'text-yellow-400' },
+        { icon: ['fab', 'vuejs'], color: 'text-green-500' },
       ],
       carousel: {
         autoplay: true,
         showIndicators: true,
-        showArrows: true,
+        showArrows: false,
       },
     },
     {
@@ -70,22 +69,23 @@
       },
     },
     {
-      title: 'e-moderators',
-      link: 'https://e-moderators.com/',
+      title: 'hydropay',
+      link: 'https://optimail-dev.github.io/hydropay-frontend-2020',
       description:
-        'Website that recruits and employs people to work as online chat moderators, often for adult-oriented dating or chat platforms.',
-      images: [getImageUrl('e-moderators.png')],
+        'A payment gateway that allows users to pay for their dating app subscriptions. It includes a dashboard for managing subscriptions, billing, and payment methods.',
+      images: [getImageUrl('hydropay.png'), getImageUrl('hydropay-2.png')],
       icons: [
         { icon: ['fab', 'html5'], color: 'text-orange-400' },
+        { icon: ['fab', 'tailwind-css'], color: 'text-teal-400' },
+        { icon: ['fab', 'typescript'], color: 'text-blue-500' },
+        { icon: ['fab', 'js'], color: 'text-yellow-400' },
         { icon: ['fab', 'sass'], color: 'text-pink-400' },
         { icon: ['fab', 'css3'], color: 'text-blue-500' },
-        { icon: ['fab', 'js'], color: 'text-yellow-400' },
-        { icon: ['fab', 'vuejs'], color: 'text-green-500' },
       ],
       carousel: {
         autoplay: true,
         showIndicators: true,
-        showArrows: false,
+        showArrows: true,
       },
     },
     {

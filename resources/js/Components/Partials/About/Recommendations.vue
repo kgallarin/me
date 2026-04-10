@@ -5,6 +5,7 @@
 
   import BaseContainer from '@/Components/Common/BaseContainer.vue';
   import BaseImage from '@/Components/Common/BaseImage.vue';
+  import ScrollReveal from '@/Components/Motion/ScrollReveal.vue';
 
   const expandedIndexes = ref<number[]>([]);
 
@@ -63,70 +64,91 @@
   });
 
   const getImageUrl = (name: string) => images[`/resources/images/kudos/${name}`]?.default || '';
+
+  defineProps({
+    animateOnce: {
+      type: Boolean,
+      default: false,
+    },
+    animateOnlyScrollDown: {
+      type: Boolean,
+      default: false,
+    },
+  });
 </script>
 
 <template>
   <section>
     <base-container class="pb-24">
-      <h2 class="pt-24 font-proxima text-4xl font-light">Kudos</h2>
-      <p class="font-acumin text-xs font-light">from my highly respected people</p>
+      <scroll-reveal direction="up" :animate-once="animateOnce" :animate-only-scroll-down="animateOnlyScrollDown">
+        <h2 class="pt-24 font-proxima text-4xl font-light">Kudos</h2>
+        <p class="font-acumin text-xs font-light">from my highly respected people</p>
+      </scroll-reveal>
+
       <div class="mb-12 grid grid-cols-1 gap-2 pt-12 md:grid-cols-3 lg:grid-cols-4">
-        <div
+        <scroll-reveal
           v-for="(recommendation, index) in recommendations"
           :key="index"
-          class="main-card relative flex flex-col rounded-md border border-gray-200 p-4 py-8 text-primary shadow-md"
-          :class="
-            isExpanded(index)
-              ? 'max-h-fit max-w-full md:max-w-[300px]'
-              : 'h-[300px] max-w-full overflow-hidden pb-12 md:max-w-[300px]'
-          "
+          direction="up"
+          :delay="index * 0.1"
+          :animate-once="animateOnce"
+          :animate-only-scroll-down="animateOnlyScrollDown"
         >
-          <fa-icon
-            v-if="recommendation.linkedIn"
-            class="absolute right-3 top-3 text-[#0982c0]"
-            :icon="['fab', 'linkedin']"
-          />
-          <div class="flex justify-between border-b border-gray-200 pb-4">
-            <div class="author flex flex-row items-center gap-3 leading-tight">
-              <base-image
-                :src="getImageUrl(recommendation.image)"
-                class="h-12 w-12 object-contain"
-                rounded="rounded-full"
-                :alt="recommendation.alt"
-              />
-              <div class="flex flex-col text-left">
-                <p class="mb-0 leading-tight">{{ recommendation.author }}</p>
-                <p class="text-xs">{{ recommendation.role }}</p>
+          <div
+            class="main-card relative flex flex-col rounded-md border border-gray-200 p-4 py-8 text-primary shadow-md"
+            :class="
+              isExpanded(index)
+                ? 'max-h-fit max-w-full md:max-w-[300px]'
+                : 'h-[300px] max-w-full overflow-hidden pb-12 md:max-w-[300px]'
+            "
+          >
+            <fa-icon
+              v-if="recommendation.linkedIn"
+              class="absolute right-3 top-3 text-[#0982c0]"
+              :icon="['fab', 'linkedin']"
+            />
+            <div class="flex justify-between border-b border-gray-200 pb-4">
+              <div class="author flex flex-row items-center gap-3 leading-tight">
+                <base-image
+                  :src="getImageUrl(recommendation.image)"
+                  class="h-12 w-12 object-contain"
+                  rounded="rounded-full"
+                  :alt="recommendation.alt"
+                />
+                <div class="flex flex-col text-left">
+                  <p class="mb-0 leading-tight">{{ recommendation.author }}</p>
+                  <p class="text-xs">{{ recommendation.role }}</p>
+                </div>
+              </div>
+
+              <div>
+                <fa-icon
+                  v-for="i in recommendation.rating"
+                  :key="i"
+                  class="inline-block text-xs text-yellow-400"
+                  :icon="['fas', 'star']"
+                />
               </div>
             </div>
 
-            <div>
-              <fa-icon
-                v-for="i in recommendation.rating"
-                :key="i"
-                class="inline-block text-xs text-yellow-400"
-                :icon="['fas', 'star']"
-              />
+            <p class="text-content pb-4 pt-8 leading-relaxed" v-html="recommendation.text" />
+
+            <div
+              v-if="!isExpanded(index)"
+              class="absolute bottom-0 left-0 flex w-full justify-center bg-gradient-to-t from-white via-white/80 to-transparent pb-4 pt-12"
+            >
+              <button class="text-xs font-semibold text-blue-500 hover:underline" @click="toggleExpand(index)">
+                read more
+              </button>
+            </div>
+
+            <div v-else class="mt-auto flex justify-center pb-4">
+              <button class="text-xs font-semibold text-blue-500 hover:underline" @click="toggleExpand(index)">
+                show less
+              </button>
             </div>
           </div>
-
-          <p class="text-content pb-4 pt-8 leading-relaxed" v-html="recommendation.text" />
-
-          <div
-            v-if="!isExpanded(index)"
-            class="absolute bottom-0 left-0 flex w-full justify-center bg-gradient-to-t from-white via-white/80 to-transparent pb-4 pt-12"
-          >
-            <button class="text-xs font-semibold text-blue-500 hover:underline" @click="toggleExpand(index)">
-              read more
-            </button>
-          </div>
-
-          <div v-else class="mt-auto flex justify-center pb-4">
-            <button class="text-xs font-semibold text-blue-500 hover:underline" @click="toggleExpand(index)">
-              show less
-            </button>
-          </div>
-        </div>
+        </scroll-reveal>
       </div>
     </base-container>
   </section>
