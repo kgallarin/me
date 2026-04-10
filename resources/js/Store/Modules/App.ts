@@ -33,6 +33,7 @@ export interface AppState {
     y: number;
   } | null;
   theme: Theme;
+  isSidebarOpen: boolean;
 }
 
 const state = (): AppState => ({
@@ -47,6 +48,7 @@ const state = (): AppState => ({
   mobileMenuOpen: false,
   routeFrom: null,
   theme: Number(localStorage.getItem('theme')) || 0,
+  isSidebarOpen: false,
 });
 
 const getters = {
@@ -95,6 +97,12 @@ const mutations = {
 
   toggleTheme(this: { theme: Theme }): void {
     this.theme = this.theme === 0 ? 1 : 0;
+  },
+  closeSidebar(this: { isSidebarOpen: boolean }): void {
+    this.isSidebarOpen = false;
+  },
+  openSidebar(this: { isSidebarOpen: boolean }): void {
+    this.isSidebarOpen = true;
   },
 };
 

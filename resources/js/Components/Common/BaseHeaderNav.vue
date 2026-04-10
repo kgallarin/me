@@ -1,9 +1,11 @@
 <script setup lang="ts">
   import { FontAwesomeIcon as FaIcon } from '@fortawesome/vue-fontawesome';
 
-  import { PropType, ref } from 'vue';
+  import { PropType } from 'vue';
 
   import { NavLink } from '@/Types/Props';
+
+  import { useAppStore } from '@/Store/Modules/App';
 
   import BaseContainer from '@/Components/Common/BaseContainer.vue';
   import BrandLogo from '@/Components/Motion/BrandLogo.vue';
@@ -16,7 +18,8 @@
     },
   });
 
-  const isOpen = ref(false);
+  const appStore = useAppStore();
+  const openSidebar = appStore.openSidebar;
 </script>
 
 <template>
@@ -39,20 +42,20 @@
                 :to="{ name: item.to }"
                 class="nav-link flex items-center gap-2 font-acumin font-normal text-white hover:text-gray-300"
               >
-                <fa-icon v-if="item.icon" :icon="['fas', item.icon]" class="text-sm" />
                 {{ item.label }}
               </router-link>
             </li>
           </ul>
         </nav>
 
-        <button
+        <a
+          href="#"
           class="text-2xl text-white focus:outline-none md:hidden"
           aria-label="Open menu"
-          @click="isOpen = !isOpen"
+          @click.prevent.stop="openSidebar"
         >
           <fa-icon :icon="['fas', 'bars']" />
-        </button>
+        </a>
       </div>
     </base-container>
   </header>
