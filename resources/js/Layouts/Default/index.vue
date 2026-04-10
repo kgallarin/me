@@ -30,5 +30,3 @@
 
   <base-footer :nav="defaultNav" />
 </template>
-
-<style scoped></style>

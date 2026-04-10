@@ -38,5 +38,3 @@
     </base-container>
   </section>
 </template>
-
-<style scoped></style>

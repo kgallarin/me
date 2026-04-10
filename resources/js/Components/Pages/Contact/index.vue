@@ -1,11 +1,13 @@
 <script setup lang="ts">
   import freeMe from '@images/social_images/10.png';
 
+  import { Link } from '@/Types/Props';
+
   import BaseContainer from '@/Components/Common/BaseContainer.vue';
   import BaseImage from '@/Components/Common/BaseImage.vue';
   import ContactForm from '@/Components/Partials/Contact/Form.vue';
 
-  const links = [
+  const links: Link[] = [
     {
       name: 'linkedIn',
       href: 'https://www.linkedin.com/in/kmgallarin/',
@@ -81,11 +83,11 @@
           </div>
         </div>
       </base-container>
+    </section>
 
+    <section class="shadow-bottom flex-1 bg-gray-lighter shadow-custom-mid-inset">
       <!--	form starts-->
       <contact-form />
     </section>
   </div>
 </template>
-
-<style scoped></style>

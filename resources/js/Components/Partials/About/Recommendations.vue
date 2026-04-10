@@ -3,6 +3,8 @@
 
   import { ref } from 'vue';
 
+  import { RecommendationsResponseDTO } from '@/Types/Responses';
+
   import BaseContainer from '@/Components/Common/BaseContainer.vue';
   import BaseImage from '@/Components/Common/BaseImage.vue';
   import ScrollReveal from '@/Components/Motion/ScrollReveal.vue';
@@ -19,10 +21,10 @@
 
   const isExpanded = (index: number) => expandedIndexes.value.includes(index);
 
-  const recommendations = [
+  const recommendations: RecommendationsResponseDTO[] = [
     {
       author: 'Brian M.',
-      role: 'Full-stack developer',
+      title: 'Full-stack developer',
       image: 'brian.png',
       alt: 'brian monsales',
       rating: 5,
@@ -31,7 +33,7 @@
 
     {
       author: 'Diego R.',
-      role: 'Growth Strategist',
+      title: 'Growth Strategist',
       image: 'diego.png',
       alt: 'brian monsales',
       linkedIn: true,
@@ -41,7 +43,7 @@
 
     {
       author: 'Nida S.',
-      role: 'HR Manager',
+      title: 'HR Manager',
       image: 'nida.png',
       alt: 'brian monsales',
       rating: 5,
@@ -50,7 +52,7 @@
 
     {
       author: 'Irawin P.',
-      role: 'Lead UI/UX Designer',
+      title: 'Lead UI/UX Designer',
       image: 'irawin.png',
       alt: 'brian monsales',
       linkedIn: true,
@@ -117,7 +119,7 @@
                 />
                 <div class="flex flex-col text-left">
                   <p class="mb-0 leading-tight">{{ recommendation.author }}</p>
-                  <p class="text-xs">{{ recommendation.role }}</p>
+                  <p class="text-xs">{{ recommendation.title }}</p>
                 </div>
               </div>
 

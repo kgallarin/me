@@ -1,6 +1,8 @@
 <script setup lang="ts">
   import { SplideSlide } from '@splidejs/vue-splide';
 
+  import { ProjectResponseDTO } from '@/Types/Responses';
+
   import BaseContainer from '@/Components/Common/BaseContainer.vue';
   import Splider from '@/Components/Motion/Splider.vue';
 
@@ -10,7 +12,7 @@
 
   const getImageUrl = (name: string) => images[`/resources/images/projects/${name}`]?.default || '';
 
-  const projects = [
+  const projects: ProjectResponseDTO[] = [
     {
       title: 'loomberryliving',
       description:
