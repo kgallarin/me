@@ -1,7 +1,8 @@
 <script setup lang="ts">
+  // import BaseImage from '@/Components/Common/BaseImage.vue';
+  import logoNbWhite from '@images/me/imgkg_nb_white.png';
+  import logoNbBlack from '@images/me/imkg_no_ring.png';
   import { motion } from 'motion-v';
-
-  import BaseImage from '@/Components/Common/BaseImage.vue';
 
   const props = defineProps({
     spinnerTrailColor: {
@@ -11,6 +12,10 @@
     spinnerColorBorder: {
       type: String,
       default: 'border-[white]',
+    },
+    forLight: {
+      type: Boolean,
+      default: false,
     },
   });
 </script>
@@ -27,6 +32,6 @@
       }"
     />
 
-    <img class="h-full w-full" alt="kevin gallarin" src="@images/me/imgkg_nb_white.png" />
+    <img class="h-full w-full" alt="kevin gallarin" :src="!props.forLight ? logoNbWhite : logoNbBlack" />
   </div>
 </template>

@@ -71,7 +71,7 @@
           :animate-only-scroll-down="animateOnlyScrollDown"
         >
           <base-image
-            class="h-[340px] w-[340px] object-cover"
+            class="h-full w-full object-cover sm:h-[340px] sm:w-[340px]"
             :src="kgChart1"
             alt="kgallarin cart"
             rounded="rounded-full"

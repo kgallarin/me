@@ -14,11 +14,14 @@
     },
   });
 
-  const emit = defineEmits(['hover-right', 'hover-left', 'hover-leave']);
+  const emit = defineEmits(['hover-right', 'hover-left', 'hover-leave', 'click']);
 </script>
 
 <template>
-  <div class="hero-main relative flex justify-between overflow-hidden border-b border-gray-300 font-acumin">
+  <div
+    class="hero-main relative flex justify-between overflow-hidden border-b border-gray-300 font-acumin"
+    @click="emit('click')"
+  >
     <!-- Background Layers -->
     <swoosh-layered-bg
       container-classes="pointer-events-none absolute inset-0 z-0"

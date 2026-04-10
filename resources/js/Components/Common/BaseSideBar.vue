@@ -8,6 +8,7 @@
 
   import { useAppStore } from '@/Store/Modules/App';
 
+  import BrandLogo from '@/Components/Motion/BrandLogo.vue';
   import ScalesOnPress from '@/Components/Motion/ScalesOnPress.vue';
   import StaggeringVerticalNav from '@/Components/Motion/StaggeringVerticalNav.vue';
 
@@ -78,10 +79,17 @@
           </motion.ul>
 
           <scales-on-press
-            class="absolute left-3 top-3 flex h-9 w-9 cursor-pointer items-center justify-center p-2 text-xl"
-            @click.prevent.stop="closeSidebar"
+            class="absolute left-0 top-0 flex w-full cursor-pointer items-center justify-center p-4 text-xl"
           >
-            <fa-icon :icon="['fas', 'times']" class="text-primary" />
+            <div class="flex w-full items-center justify-between">
+              <div class="h-[36px] w-[36px] sm:w-[44px]">
+                <brand-logo class="block" for-light />
+              </div>
+
+              <div class="p-3" @click.prevent.stop="closeSidebar">
+                <fa-icon :icon="['fas', 'times']" class="text-primary" />
+              </div>
+            </div>
           </scales-on-press>
         </template>
       </staggering-vertical-nav>
