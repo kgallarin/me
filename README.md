@@ -2,10 +2,12 @@
 
 My personal website that I built from scratch to showcase my skills, technologies and myself. I plan to add more features and content as a diary since I do not much exposing myself to social media. Feel free to click here to view how it was coded so I can share my knowledge and experience by this simple website.
 
+## 🚀 About Me
+I'm a Senior Frontend Engineer (Full-Stack Capable with Laravel and GraphQL)
+
 ## Demo
 
 soon
-
 
 ## Acknowledgements
 
@@ -38,38 +40,32 @@ To all my respected colleague/friends that gave me time for recommendation lette
 
 **Server:** NA
 
-
-## Authors
-
-- [@kgallarin](https://github.com/kgallarin)
-
-
 ## Run Locally
 
 Clone the project
 
 ```bash
-  git clone https://github.com/kgallarin/me
+git clone https://github.com/kgallarin/me
 ```
 Setup env
 ``` bash
- copy env.example to .env
+copy env.example to .env
 ```
 
 Install composer dependencies
 ```bash
- $ composer install
+$ composer install
 ```
 
 Install dependencies
 ```bash
- npm install
+$ npm install
 ```
 
 Start the server
 
 ```bash
- npm run dev
+$ npm run dev
 ```
 
 
@@ -78,7 +74,7 @@ Start the server
 To run frontend unit tests, run the following command
 
 ```bash
-  npm run test:unit
+$ npm run test:unit
 ```
 
 
@@ -90,11 +86,12 @@ To run this project, you will need to add the following environment variables to
 
 `ANOTHER_API_KEY`
 
+## Authors
+
+- [@kgallarin](https://github.com/kgallarin)
+
 
 ## 🔗 Links
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](hhttps://www.linkedin.com/in/kmgallarin)
 
-
-## 🚀 About Me
-I'm a Senior Frontend Engineer (Full-Stack Capable with Laravel and GraphQL)
 
