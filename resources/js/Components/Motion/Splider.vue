@@ -53,7 +53,7 @@
 
 <template>
   <div class="splide-main group relative w-full overflow-hidden rounded-sm" :class="aspectRatio">
-    <splide :options="options" class="h-full w-full">
+    <splide data-testid="slider" :options="options" class="h-full w-full">
       <slot v-if="$slots.default" />
       <template v-else>
         <splide-slide v-for="(item, index) in items" :key="index" class="h-full w-full">

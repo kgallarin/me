@@ -6,7 +6,7 @@
   const defaultNav = [
     {
       label: 'home',
-      to: '',
+      to: 'home',
       icon: 'chevron-right',
     },
     {

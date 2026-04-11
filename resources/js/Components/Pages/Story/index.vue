@@ -45,7 +45,8 @@
       },
       {
         title: 'Nickname(s)',
-        description: 'Kevin, KG, my best friends call me Kilay or "eyebrows" because of my unibrows (lived with it)',
+        description:
+          'Kevin, KG, my best friends call me Kilay or "eyebrows" because of my unibrows (well, I lived with it)',
       },
       { title: 'Born and Raised', description: 'Manila, Philippines' },
       { title: 'Started my career as frontend', description: '2014 With my awesome thesis-mates in college!' },

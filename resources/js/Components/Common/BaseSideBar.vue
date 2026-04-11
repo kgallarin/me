@@ -62,7 +62,7 @@
               :while-press="{ scale: 0.95 }"
             >
               <router-link
-                :to="navItem.to || '/'"
+                :to="{ name: navItem.to || 'home' }"
                 @click.prevent.stop="navigateTo(navItem.to || 'home')"
                 class="text-text-primary flex w-full items-center justify-between pb-2 text-sm"
                 :class="isSidebarAnimationComplete ? 'border-b border-gray-100' : ''"
@@ -86,7 +86,7 @@
                 <brand-logo class="block" for-light />
               </div>
 
-              <div class="p-3" @click.prevent.stop="closeSidebar">
+              <div class="p-3" @click.prevent.stop="closeSidebar" data-testid="close-sidebar">
                 <fa-icon :icon="['fas', 'times']" class="text-primary" />
               </div>
             </div>
