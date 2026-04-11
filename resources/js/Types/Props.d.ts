@@ -11,3 +11,15 @@ export interface Link {
   icon: string[];
   class?: string;
 }
+
+export interface HeroImageTextShardProps {
+  textLeft: string;
+  textRight: string;
+  textLeftClasses?: string;
+  textRightClasses?: string;
+  animateLeftInPixels?: number;
+  animateRightInPixels?: number;
+  isAnyHoveredLeft?: boolean;
+  isAnyHoveredRight?: boolean;
+  darken?: boolean;
+}

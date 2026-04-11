@@ -29,7 +29,7 @@
         class="header-inner mx-auto flex h-16 items-center justify-between lg:max-w-screen-lg lg:px-0 xl:max-w-screen-xl"
       >
         <div class="w-[36px] sm:w-[44px]">
-          <router-link :to="{ name: 'home' }">
+          <router-link data-testid="brand-logo" :to="{ name: 'home' }">
             <brand-logo />
           </router-link>
         </div>

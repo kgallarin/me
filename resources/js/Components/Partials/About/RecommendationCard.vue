@@ -1,0 +1,101 @@
+<script setup lang="ts">
+  import { FontAwesomeIcon as FaIcon } from '@fortawesome/vue-fontawesome';
+
+  import { nextTick, ref } from 'vue';
+
+  import { RecommendationsResponseDTO } from '@/Types/Responses';
+
+  import BaseImage from '@/Components/Common/BaseImage.vue';
+
+  defineProps<{
+    recommendation: RecommendationsResponseDTO;
+  }>();
+
+  const cardRef = ref<HTMLElement | null>(null);
+  const isExpanded = ref(false);
+
+  const toggleExpand = async () => {
+    isExpanded.value = !isExpanded.value;
+
+    if (isExpanded.value) {
+      await nextTick();
+      cardRef.value?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const images = import.meta.glob<{ default: string }>('/resources/images/kudos/*.{png,jpg,jpeg,webp}', {
+    eager: true,
+  });
+
+  const getImageUrl = (name: string) => images[`/resources/images/kudos/${name}`]?.default || '';
+</script>
+
+<template>
+  <div
+    ref="cardRef"
+    class="main-card relative flex flex-col rounded-md border border-gray-200 p-4 py-8 text-primary shadow-md"
+    :class="isExpanded ? 'max-h-fit w-full' : 'h-[380px] w-full overflow-hidden pb-12'"
+  >
+    <fa-icon v-if="recommendation.linkedIn" class="absolute right-3 top-3 text-[#0982c0]" :icon="['fab', 'linkedin']" />
+    <div class="flex justify-between border-b border-gray-200 pb-4">
+      <div class="author flex flex-row items-center gap-3 leading-tight">
+        <base-image
+          :src="getImageUrl(recommendation.image)"
+          class="h-12 w-12 object-contain"
+          rounded="rounded-full"
+          :alt="recommendation.alt"
+        />
+        <div class="flex flex-col text-left">
+          <p class="mb-0 leading-tight">{{ recommendation.author }}</p>
+          <p class="text-xs">{{ recommendation.title }}</p>
+        </div>
+      </div>
+
+      <div>
+        <fa-icon
+          v-for="i in recommendation.rating"
+          :key="i"
+          class="inline-block text-xs text-yellow-400"
+          :icon="['fas', 'star']"
+        />
+      </div>
+    </div>
+
+    <p class="text-content pb-4 pt-10 leading-loose" v-html="recommendation.text" />
+
+    <div
+      v-if="!isExpanded"
+      class="absolute bottom-0 left-0 flex w-full justify-center bg-gradient-to-t from-white via-white/80 to-transparent pb-4 pt-12"
+    >
+      <button class="text-xs font-semibold text-blue-500 hover:underline" @click="toggleExpand">read more</button>
+    </div>
+
+    <div v-else class="mt-auto flex justify-center pb-4">
+      <button class="text-xs font-semibold text-blue-500 hover:underline" @click="toggleExpand">show less</button>
+    </div>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+  .text-content {
+    position: relative;
+    &:before,
+    &:after {
+      font-size: 2.5rem;
+      line-height: 0;
+    }
+
+    &:before {
+      content: open-quote;
+      top: 0;
+      left: 0;
+    }
+
+    &:after {
+      position: absolute;
+      right: 0;
+      bottom: 35px;
+      content: close-quote;
+    }
+  }
+</style>

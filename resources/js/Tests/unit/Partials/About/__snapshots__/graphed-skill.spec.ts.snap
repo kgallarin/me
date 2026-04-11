@@ -1,0 +1,56 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`GraphedSkill > Renders texts and chart component correctly 1`] = `
+<div>
+  <section
+    class="skills-chart shadow-bottom bg-gray-lighter shadow-custom-mid-inset"
+  >
+    <div
+      class="lg:max-w-screen-lg mx-auto px-4 xl:max-w-screen-xl xl:px-0 px-0 py-12 pb-20 md:px-4 md:py-24 md:pb-24"
+    >
+      
+      <div
+        class="w-full text-right"
+      >
+        <div
+          animate-once="false"
+          animate-only-scroll-down="false"
+          direction="right"
+        >
+          
+          <h2
+            class="font-proxima text-4xl font-light"
+          >
+            My Skills
+          </h2>
+          <p
+            class="font-acumin text-xs font-light"
+          >
+            more or less
+          </p>
+          
+        </div>
+        <div
+          animate-once="false"
+          animate-only-scroll-down="false"
+          delay="0.2"
+          direction="up"
+        >
+          
+          <div
+            class="w-full"
+          >
+            <div
+              data-testid="skill-chart"
+            >
+              Skill Chart
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+  </section>
+</div>
+`;

@@ -50,7 +50,7 @@
               ☀️ Manila, Philippines.
             </p>
 
-            <p class="font-proxima text-base font-light leading-relaxed">
+            <p class="font-proxima text-base font-light leading-loose">
               With over a decade of experience, I bridge the gap between design and development, delivering intuitive
               client solutions with a natural instinct for the designer’s perspective. When I’m stepping away from the
               syntax, I enjoy spending time working out, gaming occasionally, exploring places, listening to music,
@@ -60,12 +60,7 @@
         </div>
 
         <div class="w-full justify-self-end pt-8 md:w-1/2">
-          <scroll-reveal
-            direction="left"
-            :delay="appStore.isDesktop ? 0.2 : 0"
-            :animate-once="animateOnce"
-            :animate-only-scroll-down="animateOnlyScrollDown"
-          >
+          <scroll-reveal direction="left" :animate-once="animateOnce" :animate-only-scroll-down="animateOnlyScrollDown">
             <base-image
               class="object-cover shadow-lg"
               rounded="rounded-md"
@@ -77,12 +72,7 @@
       </div>
 
       <div class="image-gallery py-10">
-        <scroll-reveal
-          direction="up"
-          :delay="appStore.isDesktop ? 0.4 : 0"
-          :animate-once="animateOnce"
-          :animate-only-scroll-down="animateOnlyScrollDown"
-        >
+        <scroll-reveal direction="up" :animate-once="animateOnce" :animate-only-scroll-down="animateOnlyScrollDown">
           <splider
             :items="images"
             :autoplay="true"

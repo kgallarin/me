@@ -8,10 +8,10 @@
 
     <form action="">
       <div class="mb-4">
-        <label for="email" class="mb-2 block font-proxima text-lg font-light text-primary">Name or alias</label>
+        <label for="name" class="mb-2 block font-proxima text-lg font-light text-primary">Name or alias</label>
         <input
-          type="email"
-          id="email"
+          type="text"
+          id="name"
           class="w-full rounded-md border border-gray-300 px-4 py-2 text-primary focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary"
           required
         />

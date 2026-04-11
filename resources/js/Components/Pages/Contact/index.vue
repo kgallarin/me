@@ -28,7 +28,7 @@
     },
     {
       name: 'download my resume',
-      href: 'https://www.instagram.com/kgallarin/',
+      href: '/assets/pdf/resume.pdf',
       icon: ['fas', 'laptop-file'],
       class: 'text-green-500',
     },
@@ -56,6 +56,7 @@
                 v-for="link in links"
                 :key="link.name"
                 :href="link.href"
+                :download="link.name === 'download my resume' ? 'resume.pdf' : undefined"
                 target="_blank"
                 class="flex items-center gap-2 text-center"
                 :class="[

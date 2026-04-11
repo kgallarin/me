@@ -38,6 +38,10 @@
       type: Boolean,
       default: false,
     },
+    darken: {
+      type: Boolean,
+      default: false,
+    },
   });
 
   const emit = defineEmits(['textHoverLeft', 'textHoverRight', 'textHoverLeave']);
@@ -70,18 +74,19 @@
   <div class="text-shard mb-2 grid grid-cols-2 justify-items-stretch gap-4">
     <div class="relative cursor-pointer">
       <div
+        data-testid="shard-hoverable-left"
         class="hover-me-baby absolute inset-0 z-10"
         @mouseover="handleMouseOverLeft"
         @mouseleave="handleMouseLeaveLeft"
       ></div>
-
       <motion.div
+        data-testid="shard-text-left"
         :class="[textLeftClasses, 'justify-self-end', 'font-light']"
-        :initial="{ x: 0, color: '', fontWeight: 300, opacity: 1 }"
+        :initial="{ x: 0, color: darken ? '#010303' : '#E5E4E2', fontWeight: 300, opacity: 1 }"
         :animate="{
           x: isHoveredLeft ? -animateLeftInPixels : 0,
-          color: isHoveredLeft ? '#060606' : '#E5E4E2',
-          fontWeight: isHoveredLeft ? 700 : 300,
+          color: isHoveredLeft ? '#010303' : darken ? '#010303' : '#1f2a2d',
+          fontWeight: isHoveredLeft ? 700 : darken ? 500 : 300,
           opacity: isAnyHoveredRight ? 0 : 1,
         }"
         :transition="{ duration: 0.8, ease: 'easeOut' }"
@@ -91,18 +96,20 @@
     </div>
     <div class="relative cursor-pointer">
       <div
+        data-testid="shard-hoverable-right"
         class="hover-me-baby absolute inset-0 z-40"
         @mouseover="handleMouseOverRight"
         @mouseleave="handleMouseLeaveRight"
       ></div>
 
       <motion.div
+        data-testid="shard-text-right"
         :class="[textRightClasses, 'justify-self-start', 'font-light']"
-        :initial="{ x: 0, color: '', fontWeight: 300, opacity: 1 }"
+        :initial="{ x: 0, color: '#E5E4E2', fontWeight: 300, opacity: 1 }"
         :animate="{
           x: isHoveredRight ? animateRightInPixels : 0,
-          color: isHoveredRight ? '#060606' : '#E5E4E2',
-          fontWeight: isHoveredRight ? 700 : 300,
+          color: isHoveredRight ? '#010303' : darken ? '#010303' : '#1f2a2d',
+          fontWeight: isHoveredRight ? 700 : darken ? 500 : 300,
           opacity: isAnyHoveredLeft ? 0 : 1,
         }"
         :transition="{ duration: 0.8, ease: 'easeOut' }"

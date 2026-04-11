@@ -49,7 +49,7 @@
     />
 
     <hero-image-text-shard
-      class="whitespace-nowrap font-light 2xs:text-base xs:mb-12 sm:-ml-16 sm:mb-0 md:-ml-8 md:text-xl lg:-ml-10 lg:text-4xl"
+      class="whitespace-nowrap font-light 2xs:mb-12 2xs:text-base xs:mb-12 sm:-ml-16 sm:mb-0 md:-ml-8 md:text-xl lg:-ml-10 lg:text-4xl"
       text-left="Photoshop"
       text-right="TS/JavaScript"
       :animate-left-in-pixels="appStore.queryBreakpoints(140, 80, 90)"
@@ -59,6 +59,7 @@
       @text-hover-leave="handleHoverLeave"
       :is-any-hovered-left="isAnyHoveredLeft"
       :is-any-hovered-right="isAnyHoveredRight"
+      darken
     />
 
     <hero-image-text-shard
@@ -75,7 +76,7 @@
     />
 
     <hero-image-text-shard
-      class="whitespace-nowrap 2xs:text-base sm:-ml-24 sm:w-[660px] md:mx-auto md:-ml-10 md:w-[768px] md:text-lg lg:-ml-36 lg:w-[900px] lg:text-5xl"
+      class="whitespace-nowrap 2xs:text-base xs:ml-16 xs:w-[290px] sm:-ml-24 sm:w-[660px] md:mx-auto md:-ml-10 md:w-[768px] md:text-lg lg:-ml-36 lg:w-[900px] lg:text-5xl"
       text-left="Animation"
       text-right="Web/Mobile"
       text-left-classes="justify-self-center"
@@ -87,16 +88,17 @@
       @text-hover-leave="handleHoverLeave"
       :is-any-hovered-left="isAnyHoveredLeft"
       :is-any-hovered-right="isAnyHoveredRight"
+      darken
     />
 
     <hero-image-text-shard
-      class="whitespace-nowrap 2xs:text-base sm:-ml-20 md:mx-auto md:-ml-10 md:w-[658px] md:text-lg lg:-ml-56 lg:w-[980px] lg:text-3xl"
+      class="xs:-ml-18 whitespace-nowrap 2xs:text-base xs:w-[380px] sm:-ml-20 md:mx-auto md:-ml-10 md:w-[658px] md:text-lg lg:-ml-56 lg:w-[980px] lg:text-3xl"
       text-left="Communication"
       text-right="Structure,Testing"
       text-left-classes="justify-self-center"
       text-right-classes="justify-self-end"
       :animate-left-in-pixels="appStore.queryBreakpoints(220, 110, 50)"
-      :animate-right-in-pixels="appStore.queryBreakpoints(240, 110, 20)"
+      :animate-right-in-pixels="appStore.queryBreakpoints(240, 110, 80)"
       @text-hover-left="handleHoverLeft"
       @text-hover-right="handleHoverRight"
       @text-hover-leave="handleHoverLeave"
@@ -117,6 +119,7 @@
       @text-hover-leave="handleHoverLeave"
       :is-any-hovered-left="isAnyHoveredLeft"
       :is-any-hovered-right="isAnyHoveredRight"
+      darken
     />
 
     <hero-image-text-shard
