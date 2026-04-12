@@ -43,13 +43,16 @@
             :animate-once="animateOnce"
             :animate-only-scroll-down="animateOnlyScrollDown"
           >
+            <!--						title -->
             <h1 class="mb-4 text-6xl lowercase tracking-tight text-tertiary">$ whoami</h1>
+            <!--						subtitle-->
             <p class="mb-4 font-acumin text-xl font-light">
               I'm a frontend/software engineer from
               <br />
               ☀️ Manila, Philippines.
             </p>
 
+            <!--						description-->
             <p class="font-proxima text-base font-light leading-loose">
               With over a decade of experience, I bridge the gap between design and development, delivering intuitive
               client solutions with a natural instinct for the designer’s perspective. When I’m stepping away from the
@@ -71,6 +74,7 @@
         </div>
       </div>
 
+      <!--			images-->
       <div class="image-gallery py-10">
         <scroll-reveal direction="up" :animate-once="animateOnce" :animate-only-scroll-down="animateOnlyScrollDown">
           <splider

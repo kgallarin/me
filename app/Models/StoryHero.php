@@ -5,8 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Projects extends Model
+class StoryHero extends Model
 {
-    /** @use HasFactory<\Database\Factories\ProjectsFactory> */
+    /** @use HasFactory<\Database\Factories\StoryHeroFactory> */
     use HasFactory;
+
+		protected $guarded = [];
 }

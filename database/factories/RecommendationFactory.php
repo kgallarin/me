@@ -2,13 +2,13 @@
 
 namespace Database\Factories;
 
-use App\Models\Projects;
+use App\Models\Recommendation;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends Factory<Projects>
+ * @extends Factory<Recommendation>
  */
-class ProjectsFactory extends Factory
+class RecommendationFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,7 +18,10 @@ class ProjectsFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'author' => fake()->name(),
+            'title' => fake()->jobTitle(),
+            'text' => fake()->paragraph(),
+            'linkedIn'=> fake()->boolean(),
         ];
     }
 }

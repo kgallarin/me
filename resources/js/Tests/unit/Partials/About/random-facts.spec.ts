@@ -1,7 +1,7 @@
 import { type RenderResult, render } from '@testing-library/vue';
 import { describe, expect, test, vi } from 'vitest';
 
-import { ChartedSkillsResponseDTO, TitledTextResponseDTO } from '@/Types/Responses';
+import { TitledTextResponseDTO } from '@/Types/Responses';
 
 import RandomFacts from '@/Components/Partials/About/RandomFacts.vue';
 
