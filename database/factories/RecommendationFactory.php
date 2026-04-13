@@ -21,6 +21,7 @@ class RecommendationFactory extends Factory
             'author' => fake()->name(),
             'title' => fake()->jobTitle(),
             'text' => fake()->paragraph(),
+						'rating' => fake()->numberBetween(1, 5),
             'linkedIn'=> fake()->boolean(),
         ];
     }

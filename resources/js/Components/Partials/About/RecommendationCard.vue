@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  import { FontAwesomeIcon as FaIcon } from '@fortawesome/vue-fontawesome';
-
   import { nextTick, ref } from 'vue';
+
+  import { FontAwesomeIcon as FaIcon } from '@fortawesome/vue-fontawesome';
 
   import { RecommendationsResponseDTO } from '@/Types/Responses';
 
@@ -22,12 +22,6 @@
       cardRef.value?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
-
-  const images = import.meta.glob<{ default: string }>('/resources/images/kudos/*.{png,jpg,jpeg,webp}', {
-    eager: true,
-  });
-
-  const getImageUrl = (name: string) => images[`/resources/images/kudos/${name}`]?.default || '';
 </script>
 
 <template>
@@ -40,10 +34,10 @@
     <div class="flex justify-between border-b border-gray-200 pb-4">
       <div class="author flex flex-row items-center gap-3 leading-tight">
         <base-image
-          :src="getImageUrl(recommendation.image)"
+          :src="recommendation.avatar ? recommendation.avatar.url : ''"
           class="h-12 w-12 object-contain"
           rounded="rounded-full"
-          :alt="recommendation.alt"
+          :alt="recommendation.avatar ? recommendation.avatar.alt : ''"
         />
         <div class="flex flex-col text-left">
           <p class="mb-0 leading-tight">{{ recommendation.author }}</p>

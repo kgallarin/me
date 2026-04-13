@@ -11,13 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('recommendations', static function (Blueprint $table) {
-            $table->uuid('id')->primary();
-						$table->string('author');
-						$table->string('title');
-						$table->text('text');
-						$table->boolean('linkedIn');
-            $table->timestamps();
+        Schema::table('recommendations', function (Blueprint $table) {
+            $table->integer('rating')->default(0);
         });
     }
 
@@ -26,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('recommendations');
+        Schema::table('recommendations', function (Blueprint $table) {
+            $table->dropColumn('rating');
+        });
     }
 };

@@ -17,14 +17,33 @@ export interface ChartedSkillsResponseDTO {
   rightContent: string[];
 }
 
+export interface PaginatorInfo {
+  count: number;
+  currentPage: number;
+  firstItem: number;
+  hasMorePages: boolean;
+  lastItem: number;
+  lastPage: number;
+  perPage: number;
+  total: number;
+}
+
+export interface PaginatedResponse<T> {
+  data: T[];
+  paginatorInfo: PaginatorInfo;
+}
+
 export interface RecommendationsResponseDTO {
+  id: string;
   author: string;
-  image: string;
-  alt: string;
-  rating: number;
   title: string;
   text: string;
+  rating: number;
   linkedIn?: boolean;
+  avatar?: {
+    url: string;
+    alt: string;
+  };
 }
 
 export interface StoryHero {

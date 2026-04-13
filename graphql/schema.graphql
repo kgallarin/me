@@ -1,41 +1,159 @@
 "A datetime string with format `Y-m-d H:i:s`, e.g. `2018-05-23 13:43:32`."
 scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
 
-"Indicates what fields are available at the top level of a query operation."
 type Query {
     "Find a single user by an identifying attribute."
     user(
-      "Search by primary key."
-      id: ID @eq @rules(apply: ["prohibits:email", "required_without:email"])
-
-      "Search by email address."
-      email: String @eq @rules(apply: ["prohibits:id", "required_without:id", "email"])
+        id: ID @eq @rules(apply: ["prohibits:email", "required_without:email"])
+        email: String @eq @rules(apply: ["prohibits:id", "required_without:id", "email"])
     ): User @find
 
     "List multiple users."
     users(
-      "Filters by name. Accepts SQL LIKE wildcards `%` and `_`."
-      name: String @where(operator: "like")
-    ): [User!]! @paginate(defaultCount: 10)
+        name: String @where(operator: "like")
+    ): [User!]! @paginate(defaultCount: 10, type: "PAGINATOR")
+
+    "Single story hero section."
+    storyHero: StoryHero @first
+
+    "All recommendations."
+    recommendations(
+        first: Int @rules(apply: ["min:1"])
+        page: Int @rules(apply: ["min:1"])
+    ): [Recommendation!]! @paginate(type: "PAGINATOR", model: "App\\Models\\Recommendation", scopes: ["recent"])
+
+    "Find a single recommendation by ID."
+    recommendation(id: ID!): Recommendation @field(resolver: "RecommendationQueries@find")
+
+    "All charted skills."
+    chartedSkills: [ChartedSkill!]! @all
+
+    "Find a single charted skill by ID."
+    chartedSkill(id: ID! @eq): ChartedSkill @find
+
+    "All titled paragraphs."
+    titledParagraphs: [TitledParagraphs!]! @all
+
+    "Find a single titled paragraph by ID."
+    titledParagraph(id: ID! @eq): TitledParagraphs @find
+
+    "All titled items."
+    titledItems: [TitledItems!]! @all
+
+    "Find a single titled item by ID."
+    titledItem(id: ID! @eq): TitledItems @find
+
+    "All contact links."
+    contactLinks: [ContactLinks!]! @all
+
+    "All projects."
+    projects: [Project!]! @all
+
+    "Find a single project by ID."
+    project(id: ID! @eq): Project @find
 }
 
 "Account of a person who uses this application."
 type User {
-    "Unique primary key."
     id: ID!
-
-    "Non-unique name."
     name: String!
-
-    "Unique email address."
     email: String!
-
-    "When the email was verified."
     email_verified_at: DateTime
-
-    "When the account was created."
     created_at: DateTime!
-
-    "When the account was last updated."
     updated_at: DateTime!
+}
+
+type ResponsiveImage {
+    url: String!
+    width: Int!
+}
+
+type Media {
+    id: ID!
+    url: String!
+    alt: String
+    mimeType: String!
+    collectionName: String!
+    size: Int!
+    srcset: String!
+    responsiveImages: [ResponsiveImage!]!
+}
+
+type StoryHero {
+    id: ID!
+    title: String!
+    subtitle: String!
+    description: String!
+    heroImages: [Media!]! @method(name: "getHeroImagesMedia")
+    createdAt: DateTime! @rename(attribute: "created_at")
+    updatedAt: DateTime! @rename(attribute: "updated_at")
+}
+
+type Recommendation {
+    id: ID!
+    author: String!
+    title: String!
+    text: String!
+		rating: Int!
+    linkedIn: Boolean
+    avatar: Media @method(name: "getAvatarMedia")
+    createdAt: DateTime! @rename(attribute: "created_at")
+    updatedAt: DateTime! @rename(attribute: "updated_at")
+}
+
+type ChartedSkill {
+    id: ID!
+    leftTitle: String! @rename(attribute: "left_title")
+    rightTitle: String! @rename(attribute: "right_title")
+    leftContent: [String!]! @rename(attribute: "left_content")
+    rightContent: [String!]! @rename(attribute: "right_content")
+    image: Media @method(name: "getImageMedia")
+    createdAt: DateTime! @rename(attribute: "created_at")
+    updatedAt: DateTime! @rename(attribute: "updated_at")
+}
+
+type TitledParagraphs {
+    id: ID!
+    title: String!
+    paragraph: [String!]!
+    image: Media @method(name: "getImageMedia")
+    createdAt: DateTime! @rename(attribute: "created_at")
+    updatedAt: DateTime! @rename(attribute: "updated_at")
+}
+
+type TitledItems {
+    id: ID!
+    title: String!
+    items: [String!]!
+    createdAt: DateTime! @rename(attribute: "created_at")
+    updatedAt: DateTime! @rename(attribute: "updated_at")
+}
+
+type CarouselSettings {
+    autoplay: Boolean!
+    dots: Boolean!
+    infinite: Boolean!
+    speed: Int!
+    slidesToShow: Int!
+    slidesToScroll: Int!
+}
+
+type Project {
+    id: ID!
+    title: String!
+    description: String!
+    icon: [String!]!
+    carouselSettings: CarouselSettings! @rename(attribute: "carousel_settings")
+    createdAt: DateTime! @rename(attribute: "created_at")
+    updatedAt: DateTime! @rename(attribute: "updated_at")
+}
+
+type ContactLinks {
+    id: ID!
+    name: String!
+    url: String!
+    icon: [String!]!
+    classColor: String! @rename(attribute: "class_color")
+    createdAt: DateTime! @rename(attribute: "created_at")
+    updatedAt: DateTime! @rename(attribute: "updated_at")
 }

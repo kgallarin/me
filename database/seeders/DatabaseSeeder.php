@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use App\Models\User;
 use Database\Factories\ChartedSkillFactory;
 use Database\Factories\ContactLinksFactory;
-use Database\Factories\ImageFactory;
 use Database\Factories\ProjectFactory;
 use Database\Factories\RecommendationFactory;
 use Database\Factories\StoryHeroFactory;
@@ -23,13 +22,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-			ChartedSkillFactory::new()->count(5)->create();
+			 ChartedSkillFactory::new()->count(5)->create();
 			 RecommendationFactory::new()->count(5)->create();
 			 ContactLinksFactory::new()->count(5)->create();
 			 ProjectFactory::new()->count(5)->create();
 			 TitledItemsFactory::new()->count(5)->create();
 			 TitledParagraphsFactory::new()->count(5)->create();
 			 StoryHeroFactory::new()->count(5)->create();
-			 ImageFactory::new()->count(5)->create();
     }
 }
