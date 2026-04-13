@@ -1,6 +1,4 @@
 <script setup lang="ts">
-  import freeMe from '@images/social_images/10.png';
-
   import { Link } from '@/Types/Props';
 
   import BaseContainer from '@/Components/Common/BaseContainer.vue';
@@ -77,7 +75,7 @@
             <base-image
               class="object-cover shadow-lg"
               rounded="rounded-md"
-              :src="freeMe"
+              :src="''"
               alt="kevin gallarin, skill pie"
               show-loader
             />

@@ -8,14 +8,27 @@ import ProjectsSection from '@/Components/Partials/Home/Projects/index.vue';
 
 const projects: ProjectResponseDTO[] = [
   {
+    id: 'test-id',
     title: 'test project',
     description: 'test description',
-    images: ['test.png'],
-    icons: [{ icon: ['fab', 'html5'], color: 'text-orange-400' }],
-    carousel: {
+    order: 1,
+    images: [
+      {
+        id: '1',
+        url: 'test.png',
+        alt: 'test alt',
+        mimeType: 'image/png',
+        collectionName: 'project_images',
+        size: 100,
+        srcset: 'test.png 1x',
+        responsiveImages: [],
+      },
+    ],
+    icon: [{ icon: ['fab', 'html5'], color: 'text-orange-400' }],
+    carouselSettings: {
       autoplay: true,
-      showIndicators: true,
       showArrows: true,
+      showIndicators: true,
     },
   },
 ];
@@ -58,5 +71,6 @@ describe('ProjectsSection', (): void => {
 
     const icons = getAllByTestId('project-icon');
     expect(icons.length).toBe(1);
+    expect(icons[0]).toHaveClass('text-orange-400');
   });
 });

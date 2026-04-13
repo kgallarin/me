@@ -17,7 +17,7 @@
     recommendationsStore.fetchRecommendations();
   });
 
-  const recommendations = computed(() => recommendationsStore.recommendations);
+  const recommendationsData = computed(() => recommendationsStore.recommendations);
 
   const skills: ChartedSkillsResponseDTO = {
     leftTitle: 'Perceptive side',
@@ -73,6 +73,6 @@
 
     <graphed-skills animate-once animate-only-scroll-down />
 
-    <recommendations :testimonials="recommendations" animate-once animate-only-scroll-down />
+    <recommendations :testimonials="recommendationsData" animate-once animate-only-scroll-down />
   </div>
 </template>

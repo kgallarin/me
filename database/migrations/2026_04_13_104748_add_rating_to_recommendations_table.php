@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('recommendations', function (Blueprint $table) {
+        Schema::table('recommendations', static function (Blueprint $table) {
             $table->integer('rating')->default(0);
         });
     }
@@ -21,7 +21,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('recommendations', function (Blueprint $table) {
+        Schema::table('recommendations', static function (Blueprint $table) {
             $table->dropColumn('rating');
         });
     }

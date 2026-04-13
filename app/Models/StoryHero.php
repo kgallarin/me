@@ -22,11 +22,22 @@ class StoryHero extends Model implements HasMedia
         $this->addMediaCollection('hero_image')
             ->useDisk('s3')
             ->withResponsiveImages();
+
+        $this->addMediaCollection('social_images')
+            ->useDisk('s3')
+            ->withResponsiveImages();
     }
 
     public function getHeroImagesMedia(): array
     {
         return $this->getMedia('hero_image')
+            ->map(fn (Media $media) => $this->formatMedia($media))
+            ->toArray();
+    }
+
+    public function getSocialImagesMedia(): array
+    {
+        return $this->getMedia('social_images')
             ->map(fn (Media $media) => $this->formatMedia($media))
             ->toArray();
     }

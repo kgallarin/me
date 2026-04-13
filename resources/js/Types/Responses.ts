@@ -1,13 +1,33 @@
-import { CarouselConfig, FontAwesomeIconObject } from '@/Types/General';
+// No imports needed here for ProjectResponseDTO currently
 
 export interface ProjectResponseDTO {
+  id: string;
   title: string;
   description: string;
-  // @todo
-  images: string[];
-  icons: FontAwesomeIconObject[];
-  carousel: CarouselConfig;
   link?: string;
+  order: number;
+  icon: Array<{
+    icon: string[];
+    color: string;
+  }>;
+  carouselSettings: {
+    autoplay: boolean;
+    showIndicators: boolean;
+    showArrows: boolean;
+  };
+  images: Array<{
+    id: string;
+    url: string;
+    alt: string | null;
+    mimeType: string;
+    collectionName: string;
+    size: number;
+    srcset: string;
+    responsiveImages: Array<{
+      url: string;
+      width: number;
+    }>;
+  }>;
 }
 
 export interface ChartedSkillsResponseDTO {
@@ -30,7 +50,7 @@ export interface PaginatorInfo {
 
 export interface PaginatedResponse<T> {
   data: T[];
-  paginatorInfo: PaginatorInfo;
+  paginatorInfo: PaginatorInfo | null;
 }
 
 export interface RecommendationsResponseDTO {
@@ -38,6 +58,7 @@ export interface RecommendationsResponseDTO {
   author: string;
   title: string;
   text: string;
+  order: number;
   rating: number;
   linkedIn?: boolean;
   avatar?: {

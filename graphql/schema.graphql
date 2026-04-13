@@ -20,12 +20,21 @@ type Query {
     recommendations(
         first: Int @rules(apply: ["min:1"])
         page: Int @rules(apply: ["min:1"])
-    ): [Recommendation!]! @paginate(type: "PAGINATOR", model: "App\\Models\\Recommendation", scopes: ["recent"])
+    ): [Recommendation!]! @paginate(type: "PAGINATOR", model: "App\\Models\\Recommendation", scopes: ["ordered"])
 
     "Find a single recommendation by ID."
     recommendation(id: ID!): Recommendation @field(resolver: "RecommendationQueries@find")
 
-    "All charted skills."
+		"All projects."
+    projects(
+			first: Int @rules(apply: ["min:1"])
+			page: Int @rules(apply: ["min:1"])
+		): [Project!]! @paginate(type: "PAGINATOR", model: "App\\Models\\Project", scopes: ["ordered"])
+
+		"Find a single project by ID."
+		project(id: ID! @eq): Project @find
+
+	"All charted skills."
     chartedSkills: [ChartedSkill!]! @all
 
     "Find a single charted skill by ID."
@@ -45,12 +54,6 @@ type Query {
 
     "All contact links."
     contactLinks: [ContactLinks!]! @all
-
-    "All projects."
-    projects: [Project!]! @all
-
-    "Find a single project by ID."
-    project(id: ID! @eq): Project @find
 }
 
 "Account of a person who uses this application."
@@ -85,6 +88,7 @@ type StoryHero {
     subtitle: String!
     description: String!
     heroImages: [Media!]! @method(name: "getHeroImagesMedia")
+    socialImages: [Media!]! @method(name: "getSocialImagesMedia")
     createdAt: DateTime! @rename(attribute: "created_at")
     updatedAt: DateTime! @rename(attribute: "updated_at")
 }
@@ -95,6 +99,7 @@ type Recommendation {
     title: String!
     text: String!
 		rating: Int!
+		order: Int!
     linkedIn: Boolean
     avatar: Media @method(name: "getAvatarMedia")
     createdAt: DateTime! @rename(attribute: "created_at")
@@ -131,19 +136,29 @@ type TitledItems {
 
 type CarouselSettings {
     autoplay: Boolean!
-    dots: Boolean!
+    showIndicators: Boolean!
+    showArrows: Boolean!
     infinite: Boolean!
     speed: Int!
     slidesToShow: Int!
     slidesToScroll: Int!
 }
 
+
+type ProjectIcon {
+	icon: [String!]!
+	color: String!
+}
+
 type Project {
     id: ID!
     title: String!
     description: String!
-    icon: [String!]!
+		link: String
+    order: Int!
+    icon: [ProjectIcon!]!
     carouselSettings: CarouselSettings! @rename(attribute: "carousel_settings")
+    images: [Media!]! @method(name: "getImageMedia")
     createdAt: DateTime! @rename(attribute: "created_at")
     updatedAt: DateTime! @rename(attribute: "updated_at")
 }

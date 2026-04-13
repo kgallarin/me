@@ -1,4 +1,4 @@
-import { getRecommendations } from '@/Api/Recommendation';
+import { getRecommendations } from '@/Api/Recommendations';
 import { defineStore } from 'pinia';
 
 import { RecommendationsModuleContext, RecommendationsState } from '@/Types/Modules';

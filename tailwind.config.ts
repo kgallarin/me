@@ -3,6 +3,11 @@
 module.exports = {
   mode: 'jit',
   content: ['./resources/js/**/*.{js,vue}', './resources/**/*.blade.php', './resources/js/*.{js,vue}'],
+  safelist: [
+		{
+			pattern: /text-(orange|green|yellow|teal|pink|red|purple|blue)-(400|500)/,
+		}
+  ],
   theme: {
     extend: {
       screens: {

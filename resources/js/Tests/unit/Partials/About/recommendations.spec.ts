@@ -39,10 +39,14 @@ describe('Recommendations', (): void => {
     const { getByText } = await renderRecommendations({
       testimonials: [
         {
+          id: 'test-id',
+          order: 1,
           author: 'test author',
           title: 'test title',
-          image: 'test image',
-          alt: 'test alt',
+          avatar: {
+            url: 'test image',
+            alt: 'test alt',
+          },
           linkedIn: false,
           rating: 5,
           text: 'test text',
@@ -64,10 +68,14 @@ describe('Recommendations', (): void => {
     const { getAllByText } = await renderRecommendations({
       testimonials: [
         {
+          id: 'test-id',
+          order: 1,
           author: 'test author',
           title: 'test title',
-          image: 'test image',
-          alt: 'test alt',
+          avatar: {
+            url: 'test image',
+            alt: 'test alt',
+          },
           linkedIn: false,
           rating: 5,
           text: 'test text',
