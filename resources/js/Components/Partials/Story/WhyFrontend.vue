@@ -5,6 +5,7 @@
 
   import BaseContainer from '@/Components/Common/BaseContainer.vue';
   import BaseImage from '@/Components/Common/BaseImage.vue';
+  import SafeHtml from '@/Components/Common/SafeHtml.vue';
 
   const props = defineProps({
     title: {
@@ -12,8 +13,8 @@
       default: '',
     },
 
-    description: {
-      type: String,
+    text: {
+      type: [String, Array] as PropType<string | { title?: string; text: string }[]>,
       default: '',
     },
 
@@ -36,7 +37,17 @@
           </h1>
 
           <div class="font-proxima text-base font-light">
-            <p v-html="props.description" class="leading-loose"></p>
+            <template v-if="Array.isArray(props.text)">
+              <div v-for="(section, index) in props.text" :key="index" class="mb-4">
+                <h2 v-if="section.title" class="mb-2 text-2xl font-semibold">{{ section.title }}</h2>
+                <p class="leading-loose">
+                  <safe-html :html="section.text" />
+                </p>
+              </div>
+            </template>
+            <p v-else class="leading-loose">
+              <safe-html :html="props.text" />
+            </p>
           </div>
         </div>
 

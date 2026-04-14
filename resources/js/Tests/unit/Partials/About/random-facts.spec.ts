@@ -1,7 +1,7 @@
 import { type RenderResult, render } from '@testing-library/vue';
 import { describe, expect, test, vi } from 'vitest';
 
-import { TitledTextResponseDTO } from '@/Types/Responses';
+import { ContentResponseDTO } from '@/Types/Responses';
 
 import RandomFacts from '@/Components/Partials/About/RandomFacts.vue';
 
@@ -11,15 +11,23 @@ vi.mock('@/Components/Motion/ScrollReveal.vue', (): { default: { template: strin
   },
 }));
 
-const renderRandomFacts = async (facts: TitledTextResponseDTO): Promise<RenderResult> => {
+const renderRandomFacts = async (data: ContentResponseDTO): Promise<RenderResult> => {
   return render(RandomFacts, {
-    props: { facts, animateOnce: true, animateOnlyScrollDown: false },
+    props: { data, animateOnce: true, animateOnlyScrollDown: false },
   });
 };
 
-const defaultProps = {
+const defaultProps: ContentResponseDTO = {
   title: 'test nugget',
-  text: ['random test text 1'],
+  content: [
+    {
+      title: '',
+      text: 'random test text 1',
+    },
+  ],
+  key: 'test-key',
+  heroImages: [],
+  socialImages: [],
 };
 describe('RandomFacts', (): void => {
   test('Component renders correctly', async (): Promise<void> => {

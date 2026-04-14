@@ -1,18 +1,18 @@
 <script setup lang="ts">
   import { computed } from 'vue';
 
-  import { useStoryHeroStore } from '@/Store/Modules/StoryHero';
+  import { useContentStore } from '@/Store/Modules/Content';
 
   import { TitledContentDTO, TitledParagraphsDTO } from '@/Types/Responses';
 
   import BaseContainer from '@/Components/Common/BaseContainer.vue';
   import WhyFrontend from '@/Components/Partials/Story/WhyFrontend.vue';
 
-  const storyHeroStore = useStoryHeroStore();
+  const contentStore = useContentStore();
 
-  storyHeroStore.fetchStoryHero('how_me');
+  contentStore.fetchContent('how_me');
 
-  const whyMeData = computed(() => storyHeroStore.getStoryHero);
+  const whyMeData = computed(() => contentStore.content);
   const whyMeHeroImage = computed(() => whyMeData.value?.heroImages?.[0] || '');
 
   const gists: TitledParagraphsDTO = {
@@ -151,7 +151,11 @@
 </script>
 
 <template>
-  <why-frontend :title="whyMeData?.title" :description="whyMeData?.description" :image="whyMeHeroImage" />
+  <why-frontend
+    :title="whyMeData?.content?.[0]?.title || whyMeData?.title"
+    :text="whyMeData?.content"
+    :image="whyMeHeroImage"
+  />
   <section class="shadow-bottom bg-gray-lighter shadow-custom-mid-inset">
     <base-container class="py-12 md:py-16">
       <div class="mx-auto max-w-screen-md border-b border-gray-200 pb-12">

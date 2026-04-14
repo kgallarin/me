@@ -55,12 +55,17 @@ export interface RecommendationsResponseDTO {
   avatar?: ImageDTO;
 }
 
-export interface StoryHeroResponseDTO {
+export interface ContentSection {
+  title?: string;
+  text: string;
+}
+
+export interface ContentResponseDTO {
   id?: string;
   key: string;
   title: string;
   subtitle?: string;
-  description: string;
+  content: ContentSection[];
   heroImages: ImageDTO[];
   socialImages?: ImageDTO[];
 }

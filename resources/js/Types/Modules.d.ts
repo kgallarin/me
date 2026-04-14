@@ -1,4 +1,4 @@
-import { PaginatorInfo, ProjectResponseDTO, RecommendationsResponseDTO, StoryHeroResponseDTO } from '@/Types/Responses';
+import { ContentResponseDTO, PaginatorInfo, ProjectResponseDTO, RecommendationsResponseDTO } from '@/Types/Responses';
 
 // recommendations
 export interface RecommendationsState {
@@ -23,12 +23,12 @@ export interface ProjectsModuleContext {
   setLoading?: (payload: { type: 'global' | 'projects'; flag: boolean }) => void;
 }
 
-export interface StoryHeroState {
-  storyHero: StoryHeroResponseDTO;
-  storyHeroes: StoryHeroResponseDTO[];
+export interface ContentState {
+  content: ContentResponseDTO;
+  contents: ContentResponseDTO[];
 }
-export interface StoryHeroModuleContext {
-  storyHero: StoryHeroResponseDTO;
-  storyHeroes: StoryHeroResponseDTO[];
-  setLoading?: (payload: { type: 'global' | 'storyHero'; flag: boolean }) => void;
+export interface ContentModuleContext {
+  content: ContentResponseDTO;
+  contents: ContentResponseDTO[];
+  setLoading?: (payload: { type: 'global' | 'content'; flag: boolean }) => void;
 }

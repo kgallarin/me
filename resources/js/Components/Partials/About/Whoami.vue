@@ -1,14 +1,13 @@
 <script setup lang="ts">
   import { PropType, computed } from 'vue';
 
-  import kgAbout from '@images/me/kg_about.png';
-
   import { useAppStore } from '@/Store/Modules/App';
 
-  import { StoryHeroResponseDTO } from '@/Types/Responses';
+  import { ContentResponseDTO } from '@/Types/Responses';
 
   import BaseContainer from '@/Components/Common/BaseContainer.vue';
   import BaseImage from '@/Components/Common/BaseImage.vue';
+  import SafeHtml from '@/Components/Common/SafeHtml.vue';
   import ScrollReveal from '@/Components/Motion/ScrollReveal.vue';
   import Splider from '@/Components/Motion/Splider.vue';
 
@@ -18,7 +17,7 @@
 
   const props = defineProps({
     data: {
-      type: Object as PropType<StoryHeroResponseDTO>,
+      type: Object as PropType<ContentResponseDTO>,
       default: () => ({}),
     },
     animateOnce: {
@@ -47,11 +46,18 @@
             :animate-once="animateOnce"
             :animate-only-scroll-down="animateOnlyScrollDown"
           >
-            <h1 class="mb-4 text-6xl lowercase tracking-tight text-tertiary">{{ data?.title }}</h1>
-            <p v-html="data?.subtitle" class="mb-4 font-acumin text-xl font-light" />
-            <p class="font-proxima text-base font-light leading-loose">
-              {{ data?.description }}
+            <h1 class="mb-4 text-6xl lowercase tracking-tight text-tertiary">
+              {{ data?.content?.[0]?.title || data?.title }}
+            </h1>
+            <p class="mb-4 font-acumin text-xl font-light">
+              <safe-html :html="data?.subtitle" />
             </p>
+            <div v-for="(section, index) in data?.content" :key="index">
+              <h2 v-if="section.title" class="mb-2 text-2xl font-semibold">{{ section.title }}</h2>
+              <p class="font-proxima text-base font-light leading-loose">
+                {{ section.text }}
+              </p>
+            </div>
           </scroll-reveal>
         </div>
 

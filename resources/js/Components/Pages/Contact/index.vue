@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { computed } from 'vue';
 
-  import { useStoryHeroStore } from '@/Store/Modules/StoryHero';
+  import { useContentStore } from '@/Store/Modules/Content';
 
   import { Link } from '@/Types/Props';
 
@@ -35,11 +35,11 @@
     },
   ];
 
-  const storyHeroStore = useStoryHeroStore();
+  const contentStore = useContentStore();
 
-  storyHeroStore.fetchStoryHero('contact');
+  contentStore.fetchContent('contact');
 
-  const contactHeroData = computed(() => storyHeroStore.getStoryHero);
+  const contactHeroData = computed(() => contentStore.content);
 </script>
 
 <template>

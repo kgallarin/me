@@ -12,9 +12,10 @@ class DatabaseSeeder extends Seeder
         Artisan::call('media-library:clean');
 
         $this->call([
-            StoryHeroSeeder::class,
+            ContentSeeder::class,
             RecommendationSeeder::class,
             ProjectSeeder::class,
+            IconLinksSeeder::class,
         ]);
 
     }

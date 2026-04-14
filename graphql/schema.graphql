@@ -13,11 +13,11 @@ type Query {
         name: String @where(operator: "like")
     ): [User!]! @paginate(defaultCount: 10, type: "PAGINATOR")
 
-    "Single story hero section query by key."
-    storyHero(key: String! @eq): StoryHero @find
+    "Single content section query by key."
+    content(key: String! @eq): Content @find
 
-		"All story heroes."
-		storyHeroes: [StoryHero!]! @all
+		"All contents."
+		contents: [Content!]! @all
 
     "All recommendations."
     recommendations(
@@ -90,12 +90,17 @@ type ImageLink {
     alt: String
 }
 
-type StoryHero {
+type ContentSection {
+    title: String
+    text: String!
+}
+
+type Content {
     id: ID!
     key: String!
     title: String!
     subtitle: String!
-    description: String!
+    content: [ContentSection!]!
     heroImages: [ImageLink!]! @method(name: "getHeroImagesMedia")
     socialImages: [ImageLink!]! @method(name: "getSocialImagesMedia")
     createdAt: DateTime! @rename(attribute: "created_at")

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-  import { computed, onMounted } from 'vue';
+  import { computed } from 'vue';
 
+  import { useContentStore } from '@/Store/Modules/Content';
   import { useRecommendationsStore } from '@/Store/Modules/Recommendations';
-  import { useStoryHeroStore } from '@/Store/Modules/StoryHero';
 
-  import { ChartedSkillsResponseDTO, TitledTextResponseDTO } from '@/Types/Responses';
+  import { ChartedSkillsResponseDTO } from '@/Types/Responses';
 
   import ChartedSkills from '@/Components/Partials/About/ChartedSkills.vue';
   import GraphedSkills from '@/Components/Partials/About/GraphedSkills.vue';
@@ -13,12 +13,16 @@
   import Whoami from '@/Components/Partials/About/Whoami.vue';
 
   const recommendationsStore = useRecommendationsStore();
-  const storyHeroStore = useStoryHeroStore();
+  const contentStore = useContentStore();
 
   recommendationsStore.fetchRecommendations();
-  storyHeroStore.fetchStoryHero('whoami');
+  contentStore.fetchContents();
 
-  const whoamiData = computed(() => storyHeroStore.getStoryHero);
+  const contents = computed(() => contentStore.contents);
+
+  const whoamiData = computed(() => contents.value.find((data) => data.key === 'whoami'));
+  const randomFactsData = computed(() => contents.value.find((data) => data.key === 'random_facts'));
+
   const recommendationsData = computed(() => recommendationsStore.recommendations);
 
   const skills: ChartedSkillsResponseDTO = {
@@ -47,22 +51,22 @@
     ],
   };
 
-  const randomFactsContent: TitledTextResponseDTO = {
-    title: 'Random Nuggets',
-    text: [
-      'Workout and driving is my Zen time!',
-      'I love animals',
-      'I love occasionally playing ARPGs',
-      "I'm a bit sensitive to aesthetics",
-      'I play guitar, and can sing (in tune)',
-      'Analog/High-Fi audio enthusiast',
-      'Always keen to adventures',
-      'A bit of a clean freak',
-      'Always wants improvement',
-      'Loves cooking',
-      'I drink a lot of coffee',
-    ],
-  };
+  // const randomFactsContent: TitledTextResponseDTO = {
+  //   title: 'Random Nuggets',
+  //   text: [
+  //     'Workout and driving is my Zen time!',
+  //     'I love animals',
+  //     'I love occasionally playing ARPGs',
+  //     "I'm a bit sensitive to aesthetics",
+  //     'I play guitar, and can sing (in tune)',
+  //     'Analog/High-Fi audio enthusiast',
+  //     'Always keen to adventures',
+  //     'A bit of a clean freak',
+  //     'Always wants improvement',
+  //     'Loves cooking',
+  //     'I drink a lot of coffee',
+  //   ],
+  // };
 </script>
 
 <template>
@@ -71,7 +75,7 @@
 
     <charted-skills :skills="skills" animate-once animate-only-scroll-down />
 
-    <random-facts :facts="randomFactsContent" animate-only-scroll-down />
+    <random-facts :data="randomFactsData" animate-only-scroll-down />
 
     <graphed-skills animate-once animate-only-scroll-down />
 
