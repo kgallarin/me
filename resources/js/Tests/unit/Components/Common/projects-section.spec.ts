@@ -14,14 +14,8 @@ const projects: ProjectResponseDTO[] = [
     order: 1,
     images: [
       {
-        id: '1',
         url: 'test.png',
         alt: 'test alt',
-        mimeType: 'image/png',
-        collectionName: 'project_images',
-        size: 100,
-        srcset: 'test.png 1x',
-        responsiveImages: [],
       },
     ],
     icon: [{ icon: ['fab', 'html5'], color: 'text-orange-400' }],

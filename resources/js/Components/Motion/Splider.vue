@@ -3,10 +3,13 @@
 
   import { Splide, SplideSlide } from '@splidejs/vue-splide';
 
+  import { BaseImageProps } from '@/Types/Props';
+  import { ImageDTO } from '@/Types/Responses';
+
   import BaseImage from '@/Components/Common/BaseImage.vue';
 
   interface Props {
-    items?: string[];
+    items?: string[] | ImageDTO[];
     autoplay?: boolean;
     interval?: number;
     showArrows?: boolean;
@@ -24,7 +27,7 @@
   const props = withDefaults(defineProps<Props>(), {
     items: () => [],
     autoplay: true,
-    interval: 10000,
+    interval: 15000,
     showArrows: false,
     showIndicators: true,
     aspectRatio: '',
@@ -41,6 +44,7 @@
     type: 'slide',
     perPage: props.itemsToShow,
     gap: props.gap,
+    drag: props.drag,
     arrows: props.showArrows,
     pagination: props.showIndicators,
     autoplay: props.autoplay,
@@ -60,10 +64,10 @@
       <template v-else>
         <splide-slide v-for="(item, index) in items" :key="index" class="h-full w-full">
           <base-image
-            :src="item"
+            :src="typeof item === 'string' ? item : item.url"
             :class="['h-full w-full object-cover object-left']"
             :rounded="imageClasses"
-            alt="Carousel Image"
+            :alt="typeof item === 'string' ? '' : item.alt"
             show-loader
           />
         </splide-slide>

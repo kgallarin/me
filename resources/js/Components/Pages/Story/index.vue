@@ -1,26 +1,22 @@
 <script setup lang="ts">
   import howMe from '@images/me/how-me.png';
 
-  import { StoryHero, TitledContentDTO, TitledParagraphsDTO } from '@/Types/Responses';
+  import { StoryHeroResponseDTO, TitledContentDTO, TitledParagraphsDTO } from '@/Types/Responses';
 
   import BaseContainer from '@/Components/Common/BaseContainer.vue';
   import BaseImage from '@/Components/Common/BaseImage.vue';
 
-  const whyFrontend: StoryHero = {
+  const whyFrontend: StoryHeroResponseDTO = {
     title: '/? why frontend',
-    paragraphs: [
-      `Since childhood, I've been fascinated by video games, and web UIs that transformed the way we interact
-              with technology. I have used social media such as Friendster that you can modify its UI that could impress
-              your friends. Apparently, it was all part of front-end development!`,
-      `When starting my education journey, I was fortunate to meet my mentor(s), who introduced me to the world
-              of frontend development that are mostly knowledgeable in both worlds (backend). It was like finding a
-              hidden treasure, and tried my best to cope up with the different kinds of challenging problems that I can
-              apply until today.`,
+    key: 'whoami',
+    description:
+      "Since childhood, I've been fascinated by video games, and web UIs that transformed the way we interact with technology. I have used social media such as Friendster that you can modify its UI that could impress your friends. Apparently, it was all part of front-end development! <br /><br />When starting my education journey, I was fortunate to meet my mentor(s), who introduced me to the world of frontend development that are mostly knowledgeable in both worlds (backend). It was like finding ahidden treasure, and tried my best to cope up with the different kinds of challenging problems that I can apply until today.",
+    heroImages: [
+      {
+        url: howMe,
+        alt: 'how frontend - kevin gallarin',
+      },
     ],
-    image: {
-      src: howMe,
-      alt: 'how frontend - kevin gallarin',
-    },
   };
 
   const gists: TitledParagraphsDTO = {
@@ -171,7 +167,7 @@
 
           <div class="font-proxima text-base font-light">
             <p
-              v-for="(paragraph, index) in whyFrontend.paragraphs"
+              v-for="(paragraph, index) in whyFrontend.description"
               :key="index"
               class="leading-loose"
               :class="{ 'mt-4': index > 0 }"
@@ -185,8 +181,8 @@
           <base-image
             class="object-cover shadow-lg"
             rounded="rounded-md"
-            :src="whyFrontend.image.src"
-            :alt="whyFrontend.image.alt"
+            :src="whyFrontend.heroImages[0].url"
+            :alt="whyFrontend.heroImages[0].alt"
           />
         </div>
       </div>

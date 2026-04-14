@@ -2,6 +2,7 @@
   import { computed, onMounted } from 'vue';
 
   import { useRecommendationsStore } from '@/Store/Modules/Recommendations';
+  import { useStoryHeroStore } from '@/Store/Modules/StoryHero';
 
   import { ChartedSkillsResponseDTO, TitledTextResponseDTO } from '@/Types/Responses';
 
@@ -12,10 +13,16 @@
   import Whoami from '@/Components/Partials/About/Whoami.vue';
 
   const recommendationsStore = useRecommendationsStore();
+  const storyHero = useStoryHeroStore();
 
   onMounted(() => {
+    storyHero.fetchStoryHeroes();
     recommendationsStore.fetchRecommendations();
   });
+
+  const storyHeroes = computed(() => storyHero.storyHeroes);
+
+  const whoamiData = computed(() => storyHeroes.value.find((data) => data.key === 'whoami'));
 
   const recommendationsData = computed(() => recommendationsStore.recommendations);
 
@@ -65,7 +72,7 @@
 
 <template>
   <div class="about-i">
-    <whoami animate-once animate-only-scroll-down />
+    <whoami :data="whoamiData" animate-once animate-only-scroll-down />
 
     <charted-skills :skills="skills" animate-once animate-only-scroll-down />
 

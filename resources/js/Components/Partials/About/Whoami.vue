@@ -1,9 +1,11 @@
 <script setup lang="ts">
-  import kgAbout from '@images/me/kg_about.png';
-
   import { computed } from 'vue';
 
+  import kgAbout from '@images/me/kg_about.png';
+
   import { useAppStore } from '@/Store/Modules/App';
+
+  import { StoryHeroResponseDTO } from '@/Types/Responses';
 
   import BaseContainer from '@/Components/Common/BaseContainer.vue';
   import BaseImage from '@/Components/Common/BaseImage.vue';
@@ -14,12 +16,11 @@
 
   const responsiveQueries = computed(() => appStore.queryBreakpoints(8, 4, 3));
 
-  const socialImages = import.meta.glob<{ default: string }>('/resources/images/social_images/*.{png,jpg,jpeg,webp}', {
-    eager: true,
-  });
-
-  const images = Object.values(socialImages).map((image) => (image as { default: string }).default);
-  defineProps({
+  const props = defineProps({
+    data: {
+      type: Object as () => StoryHeroResponseDTO,
+      default: () => ({}),
+    },
     animateOnce: {
       type: Boolean,
       default: false,
@@ -29,6 +30,9 @@
       default: false,
     },
   });
+
+  const heroImage = computed(() => props.data?.heroImages?.[0]);
+  const socialImages = computed(() => props.data?.socialImages);
 </script>
 
 <template>
@@ -43,21 +47,10 @@
             :animate-once="animateOnce"
             :animate-only-scroll-down="animateOnlyScrollDown"
           >
-            <!--						title -->
-            <h1 class="mb-4 text-6xl lowercase tracking-tight text-tertiary">$ whoami</h1>
-            <!--						subtitle-->
-            <p class="mb-4 font-acumin text-xl font-light">
-              I'm a frontend/software engineer from
-              <br />
-              ☀️ Manila, Philippines.
-            </p>
-
-            <!--						description-->
+            <h1 class="mb-4 text-6xl lowercase tracking-tight text-tertiary">{{ data?.title }}</h1>
+            <p v-html="data?.subtitle" class="mb-4 font-acumin text-xl font-light" />
             <p class="font-proxima text-base font-light leading-loose">
-              With over a decade of experience, I bridge the gap between design and development, delivering intuitive
-              client solutions with a natural instinct for the designer’s perspective. When I’m stepping away from the
-              syntax, I enjoy spending time working out, gaming occasionally, exploring places, listening to music,
-              cooking and learning new things.
+              {{ data?.description }}
             </p>
           </scroll-reveal>
         </div>
@@ -67,8 +60,8 @@
             <base-image
               class="object-cover shadow-lg"
               rounded="rounded-md"
-              :src="kgAbout"
-              alt="kevin gallarin, skill pie"
+              :src="heroImage?.url"
+              :alt="heroImage?.alt"
             />
           </scroll-reveal>
         </div>
@@ -78,11 +71,12 @@
       <div class="image-gallery py-10">
         <scroll-reveal direction="up" :animate-once="animateOnce" :animate-only-scroll-down="animateOnlyScrollDown">
           <splider
-            :items="images"
+            :items="socialImages"
             :autoplay="true"
             :interval="8000"
             :show-indicators="true"
             :show-arrows="false"
+            :drag="true"
             :items-to-show="responsiveQueries"
             fixed-height="100px"
           />

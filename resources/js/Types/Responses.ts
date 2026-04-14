@@ -1,4 +1,7 @@
-// No imports needed here for ProjectResponseDTO currently
+export interface ImageDTO {
+  url: string;
+  alt: string;
+}
 
 export interface ProjectResponseDTO {
   id: string;
@@ -15,10 +18,7 @@ export interface ProjectResponseDTO {
     showIndicators: boolean;
     showArrows: boolean;
   };
-  images: Array<{
-    url: string;
-    alt: string | null;
-  }>;
+  images: ImageDTO[];
 }
 
 export interface ChartedSkillsResponseDTO {
@@ -52,16 +52,17 @@ export interface RecommendationsResponseDTO {
   order: number;
   rating: number;
   linkedIn?: boolean;
-  avatar?: {
-    url: string;
-    alt: string;
-  };
+  avatar?: ImageDTO;
 }
 
-export interface StoryHero {
+export interface StoryHeroResponseDTO {
+  id?: string;
+  key: string;
   title: string;
-  paragraphs: string[];
-  image: imageDTO;
+  subtitle?: string;
+  description: string;
+  heroImages: ImageDTO[];
+  socialImages?: ImageDTO[];
 }
 
 export interface TitledParagraphsDTO {
@@ -82,9 +83,4 @@ export interface TitledTextResponseDTO {
 export interface TitledContentDTO {
   title: string;
   items: ContentItemDTO[];
-}
-
-export interface imageDTO {
-  src: string;
-  alt: string;
 }

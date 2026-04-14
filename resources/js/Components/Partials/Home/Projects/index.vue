@@ -30,7 +30,7 @@
       :interval="8000"
       rewind
       autoplay
-      :drag="false"
+      :drag="true"
       :breakpoints="{
         1024: { perPage: 2 },
         640: { perPage: 1 },
@@ -48,6 +48,7 @@
             :show-indicators="project.carouselSettings?.showIndicators"
             :show-arrows="project.carouselSettings?.showArrows"
             :items-to-show="1"
+            :drag="false"
             fixed-height="250px"
           />
           <div class="relative bg-white p-4 text-primary">
@@ -59,9 +60,9 @@
               v-if="project.link"
               :href="project.link"
               target="_blank"
-              class="inline-block pl-1 font-acumin text-xs text-blue-400 underline"
+              class="inline-block pl-1 font-acumin text-xs font-light text-blue-400 underline"
             >
-              click here
+              link
             </a>
           </div>
 

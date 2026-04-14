@@ -44,9 +44,9 @@
             <h1 class="mb-4 text-6xl lowercase tracking-tight text-tertiary">$ touch</h1>
             <p class="mb-4 font-acumin text-xl font-light">Let's get in touch! 👋🏼</p>
             <p class="font-proxima text-base font-light leading-relaxed">
-              Let's connect and explore how we can work together. Whether you have a question, need assistance with a
-              project, or just want to chat about design, development, or anything else, I'm here to help. Feel free to
-              reach out via the contact methods below, or send me an email and let's collaborate on your next project!
+              Let\'s connect and explore how we can work together. Whether you have a question, need assistance with a
+              project, or just want to chat about design, development, or anything else, I\'m here to help. Feel free to
+              reach out via the contact methods below, or send me an email and let\'s collaborate on your next project!
             </p>
 
             <div class="grid grid-cols-2 gap-4 pt-8">

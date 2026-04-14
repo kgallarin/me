@@ -2,20 +2,21 @@
 
 namespace App\Models;
 
-use App\Traits\FormatsMedia;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class StoryHero extends Model implements HasMedia
+class StoryHero extends Model
 {
     /** @use HasFactory<\Database\Factories\StoryHeroFactory> */
-    use HasFactory, HasUuids, InteractsWithMedia, FormatsMedia;
+    use HasFactory, HasUuids  ;
 
     protected $guarded = [];
+		protected $casts = [
+				'hero_image' => 'array',
+				'social_images' => 'array',
+			];
 
     public function registerMediaCollections(): void
     {
@@ -30,15 +31,11 @@ class StoryHero extends Model implements HasMedia
 
     public function getHeroImagesMedia(): array
     {
-        return $this->getMedia('hero_image')
-            ->map(fn (Media $media) => $this->formatMedia($media))
-            ->toArray();
+        return $this->hero_image ?? [];
     }
 
     public function getSocialImagesMedia(): array
     {
-        return $this->getMedia('social_images')
-            ->map(fn (Media $media) => $this->formatMedia($media))
-            ->toArray();
+				return $this->social_images ?? [];
     }
 }
