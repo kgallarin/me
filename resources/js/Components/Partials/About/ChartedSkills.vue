@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  import kgChart1 from '@images/me/kg_chart1.png';
-
   import { PropType } from 'vue';
+
+  import kgChart1 from '@images/me/kg_chart1.png';
 
   import { ChartedSkillsResponseDTO } from '@/Types/Responses';
 

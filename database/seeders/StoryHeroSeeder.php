@@ -77,7 +77,7 @@ class StoryHeroSeeder extends Seeder
 							'subtitle'    => 'Let\'s get in touch! 👋🏼',
 							'key' => 'contact',
 							'description' => "Let\'s connect and explore how we can work together. Whether you have a question, need assistance with a project, or just want to chat about design, development, or anything else, I\'m here to help. Feel free to reach out via the contact methods below, or send me an email and let\'s collaborate on your next project!",
-							'hero_image' => [],
+							'hero_image' => ['social_images/krabi.png'],
 							'social_images' => [],
 						]
         ];

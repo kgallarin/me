@@ -1,23 +1,19 @@
 <script setup lang="ts">
-  import howMe from '@images/me/how-me.png';
+  import { computed } from 'vue';
 
-  import { StoryHeroResponseDTO, TitledContentDTO, TitledParagraphsDTO } from '@/Types/Responses';
+  import { useStoryHeroStore } from '@/Store/Modules/StoryHero';
+
+  import { TitledContentDTO, TitledParagraphsDTO } from '@/Types/Responses';
 
   import BaseContainer from '@/Components/Common/BaseContainer.vue';
-  import BaseImage from '@/Components/Common/BaseImage.vue';
+  import WhyFrontend from '@/Components/Partials/Story/WhyFrontend.vue';
 
-  const whyFrontend: StoryHeroResponseDTO = {
-    title: '/? why frontend',
-    key: 'whoami',
-    description:
-      "Since childhood, I've been fascinated by video games, and web UIs that transformed the way we interact with technology. I have used social media such as Friendster that you can modify its UI that could impress your friends. Apparently, it was all part of front-end development! <br /><br />When starting my education journey, I was fortunate to meet my mentor(s), who introduced me to the world of frontend development that are mostly knowledgeable in both worlds (backend). It was like finding ahidden treasure, and tried my best to cope up with the different kinds of challenging problems that I can apply until today.",
-    heroImages: [
-      {
-        url: howMe,
-        alt: 'how frontend - kevin gallarin',
-      },
-    ],
-  };
+  const storyHeroStore = useStoryHeroStore();
+
+  storyHeroStore.fetchStoryHero('how_me');
+
+  const whyMeData = computed(() => storyHeroStore.getStoryHero);
+  const whyMeHeroImage = computed(() => whyMeData.value?.heroImages?.[0] || '');
 
   const gists: TitledParagraphsDTO = {
     title: 'Gists about me',
@@ -155,40 +151,7 @@
 </script>
 
 <template>
-  <section>
-    <base-container>
-      <div
-        class="flex w-full flex-col items-center justify-between border-b border-gray-200 py-6 md:flex-row-reverse md:py-8 lg:py-16"
-      >
-        <div class="w-full text-balance text-primary md:w-5/12">
-          <h1 class="mb-4 text-4xl capitalize tracking-tight text-tertiary md:text-4xl xl:text-6xl">
-            {{ whyFrontend.title }}
-          </h1>
-
-          <div class="font-proxima text-base font-light">
-            <p
-              v-for="(paragraph, index) in whyFrontend.description"
-              :key="index"
-              class="leading-loose"
-              :class="{ 'mt-4': index > 0 }"
-            >
-              {{ paragraph }}
-            </p>
-          </div>
-        </div>
-
-        <div class="w-full justify-self-end pt-8 md:w-1/2">
-          <base-image
-            class="object-cover shadow-lg"
-            rounded="rounded-md"
-            :src="whyFrontend.heroImages[0].url"
-            :alt="whyFrontend.heroImages[0].alt"
-          />
-        </div>
-      </div>
-    </base-container>
-  </section>
-
+  <why-frontend :title="whyMeData?.title" :description="whyMeData?.description" :image="whyMeHeroImage" />
   <section class="shadow-bottom bg-gray-lighter shadow-custom-mid-inset">
     <base-container class="py-12 md:py-16">
       <div class="mx-auto max-w-screen-md border-b border-gray-200 pb-12">

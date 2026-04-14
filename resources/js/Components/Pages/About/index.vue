@@ -13,17 +13,12 @@
   import Whoami from '@/Components/Partials/About/Whoami.vue';
 
   const recommendationsStore = useRecommendationsStore();
-  const storyHero = useStoryHeroStore();
+  const storyHeroStore = useStoryHeroStore();
 
-  onMounted(() => {
-    storyHero.fetchStoryHeroes();
-    recommendationsStore.fetchRecommendations();
-  });
+  recommendationsStore.fetchRecommendations();
+  storyHeroStore.fetchStoryHero('whoami');
 
-  const storyHeroes = computed(() => storyHero.storyHeroes);
-
-  const whoamiData = computed(() => storyHeroes.value.find((data) => data.key === 'whoami'));
-
+  const whoamiData = computed(() => storyHeroStore.getStoryHero);
   const recommendationsData = computed(() => recommendationsStore.recommendations);
 
   const skills: ChartedSkillsResponseDTO = {

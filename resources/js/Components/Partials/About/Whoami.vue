@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { computed } from 'vue';
+  import { PropType, computed } from 'vue';
 
   import kgAbout from '@images/me/kg_about.png';
 
@@ -18,7 +18,7 @@
 
   const props = defineProps({
     data: {
-      type: Object as () => StoryHeroResponseDTO,
+      type: Object as PropType<StoryHeroResponseDTO>,
       default: () => ({}),
     },
     animateOnce: {
@@ -58,7 +58,7 @@
         <div class="w-full justify-self-end pt-8 md:w-1/2">
           <scroll-reveal direction="left" :animate-once="animateOnce" :animate-only-scroll-down="animateOnlyScrollDown">
             <base-image
-              class="object-cover shadow-lg"
+              class="min-h-[300px] object-cover shadow-lg"
               rounded="rounded-md"
               :src="heroImage?.url"
               :alt="heroImage?.alt"

@@ -14,6 +14,7 @@ class StoryHeroTest extends TestCase
     {
         StoryHero::create([
             'id' => \Illuminate\Support\Str::uuid(),
+            'key' => 'test-hero',
             'title' => 'Test Title',
             'subtitle' => 'Test Subtitle',
             'description' => 'Test Description',
@@ -27,7 +28,7 @@ class StoryHeroTest extends TestCase
 
         $query = '
         {
-            storyHero {
+            storyHero(key: "test-hero") {
                 id
                 title
                 subtitle
@@ -68,6 +69,7 @@ class StoryHeroTest extends TestCase
     {
         StoryHero::create([
             'id' => \Illuminate\Support\Str::uuid(),
+            'key' => 'test-hero-empty',
             'title' => 'Test Title',
             'subtitle' => 'Test Subtitle',
             'description' => 'Test Description',
@@ -77,7 +79,7 @@ class StoryHeroTest extends TestCase
 
         $query = '
         {
-            storyHero {
+            storyHero(key: "test-hero-empty") {
                 heroImages {
                     url
                     alt

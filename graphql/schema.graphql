@@ -14,7 +14,7 @@ type Query {
     ): [User!]! @paginate(defaultCount: 10, type: "PAGINATOR")
 
     "Single story hero section query by key."
-    storyHero(key: String!): StoryHero @first
+    storyHero(key: String! @eq): StoryHero @find
 
 		"All story heroes."
 		storyHeroes: [StoryHero!]! @all

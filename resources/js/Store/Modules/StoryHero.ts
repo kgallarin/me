@@ -2,6 +2,7 @@ import { getStoryHeroByKey, getStoryHeroes } from '@/Api/StoryHero';
 import { defineStore } from 'pinia';
 
 import { StoryHeroModuleContext, StoryHeroState } from '@/Types/Modules';
+import { StoryHeroResponseDTO } from '@/Types/Responses';
 
 const state = (): StoryHeroState => ({
   storyHero: {
@@ -17,7 +18,8 @@ const state = (): StoryHeroState => ({
 
 const mutations = {};
 const getters = {
-  getStoryHeroes: (state: StoryHeroState) => state.storyHeroes,
+  getStoryHeroes: (state: StoryHeroState): StoryHeroResponseDTO[] => state.storyHeroes,
+  getStoryHero: (state: StoryHeroState): StoryHeroResponseDTO => state.storyHero,
 };
 const actions = {
   async fetchStoryHeroes(this: StoryHeroModuleContext): Promise<void> {

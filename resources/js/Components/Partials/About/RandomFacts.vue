@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  import ojophile2 from '@images/me/ojophile2.png';
-
   import { PropType } from 'vue';
+
+  import ojophile2 from '@images/me/ojophile2.png';
 
   import { TitledTextResponseDTO } from '@/Types/Responses';
 
