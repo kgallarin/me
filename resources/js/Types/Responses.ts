@@ -16,17 +16,8 @@ export interface ProjectResponseDTO {
     showArrows: boolean;
   };
   images: Array<{
-    id: string;
     url: string;
     alt: string | null;
-    mimeType: string;
-    collectionName: string;
-    size: number;
-    srcset: string;
-    responsiveImages: Array<{
-      url: string;
-      width: number;
-    }>;
   }>;
 }
 

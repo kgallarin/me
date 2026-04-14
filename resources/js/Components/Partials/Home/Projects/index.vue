@@ -30,6 +30,7 @@
       :interval="8000"
       rewind
       autoplay
+      :drag="false"
       :breakpoints="{
         1024: { perPage: 2 },
         640: { perPage: 1 },

@@ -24,17 +24,8 @@ export const GET_PROJECTS = gql`
           showArrows
         }
         images {
-          id
           url
           alt
-          mimeType
-          collectionName
-          size
-          srcset
-          responsiveImages {
-            url
-            width
-          }
         }
       }
       paginatorInfo {

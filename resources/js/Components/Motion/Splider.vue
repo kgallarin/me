@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  import { Splide, SplideSlide } from '@splidejs/vue-splide';
-
   import { computed } from 'vue';
+
+  import { Splide, SplideSlide } from '@splidejs/vue-splide';
 
   import BaseImage from '@/Components/Common/BaseImage.vue';
 
@@ -17,6 +17,7 @@
     imageClasses?: string;
     fixedHeight?: string | null;
     rewind?: boolean;
+    drag?: boolean;
     breakpoints?: Record<string, unknown>;
   }
 
@@ -32,6 +33,7 @@
     gap: 8,
     fixedHeight: null,
     rewind: true,
+    drag: false,
     breakpoints: () => ({}),
   });
 

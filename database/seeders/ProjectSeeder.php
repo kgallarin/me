@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Project;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectSeeder extends Seeder
 {
@@ -132,19 +133,18 @@ class ProjectSeeder extends Seeder
         ];
 
         foreach ($projects as $data) {
-            $imagePaths = $data['images'];
+            $imagePaths = $data['images'] ?? [];
             unset($data['images']);
 
-            $project = Project::create($data);
+            $data['images'] = collect($imagePaths)
+                ->map(fn (string $path) => [
+                    'url' => Storage::disk('s3')->url($path),
+                    'alt' => pathinfo($path, PATHINFO_FILENAME),
+                ])
+                ->values()
+                ->toArray();
 
-            foreach ($imagePaths as $path) {
-                $filename = pathinfo($path, PATHINFO_FILENAME);
-                $project
-                    ->addMediaFromDisk($path, 's3')
-                    ->preservingOriginal()
-                    ->withCustomProperties(['alt' => $filename])
-                    ->toMediaCollection('project_images');
-            }
+            Project::create($data);
         }
     }
 }

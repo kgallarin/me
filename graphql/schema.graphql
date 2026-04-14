@@ -82,6 +82,11 @@ type Media {
     responsiveImages: [ResponsiveImage!]!
 }
 
+type ImageLink {
+    url: String!
+    alt: String
+}
+
 type StoryHero {
     id: ID!
     title: String!
@@ -101,7 +106,7 @@ type Recommendation {
 		rating: Int!
 		order: Int!
     linkedIn: Boolean
-    avatar: Media @method(name: "getAvatarMedia")
+    avatar: ImageLink @method(name: "getAvatarMedia")
     createdAt: DateTime! @rename(attribute: "created_at")
     updatedAt: DateTime! @rename(attribute: "updated_at")
 }
@@ -158,7 +163,7 @@ type Project {
     order: Int!
     icon: [ProjectIcon!]!
     carouselSettings: CarouselSettings! @rename(attribute: "carousel_settings")
-    images: [Media!]! @method(name: "getImageMedia")
+    images: [ImageLink!]! @method(name: "getImageMedia")
     createdAt: DateTime! @rename(attribute: "created_at")
     updatedAt: DateTime! @rename(attribute: "updated_at")
 }
