@@ -180,6 +180,20 @@ type Project {
     updatedAt: DateTime! @rename(attribute: "updated_at")
 }
 
+type Mutation {
+    "Send a contact form email."
+    sendContactEmail(
+        name: String!
+        email: String!
+        message: String!
+    ): ContactEmailResponse!
+}
+
+type ContactEmailResponse {
+    success: Boolean!
+    message: String!
+}
+
 type ContactLinks {
     id: ID!
     name: String!
