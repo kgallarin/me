@@ -6,6 +6,7 @@
   import { RecommendationsResponseDTO } from '@/Types/Responses';
 
   import BaseImage from '@/Components/Common/BaseImage.vue';
+  import SafeHtml from '@/Components/Common/SafeHtml.vue';
 
   defineProps<{
     recommendation: RecommendationsResponseDTO;
@@ -55,7 +56,9 @@
       </div>
     </div>
 
-    <p class="text-content pb-4 pt-10 leading-loose" v-html="recommendation.text" />
+    <p class="text-content pb-4 pt-10 leading-loose">
+      <safe-html :html="recommendation.text" />
+    </p>
 
     <div
       v-if="!isExpanded"

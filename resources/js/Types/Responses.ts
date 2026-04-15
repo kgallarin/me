@@ -1,4 +1,7 @@
-// No imports needed here for ProjectResponseDTO currently
+export interface ImageDTO {
+  url: string;
+  alt: string;
+}
 
 export interface ProjectResponseDTO {
   id: string;
@@ -15,26 +18,7 @@ export interface ProjectResponseDTO {
     showIndicators: boolean;
     showArrows: boolean;
   };
-  images: Array<{
-    id: string;
-    url: string;
-    alt: string | null;
-    mimeType: string;
-    collectionName: string;
-    size: number;
-    srcset: string;
-    responsiveImages: Array<{
-      url: string;
-      width: number;
-    }>;
-  }>;
-}
-
-export interface ChartedSkillsResponseDTO {
-  leftTitle: string;
-  rightTitle: string;
-  leftContent: string[];
-  rightContent: string[];
+  images: ImageDTO[];
 }
 
 export interface PaginatorInfo {
@@ -61,39 +45,27 @@ export interface RecommendationsResponseDTO {
   order: number;
   rating: number;
   linkedIn?: boolean;
-  avatar?: {
-    url: string;
-    alt: string;
-  };
+  avatar?: ImageDTO;
 }
 
-export interface StoryHero {
-  title: string;
-  paragraphs: string[];
-  image: imageDTO;
+export interface ContentSection {
+  title?: string;
+  text: string;
 }
 
-export interface TitledParagraphsDTO {
+export interface ContentResponseDTO {
+  id?: string;
+  key: string;
   title: string;
-  paragraphs: string[];
+  subtitle?: string;
+  content: ContentSection[];
+  heroImages: ImageDTO[];
+  socialImages?: ImageDTO[];
 }
-
-export interface ContentItemDTO {
-  title: string;
-  description: string;
-  href?: string;
-}
-
-export interface TitledTextResponseDTO {
-  title: string;
-  text: string[];
-}
-export interface TitledContentDTO {
-  title: string;
-  items: ContentItemDTO[];
-}
-
-export interface imageDTO {
-  src: string;
-  alt: string;
+export interface IconLinkResponseDTO {
+  id: string;
+  name: string;
+  url: string;
+  icon: string[];
+  classColor: string;
 }

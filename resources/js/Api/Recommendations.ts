@@ -17,6 +17,7 @@ export const GET_RECOMMENDATIONS = gql`
         linkedIn
         avatar {
           url
+          alt
         }
       }
       paginatorInfo {

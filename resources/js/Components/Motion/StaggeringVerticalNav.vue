@@ -1,8 +1,8 @@
 <script setup lang="ts">
-  import { useResizeObserver } from '@vueuse/core';
-  import { type MotionProps, motion, useDomRef } from 'motion-v';
-
   import { PropType, computed, ref } from 'vue';
+
+  import { useResizeObserver } from '@vueuse/core';
+  import { type MotionProps, motion, stagger, useDomRef } from 'motion-v';
 
   import { NavLink } from '@/Types/Props';
 
@@ -33,10 +33,10 @@
 
   const navVariants: MotionProps['variants'] = {
     open: {
-      transition: { staggerChildren: 0.04, delayChildren: 0.2 },
+      transition: { delayChildren: stagger(0.04, { startDelay: 0 }) },
     },
     closed: {
-      transition: { staggerChildren: 0.05, staggerDirection: -1 },
+      transition: { delayChildren: stagger(0.5, { from: 'last' }) },
     },
   };
   const itemVariants = {
@@ -62,8 +62,8 @@
         clipPath: `circle(${height * 2 + 100}px at 5px 5px)`,
         transition: {
           type: 'spring',
-          stiffness: 6,
-          damping: 4,
+          stiffness: 20,
+          damping: 20,
           restDelta: 2,
           onComplete: () => emit('sidebar-animation-complete'),
         },

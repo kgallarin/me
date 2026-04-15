@@ -1,17 +1,18 @@
 <script setup lang="ts">
+  import { PropType, computed } from 'vue';
+
   import kgChart1 from '@images/me/kg_chart1.png';
 
-  import { PropType } from 'vue';
-
-  import { ChartedSkillsResponseDTO } from '@/Types/Responses';
+  import { ContentResponseDTO } from '@/Types/Responses';
 
   import BaseContainer from '@/Components/Common/BaseContainer.vue';
   import BaseImage from '@/Components/Common/BaseImage.vue';
+  import SafeHtml from '@/Components/Common/SafeHtml.vue';
   import ScrollReveal from '@/Components/Motion/ScrollReveal.vue';
 
-  defineProps({
-    skills: {
-      type: Object as PropType<ChartedSkillsResponseDTO>,
+  const props = defineProps({
+    content: {
+      type: Object as PropType<ContentResponseDTO>,
       required: true,
     },
     animateOnce: {
@@ -23,6 +24,9 @@
       default: false,
     },
   });
+
+  const perceptiveSide = computed(() => props.content.content[0]);
+  const developerSide = computed(() => props.content.content[1]);
 </script>
 
 <template>
@@ -35,12 +39,15 @@
             :animate-once="animateOnce"
             :animate-only-scroll-down="animateOnlyScrollDown"
           >
-            <h3 class="mb-4 font-proxima text-3xl font-light">{{ skills.leftTitle }}</h3>
-            <ul class="font-proxima font-light leading-8 text-tertiary">
-              <li v-for="(skill, index) in skills.leftContent" :key="index">
-                {{ skill }}
-              </li>
-            </ul>
+            <h3 class="mb-5 font-proxima text-3xl font-light">{{ perceptiveSide?.title }}</h3>
+            <p class="font-proxima font-light leading-snug text-tertiary">
+              <safe-html :html="perceptiveSide?.text" />
+            </p>
+            <!--            <ul class="font-proxima font-light leading-8 text-tertiary">-->
+            <!--              <li v-for="(skill, index) in skills.leftContent" :key="index">-->
+            <!--                {{ skill }}-->
+            <!--              </li>-->
+            <!--            </ul>-->
           </scroll-reveal>
         </div>
 
@@ -60,12 +67,11 @@
 
         <div class="w-full text-right md:w-auto">
           <scroll-reveal direction="left" :animate-once="animateOnce" :animate-only-scroll-down="animateOnlyScrollDown">
-            <h3 class="mb-4 font-proxima text-3xl font-light">{{ skills.rightTitle }}</h3>
-            <ul class="font-proxima font-light leading-8 text-tertiary">
-              <li v-for="(skill, index) in skills.rightContent" :key="index">
-                {{ skill }}
-              </li>
-            </ul>
+            <h3 class="mb-5 font-proxima text-3xl font-light">{{ developerSide?.title }}</h3>
+
+            <p class="text-tertiar font-proxima font-light leading-snug">
+              <safe-html :html="developerSide?.text" />
+            </p>
           </scroll-reveal>
         </div>
       </div>

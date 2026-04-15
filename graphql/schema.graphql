@@ -13,8 +13,11 @@ type Query {
         name: String @where(operator: "like")
     ): [User!]! @paginate(defaultCount: 10, type: "PAGINATOR")
 
-    "Single story hero section."
-    storyHero: StoryHero @first
+    "Single content section query by key."
+    content(key: String! @eq): Content @find
+
+		"All contents."
+		contents: [Content!]! @all
 
     "All recommendations."
     recommendations(
@@ -54,6 +57,9 @@ type Query {
 
     "All contact links."
     contactLinks: [ContactLinks!]! @all
+
+    "All icon links."
+    iconLinks: [IconLink!]! @all
 }
 
 "Account of a person who uses this application."
@@ -82,13 +88,24 @@ type Media {
     responsiveImages: [ResponsiveImage!]!
 }
 
-type StoryHero {
+type ImageLink {
+    url: String!
+    alt: String
+}
+
+type ContentSection {
+    title: String
+    text: String!
+}
+
+type Content {
     id: ID!
+    key: String!
     title: String!
     subtitle: String!
-    description: String!
-    heroImages: [Media!]! @method(name: "getHeroImagesMedia")
-    socialImages: [Media!]! @method(name: "getSocialImagesMedia")
+    content: [ContentSection!]!
+    heroImages: [ImageLink!]! @method(name: "getHeroImagesMedia")
+    socialImages: [ImageLink!]! @method(name: "getSocialImagesMedia")
     createdAt: DateTime! @rename(attribute: "created_at")
     updatedAt: DateTime! @rename(attribute: "updated_at")
 }
@@ -101,7 +118,7 @@ type Recommendation {
 		rating: Int!
 		order: Int!
     linkedIn: Boolean
-    avatar: Media @method(name: "getAvatarMedia")
+    avatar: ImageLink
     createdAt: DateTime! @rename(attribute: "created_at")
     updatedAt: DateTime! @rename(attribute: "updated_at")
 }
@@ -158,12 +175,22 @@ type Project {
     order: Int!
     icon: [ProjectIcon!]!
     carouselSettings: CarouselSettings! @rename(attribute: "carousel_settings")
-    images: [Media!]! @method(name: "getImageMedia")
+    images: [ImageLink!]!
     createdAt: DateTime! @rename(attribute: "created_at")
     updatedAt: DateTime! @rename(attribute: "updated_at")
 }
 
 type ContactLinks {
+    id: ID!
+    name: String!
+    url: String!
+    icon: [String!]!
+    classColor: String! @rename(attribute: "class_color")
+    createdAt: DateTime! @rename(attribute: "created_at")
+    updatedAt: DateTime! @rename(attribute: "updated_at")
+}
+
+type IconLink {
     id: ID!
     name: String!
     url: String!

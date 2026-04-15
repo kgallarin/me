@@ -1,12 +1,13 @@
 <script setup lang="ts">
-  import kgAbout from '@images/me/kg_about.png';
-
-  import { computed } from 'vue';
+  import { PropType, computed } from 'vue';
 
   import { useAppStore } from '@/Store/Modules/App';
 
+  import { ContentResponseDTO } from '@/Types/Responses';
+
   import BaseContainer from '@/Components/Common/BaseContainer.vue';
   import BaseImage from '@/Components/Common/BaseImage.vue';
+  import SafeHtml from '@/Components/Common/SafeHtml.vue';
   import ScrollReveal from '@/Components/Motion/ScrollReveal.vue';
   import Splider from '@/Components/Motion/Splider.vue';
 
@@ -14,12 +15,11 @@
 
   const responsiveQueries = computed(() => appStore.queryBreakpoints(8, 4, 3));
 
-  const socialImages = import.meta.glob<{ default: string }>('/resources/images/social_images/*.{png,jpg,jpeg,webp}', {
-    eager: true,
-  });
-
-  const images = Object.values(socialImages).map((image) => (image as { default: string }).default);
-  defineProps({
+  const props = defineProps({
+    content: {
+      type: Object as PropType<ContentResponseDTO>,
+      default: () => ({}),
+    },
     animateOnce: {
       type: Boolean,
       default: false,
@@ -29,6 +29,9 @@
       default: false,
     },
   });
+
+  const heroImage = computed(() => props.content?.heroImages?.[0]);
+  const socialImages = computed(() => props.content?.socialImages);
 </script>
 
 <template>
@@ -43,32 +46,28 @@
             :animate-once="animateOnce"
             :animate-only-scroll-down="animateOnlyScrollDown"
           >
-            <!--						title -->
-            <h1 class="mb-4 text-6xl lowercase tracking-tight text-tertiary">$ whoami</h1>
-            <!--						subtitle-->
+            <h1 class="mb-4 text-6xl lowercase tracking-tight text-tertiary">
+              {{ content?.content?.[0]?.title || content?.title }}
+            </h1>
             <p class="mb-4 font-acumin text-xl font-light">
-              I'm a frontend/software engineer from
-              <br />
-              ☀️ Manila, Philippines.
+              <safe-html :html="content?.subtitle" />
             </p>
-
-            <!--						description-->
-            <p class="font-proxima text-base font-light leading-loose">
-              With over a decade of experience, I bridge the gap between design and development, delivering intuitive
-              client solutions with a natural instinct for the designer’s perspective. When I’m stepping away from the
-              syntax, I enjoy spending time working out, gaming occasionally, exploring places, listening to music,
-              cooking and learning new things.
-            </p>
+            <div v-for="(section, index) in content?.content" :key="index">
+              <h2 v-if="section.title" class="mb-2 text-2xl font-semibold">{{ section.title }}</h2>
+              <p class="font-proxima text-base font-light leading-loose">
+                {{ section.text }}
+              </p>
+            </div>
           </scroll-reveal>
         </div>
 
         <div class="w-full justify-self-end pt-8 md:w-1/2">
           <scroll-reveal direction="left" :animate-once="animateOnce" :animate-only-scroll-down="animateOnlyScrollDown">
             <base-image
-              class="object-cover shadow-lg"
+              class="min-h-[300px] object-cover shadow-lg"
               rounded="rounded-md"
-              :src="kgAbout"
-              alt="kevin gallarin, skill pie"
+              :src="heroImage?.url"
+              :alt="heroImage?.alt"
             />
           </scroll-reveal>
         </div>
@@ -78,11 +77,12 @@
       <div class="image-gallery py-10">
         <scroll-reveal direction="up" :animate-once="animateOnce" :animate-only-scroll-down="animateOnlyScrollDown">
           <splider
-            :items="images"
+            :items="socialImages"
             :autoplay="true"
             :interval="8000"
             :show-indicators="true"
             :show-arrows="false"
+            :drag="true"
             :items-to-show="responsiveQueries"
             fixed-height="100px"
           />

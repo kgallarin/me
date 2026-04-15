@@ -23,3 +23,10 @@ export interface HeroImageTextShardProps {
   isAnyHoveredRight?: boolean;
   darken?: boolean;
 }
+
+export interface BaseImageProps {
+  src: string;
+  alt: string;
+  showLoader?: boolean;
+  rounded?: string;
+}

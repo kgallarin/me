@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Recommendation;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
 
 class RecommendationSeeder extends Seeder
 {
@@ -77,15 +78,13 @@ class RecommendationSeeder extends Seeder
 
         foreach ($recommendations as $data) {
             $avatarPath = $data['avatar'];
-            unset($data['avatar']);
 
-            $recommendation = Recommendation::create($data);
+            $data['avatar'] = [
+                'url' => Storage::disk('s3')->url($avatarPath),
+                'alt' => "{$data['author']} avatar",
+            ];
 
-            $recommendation
-                ->addMediaFromDisk($avatarPath, 's3')
-                ->preservingOriginal()
-                ->withCustomProperties(['alt' => "{$data['author']} avatar"])
-                ->toMediaCollection('avatar');
+            Recommendation::create($data);
         }
     }
 }

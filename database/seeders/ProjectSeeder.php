@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Project;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectSeeder extends Seeder
 {
@@ -12,7 +13,7 @@ class ProjectSeeder extends Seeder
         $projects = [
             [
                 'title'       => 'kgallarin.com',
-                'description' => '(this) My personal website that I built from scratch to showcase my skills, technologies and myself. I plan to add more features and content as a diary since I do not much exposing myself to social media. Feel free to click here to view how it was coded so I can share my knowledge and experience by this simple website. (yo, it has tests!)',
+                'description' => 'My personal website that I built from scratch to showcase my skills, technologies and myself. I plan to add more features and content as a diary since I do not much exposing myself to social media. Feel free to click here to view how it was coded so I can share my knowledge and experience by this simple website. Built with GraphQL API and yo, it has tests!',
                 'images'      => ['projects/kgdev.png', 'projects/kgdev2.png'],
                 'order'       => 1,
 								 'icon' => [
@@ -132,19 +133,18 @@ class ProjectSeeder extends Seeder
         ];
 
         foreach ($projects as $data) {
-            $imagePaths = $data['images'];
+            $imagePaths = $data['images'] ?? [];
             unset($data['images']);
 
-            $project = Project::create($data);
+            $data['images'] = collect($imagePaths)
+                ->map(fn (string $path) => [
+                    'url' => Storage::disk('s3')->url($path),
+                    'alt' => pathinfo($path, PATHINFO_FILENAME),
+                ])
+                ->values()
+                ->toArray();
 
-            foreach ($imagePaths as $path) {
-                $filename = pathinfo($path, PATHINFO_FILENAME);
-                $project
-                    ->addMediaFromDisk($path, 's3')
-                    ->preservingOriginal()
-                    ->withCustomProperties(['alt' => $filename])
-                    ->toMediaCollection('project_images');
-            }
+            Project::create($data);
         }
     }
 }

@@ -30,6 +30,7 @@
       :interval="8000"
       rewind
       autoplay
+      :drag="true"
       :breakpoints="{
         1024: { perPage: 2 },
         640: { perPage: 1 },
@@ -42,12 +43,12 @@
         >
           <splider
             :items="project.images.map((img) => img.url)"
-            aspect-ratio="max-h-[240px] min-h-[240px]"
+            aspect-ratio="max-h-[215px] min-h-[215px]"
             :autoplay="project.carouselSettings?.autoplay"
             :show-indicators="project.carouselSettings?.showIndicators"
             :show-arrows="project.carouselSettings?.showArrows"
             :items-to-show="1"
-            fixed-height="250px"
+            :drag="false"
           />
           <div class="relative bg-white p-4 text-primary">
             <h2 class="mb-2 font-proxima text-lg font-medium text-primary">{{ project.title }}</h2>
@@ -58,9 +59,9 @@
               v-if="project.link"
               :href="project.link"
               target="_blank"
-              class="inline-block pl-1 font-acumin text-xs text-blue-400 underline"
+              class="inline-block pl-1 font-acumin text-xs font-light text-blue-400 underline"
             >
-              click here
+              link
             </a>
           </div>
 

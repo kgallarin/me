@@ -12,9 +12,27 @@ vi.mock('@/Components/Motion/Splider.vue', () => ({
   },
 }));
 
+const mockData = {
+  title: '$ whoami',
+  subtitle: "I'm a frontend/software engineer from<br />☀️ Manila, Philippines.",
+  key: 'whoami',
+  content: [
+    {
+      title: '',
+      text: 'With over a decade of experience, I bridge the gap between design and development, delivering intuitive client solutions with a natural instinct for the designer’s perspective. When I’m stepping away from the syntax, I enjoy spending time working out, gaming occasionally, exploring places, listening to music, cooking and learning new things.',
+    },
+  ],
+  heroImages: [{ url: 'test.png', alt: 'test' }],
+  socialImages: [],
+};
+
 const renderWhoami = async (isDesktop: boolean = true): Promise<RenderResult> => {
   initializeViewportToDesktop(isDesktop);
-  return render(Whoami);
+  return render(Whoami, {
+    props: {
+      content: mockData,
+    },
+  });
 };
 
 describe('Whoami', (): void => {
@@ -25,7 +43,8 @@ describe('Whoami', (): void => {
     expect(container).toBeInTheDocument();
     expect(getByText('$ whoami')).toBeInTheDocument();
 
-    expect(getByText(/I'm a frontend\/software engineer from ☀️ Manila, Philippines/)).toBeInTheDocument();
+    expect(getByText(/I'm a frontend\/software engineer from/)).toBeInTheDocument();
+    expect(getByText(/Manila, Philippines/)).toBeInTheDocument();
 
     expect(
       getByText(
