@@ -3,7 +3,6 @@
 
   import { Splide, SplideSlide } from '@splidejs/vue-splide';
 
-  import { BaseImageProps } from '@/Types/Props';
   import { ImageDTO } from '@/Types/Responses';
 
   import BaseImage from '@/Components/Common/BaseImage.vue';
@@ -65,7 +64,7 @@
         <splide-slide v-for="(item, index) in items" :key="index" class="h-full w-full">
           <base-image
             :src="typeof item === 'string' ? item : item.url"
-            :class="['h-full w-full object-cover object-left']"
+            :class="['object-fit h-full w-full']"
             :rounded="imageClasses"
             :alt="typeof item === 'string' ? '' : item.alt"
             show-loader

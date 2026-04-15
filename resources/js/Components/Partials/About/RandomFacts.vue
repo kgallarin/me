@@ -9,7 +9,7 @@
   import ScrollReveal from '@/Components/Motion/ScrollReveal.vue';
 
   const props = defineProps({
-    data: {
+    content: {
       type: Object as PropType<ContentResponseDTO>,
       required: true,
       default: () => ({}),
@@ -24,7 +24,7 @@
     },
   });
 
-  const heroImage = computed(() => props.data?.heroImages?.[0]);
+  const heroImage = computed(() => props.content?.heroImages?.[0]);
 </script>
 
 <template>
@@ -37,9 +37,9 @@
       </div>
       <div class="pt-8 text-center lg:text-left">
         <scroll-reveal direction="left" :animate-once="animateOnce" :animate-only-scroll-down="animateOnlyScrollDown">
-          <h3 class="mb-6 font-proxima text-3xl font-light">{{ data.content?.[0]?.title || data.title }}</h3>
+          <h3 class="mb-6 font-proxima text-3xl font-light">{{ content.content?.[0]?.title || content.title }}</h3>
 
-          <div v-for="(section, index) in data.content" :key="index">
+          <div v-for="(section, index) in content.content" :key="index">
             <h4 v-if="section.title" class="mb-2 text-xl font-semibold">{{ section.title }}</h4>
             <p class="font-proxima font-light leading-snug text-tertiary">
               <safe-html :html="section.text" />

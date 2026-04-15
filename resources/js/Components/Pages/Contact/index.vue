@@ -1,7 +1,9 @@
 <script setup lang="ts">
   import { computed } from 'vue';
 
+  import { useAppStore } from '@/Store/Modules/App';
   import { useContentStore } from '@/Store/Modules/Content';
+  import { useIconLinksStore } from '@/Store/Modules/IconLinks';
 
   import { Link } from '@/Types/Props';
 
@@ -22,6 +24,12 @@
       class: 'text-[#006AFF]',
     },
     {
+      name: 'github',
+      href: 'https://github.com/kmgallarin',
+      icon: ['fab', 'github'],
+      class: 'text-black',
+    },
+    {
       name: 'instagram',
       href: 'https://www.instagram.com/kgallarin/',
       icon: ['fab', 'instagram'],
@@ -36,6 +44,9 @@
   ];
 
   const contentStore = useContentStore();
+  const iconLinksStore = useIconLinksStore();
+
+  const iconLinks = computed(() => iconLinksStore.getIconLinks);
 
   contentStore.fetchContent('contact');
 
@@ -43,7 +54,7 @@
 </script>
 
 <template>
-  <contact-hero :links="links" :contact-hero-data="contactHeroData" />
+  <contact-hero :links="iconLinks" :contact-hero-data="contactHeroData" />
   <div class="flex min-h-[calc(100vh-150px)] flex-col">
     <section class="shadow-bottom flex-1 bg-gray-lighter shadow-custom-mid-inset">
       <!--	form starts-->

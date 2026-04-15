@@ -43,13 +43,12 @@
         >
           <splider
             :items="project.images.map((img) => img.url)"
-            aspect-ratio="max-h-[240px] min-h-[240px]"
+            aspect-ratio="max-h-[215px] min-h-[215px]"
             :autoplay="project.carouselSettings?.autoplay"
             :show-indicators="project.carouselSettings?.showIndicators"
             :show-arrows="project.carouselSettings?.showArrows"
             :items-to-show="1"
             :drag="false"
-            fixed-height="250px"
           />
           <div class="relative bg-white p-4 text-primary">
             <h2 class="mb-2 font-proxima text-lg font-medium text-primary">{{ project.title }}</h2>

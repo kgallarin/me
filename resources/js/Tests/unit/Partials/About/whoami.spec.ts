@@ -30,7 +30,7 @@ const renderWhoami = async (isDesktop: boolean = true): Promise<RenderResult> =>
   initializeViewportToDesktop(isDesktop);
   return render(Whoami, {
     props: {
-      data: mockData,
+      content: mockData,
     },
   });
 };

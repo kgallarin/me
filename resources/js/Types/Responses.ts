@@ -21,13 +21,6 @@ export interface ProjectResponseDTO {
   images: ImageDTO[];
 }
 
-export interface ChartedSkillsResponseDTO {
-  leftTitle: string;
-  rightTitle: string;
-  leftContent: string[];
-  rightContent: string[];
-}
-
 export interface PaginatorInfo {
   count: number;
   currentPage: number;
@@ -69,23 +62,10 @@ export interface ContentResponseDTO {
   heroImages: ImageDTO[];
   socialImages?: ImageDTO[];
 }
-
-export interface TitledParagraphsDTO {
-  title: string;
-  paragraphs: string[];
-}
-
-export interface ContentItemDTO {
-  title: string;
-  description: string;
-  href?: string;
-}
-
-export interface TitledTextResponseDTO {
-  title: string;
-  text: string[];
-}
-export interface TitledContentDTO {
-  title: string;
-  items: ContentItemDTO[];
+export interface IconLinkResponseDTO {
+  id: string;
+  name: string;
+  url: string;
+  icon: string[];
+  classColor: string;
 }

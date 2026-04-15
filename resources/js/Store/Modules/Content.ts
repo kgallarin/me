@@ -20,6 +20,15 @@ const mutations = {};
 const getters = {
   getContents: (state: ContentState): ContentResponseDTO[] => state.contents,
   getContent: (state: ContentState): ContentResponseDTO => state.content,
+  getContentByKey:
+    (state: ContentState) =>
+    (key: string): ContentResponseDTO =>
+      state.contents.find((content) => content.key === key) || {
+        title: '',
+        key: '',
+        content: [],
+        heroImages: [],
+      },
 };
 const actions = {
   async fetchContents(this: ContentModuleContext): Promise<void> {

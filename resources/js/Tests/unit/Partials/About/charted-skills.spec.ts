@@ -1,7 +1,7 @@
 import { type RenderResult, render } from '@testing-library/vue';
 import { describe, expect, test, vi } from 'vitest';
 
-import { ChartedSkillsResponseDTO } from '@/Types/Responses';
+import { ContentResponseDTO } from '@/Types/Responses';
 
 import ChartedSkills from '@/Components/Partials/About/ChartedSkills.vue';
 
@@ -11,34 +11,37 @@ vi.mock('@/Components/Motion/ScrollReveal.vue', (): { default: { template: strin
   },
 }));
 
-const renderChartedSkills = async (skills: ChartedSkillsResponseDTO): Promise<RenderResult> => {
-  return render(ChartedSkills, {
-    props: { skills, animateOnce: true, animateOnlyScrollDown: false },
-  });
+const testContent = {
+  title: 'test skill',
+  content: [
+    {
+      title: '',
+      text: 'random test text 1',
+    },
+  ],
+  key: 'test-key',
+  heroImages: [],
 };
-
-const defaultProps = {
-  leftTitle: 'test left title',
-  leftContent: ['test left content 1'],
-
-  rightTitle: 'test right title',
-  rightContent: ['test right content 1'],
+const renderChartedSkills = async (content: ContentResponseDTO = testContent): Promise<RenderResult> => {
+  return render(ChartedSkills, {
+    props: { content, animateOnce: true, animateOnlyScrollDown: false },
+  });
 };
 describe('ChartedSkills', (): void => {
   test('Renders component correctly', async (): Promise<void> => {
-    const { getByTestId } = await renderChartedSkills(defaultProps);
+    const { getByTestId } = await renderChartedSkills();
 
     expect(getByTestId('charted-skills')).toBeInTheDocument();
   });
   test('Renders prop left texts correctly', async (): Promise<void> => {
-    const { getByText } = await renderChartedSkills(defaultProps);
+    const { getByText } = await renderChartedSkills();
 
     expect(getByText('test left title')).toBeInTheDocument();
 
     expect(getByText('test left content 1')).toBeInTheDocument();
   });
   test('Renders prop right texts correctly', async (): Promise<void> => {
-    const { getByText } = await renderChartedSkills(defaultProps);
+    const { getByText } = await renderChartedSkills();
 
     expect(getByText('test right title')).toBeInTheDocument();
 

@@ -1,4 +1,10 @@
-import { ContentResponseDTO, PaginatorInfo, ProjectResponseDTO, RecommendationsResponseDTO } from '@/Types/Responses';
+import {
+  ContentResponseDTO,
+  IconLinkResponseDTO,
+  PaginatorInfo,
+  ProjectResponseDTO,
+  RecommendationsResponseDTO,
+} from '@/Types/Responses';
 
 // recommendations
 export interface RecommendationsState {
@@ -31,4 +37,14 @@ export interface ContentModuleContext {
   content: ContentResponseDTO;
   contents: ContentResponseDTO[];
   setLoading?: (payload: { type: 'global' | 'content'; flag: boolean }) => void;
+}
+
+// icon links
+export interface IconLinksState {
+  iconLinks: IconLinkResponseDTO[];
+}
+
+export interface IconLinksModuleContext {
+  iconLinks: IconLinkResponseDTO[];
+  setLoading?: (payload: { type: 'global' | 'iconLinks'; flag: boolean }) => void;
 }

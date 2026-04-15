@@ -1,8 +1,7 @@
 <script setup lang="ts">
   import { PropType } from 'vue';
 
-  import { Link } from '@/Types/Props';
-  import { ContentResponseDTO } from '@/Types/Responses';
+  import { ContentResponseDTO, IconLinkResponseDTO } from '@/Types/Responses';
 
   import BaseContainer from '@/Components/Common/BaseContainer.vue';
   import BaseImage from '@/Components/Common/BaseImage.vue';
@@ -14,7 +13,7 @@
       default: () => ({}),
     },
     links: {
-      type: Array as PropType<Link[]>,
+      type: Array as PropType<IconLinkResponseDTO[]>,
       default: () => [],
     },
   });
@@ -44,20 +43,19 @@
             <a
               v-for="link in links"
               :key="link.name"
-              :href="link.href"
+              :href="link.url"
               :download="link.name === 'download my resume' ? 'resume.pdf' : undefined"
               target="_blank"
-              class="flex items-center gap-2 text-center"
+              class="mb-4 flex flex-col items-center gap-2 text-center sm:flex-row"
               :class="[
-                link.class,
+                link.classColor,
                 {
-                  'mb-4': link.name === 'facebook',
-                  'justify-center hover:underline': link.name === 'download my resume',
+                  'justify-center hover:underline': link.name === 'resume',
                 },
               ]"
             >
               <fa-icon :icon="link.icon" class="mr-2 text-6xl" />
-              <p class="capitalize leading-tight">{{ link.name }}</p>
+              <p class="capitalize leading-tight">{{ link.name === 'resume' ? 'Download my resume' : link.name }}</p>
             </a>
           </div>
         </div>

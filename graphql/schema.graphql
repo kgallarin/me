@@ -57,6 +57,9 @@ type Query {
 
     "All contact links."
     contactLinks: [ContactLinks!]! @all
+
+    "All icon links."
+    iconLinks: [IconLink!]! @all
 }
 
 "Account of a person who uses this application."
@@ -178,6 +181,16 @@ type Project {
 }
 
 type ContactLinks {
+    id: ID!
+    name: String!
+    url: String!
+    icon: [String!]!
+    classColor: String! @rename(attribute: "class_color")
+    createdAt: DateTime! @rename(attribute: "created_at")
+    updatedAt: DateTime! @rename(attribute: "updated_at")
+}
+
+type IconLink {
     id: ID!
     name: String!
     url: String!

@@ -16,7 +16,7 @@
   const responsiveQueries = computed(() => appStore.queryBreakpoints(8, 4, 3));
 
   const props = defineProps({
-    data: {
+    content: {
       type: Object as PropType<ContentResponseDTO>,
       default: () => ({}),
     },
@@ -30,8 +30,8 @@
     },
   });
 
-  const heroImage = computed(() => props.data?.heroImages?.[0]);
-  const socialImages = computed(() => props.data?.socialImages);
+  const heroImage = computed(() => props.content?.heroImages?.[0]);
+  const socialImages = computed(() => props.content?.socialImages);
 </script>
 
 <template>
@@ -47,12 +47,12 @@
             :animate-only-scroll-down="animateOnlyScrollDown"
           >
             <h1 class="mb-4 text-6xl lowercase tracking-tight text-tertiary">
-              {{ data?.content?.[0]?.title || data?.title }}
+              {{ content?.content?.[0]?.title || content?.title }}
             </h1>
             <p class="mb-4 font-acumin text-xl font-light">
-              <safe-html :html="data?.subtitle" />
+              <safe-html :html="content?.subtitle" />
             </p>
-            <div v-for="(section, index) in data?.content" :key="index">
+            <div v-for="(section, index) in content?.content" :key="index">
               <h2 v-if="section.title" class="mb-2 text-2xl font-semibold">{{ section.title }}</h2>
               <p class="font-proxima text-base font-light leading-loose">
                 {{ section.text }}

@@ -32,11 +32,17 @@ class IconLinksSeeder extends Seeder
                 'class_color' => 'text-[#E4405F]',
             ],
             [
-                'name' => 'download my resume',
-                'url' => '/assets/pdf/resume.pdf',
-                'icon' => ['fas', 'laptop-file'],
-                'class_color' => 'text-green-500',
+                'name' => 'github',
+                'url' => '',
+                'icon' => ['fab', 'github'],
+                'class_color' => 'text-primary-500',
             ],
+						[
+							'name' => 'resume',
+							'url' => '/assets/pdf/resume.pdf',
+							'icon' => ['fas', 'laptop-file'],
+							'class_color' => 'text-green-500',
+						],
         ];
 
         foreach ($links as $link) {

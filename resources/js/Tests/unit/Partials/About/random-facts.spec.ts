@@ -11,9 +11,9 @@ vi.mock('@/Components/Motion/ScrollReveal.vue', (): { default: { template: strin
   },
 }));
 
-const renderRandomFacts = async (data: ContentResponseDTO): Promise<RenderResult> => {
+const renderRandomFacts = async (content: ContentResponseDTO): Promise<RenderResult> => {
   return render(RandomFacts, {
-    props: { data, animateOnce: true, animateOnlyScrollDown: false },
+    props: { content, animateOnce: true, animateOnlyScrollDown: false },
   });
 };
 
