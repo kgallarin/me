@@ -1,0 +1,50 @@
+<script setup lang="ts">
+  defineProps({
+    label: {
+      type: String,
+      default: '',
+    },
+
+    type: {
+      type: String,
+      default: 'text',
+    },
+
+    error: {
+      type: String,
+      default: '',
+    },
+  });
+
+  const model = defineModel<string | number>();
+</script>
+
+<template>
+  <div class="mb-4">
+    <label v-if="label" class="mb-2 block font-proxima text-lg font-light text-primary">
+      {{ label }}
+    </label>
+    <textarea
+      v-if="type === 'textarea'"
+      v-model="model as string"
+      v-bind="$attrs"
+      class="w-full rounded-md border px-4 py-2 text-primary focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary"
+      :class="error ? 'border-red-400' : 'border-gray-300'"
+    />
+    <input
+      v-else
+      v-model="model"
+      v-bind="$attrs"
+      :type="type"
+      class="w-full rounded-md border px-4 py-2 text-primary focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary"
+      :class="error ? 'border-red-400' : 'border-gray-300'"
+    />
+    <p v-if="error" class="mt-1 text-sm text-red-500">{{ error }}</p>
+  </div>
+</template>
+
+<script lang="ts">
+  export default {
+    inheritAttrs: false,
+  };
+</script>
