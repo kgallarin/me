@@ -69,30 +69,34 @@
   </header>
 </template>
 
-<style lang="scss">
+<style>
   .nav-link {
-    @apply text-white;
+    color: #ffffff;
   }
 
   li {
-    @apply text-white;
-    &.socials {
-      @apply relative;
-      &:before {
-        content: '|';
-        @apply absolute left-0 top-0 text-xl font-thin leading-none;
-      }
-    }
-    &:nth-child(even) {
-      .nav-link.active {
-        @apply text-teal-200;
-      }
-    }
+    color: #ffffff;
+  }
 
-    &:nth-child(odd) {
-      .nav-link.active {
-        @apply text-yellow-200;
-      }
-    }
+  li.socials {
+    position: relative;
+  }
+
+  li.socials::before {
+    content: '|';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.25rem;
+    font-weight: 100;
+    line-height: 1;
+  }
+
+  li:nth-child(even) .nav-link.active {
+    color: #99f6e4;
+  }
+
+  li:nth-child(odd) .nav-link.active {
+    color: #fef08a;
   }
 </style>

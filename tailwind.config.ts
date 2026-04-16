@@ -5,7 +5,7 @@ module.exports = {
   content: ['./resources/js/**/*.{js,vue}', './resources/**/*.blade.php', './resources/js/*.{js,vue}'],
   safelist: [
     {
-      pattern: /text-(orange|green|yellow|teal|pink|red|purple|blue|gray)-(300|400|500)/,
+      pattern: /text-(orange|green|yellow|teal|pink|red|purple|blue|gray)-(200|300|400|500)/,
     },
   ],
   theme: {

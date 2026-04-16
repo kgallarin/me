@@ -138,32 +138,41 @@
   </motion.nav>
 </template>
 
-<style lang="scss">
+<style>
   .list {
-    @apply absolute top-20 m-0 w-full list-none p-6;
+    position: absolute;
+    top: 5rem;
+    margin: 0;
+    width: 100%;
+    list-style: none;
+    padding: 1.5rem;
   }
 
   .list-item {
-    @apply m-0 mb-2 flex cursor-pointer list-none items-center justify-start p-0 text-lg;
+    margin: 0;
+    margin-bottom: 0.5rem;
+    display: flex;
+    cursor: pointer;
+    list-style: none;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    font-size: 1.125rem;
   }
 
-  li {
-    &:nth-child(even) {
-      .nav-link.active {
-        @apply text-teal-400;
-        span {
-          color: inherit;
-        }
-      }
-    }
+  li:nth-child(even) .nav-link.active {
+    color: #2dd4bf;
+  }
 
-    &:nth-child(odd) {
-      .nav-link.active {
-        @apply text-yellow-400;
-        span {
-          color: inherit;
-        }
-      }
-    }
+  li:nth-child(even) .nav-link.active span {
+    color: inherit;
+  }
+
+  li:nth-child(odd) .nav-link.active {
+    color: #facc15;
+  }
+
+  li:nth-child(odd) .nav-link.active span {
+    color: inherit;
   }
 </style>
