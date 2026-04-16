@@ -74,6 +74,15 @@ class RecommendationSeeder extends Seeder
                 'linkedIn' => false,
                 'avatar'   => 'kudos_avatar/chang.png',
             ],
+						[
+							'author'   => 'Durant D.',
+							'title'    => 'Artist, UI/UX Designer',
+							'rating' => 5,
+							'order' => 7,
+							'text'     => 'Kevin is a great work partner, easy to get along with, has a wide range of interests, is very hardworking and reliable, and is a trustworthy teammate. Outside of work, he\'s also a wonderful travel buddy.',
+							'linkedIn' => false,
+							'avatar'   => 'kudos_avatar/durant_djc.png',
+						],
         ];
 
         foreach ($recommendations as $data) {

@@ -1,5 +1,4 @@
-import { SendContactInput } from '@/Api/Contact';
-
+import { ContactFormFields } from '@/Types/Forms';
 import {
   ContentResponseDTO,
   IconLinkResponseDTO,
@@ -43,7 +42,7 @@ export interface ContentModuleContext {
 
 // contact
 export interface ContactModuleContext {
-  submitContactForm: (input: SendContactInput) => Promise<void>;
+  submitContactForm: (contactFormFields: ContactFormFields) => Promise<void>;
   setLoading?: (payload: { type: 'global' | 'contact'; flag: boolean }) => void;
 }
 

@@ -96,6 +96,22 @@ class ContentSeeder extends Seeder
 							'social_images' => [],
 						],
 						[
+							'title'       => 'Kudos',
+							'subtitle'    => 'from my highly respected people',
+							'key' => 'recommendations',
+							'content' => [	],
+							'hero_image' => [],
+							'social_images' => [],
+						],
+						[
+							'title'       => 'My Skills',
+							'subtitle'    => 'more or less',
+							'key' => 'graphed_skills',
+							'content' => [	],
+							'hero_image' => [],
+							'social_images' => [],
+						],
+						[
 							'title'       => '',
 							'subtitle'    => '',
 							'key' => 'charted_skills',

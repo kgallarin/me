@@ -59,7 +59,7 @@
             v-for="(recommendation, rowIndex) in column"
             :key="rowIndex"
             direction="up"
-            :delay="getGlobalIndex(colIndex, rowIndex, 3) * 0.1"
+            :delay="getGlobalIndex(colIndex, rowIndex, 4) * 0.1"
             :animate-once="animateOnce"
             :animate-only-scroll-down="animateOnlyScrollDown"
             class="break-inside-avoid"
