@@ -30,6 +30,7 @@
       :interval="8000"
       rewind
       autoplay
+      :drag="true"
       :breakpoints="{
         1024: { perPage: 2 },
         640: { perPage: 1 },
@@ -41,28 +42,37 @@
           class="card relative flex h-full flex-col rounded-md bg-white p-1 drop-shadow-md"
         >
           <splider
-            :items="project.images"
-            aspect-ratio="max-h-[240px] min-h-[240px]"
-            :autoplay="project.carousel?.autoplay"
-            :show-indicators="project.carousel?.showIndicators"
-            :show-arrows="project.carousel?.showArrows"
+            :items="project.images.map((img) => img.url)"
+            aspect-ratio="max-h-[215px] min-h-[215px]"
+            :autoplay="project.carouselSettings?.autoplay"
+            :show-indicators="project.carouselSettings?.showIndicators"
+            :show-arrows="project.carouselSettings?.showArrows"
             :items-to-show="1"
-            fixed-height="250px"
+            :drag="false"
           />
-          <a :href="project.link" target="_blank" class="relative bg-white p-4 text-primary">
+          <div class="relative bg-white p-4 text-primary">
             <h2 class="mb-2 font-proxima text-lg font-medium text-primary">{{ project.title }}</h2>
-            <p class="font-acumin text-xs font-light">
+            <p class="inline font-acumin text-xs font-light">
               {{ project.description }}
             </p>
-          </a>
+            <a
+              v-if="project.link"
+              :href="project.link"
+              target="_blank"
+              class="inline-block pl-1 font-acumin text-xs font-light text-blue-400 underline"
+            >
+              link
+            </a>
+          </div>
 
           <div class="mt-auto grid grid-cols-8 gap-1 p-4">
             <fa-icon
               data-testid="project-icon"
-              v-for="(tech, index) in project.icons"
+              v-for="(ico, index) in project.icon"
               :key="index"
-              :icon="tech.icon"
-              :class="['text-xl', tech.color]"
+              :icon="ico.icon"
+              class="text-xl"
+              :class="ico.color"
             />
           </div>
         </div>

@@ -12,31 +12,36 @@ const config: Config = {
   trailingComma: 'all',
   useTabs: false,
   vueIndentScriptAndStyle: true,
+  importOrderParserPlugins: ['typescript', 'vue'],
+  plugins: ['@trivago/prettier-plugin-sort-imports', 'prettier-plugin-tailwindcss'],
   importOrder: [
-    '^vue$',
-    '^@/Types',
+    '<BUILTIN_MODULES>',
+    '^vue$', // Core Framework
+    '<THIRD_PARTY_MODULES>', // External packages (Axios, Lodash, etc.)
+    '^@/Apollo', // Infrastructure
+    '^@/Router',
     '^@/Store',
-    '^@/Components',
-    '^@/Composables',
-    '^@/images',
-    '^[./]',
-    '^mock/',
     '^config',
-    '^utils/',
-    '^hooks/',
-    '^.+\\.svg$',
-    '^.+\\.scss$',
-    '^interface',
     '^(?=content|api)',
-    '^(components/|./index)',
-    '^\\.\\./(.*)$',
-    '^(?=./styles.module.scss)',
+    '^@/Types',
+    '^interface',
     '^(?=./types)',
+    '^@/Composables', // Logic
+    '^hooks/',
+    '^utils/',
+    '^@/Components', // UI
+    '^(components/|./index)',
+    '^@/Pages/(.*)$',
+    '^mock/', // Test
+    '^\\.\\./(.*)$', // Parent relative imports
+    '^[./]', // Siblings relative imports
+    '^@/images', // Assets
+    '^.+\\.svg$',
+    '^.+\\.scss$', // Styles
+    '^(?=./styles.module.scss)',
   ],
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
-  importOrderParserPlugins: ['typescript', 'vue'],
-  plugins: ['@trivago/prettier-plugin-sort-imports', 'prettier-plugin-tailwindcss'],
   tailwindConfig: './tailwind.config.ts',
   tailwindAttributes: [
     'class',

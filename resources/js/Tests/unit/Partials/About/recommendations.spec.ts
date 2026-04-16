@@ -1,7 +1,7 @@
 import { RenderResult, fireEvent, render, waitFor } from '@testing-library/vue';
 import { describe, expect, test, vi } from 'vitest';
 
-import { RecommendationsResponseDTO } from '@/Types/Responses';
+import { ContentResponseDTO, RecommendationsResponseDTO } from '@/Types/Responses';
 
 import Recommendations from '@/Components/Partials/About/Recommendations.vue';
 
@@ -24,6 +24,7 @@ vi.mock('@/Components/Common/BaseImage.vue', () => ({
 }));
 
 const renderRecommendations = async (props: {
+  content: ContentResponseDTO;
   testimonials: RecommendationsResponseDTO[];
   animateOnce: boolean;
   animateOnlyScrollDown: boolean;
@@ -34,15 +35,28 @@ const renderRecommendations = async (props: {
   });
 };
 
+const testContent: ContentResponseDTO = {
+  key: 'test-key',
+  title: 'test-title',
+  subtitle: 'test-subtitle',
+  content: [],
+  heroImages: [],
+};
+
 describe('Recommendations', (): void => {
   test('Renders component correctly', async (): Promise<void> => {
     const { getByText } = await renderRecommendations({
+      content: testContent,
       testimonials: [
         {
+          id: 'test-id',
+          order: 1,
           author: 'test author',
           title: 'test title',
-          image: 'test image',
-          alt: 'test alt',
+          avatar: {
+            url: 'test image',
+            alt: 'test alt',
+          },
           linkedIn: false,
           rating: 5,
           text: 'test text',
@@ -62,12 +76,17 @@ describe('Recommendations', (): void => {
 
   test('Text toggles label when clicking read more/show less', async (): Promise<void> => {
     const { getAllByText } = await renderRecommendations({
+      content: testContent,
       testimonials: [
         {
+          id: 'test-id',
+          order: 1,
           author: 'test author',
           title: 'test title',
-          image: 'test image',
-          alt: 'test alt',
+          avatar: {
+            url: 'test image',
+            alt: 'test alt',
+          },
           linkedIn: false,
           rating: 5,
           text: 'test text',

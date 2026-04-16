@@ -1,11 +1,12 @@
 <script setup lang="ts">
+  import { PropType, computed } from 'vue';
+
   import { FontAwesomeIcon as FaIcon } from '@fortawesome/vue-fontawesome';
 
-  import { PropType } from 'vue';
+  import { useAppStore } from '@/Store/Modules/App';
+  import { useIconLinksStore } from '@/Store/Modules/IconLinks';
 
   import { NavLink } from '@/Types/Props';
-
-  import { useAppStore } from '@/Store/Modules/App';
 
   import BaseContainer from '@/Components/Common/BaseContainer.vue';
   import BrandLogo from '@/Components/Motion/BrandLogo.vue';
@@ -19,7 +20,10 @@
   });
 
   const appStore = useAppStore();
+  const iconLinksStore = useIconLinksStore();
+
   const openSidebar = appStore.openSidebar;
+  const iconLinks = computed(() => iconLinksStore.getIconLinks.filter((link) => link.name !== 'resume'));
 </script>
 
 <template>
@@ -40,17 +44,23 @@
             <li v-for="item in nav" :key="item.label">
               <router-link
                 :to="{ name: item.to }"
-                class="nav-link flex items-center gap-2 font-acumin font-normal text-white hover:text-gray-300"
+                class="nav-link flex items-center gap-2 font-acumin font-normal hover:text-gray-300"
               >
                 {{ item.label }}
               </router-link>
+            </li>
+
+            <li v-for="(link, index) in iconLinks" :key="link.id" :class="[index === 0 ? 'socials pl-8' : 'pl-0']">
+              <a :href="link.url" target="_blank">
+                <fa-icon :icon="link.icon" class="text-2xl" />
+              </a>
             </li>
           </ul>
         </nav>
 
         <a
           href="#"
-          class="text-2xl text-white focus:outline-none md:hidden"
+          class="text-2xl text-gray-400 focus:outline-none md:hidden"
           aria-label="Open menu"
           @click.prevent.stop="openSidebar"
         >
@@ -61,8 +71,37 @@
   </header>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
   .header-inner {
     @apply flex items-center justify-between;
+  }
+
+  .nav-link {
+    @apply text-white;
+  }
+
+  li {
+    &.socials {
+      @apply relative;
+      &:before {
+        content: '|';
+        @apply absolute left-0 top-0 text-xl font-thin leading-none;
+      }
+    }
+    &:nth-child(even) {
+      .nav-link {
+        &.active {
+          @apply text-teal-200;
+        }
+      }
+    }
+
+    &:nth-child(odd) {
+      .nav-link {
+        &.active {
+          @apply text-yellow-200;
+        }
+      }
+    }
   }
 </style>

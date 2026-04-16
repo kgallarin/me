@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { PropType, computed } from 'vue';
 
-  import { RecommendationsResponseDTO } from '@/Types/Responses';
+  import { ContentResponseDTO, RecommendationsResponseDTO } from '@/Types/Responses';
 
   import BaseContainer from '@/Components/Common/BaseContainer.vue';
   import ScrollReveal from '@/Components/Motion/ScrollReveal.vue';
@@ -9,6 +9,10 @@
   import RecommendationCard from './RecommendationCard.vue';
 
   const props = defineProps({
+    content: {
+      type: Object as PropType<ContentResponseDTO>,
+      required: true,
+    },
     testimonials: {
       type: Array as PropType<RecommendationsResponseDTO[]>,
       required: true,
@@ -44,8 +48,8 @@
   <section>
     <base-container class="pb-24">
       <scroll-reveal direction="up" :animate-once="animateOnce" :animate-only-scroll-down="animateOnlyScrollDown">
-        <h2 class="pt-24 font-proxima text-4xl font-light">Kudos</h2>
-        <p class="font-acumin text-xs font-light">from my highly respected people</p>
+        <h2 class="pt-24 font-proxima text-4xl font-light">{{ content.title }}</h2>
+        <p class="font-acumin text-xs font-light">{{ content.subtitle }}</p>
       </scroll-reveal>
 
       <!-- Desktop (3 columns) -->
@@ -55,7 +59,7 @@
             v-for="(recommendation, rowIndex) in column"
             :key="rowIndex"
             direction="up"
-            :delay="getGlobalIndex(colIndex, rowIndex, 3) * 0.1"
+            :delay="getGlobalIndex(colIndex, rowIndex, 4) * 0.1"
             :animate-once="animateOnce"
             :animate-only-scroll-down="animateOnlyScrollDown"
             class="break-inside-avoid"

@@ -1,7 +1,12 @@
 <script setup lang="ts">
+  import { useIconLinksStore } from '@/Store/Modules/IconLinks';
+
   import BaseFooter from '@/Components/Common/BaseFooter.vue';
   import BaseHeaderNav from '@/Components/Common/BaseHeaderNav.vue';
   import BaseSideBar from '@/Components/Common/BaseSideBar.vue';
+
+  const iconLinksStore = useIconLinksStore();
+  iconLinksStore.fetchIconLinks();
 
   const defaultNav = [
     {

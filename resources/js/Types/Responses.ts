@@ -1,59 +1,71 @@
-import { CarouselConfig, FontAwesomeIconObject } from '@/Types/General';
-
-export interface ProjectResponseDTO {
-  title: string;
-  description: string;
-  // @todo
-  images: string[];
-  icons: FontAwesomeIconObject[];
-  carousel: CarouselConfig;
-  link?: string;
+export interface ImageDTO {
+  url: string;
+  alt: string;
 }
 
-export interface ChartedSkillsResponseDTO {
-  leftTitle: string;
-  rightTitle: string;
-  leftContent: string[];
-  rightContent: string[];
+export interface ProjectResponseDTO {
+  id: string;
+  title: string;
+  description: string;
+  link?: string;
+  order: number;
+  icon: Array<{
+    icon: string[];
+    color: string;
+  }>;
+  carouselSettings: {
+    autoplay: boolean;
+    showIndicators: boolean;
+    showArrows: boolean;
+  };
+  images: ImageDTO[];
+}
+
+export interface PaginatorInfo {
+  count: number;
+  currentPage: number;
+  firstItem: number;
+  hasMorePages: boolean;
+  lastItem: number;
+  lastPage: number;
+  perPage: number;
+  total: number;
+}
+
+export interface PaginatedResponse<T> {
+  data: T[];
+  paginatorInfo: PaginatorInfo | null;
 }
 
 export interface RecommendationsResponseDTO {
+  id: string;
   author: string;
-  image: string;
-  alt: string;
-  rating: number;
   title: string;
   text: string;
+  order: number;
+  rating: number;
   linkedIn?: boolean;
+  avatar?: ImageDTO;
 }
 
-export interface StoryHero {
-  title: string;
-  paragraphs: string[];
-  image: imageDTO;
+export interface ContentSection {
+  title?: string;
+  text: string;
 }
 
-export interface TitledParagraphsDTO {
+export interface ContentResponseDTO {
+  id?: string;
+  key: string;
   title: string;
-  paragraphs: string[];
+  subtitle?: string;
+  content: ContentSection[];
+  heroImages: ImageDTO[];
+  socialImages?: ImageDTO[];
 }
-
-export interface ContentItemDTO {
-  title: string;
-  description: string;
-  href?: string;
-}
-
-export interface TitledTextResponseDTO {
-  title: string;
-  text: string[];
-}
-export interface TitledContentDTO {
-  title: string;
-  items: ContentItemDTO[];
-}
-
-export interface imageDTO {
-  src: string;
-  alt: string;
+export interface IconLinkResponseDTO {
+  id: string;
+  name: string;
+  url: string;
+  icon: string[];
+  classColor: string;
 }

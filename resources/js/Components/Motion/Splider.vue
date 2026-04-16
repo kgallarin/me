@@ -1,12 +1,14 @@
 <script setup lang="ts">
+  import { computed } from 'vue';
+
   import { Splide, SplideSlide } from '@splidejs/vue-splide';
 
-  import { computed } from 'vue';
+  import { ImageDTO } from '@/Types/Responses';
 
   import BaseImage from '@/Components/Common/BaseImage.vue';
 
   interface Props {
-    items?: string[];
+    items?: string[] | ImageDTO[];
     autoplay?: boolean;
     interval?: number;
     showArrows?: boolean;
@@ -17,13 +19,14 @@
     imageClasses?: string;
     fixedHeight?: string | null;
     rewind?: boolean;
+    drag?: boolean;
     breakpoints?: Record<string, unknown>;
   }
 
   const props = withDefaults(defineProps<Props>(), {
     items: () => [],
     autoplay: true,
-    interval: 10000,
+    interval: 15000,
     showArrows: false,
     showIndicators: true,
     aspectRatio: '',
@@ -32,6 +35,7 @@
     gap: 8,
     fixedHeight: null,
     rewind: true,
+    drag: false,
     breakpoints: () => ({}),
   });
 
@@ -39,6 +43,7 @@
     type: 'slide',
     perPage: props.itemsToShow,
     gap: props.gap,
+    drag: props.drag,
     arrows: props.showArrows,
     pagination: props.showIndicators,
     autoplay: props.autoplay,
@@ -58,10 +63,10 @@
       <template v-else>
         <splide-slide v-for="(item, index) in items" :key="index" class="h-full w-full">
           <base-image
-            :src="item"
-            :class="['h-full w-full object-cover object-left']"
+            :src="typeof item === 'string' ? item : item.url"
+            :class="['object-fit h-full w-full']"
             :rounded="imageClasses"
-            alt="Carousel Image"
+            :alt="typeof item === 'string' ? '' : item.alt"
             show-loader
           />
         </splide-slide>

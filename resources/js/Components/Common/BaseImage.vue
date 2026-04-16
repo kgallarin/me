@@ -1,14 +1,11 @@
 <script setup lang="ts">
   import { onMounted, ref } from 'vue';
 
-  interface BaseImageProps {
-    src: string;
-    alt: string;
-    showLoader?: boolean;
-    rounded?: string;
-  }
+  import { BaseImageProps } from '@/Types/Props';
 
   const props = withDefaults(defineProps<BaseImageProps>(), {
+    src: '',
+    alt: '',
     showLoader: true,
     rounded: '',
   });
