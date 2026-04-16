@@ -21,14 +21,6 @@
     background-position: -200% 0;
   }
 }
-.nav-link {
-  @apply text-gray-800 font-acumin;
-}
-
-.nav-link:hover {
-  @apply text-gray-600;
-}
-
 @font-face {
   font-family: "Acumin Pro Wide";
   src: url("../fonts/Acumin/acumin-pro-wide-thin.otf") format("opentype");

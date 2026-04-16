@@ -72,7 +72,7 @@
   <!-- Only render when store asks to open; clicking header's openSidebar triggers this -->
   <motion.nav
     v-show="isOpen"
-    class="nav container fixed left-0 top-0 z-[70] h-full w-11/12 shadow-inner drop-shadow-xl"
+    class="nav container fixed left-0 top-0 z-[70] h-full w-11/12 bg-white shadow-inner drop-shadow-xl"
   >
     <div class="container h-full">
       <staggering-vertical-nav
@@ -138,7 +138,7 @@
   </motion.nav>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
   .list {
     @apply absolute top-20 m-0 w-full list-none p-6;
     &-item {
@@ -153,8 +153,9 @@
     &:nth-child(even) {
       .nav-link {
         &.active {
+          @apply text-teal-400;
           span {
-            @apply text-teal-400;
+            color: inherit;
           }
         }
       }
@@ -163,8 +164,9 @@
     &:nth-child(odd) {
       .nav-link {
         &.active {
+          @apply text-yellow-400;
           span {
-            @apply text-yellow-400;
+            color: inherit;
           }
         }
       }

@@ -33,7 +33,7 @@ class IconLinksSeeder extends Seeder
             ],
             [
                 'name' => 'github',
-                'url' => '',
+                'url' => 'https://github.com/kgallarin',
                 'icon' => ['fab', 'github'],
                 'class_color' => 'text-primary-500',
             ],

@@ -75,11 +75,9 @@
 </template>
 
 <style scoped lang="scss">
-  .header-inner {
-    @apply flex items-center justify-between;
-  }
   li {
     .nav-link {
+      @apply font-acumin text-gray-500;
       &.active {
         @apply text-gray-400;
       }

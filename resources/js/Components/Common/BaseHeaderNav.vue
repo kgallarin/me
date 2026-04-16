@@ -30,7 +30,7 @@
   <header data-testid="base-header-nav" class="bg-[#171717]">
     <base-container>
       <div
-        class="header-inner mx-auto flex h-16 items-center justify-between lg:max-w-screen-lg lg:px-0 xl:max-w-screen-xl"
+        class="header-inner flex h-16 items-center justify-between"
       >
         <div class="w-[36px] sm:w-[44px]">
           <router-link data-testid="brand-logo" :to="{ name: 'home' }">
@@ -72,10 +72,6 @@
 </template>
 
 <style scoped lang="scss">
-  .header-inner {
-    @apply flex items-center justify-between;
-  }
-
   .nav-link {
     @apply text-white;
   }
