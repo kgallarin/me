@@ -35,7 +35,7 @@
       <fa-icon :icon="['fa', 'chevron-up']" class="relative -top-2 text-4xl text-black/30 md:-top-5" />
     </a>
 
-    <div class="inner mx-auto flex justify-center md:justify-between lg:max-w-screen-xl">
+    <div class="inner mx-auto flex flex-col justify-center md:flex-row md:justify-between lg:max-w-screen-xl">
       <div class="flex flex-col items-center gap-4 md:items-start">
         <p class="font-proxima text-sm font-light text-primary">&copy; {{ year }} Kevin Gallarin</p>
         <div class="flex gap-4">
@@ -52,18 +52,24 @@
       </div>
 
       <!-- nav starts-->
-      <nav class="hidden md:block">
-        <ul class="text-md flex gap-8 text-primary">
-          <li v-for="item in nav" :key="item.label">
-            <router-link
-              :to="{ name: item.to }"
-              class="nav-link flex items-center gap-2 font-acumin font-normal hover:text-gray-500"
-            >
-              {{ item.label }}
-            </router-link>
-          </li>
-        </ul>
-      </nav>
+      <div class="itemst-center flex flex-col md:items-end">
+        <nav class="hidden md:block">
+          <ul class="text-md flex gap-8 text-primary">
+            <li v-for="item in nav" :key="item.label">
+              <router-link
+                :to="{ name: item.to }"
+                class="nav-link flex items-center gap-2 font-acumin font-normal hover:text-gray-500"
+              >
+                {{ item.label }}
+              </router-link>
+            </li>
+          </ul>
+        </nav>
+
+        <p class="mt-4 text-center font-proxima text-xs">
+          Created with <fa-icon :icon="['fa', 'heart']" class="text-red-600 shadow-sm" />, KG
+        </p>
+      </div>
     </div>
   </div>
 </template>

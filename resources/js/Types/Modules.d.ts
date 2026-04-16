@@ -1,3 +1,5 @@
+import { SendContactInput } from '@/Api/Contact';
+
 import {
   ContentResponseDTO,
   IconLinkResponseDTO,
@@ -37,6 +39,12 @@ export interface ContentModuleContext {
   content: ContentResponseDTO;
   contents: ContentResponseDTO[];
   setLoading?: (payload: { type: 'global' | 'content'; flag: boolean }) => void;
+}
+
+// contact
+export interface ContactModuleContext {
+  submitContactForm: (input: SendContactInput) => Promise<void>;
+  setLoading?: (payload: { type: 'global' | 'contact'; flag: boolean }) => void;
 }
 
 // icon links
