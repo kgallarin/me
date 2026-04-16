@@ -68,35 +68,3 @@
     </base-container>
   </header>
 </template>
-
-<style>
-  .nav-link {
-    color: #ffffff;
-  }
-
-  li {
-    color: #ffffff;
-  }
-
-  li.socials {
-    position: relative;
-  }
-
-  li.socials::before {
-    content: '|';
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 1.25rem;
-    font-weight: 100;
-    line-height: 1;
-  }
-
-  li:nth-child(even) .nav-link.active {
-    color: #99f6e4;
-  }
-
-  li:nth-child(odd) .nav-link.active {
-    color: #fef08a;
-  }
-</style>
