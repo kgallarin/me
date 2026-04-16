@@ -248,44 +248,36 @@ class ContentSeeder extends Seeder
 						],
 				];
 
-//			foreach ($socialImages as $path => $alt) {
-//				$story
-//					->addMediaFromDisk($path, 's3')
-//					->preservingOriginal()
-//					->withCustomProperties(['alt' => $alt])
-//					->toMediaCollection('social_images');
-//			}
+				foreach($contents as $data) {
+					$heroImagePaths = $data['hero_image'] ?? [];
+					$socialImagesPaths = $data['social_images'] ?? [];
 
-			foreach($contents as $data) {
-				$heroImagePaths = $data['hero_image'] ?? [];
-				$socialImagesPaths = $data['social_images'] ?? [];
+					unset($data['hero_image'], $data['social_images']);
 
-				unset($data['hero_image'], $data['social_images']);
+					$data['hero_image'] = collect($heroImagePaths)
+						->map(fn (string $path) => [
+							'url' => Storage::disk('s3')->url($path),
+							'alt' => pathinfo($path, PATHINFO_FILENAME),
+						])
+						->values()
+						->toArray();
 
-				$data['hero_image'] = collect($heroImagePaths)
-					->map(fn (string $path) => [
-						'url' => Storage::disk('s3')->url($path),
-						'alt' => pathinfo($path, PATHINFO_FILENAME),
-					])
-					->values()
-					->toArray();
+					$data['social_images'] = collect($socialImagesPaths)
+						->map(fn (string $alt, string $path) => [
+							'url' => Storage::disk('s3')->url($path),
+							'alt' => $alt,
+						])
+						->values()
+						->toArray();
 
-				$data['social_images'] = collect($socialImagesPaths)
-					->map(fn (string $alt, string $path) => [
-						'url' => Storage::disk('s3')->url($path),
-						'alt' => $alt,
-					])
-					->values()
-					->toArray();
+					$data['content'] = collect($data['content'])
+						->map(fn (array $section) => [
+							'title' => $section['title'] ?? '',
+							'text' => $section['text'] ?? '',
+						])
+						->toArray();
 
-				$data['content'] = collect($data['content'])
-					->map(fn (array $section) => [
-						'title' => $section['title'] ?? '',
-						'text' => $section['text'] ?? '',
-					])
-					->toArray();
-
-				Content::create($data);
-			}
+					Content::create($data);
+				}
     }
 }
