@@ -29,6 +29,10 @@
       type: Boolean,
       default: false,
     },
+    noAnimation: {
+      type: Boolean,
+      default: false,
+    },
   });
 
   const { y } = useWindowScroll();
@@ -84,18 +88,18 @@
   <div ref="target">
     <motion.div
       :initial="{
-        opacity: 0,
-        x: getInitialX(direction, distance),
-        y: getInitialY(direction, distance),
+        opacity: noAnimation ? 1 : 0,
+        x: noAnimation ? 0 : getInitialX(direction, distance),
+        y: noAnimation ? 0 : getInitialY(direction, distance),
       }"
       :animate="{
-        opacity: isVisible ? 1 : 0,
-        x: isVisible ? 0 : getInitialX(direction, distance),
-        y: isVisible ? 0 : getInitialY(direction, distance),
+        opacity: noAnimation || isVisible ? 1 : 0,
+        x: noAnimation || isVisible ? 0 : getInitialX(direction, distance),
+        y: noAnimation || isVisible ? 0 : getInitialY(direction, distance),
       }"
       :transition="{
-        duration: skipAnimation ? 0 : duration,
-        delay: skipAnimation ? 0 : delay,
+        duration: noAnimation || skipAnimation ? 0 : duration,
+        delay: noAnimation || skipAnimation ? 0 : delay,
         ease: 'easeOut',
       }"
     >

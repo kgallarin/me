@@ -1,8 +1,8 @@
+import type { Ref } from 'vue';
+
 import { Theme } from '@/Constants/app';
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core';
 import { defineStore } from 'pinia';
-
-import type { Ref } from 'vue';
 
 export interface IBreakpoints {
   greater: (k: 'sm' | 'md' | 'lg' | 'xl' | '2xl') => Ref<boolean>;

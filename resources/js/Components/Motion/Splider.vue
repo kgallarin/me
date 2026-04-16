@@ -21,6 +21,7 @@
     rewind?: boolean;
     drag?: boolean;
     breakpoints?: Record<string, unknown>;
+    objectFit?: 'cover' | 'contain' | 'fill' | 'none' | 'scale-down';
   }
 
   const props = withDefaults(defineProps<Props>(), {
@@ -36,6 +37,7 @@
     fixedHeight: null,
     rewind: true,
     drag: false,
+    objectFit: 'cover',
     breakpoints: () => ({}),
   });
 
@@ -64,7 +66,7 @@
         <splide-slide v-for="(item, index) in items" :key="index" class="h-full w-full">
           <base-image
             :src="typeof item === 'string' ? item : item.url"
-            :class="['object-fit h-full w-full']"
+            :class="[`object-${props.objectFit}`, 'h-full w-full']"
             :rounded="imageClasses"
             :alt="typeof item === 'string' ? '' : item.alt"
             show-loader

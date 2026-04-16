@@ -13,7 +13,7 @@
 
   const appStore = useAppStore();
 
-  const responsiveQueries = computed(() => appStore.queryBreakpoints(8, 4, 3));
+  const responsiveQueries = computed(() => appStore.queryBreakpoints(8, 4, 2));
 
   const props = defineProps({
     content: {
@@ -85,6 +85,7 @@
             :drag="true"
             :items-to-show="responsiveQueries"
             fixed-height="100px"
+            object-fit="cover"
           />
         </scroll-reveal>
       </div>

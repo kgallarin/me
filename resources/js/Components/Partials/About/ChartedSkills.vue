@@ -23,6 +23,10 @@
       type: Boolean,
       default: false,
     },
+    noAnimation: {
+      type: Boolean,
+      default: false,
+    },
   });
 
   const perceptiveSide = computed(() => props.content.content[0]);
@@ -38,16 +42,12 @@
             direction="right"
             :animate-once="animateOnce"
             :animate-only-scroll-down="animateOnlyScrollDown"
+            :no-animation="noAnimation"
           >
             <h3 class="mb-5 font-proxima text-3xl font-light">{{ perceptiveSide?.title }}</h3>
             <p class="font-proxima font-light leading-snug text-tertiary">
               <safe-html :html="perceptiveSide?.text" />
             </p>
-            <!--            <ul class="font-proxima font-light leading-8 text-tertiary">-->
-            <!--              <li v-for="(skill, index) in skills.leftContent" :key="index">-->
-            <!--                {{ skill }}-->
-            <!--              </li>-->
-            <!--            </ul>-->
           </scroll-reveal>
         </div>
 
@@ -56,6 +56,7 @@
           :delay="0.2"
           :animate-once="animateOnce"
           :animate-only-scroll-down="animateOnlyScrollDown"
+          :no-animation="noAnimation"
         >
           <base-image
             class="h-full w-full object-cover sm:h-[340px] sm:w-[340px]"
@@ -66,7 +67,12 @@
         </scroll-reveal>
 
         <div class="w-full text-right md:w-auto">
-          <scroll-reveal direction="left" :animate-once="animateOnce" :animate-only-scroll-down="animateOnlyScrollDown">
+          <scroll-reveal
+            direction="left"
+            :animate-once="animateOnce"
+            :animate-only-scroll-down="animateOnlyScrollDown"
+            :no-animation="noAnimation"
+          >
             <h3 class="mb-5 font-proxima text-3xl font-light">{{ developerSide?.title }}</h3>
 
             <p class="text-tertiar font-proxima font-light leading-snug">

@@ -28,7 +28,7 @@
       v-if="type === 'textarea'"
       v-model="model as string"
       v-bind="$attrs"
-      class="w-full rounded-md border px-4 py-2 text-primary focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary"
+      class="w-full rounded-md border px-4 py-2 text-primary placeholder:font-proxima placeholder:text-sm placeholder:font-thin placeholder:text-gray-300 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary"
       :class="error ? 'border-red-400' : 'border-gray-300'"
     />
     <input
@@ -36,7 +36,7 @@
       v-model="model"
       v-bind="$attrs"
       :type="type"
-      class="w-full rounded-md border px-4 py-2 text-primary focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary"
+      class="w-full rounded-md border px-4 py-2 text-primary placeholder:font-proxima placeholder:text-sm placeholder:font-thin placeholder:text-gray-300 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary"
       :class="error ? 'border-red-400' : 'border-gray-300'"
     />
     <p v-if="error" class="mt-1 text-sm text-red-500">{{ error }}</p>
