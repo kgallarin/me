@@ -29,9 +29,7 @@
 <template>
   <header data-testid="base-header-nav" class="bg-[#171717]">
     <base-container>
-      <div
-        class="header-inner flex h-16 items-center justify-between"
-      >
+      <div class="header-inner flex h-16 items-center justify-between">
         <div class="w-[36px] sm:w-[44px]">
           <router-link data-testid="brand-logo" :to="{ name: 'home' }">
             <brand-logo />
@@ -71,7 +69,7 @@
   </header>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
   .nav-link {
     @apply text-white;
   }

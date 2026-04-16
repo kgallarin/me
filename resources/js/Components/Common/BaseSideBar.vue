@@ -138,7 +138,7 @@
   </motion.nav>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
   :deep(.list) {
     @apply absolute top-20 m-0 w-full list-none p-6;
   }
