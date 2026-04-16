@@ -75,6 +75,7 @@
   }
 
   li {
+    @apply text-white;
     &.socials {
       @apply relative;
       &:before {
@@ -83,13 +84,13 @@
       }
     }
     &:nth-child(even) {
-      :deep(.nav-link.active) {
+      .nav-link.active {
         @apply text-teal-200;
       }
     }
 
     &:nth-child(odd) {
-      :deep(.nav-link.active) {
+      .nav-link.active {
         @apply text-yellow-200;
       }
     }
