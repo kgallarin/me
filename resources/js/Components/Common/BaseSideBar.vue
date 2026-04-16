@@ -139,35 +139,33 @@
 </template>
 
 <style scoped lang="scss">
-  .list {
+  :deep(.list) {
     @apply absolute top-20 m-0 w-full list-none p-6;
-    &-item {
-      @apply m-0 mb-2 flex cursor-pointer list-none items-center justify-start p-0 text-lg;
-    }
   }
-  .nav-link {
+
+  :deep(.list-item) {
+    @apply m-0 mb-2 flex cursor-pointer list-none items-center justify-start p-0 text-lg;
+  }
+
+  :deep(.nav-link) {
     @apply text-primary;
   }
 
   li {
     &:nth-child(even) {
-      .nav-link {
-        &.active {
-          @apply text-teal-400;
-          span {
-            color: inherit;
-          }
+      :deep(.nav-link.active) {
+        @apply text-teal-400;
+        span {
+          color: inherit;
         }
       }
     }
 
     &:nth-child(odd) {
-      .nav-link {
-        &.active {
-          @apply text-yellow-400;
-          span {
-            color: inherit;
-          }
+      :deep(.nav-link.active) {
+        @apply text-yellow-400;
+        span {
+          color: inherit;
         }
       }
     }

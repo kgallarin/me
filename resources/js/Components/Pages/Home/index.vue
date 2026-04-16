@@ -38,7 +38,7 @@
 </script>
 
 <template>
-  <div class="flex min-h-[calc(100vh-150px)] flex-col">
+  <div class="flex min-h-[calc(100dvh-150px)] flex-col">
     <base-toast
       :show="showToast"
       :message="`${isDesktop ? 'Hover' : 'Tap'} the texts behind me, to explore skills`"

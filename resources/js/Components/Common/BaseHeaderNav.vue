@@ -85,18 +85,14 @@
       }
     }
     &:nth-child(even) {
-      .nav-link {
-        &.active {
-          @apply text-teal-200;
-        }
+      :deep(.nav-link.active) {
+        @apply text-teal-200;
       }
     }
 
     &:nth-child(odd) {
-      .nav-link {
-        &.active {
-          @apply text-yellow-200;
-        }
+      :deep(.nav-link.active) {
+        @apply text-yellow-200;
       }
     }
   }
