@@ -5,8 +5,7 @@ import { apolloClient } from '@/Apollo';
 import { ContactFormFields } from '@/Types/Forms';
 
 export const SEND_CONTACT_MUTATION = gql`
-  mutation SendContact(contactFormFields
-  : ContactFormFields!) {
+  mutation SendContact($contactFormFields: ContactFormFields!) {
     sendContact(contactFormFields: ContactFormFields) {
       success
     }

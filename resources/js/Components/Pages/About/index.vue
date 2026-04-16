@@ -30,9 +30,9 @@
 
     <charted-skills :content="chartedSkillsContent" animate-once animate-only-scroll-down />
 
-    <random-facts :content="randomFactsContent" animate-only-scroll-down />
+    <random-facts :content="randomFactsContent" animate-once animate-only-scroll-down />
 
-    <graphed-skills :data="graphedSkillsContent" animate-once animate-only-scroll-down />
+    <graphed-skills :content="graphedSkillsContent" animate-once animate-only-scroll-down />
 
     <recommendations
       :content="recommendationsContent"

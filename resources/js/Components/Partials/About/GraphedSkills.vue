@@ -8,7 +8,7 @@
   import SkillChart from '@/Components/Partials/SkillChart/index.vue';
 
   defineProps({
-    data: {
+    content: {
       type: Object as PropType<ContentResponseDTO>,
       required: true,
       default: () => ({}),
@@ -29,9 +29,9 @@
     <base-container class="px-0 py-12 pb-20 md:px-4 md:py-24 md:pb-24">
       <div class="w-full text-right">
         <scroll-reveal direction="right" :animate-once="animateOnce" :animate-only-scroll-down="animateOnlyScrollDown">
-          <h2 class="font-proxima text-4xl font-light">{{ data.title }}</h2>
+          <h2 class="font-proxima text-4xl font-light">{{ content.title }}</h2>
           <p class="font-acumin text-xs font-light">
-            {{ data.subtitle }}
+            {{ content.subtitle }}
           </p>
         </scroll-reveal>
 

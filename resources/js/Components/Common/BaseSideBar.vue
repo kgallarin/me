@@ -95,7 +95,6 @@
                 :to="{ name: navItem.to || 'home' }"
                 @click.prevent.stop="navigateTo(navItem.to || 'home')"
                 class="nav-link flex w-full items-center justify-between pb-2 text-sm"
-                :class="isSidebarAnimationComplete ? 'border-b border-gray-100' : ''"
               >
                 <span>
                   {{ navItem.label }}
