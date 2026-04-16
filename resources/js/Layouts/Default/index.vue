@@ -37,7 +37,7 @@
   <!-- add more layout components if necessary -->
   <base-side-bar :nav="defaultNav" />
 
-  <div class="min-h-[calc(100dvh-155px)]">
+  <div class="flex-1">
     <router-view />
   </div>
 

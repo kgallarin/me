@@ -74,7 +74,7 @@
     v-show="isOpen"
     class="nav container fixed left-0 top-0 z-[70] h-full w-11/12 bg-white shadow-inner drop-shadow-xl"
   >
-    <div class="container h-full">
+    <div class="sidebar-main container h-full">
       <staggering-vertical-nav
         :nav-items="nav"
         :is-open="isOpen"
