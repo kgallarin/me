@@ -29,16 +29,12 @@
 
 <template>
   <div data-testid="base-image" class="relative flex overflow-hidden" :class="props.rounded">
-    <div
-      v-if="!isLoaded && props.showLoader"
-      class="skeleton absolute inset-0 z-10 h-full w-full"
-      :class="props.rounded"
-    />
+    <div v-if="!isLoaded && props.showLoader" class="skeleton absolute inset-0 z-10 w-full" :class="props.rounded" />
     <img
       ref="imgRef"
       :src="props.src"
       :alt="props.alt"
-      class="h-full w-full"
+      class="w-full"
       :class="[
         props.rounded,
         `object-${props.objectFit}`,

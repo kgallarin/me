@@ -32,10 +32,19 @@ describe('SafeHtml', () => {
     expect(container.textContent).toContain('Four');
   });
 
+  test('renders <a> tags correctly', () => {
+    const { getByRole } = render(SafeHtml, {
+      props: { html: 'Visit <a href="https://example.com">Example</a> site' },
+    });
+    const link = getByRole('link', { name: 'Example' });
+    expect(link).toBeInTheDocument();
+    expect(link).toHaveAttribute('href', 'https://example.com');
+  });
+
   test('handles null or undefined html gracefully', () => {
     const { container } = render(SafeHtml, {
       props: { html: null as unknown as string },
     });
-    expect(container.innerHTML).toMatch(/^(<!--v-if-->|)$/);
+    expect(container.innerHTML).toBe('');
   });
 });

@@ -19,7 +19,7 @@ https://kgallarin.com/
 
 ## Tech Stack
 
-**Frontend:** Vite, Vue, SplideJS, Pinia, TypeScript, TailwindCSS, Apollographql
+**Frontend:** Vite, Vue, SplideJS, Pinia, TypeScript, TailwindCSS, Apollographql, Framer Motion
 
 **Linters:** ESLint, StyleLint
 
