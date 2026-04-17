@@ -91,7 +91,13 @@
     ref="targetMain"
     class="relative h-full w-full"
   >
-    <motion.div class="bg-variant" :variants="sidebarVariants" :on-animation-complete="onAnimationComplete" />
+    <motion.div
+      class="bg-variant"
+      :animate="propsIsOpen ? 'open' : 'closed'"
+      :custom="dimensions.height"
+      :variants="sidebarVariants"
+      :on-animation-complete="onAnimationComplete"
+    />
 
     <slot name="stagger-nav-slot" :variants="{ navVariants, itemVariants }" />
   </motion.div>
@@ -99,6 +105,13 @@
 
 <style scoped lang="scss">
   .bg-variant {
-    @apply absolute bottom-0 left-0 right-0 top-0 w-full bg-white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: -1;
   }
 </style>

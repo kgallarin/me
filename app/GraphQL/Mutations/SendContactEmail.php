@@ -28,14 +28,18 @@ class SendContactEmail
 
         RateLimiter::hit($key, 3600);
 
-        Mail::raw(
-            "Name: {$args['name']}\nEmail: {$args['email']}\n\nMessage:\n{$args['message']}",
-            function ($mail) use ($args) {
-                $mail->to(env('CONTACT_EMAIL'))
-                     ->subject("Portfolio Contact: {$args['name']}")
-                     ->replyTo($args['email'], $args['name']);
-            }
-        );
+        try {
+            Mail::raw(
+                "Name: {$args['name']}\nEmail: {$args['email']}\n\nMessage:\n{$args['message']}",
+                function ($mail) use ($args) {
+                    $mail->to(env('CONTACT_EMAIL'))
+                         ->subject("Portfolio Contact: {$args['name']}")
+                         ->replyTo($args['email'], $args['name']);
+                }
+            );
+        } catch (\Exception $e) {
+            return ['success' => false, 'message' => 'Failed to send message. Please try again later.'];
+        }
 
         return ['success' => true, 'message' => 'Message sent! I will get back to you soon.'];
     }
