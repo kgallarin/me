@@ -1,34 +1,27 @@
-# imkg
+# kgallarin.com 
 
-My personal website that I built from scratch to showcase my skills, technologies and myself. I plan to add more features and content as a diary since I do not much exposing myself to social media. Feel free to click here to view how it was coded so I can share my knowledge and experience by this simple website.
+My personal website that I built from scratch. Sharing my ideas and experience by this simple website.
 
 ## 🚀 About Me
 I'm a Senior Frontend Engineer (Full-Stack Capable with Laravel and GraphQL)
 
 ## Demo
 
-soon
-
-## Acknowledgements
-
-To all my respected colleague/friends that gave me time for recommendation letters. You have always inspired and pushed me forward. 😘
-
+https://kgallarin.com/
 
 ## Features
 
+- About Kevin Gallarin 
 - Eye Candy
-- Light/dark mode toggle - soon
 - Animation Techniques
 - Tailwind setup
 - Frontend testing
 
-
 ## Tech Stack
 
-**Frontend:** Vite, Vue, SplideJS, Pinia, TypeScript, TailwindCSS
+**Frontend:** Vite, Vue, SplideJS, Pinia, TypeScript, TailwindCSS, Apollographql
 
 **Linters:** ESLint, StyleLint
-
 
 **API:** Laravel, GraphQL
 
@@ -38,7 +31,11 @@ To all my respected colleague/friends that gave me time for recommendation lette
 
 **Formatters:** Prettier
 
-**Server:** NA
+**Storage:** S3
+
+**Server:** AWS Lightsail, Nginx
+
+**Mailer:** Resend 
 
 ## Run Locally
 
@@ -57,6 +54,11 @@ Install composer dependencies
 $ composer install
 ```
 
+Migrate the seeders, connected to S3 bucket
+```bash
+$ php artisan migrate --seed 
+```
+
 Install dependencies
 ```bash
 $ npm install
@@ -67,7 +69,6 @@ Start the server
 ```bash
 $ npm run dev
 ```
-
 
 ## Running Tests
 
@@ -82,13 +83,22 @@ $ npm run test:unit
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`API_KEY`
+`MAIL_MAILER`
 
-`ANOTHER_API_KEY`
+`AWS_ACCESS_KEY_ID`
+`AWS_SECRET_ACCESS_KEY`
+`AWS_DEFAULT_REGION`
+`AWS_BUCKET`
+`AWS_URL`
 
 ## Authors
 
 - [@kgallarin](https://github.com/kgallarin)
+
+
+## Acknowledgements
+
+Friends and colleagues who inspired me to build this website, allotted time for recommendations and feedback. You always inspire me and push me forward. 💐
 
 
 ## 🔗 Links

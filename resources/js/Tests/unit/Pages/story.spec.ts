@@ -1,10 +1,66 @@
+import { createTestingPinia } from '@pinia/testing';
 import { RenderResult, render } from '@testing-library/vue';
-import { describe, expect, test } from 'vitest';
+import { describe, expect, test, vi } from 'vitest';
 
 import Story from '@/Components/Pages/Story/index.vue';
 
+const mockContents = [
+  {
+    key: 'how_me',
+    title: '/? why frontend',
+    content: [{ text: "Since childhood, I've been fascinated by video games" }],
+    heroImages: [{ url: 'test.png', alt: 'how frontend - kevin gallarin' }],
+  },
+  {
+    key: 'gists',
+    title: 'Gists about me',
+    content: [{ text: "I'm a Manila-based developer that specializes in web development" }],
+    heroImages: [],
+  },
+  {
+    key: 'personal_facts',
+    title: 'Facts',
+    content: [
+      { title: 'Full Name', text: 'Kevin Morales Gallarin' },
+      { title: 'Born and Raised', text: 'Manila, Philippines' },
+    ],
+    heroImages: [],
+  },
+  {
+    key: 'got_into_web_dev',
+    title: 'How I got into Web Development',
+    content: [{ text: "At the end of high school, I'm really not sure what to take" }],
+    heroImages: [],
+  },
+  {
+    key: 'lessons',
+    title: 'Lessons from the Journey',
+    content: [
+      { title: 'Practice, practice', text: 'Practice text' },
+      { title: 'Testing is the key', text: 'Testing text' },
+      { title: 'TypeScript is your eagle eye', text: '<a href="https://www.typescriptlang.org/">TS Link</a>' },
+      { title: 'A Profane Quote from Ira Glass', text: 'Nobody tells this to people who are beginners' },
+    ],
+    heroImages: [],
+  },
+];
+
 const renderStory = async (): Promise<RenderResult> => {
-  return render(Story);
+  return render(Story, {
+    global: {
+      plugins: [
+        createTestingPinia({
+          createSpy: vi.fn,
+          initialState: {
+            content: {
+              contents: mockContents,
+            },
+          },
+          stubActions: false,
+        }),
+      ],
+    },
+  });
 };
 
 describe('Story Page', (): void => {
@@ -30,7 +86,7 @@ describe('Story Page', (): void => {
     expect(getByText('Practice, practice')).toBeInTheDocument();
     expect(getByText('Testing is the key')).toBeInTheDocument();
 
-    const tsLink = getByText('TypeScript is your eagle eye');
+    const tsLink = getByText('TS Link');
     expect(tsLink).toBeInTheDocument();
     expect(tsLink.closest('a')).toHaveAttribute('href', 'https://www.typescriptlang.org/');
 
@@ -38,8 +94,8 @@ describe('Story Page', (): void => {
     expect(getByText(/Nobody tells this to people who are beginners/)).toBeInTheDocument();
   });
 
-  test('Renders all images with correct alt text', () => {
-    const { getByAltText } = render(Story);
+  test('Renders all images with correct alt text', async () => {
+    const { getByAltText } = await renderStory();
     expect(getByAltText('how frontend - kevin gallarin')).toBeInTheDocument();
   });
 });

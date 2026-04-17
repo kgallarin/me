@@ -1,10 +1,19 @@
+import { createTestingPinia } from '@pinia/testing';
 import { RenderResult, fireEvent, render } from '@testing-library/vue';
-import { describe, expect, test } from 'vitest';
+import { describe, expect, test, vi } from 'vitest';
 
 import ContactForm from '@/Components/Partials/Contact/Form.vue';
 
 const renderContactForm = async (): Promise<RenderResult> => {
-  return render(ContactForm);
+  return render(ContactForm, {
+    global: {
+      plugins: [
+        createTestingPinia({
+          createSpy: vi.fn,
+        }),
+      ],
+    },
+  });
 };
 describe('ContactForm Partial', () => {
   test('renders all form fields correctly', async (): Promise<void> => {

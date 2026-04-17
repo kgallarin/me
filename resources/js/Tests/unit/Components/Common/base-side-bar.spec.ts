@@ -1,4 +1,3 @@
-import router from '@/Router/index';
 import { initializeViewportToDesktop } from '@/Tests/unit/SetupFiles/store-breakpoints-helper';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { createTestingPinia } from '@pinia/testing';
@@ -6,9 +5,11 @@ import { userEvent } from '@testing-library/user-event';
 import { type RenderResult, render } from '@testing-library/vue';
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 
-import { NavLink } from '@/Types/Props';
+import router from '@/Router/index';
 
 import { AppState, useAppStore } from '@/Store/Modules/App';
+
+import { NavLink } from '@/Types/Props';
 
 import BaseSideBar from '@/Components/Common/BaseSideBar.vue';
 
@@ -35,8 +36,8 @@ const renderBaseSideBar = async (
       stubs: {
         'fa-icon': FontAwesomeIcon,
         'motion.nav': {
-          template: '<nav v-show="isOpen"><slot /></nav>',
-          props: ['isOpen'],
+          template: '<nav v-show="animate === \'open\'"><slot /></nav>',
+          props: ['animate'],
         },
         'motion.ul': {
           template: '<ul><slot /></ul>',

@@ -14,7 +14,7 @@ class ProjectSeeder extends Seeder
             [
                 'title'       => 'kgallarin.com',
                 'link'        => 'https://github.com/kgallarin/me',
-                'description' => 'My personal website that I built from scratch to showcase my skills, technologies and myself. I plan to add more features and content as a diary since I do not much exposing myself to social media. Feel free to click here to view how it was coded so I can share my knowledge and experience by this simple website. Built with GraphQL API and yo, it has tests!',
+                'description' => 'My personal website that I built from scratch to showcase my skills, technologies and myself. I plan to add more features and content whenever available to share some ideas and some of my experiences. Built with GraphQL API and yo, it has tests!',
                 'images'      => ['projects/kgdev.png', 'projects/kgdev2.png'],
                 'order'       => 1,
 								 'icon' => [

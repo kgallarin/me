@@ -15,8 +15,12 @@ const testContent = {
   title: 'test skill',
   content: [
     {
-      title: '',
-      text: 'random test text 1',
+      title: 'test left title',
+      text: 'test left content 1',
+    },
+    {
+      title: 'test right title',
+      text: 'test right content 1',
     },
   ],
   key: 'test-key',

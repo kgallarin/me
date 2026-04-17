@@ -1,0 +1,1746 @@
+
+> test:unit
+> npx vitest watch --run
+
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.4 [39m[90m/Users/kg/Dev/PHP/kgdev[39m
+
+[90mstderr[2m | resources/js/Tests/unit/Partials/About/graphed-skill.spec.ts[2m > [22m[2mGraphedSkill[2m > [22m[2mRenders texts and chart component correctly
+[22m[39m[Vue warn]: Missing required prop: "content" 
+  at <GraphedSkills ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ [31m×[39m resources/js/Tests/unit/Partials/About/graphed-skill.spec.ts[2m > [22mGraphedSkill[2m > [22mRenders texts and chart component correctly[32m 22[2mms[22m[39m
+[31m   → Unable to find an element with the text: My Skills. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<section[31m
+      [33mclass[31m=[32m"skills-chart shadow-bottom bg-gray-lighter shadow-custom-mid-inset"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"lg:max-w-screen-lg mx-auto px-4 xl:max-w-screen-xl xl:px-0 px-0 py-12 pb-20 md:px-4 md:py-24 md:pb-24"[31m
+      [36m>[31m
+        [0m[0m
+        [36m<div[31m
+          [33mclass[31m=[32m"w-full text-right"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33manimate-once[31m=[32m"false"[31m
+            [33manimate-only-scroll-down[31m=[32m"false"[31m
+            [33mdirection[31m=[32m"right"[31m
+          [36m>[31m
+            [0m[0m
+            [36m<h2[31m
+              [33mclass[31m=[32m"font-proxima text-4xl font-light"[31m
+            [36m/>[31m
+            [36m<p[31m
+              [33mclass[31m=[32m"font-acumin text-xs font-light"[31m
+            [36m/>[31m
+            [0m[0m
+          [36m</div>[31m
+          [36m<div[31m
+            [33manimate-once[31m=[32m"false"[31m
+            [33manimate-only-scroll-down[31m=[32m"false"[31m
+            [33mdelay[31m=[32m"0.2"[31m
+            [33mdirection[31m=[32m"up"[31m
+          [36m>[31m
+            [0m[0m
+            [36m<div[31m
+              [33mclass[31m=[32m"w-full"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mdata-testid[31m=[32m"skill-chart"[31m
+              [36m>[31m
+                [0mSkill Chart[0m
+              [36m</div>[31m
+            [36m</div>[31m
+            [0m[0m
+          [36m</div>[31m
+        [36m</div>[31m
+        [0m[0m
+      [36m</div>[31m
+    [36m</section>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+ [32m✓[39m resources/js/Tests/unit/Components/Common/projects-section.spec.ts[2m > [22mProjectsSection[2m > [22mProjects headings renders properly[32m 38[2mms[22m[39m
+ [32m✓[39m resources/js/Tests/unit/Components/Common/projects-section.spec.ts[2m > [22mProjectsSection[2m > [22mProject headings has correct text[32m 6[2mms[22m[39m
+ [32m✓[39m resources/js/Tests/unit/Partials/About/charted-skills.spec.ts[2m > [22mChartedSkills[2m > [22mRenders component correctly[32m 56[2mms[22m[39m
+ [31m×[39m resources/js/Tests/unit/Partials/About/charted-skills.spec.ts[2m > [22mChartedSkills[2m > [22mRenders prop left texts correctly[32m 13[2mms[22m[39m
+[31m   → Unable to find an element with the text: test left title. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<section[31m
+      [33mclass[31m=[32m"shadow-bottom bg-gray-lighter shadow-custom-mid-inset"[31m
+      [33mdata-testid[31m=[32m"charted-skills"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"lg:max-w-screen-lg mx-auto px-4 xl:max-w-screen-xl xl:px-0 py-16 md:py-32"[31m
+      [36m>[31m
+        [0m[0m
+        [36m<div[31m
+          [33mclass[31m=[32m"align-center flex w-full flex-col items-start justify-between gap-8 md:flex-row md:gap-0"[31m
+        [36m>[31m
+          [36m<div>[31m
+            [36m<div[31m
+              [33manimate-once[31m=[32m"true"[31m
+              [33manimate-only-scroll-down[31m=[32m"false"[31m
+              [33mdirection[31m=[32m"right"[31m
+              [33mno-animation[31m=[32m"false"[31m
+            [36m>[31m
+              [0m[0m
+              [36m<h3[31m
+                [33mclass[31m=[32m"mb-5 font-proxima text-3xl font-light"[31m
+              [36m/>[31m
+              [36m<p[31m
+                [33mclass[31m=[32m"font-proxima font-light leading-snug text-tertiary"[31m
+              [36m>[31m
+                [0m[0m
+                [0m[0m
+                [0mrandom test text 1 [0m
+                [0m[0m
+                [0m[0m
+              [36m</p>[31m
+              [0m[0m
+            [36m</div>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33manimate-once[31m=[32m"true"[31m
+            [33manimate-only-scroll-down[31m=[32m"false"[31m
+            [33mdelay[31m=[32m"0.2"[31m
+            [33mdirection[31m=[32m"up"[31m
+            [33mno-animation[31m=[32m"false"[31m
+          [36m>[31m
+            [0m[0m
+            [36m<div[31m
+              [33mclass[31m=[32m"relative flex overflow-hidden rounded-full h-full w-full object-cover sm:h-[340px] sm:w-[340px]"[31m
+              [33mdata-testid[31m=[32m"base-image"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"skeleton absolute inset-0 z-10 h-full w-full rounded-full"[31m
+              [36m/>[31m
+              [36m<img[31m
+                [33malt[31m=[32m"kgallarin cart"[31m
+                [33mclass[31m=[32m"h-full w-full rounded-full object-cover opacity-0"[31m
+                [33msrc[31m=[32m"undefined/resources/images/me/kg_chart1.png"[31m
+              [36m/>[31m
+            [36m</div>[31m
+            [0m[0m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"w-full text-right md:w-auto"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33manimate-once[31m=[32m"true"[31m
+              [33manimate-only-scroll-down[31m=[32m"false"[31m
+              [33mdirection[31m=[32m"left"[31m
+              [33mno-animation[31m=[32m"false"[31m
+            [36m>[31m
+              [0m[0m
+              [36m<h3[31m
+                [33mclass[31m=[32m"mb-5 font-proxima text-3xl font-light"[31m
+              [36m/>[31m
+              [36m<p[31m
+                [33mclass[31m=[32m"text-tertiar font-proxima font-light leading-snug"[31m
+              [36m>[31m
+                [0m[0m
+                [0m[0m
+              [36m</p>[31m
+              [0m[0m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+        [0m[0m
+      [36m</div>[31m
+    [36m</section>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+ [31m×[39m resources/js/Tests/unit/Partials/About/charted-skills.spec.ts[2m > [22mChartedSkills[2m > [22mRenders prop right texts correctly[32m 7[2mms[22m[39m
+[31m   → Unable to find an element with the text: test right title. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<section[31m
+      [33mclass[31m=[32m"shadow-bottom bg-gray-lighter shadow-custom-mid-inset"[31m
+      [33mdata-testid[31m=[32m"charted-skills"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"lg:max-w-screen-lg mx-auto px-4 xl:max-w-screen-xl xl:px-0 py-16 md:py-32"[31m
+      [36m>[31m
+        [0m[0m
+        [36m<div[31m
+          [33mclass[31m=[32m"align-center flex w-full flex-col items-start justify-between gap-8 md:flex-row md:gap-0"[31m
+        [36m>[31m
+          [36m<div>[31m
+            [36m<div[31m
+              [33manimate-once[31m=[32m"true"[31m
+              [33manimate-only-scroll-down[31m=[32m"false"[31m
+              [33mdirection[31m=[32m"right"[31m
+              [33mno-animation[31m=[32m"false"[31m
+            [36m>[31m
+              [0m[0m
+              [36m<h3[31m
+                [33mclass[31m=[32m"mb-5 font-proxima text-3xl font-light"[31m
+              [36m/>[31m
+              [36m<p[31m
+                [33mclass[31m=[32m"font-proxima font-light leading-snug text-tertiary"[31m
+              [36m>[31m
+                [0m[0m
+                [0m[0m
+                [0mrandom test text 1 [0m
+                [0m[0m
+                [0m[0m
+              [36m</p>[31m
+              [0m[0m
+            [36m</div>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33manimate-once[31m=[32m"true"[31m
+            [33manimate-only-scroll-down[31m=[32m"false"[31m
+            [33mdelay[31m=[32m"0.2"[31m
+            [33mdirection[31m=[32m"up"[31m
+            [33mno-animation[31m=[32m"false"[31m
+          [36m>[31m
+            [0m[0m
+            [36m<div[31m
+              [33mclass[31m=[32m"relative flex overflow-hidden rounded-full h-full w-full object-cover sm:h-[340px] sm:w-[340px]"[31m
+              [33mdata-testid[31m=[32m"base-image"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"skeleton absolute inset-0 z-10 h-full w-full rounded-full"[31m
+              [36m/>[31m
+              [36m<img[31m
+                [33malt[31m=[32m"kgallarin cart"[31m
+                [33mclass[31m=[32m"h-full w-full rounded-full object-cover opacity-0"[31m
+                [33msrc[31m=[32m"undefined/resources/images/me/kg_chart1.png"[31m
+              [36m/>[31m
+            [36m</div>[31m
+            [0m[0m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"w-full text-right md:w-auto"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33manimate-once[31m=[32m"true"[31m
+              [33manimate-only-scroll-down[31m=[32m"false"[31m
+              [33mdirection[31m=[32m"left"[31m
+              [33mno-animation[31m=[32m"false"[31m
+            [36m>[31m
+              [0m[0m
+              [36m<h3[31m
+                [33mclass[31m=[32m"mb-5 font-proxima text-3xl font-light"[31m
+              [36m/>[31m
+              [36m<p[31m
+                [33mclass[31m=[32m"text-tertiar font-proxima font-light leading-snug"[31m
+              [36m>[31m
+                [0m[0m
+                [0m[0m
+              [36m</p>[31m
+              [0m[0m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+        [0m[0m
+      [36m</div>[31m
+    [36m</section>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+ [32m✓[39m resources/js/Tests/unit/Components/Common/projects-section.spec.ts[2m > [22mProjectsSection[2m > [22mProject cards renders properly[32m 153[2mms[22m[39m
+ [32m✓[39m resources/js/Tests/unit/Components/Common/projects-section.spec.ts[2m > [22mProjectsSection[2m > [22mIcon length count is correct[32m 57[2mms[22m[39m
+[90mstderr[2m | resources/js/Tests/unit/Components/Common/base-footer.spec.ts[2m > [22m[2mBaseFooter[2m > [22m[2mRenders copyright with correct current year
+[22m[39m[Vue warn]: Failed to resolve component: router-link
+If this is a native custom element, make sure to exclude it from component resolution via compilerOptions.isCustomElement. 
+  at <BaseFooter ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+[90mstderr[2m | resources/js/Tests/unit/Pages/contact.spec.ts[2m > [22m[2mContact Page[2m > [22m[2mRenders the Contact page correctly
+[22m[39m[Vue warn]: Invalid vnode type when creating vnode: undefined. 
+  at <Index ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+[Vue warn]: Invalid vnode type when creating vnode: undefined. 
+  at <Index ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+[90mstderr[2m | resources/js/Tests/unit/Partials/Contact/form.spec.ts[2m > [22m[2mContactForm Partial[2m > [22m[2mrenders all form fields correctly
+[22m[39m[Vue warn]: Invalid vnode type when creating vnode: undefined. 
+  at <Form ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+[90mstderr[2m | resources/js/Tests/unit/Pages/contact.spec.ts[2m > [22m[2mContact Page[2m > [22m[2mRenders the Contact form partial
+[22m[39m[Vue warn]: Invalid vnode type when creating vnode: undefined. 
+  at <Index ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+[Vue warn]: Invalid vnode type when creating vnode: undefined. 
+  at <Index ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+[90mstderr[2m | resources/js/Tests/unit/Partials/Contact/form.spec.ts[2m > [22m[2mContactForm Partial[2m > [22m[2mallows user to fill out the form
+[22m[39m[Vue warn]: Invalid vnode type when creating vnode: undefined. 
+  at <Form ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+[90mstderr[2m | resources/js/Tests/unit/Partials/Contact/form.spec.ts[2m > [22m[2mContactForm Partial[2m > [22m[2mhas required attributes on inputs
+[22m[39m[Vue warn]: Invalid vnode type when creating vnode: undefined. 
+  at <Form ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ [31m×[39m resources/js/Tests/unit/Pages/contact.spec.ts[2m > [22mContact Page[2m > [22mRenders the Contact page correctly[32m 12[2mms[22m[39m
+[31m   → [🍍]: "getActivePinia()" was called but there was no active Pinia. Are you trying to use a store before calling "app.use(pinia)"?
+See https://pinia.vuejs.org/core-concepts/outside-component-usage.html for help.
+This will fail in production.[39m
+ [31m×[39m resources/js/Tests/unit/Pages/contact.spec.ts[2m > [22mContact Page[2m > [22mRenders the Contact form partial[32m 4[2mms[22m[39m
+[31m   → [🍍]: "getActivePinia()" was called but there was no active Pinia. Are you trying to use a store before calling "app.use(pinia)"?
+See https://pinia.vuejs.org/core-concepts/outside-component-usage.html for help.
+This will fail in production.[39m
+[90mstderr[2m | resources/js/Tests/unit/Components/Common/base-footer.spec.ts[2m > [22m[2mBaseFooter[2m > [22m[2mRenders navigation links when provided
+[22m[39m[Vue warn]: Failed to resolve component: router-link
+If this is a native custom element, make sure to exclude it from component resolution via compilerOptions.isCustomElement. 
+  at <BaseFooter nav= [
+  { label: [32m'Home'[39m, to: [32m'home'[39m, icon: [32m'chevron-right'[39m },
+  { label: [32m'About'[39m, to: [32m'about'[39m, icon: [32m'chevron-right'[39m }
+] ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ [31m×[39m resources/js/Tests/unit/Partials/Contact/form.spec.ts[2m > [22mContactForm Partial[2m > [22mrenders all form fields correctly[32m 20[2mms[22m[39m
+[31m   → [🍍]: "getActivePinia()" was called but there was no active Pinia. Are you trying to use a store before calling "app.use(pinia)"?
+See https://pinia.vuejs.org/core-concepts/outside-component-usage.html for help.
+This will fail in production.[39m
+ [31m×[39m resources/js/Tests/unit/Partials/Contact/form.spec.ts[2m > [22mContactForm Partial[2m > [22mallows user to fill out the form[32m 2[2mms[22m[39m
+[31m   → [🍍]: "getActivePinia()" was called but there was no active Pinia. Are you trying to use a store before calling "app.use(pinia)"?
+See https://pinia.vuejs.org/core-concepts/outside-component-usage.html for help.
+This will fail in production.[39m
+ [31m×[39m resources/js/Tests/unit/Partials/Contact/form.spec.ts[2m > [22mContactForm Partial[2m > [22mhas required attributes on inputs[32m 1[2mms[22m[39m
+[31m   → [🍍]: "getActivePinia()" was called but there was no active Pinia. Are you trying to use a store before calling "app.use(pinia)"?
+See https://pinia.vuejs.org/core-concepts/outside-component-usage.html for help.
+This will fail in production.[39m
+[90mstderr[2m | resources/js/Tests/unit/Components/Common/base-footer.spec.ts[2m > [22m[2mBaseFooter[2m > [22m[2mScrolls to top when chevron UP is clicked
+[22m[39m[Vue warn]: Failed to resolve component: router-link
+If this is a native custom element, make sure to exclude it from component resolution via compilerOptions.isCustomElement. 
+  at <BaseFooter ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ [31m×[39m resources/js/Tests/unit/Pages/story.spec.ts[2m > [22mStory Page[2m > [22mRenders the Story page component correctly[32m 19[2mms[22m[39m
+[31m   → [🍍]: "getActivePinia()" was called but there was no active Pinia. Are you trying to use a store before calling "app.use(pinia)"?
+See https://pinia.vuejs.org/core-concepts/outside-component-usage.html for help.
+This will fail in production.[39m
+ [31m×[39m resources/js/Tests/unit/Pages/story.spec.ts[2m > [22mStory Page[2m > [22mRenders all images with correct alt text[32m 1[2mms[22m[39m
+[31m   → [🍍]: "getActivePinia()" was called but there was no active Pinia. Are you trying to use a store before calling "app.use(pinia)"?
+See https://pinia.vuejs.org/core-concepts/outside-component-usage.html for help.
+This will fail in production.[39m
+ [31m×[39m resources/js/Tests/unit/Components/Common/base-footer.spec.ts[2m > [22mBaseFooter[2m > [22mRenders copyright with correct current year[32m 61[2mms[22m[39m
+[31m   → [🍍]: "getActivePinia()" was called but there was no active Pinia. Are you trying to use a store before calling "app.use(pinia)"?
+See https://pinia.vuejs.org/core-concepts/outside-component-usage.html for help.
+This will fail in production.[39m
+ [31m×[39m resources/js/Tests/unit/Components/Common/base-footer.spec.ts[2m > [22mBaseFooter[2m > [22mRenders navigation links when provided[32m 6[2mms[22m[39m
+[31m   → [🍍]: "getActivePinia()" was called but there was no active Pinia. Are you trying to use a store before calling "app.use(pinia)"?
+See https://pinia.vuejs.org/core-concepts/outside-component-usage.html for help.
+This will fail in production.[39m
+ [31m×[39m resources/js/Tests/unit/Components/Common/base-footer.spec.ts[2m > [22mBaseFooter[2m > [22mScrolls to top when chevron UP is clicked[32m 74[2mms[22m[39m
+[31m   → [🍍]: "getActivePinia()" was called but there was no active Pinia. Are you trying to use a store before calling "app.use(pinia)"?
+See https://pinia.vuejs.org/core-concepts/outside-component-usage.html for help.
+This will fail in production.[39m
+ [32m✓[39m resources/js/Tests/unit/Partials/About/whoami.spec.ts[2m > [22mWhoami[2m > [22mComponent renders correctly and checks content[32m 238[2mms[22m[39m
+ [32m✓[39m resources/js/Tests/unit/Partials/About/whoami.spec.ts[2m > [22mWhoami[2m > [22mUses correct number of items shown for desktop[32m 55[2mms[22m[39m
+ [31m×[39m resources/js/Tests/unit/Partials/About/whoami.spec.ts[2m > [22mWhoami[2m > [22mUses correct number of items shown for mobile[32m 44[2mms[22m[39m
+[31m   → expected '2' to be '3' // Object.is equality[39m
+ [32m✓[39m resources/js/Tests/unit/Components/Common/base-side-bar.spec.ts[2m > [22mBaseSideBar[2m > [22mSidebar is hidden by default[32m 187[2mms[22m[39m
+ [31m×[39m resources/js/Tests/unit/Partials/About/recommendations.spec.ts[2m > [22mRecommendations[2m > [22mRenders component correctly[33m 1103[2mms[22m[39m
+[31m   → Found multiple elements with the text: test title
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<p[31m
+  [33mclass[31m=[32m"text-xs"[31m
+  [33mdata-v-7bec0ac5[31m=[32m""[31m
+[36m>[31m
+  [0mtest title[0m
+[36m</p>[31m
+
+Ignored nodes: comments, script, style
+[36m<p[31m
+  [33mclass[31m=[32m"text-xs"[31m
+  [33mdata-v-7bec0ac5[31m=[32m""[31m
+[36m>[31m
+  [0mtest title[0m
+[36m</p>[31m
+
+Ignored nodes: comments, script, style
+[36m<p[31m
+  [33mclass[31m=[32m"text-xs"[31m
+  [33mdata-v-7bec0ac5[31m=[32m""[31m
+[36m>[31m
+  [0mtest title[0m
+[36m</p>[31m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<section>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"lg:max-w-screen-lg mx-auto px-4 xl:max-w-screen-xl xl:px-0 pb-24"[31m
+      [36m>[31m
+        [0m[0m
+        [36m<div[31m
+          [33manimate-once[31m=[32m"true"[31m
+          [33manimate-only-scroll-down[31m=[32m"false"[31m
+          [33mdirection[31m=[32m"up"[31m
+        [36m>[31m
+          [0m[0m
+          [36m<h2[31m
+            [33mclass[31m=[32m"pt-24 font-proxima text-4xl font-light"[31m
+          [36m>[31m
+            [0mtest-title[0m
+          [36m</h2>[31m
+          [36m<p[31m
+            [33mclass[31m=[32m"font-acumin text-xs font-light"[31m
+          [36m>[31m
+            [0mtest-subtitle[0m
+          [36m</p>[31m
+          [0m[0m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"hidden gap-6 pt-12 lg:flex"[31m
+        [36m>[31m
+          [0m[0m
+          [36m<div[31m
+            [33mclass[31m=[32m"flex flex-1 flex-col gap-6"[31m
+          [36m>[31m
+            [0m[0m
+            [36m<div[31m
+              [33manimate-once[31m=[32m"true"[31m
+              [33manimate-only-scroll-down[31m=[32m"false"[31m
+              [33mclass[31m=[32m"break-inside-avoid"[31m
+              [33mdelay[31m=[32m"0"[31m
+              [33mdirection[31m=[32m"up"[31m
+            [36m>[31m
+              [0m[0m
+              [36m<div[31m
+                [33mclass[31m=[32m"main-card relative flex flex-col rounded-md border border-gray-200 p-4 py-8 text-primary shadow-md h-[380px] w-full overflow-hidden pb-12"[31m
+                [33mdata-v-7bec0ac5[31m=[32m""[31m
+              [36m>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"flex justify-between border-b border-gray-200 pb-4"[31m
+                  [33mdata-v-7bec0ac5[31m=[32m""[31m
+                [36m>[31m
+                  [36m<div[31m
+                    [33mclass[31m=[32m"author flex flex-row items-center gap-3 leading-tight"[31m
+                    [33mdata-v-7bec0ac5[31m=[32m""[31m
+                  [36m>[31m
+                    [36m<img[31m
+                      [33malt[31m=[32m"test"[31m
+                      [33mclass[31m=[32m"h-12 w-12 object-contain"[31m
+                      [33mdata-v-7bec0ac5[31m=[32m""[31m
+                      [33mrounded[31m=[32m"rounded-full"[31m
+                    [36m/>[31m
+                    [36m<div[31m
+                      [33mclass[31m=[32m"flex flex-col text-left"[31m
+                      [33mdata-v-7bec0ac5[31m=[32m""[31m
+                    [36m>[31m
+                      [36m<p[31m
+                        [33mclass[31m=[32m"mb-0 leading-tight"[31m
+                        [33mdata-v-7bec0ac5[31m=[32m""[31m
+                      [36m>[31m
+                        [0mtest author[0m
+                      [36m</p>[31m
+                      [36m<p[31m
+                        [33mclass[31m=[32m"text-xs"[31m
+                        [33mdata-v-7bec0ac5[31m=[32m""[31m
+                      [36m>[31m
+                        [0mtest title[0m
+                      [36m</p>[31m
+                    [36m</div>[31m
+                  [36m</div>[31m
+                  [36m<div[31m
+                    [33mdata-v-7bec0ac5[31m=[32m""[31m
+                  [36m>[31m
+                    [0m[0m
+                    [36m<svg[31m
+                      [33maria-hidden[31m=[32m"true"[31m
+                      [33mclass[31m=[32m"svg-inline--fa fa-star inline-block text-xs text-yellow-400"[31m
+                      [33mdata-icon[31m=[32m"star"[31m
+                      [33mdata-prefix[31m=[32m"fas"[31m
+                      [33mdata-v-7bec0ac5[31m=[32m""[31m
+                      [33mrole[31m=[32m"img"[31m
+                      [33mviewBox[31m=[32m"0 0 576 512"[31m
+                    [36m>[31m
+                      [36m<path[31m
+                        [33mclass[31m=[32m""[31m
+                        [33md[31m=[32m"M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"[31m
+                        [33mfill[31m=[32m"currentColor"[31m
+                      [36m/>[31m
+                    [36m</svg>[31m
+                    [36m<svg[31m
+                      [33maria-hidden[31m=[32m"true"[31m
+                      [33mclass[31m=[32m"svg-inline--fa fa-star inline-block text-xs text-yellow-400"[31m
+                      [33mdata-icon[31m=[32m"star"[31m
+                      [33mdata-prefix[31m=[32m"fas"[31m
+                      [33mdata-v-7bec0ac5[31m=[32m""[31m
+                      [33mrole[31m=[32m"img"[31m
+                      [33mviewBox[31m=[32m"0 0 576 512"[31m
+                    [36m>[31m
+                      [36m<path[31m
+                        [33mclass[31m=[32m""[31m
+                        [33md[31m=[32m"M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"[31m
+                        [33mfill[31m=[32m"currentColor"[31m
+                      [36m/>[31m
+                    [36m</svg>[31m
+                    [36m<svg[31m
+                      [33maria-hidden[31m=[32m"true"[31m
+                      [33mclass[31m=[32m"svg-inline--fa fa-star inline-block text-xs text-yellow-400"[31m
+                      [33mdata-icon[31m=[32m"star"[31m
+                      [33mdata-prefix[31m=[32m"fas"[31m
+                      [33mdata-v-7bec0ac5[31m=[32m""[31m
+                      [33mrole[31m=[32m"img"[31m
+                      [33mviewBox[31m=[32m"0 0 576 512"[31m
+                    [36m>[31m
+                      [36m<path[31m
+                        [33mclass[31m=[32m""[31m
+                        [33md[31m=[32m"M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"[31m
+                        [33mfill[31m=[32m"currentColor"[31m
+                      [36m/>[31m
+                    [36m</svg>[31m
+                    [36m<svg[31m
+                      [33mar...
+
+Ignored nodes: comments, script, style
+[36m<html>[31m
+  [36m<head />[31m
+  [36m<body>[31m
+    [36m<div>[31m
+      [36m<section>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"lg:max-w-screen-lg mx-auto px-4 xl:max-w-screen-xl xl:px-0 pb-24"[31m
+        [36m>[31m
+          [0m[0m
+          [36m<div[31m
+            [33manimate-once[31m=[32m"true"[31m
+            [33manimate-only-scroll-down[31m=[32m"false"[31m
+            [33mdirection[31m=[32m"up"[31m
+          [36m>[31m
+            [0m[0m
+            [36m<h2[31m
+              [33mclass[31m=[32m"pt-24 font-proxima text-4xl font-light"[31m
+            [36m>[31m
+              [0mtest-title[0m
+            [36m</h2>[31m
+            [36m<p[31m
+              [33mclass[31m=[32m"font-acumin text-xs font-light"[31m
+            [36m>[31m
+              [0mtest-subtitle[0m
+            [36m</p>[31m
+            [0m[0m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"hidden gap-6 pt-12 lg:flex"[31m
+          [36m>[31m
+            [0m[0m
+            [36m<div[31m
+              [33mclass[31m=[32m"flex flex-1 flex-col gap-6"[31m
+            [36m>[31m
+              [0m[0m
+              [36m<div[31m
+                [33manimate-once[31m=[32m"true"[31m
+                [33manimate-only-scroll-down[31m=[32m"false"[31m
+                [33mclass[31m=[32m"break-inside-avoid"[31m
+                [33mdelay[31m=[32m"0"[31m
+                [33mdirection[31m=[32m"up"[31m
+              [36m>[31m
+                [0m[0m
+                [36m<div[31m
+                  [33mclass[31m=[32m"main-card relative flex flex-col rounded-md border border-gray-200 p-4 py-8 text-primary shadow-md h-[380px] w-full overflow-hidden pb-12"[31m
+                  [33mdata-v-7bec0ac5[31m=[32m""[31m
+                [36m>[31m
+                  [36m<div[31m
+                    [33mclass[31m=[32m"flex justify-between border-b border-gray-200 pb-4"[31m
+                    [33mdata-v-7bec0ac5[31m=[32m""[31m
+                  [36m>[31m
+                    [36m<div[31m
+                      [33mclass[31m=[32m"author flex flex-row items-center gap-3 leading-tight"[31m
+                      [33mdata-v-7bec0ac5[31m=[32m""[31m
+                    [36m>[31m
+                      [36m<img[31m
+                        [33malt[31m=[32m"test"[31m
+                        [33mclass[31m=[32m"h-12 w-12 object-contain"[31m
+                        [33mdata-v-7bec0ac5[31m=[32m""[31m
+                        [33mrounded[31m=[32m"rounded-full"[31m
+                      [36m/>[31m
+                      [36m<div[31m
+                        [33mclass[31m=[32m"flex flex-col text-left"[31m
+                        [33mdata-v-7bec0ac5[31m=[32m""[31m
+                      [36m>[31m
+                        [36m<p[31m
+                          [33mclass[31m=[32m"mb-0 leading-tight"[31m
+                          [33mdata-v-7bec0ac5[31m=[32m""[31m
+                        [36m>[31m
+                          [0mtest author[0m
+                        [36m</p>[31m
+                        [36m<p[31m
+                          [33mclass[31m=[32m"text-xs"[31m
+                          [33mdata-v-7bec0ac5[31m=[32m""[31m
+                        [36m>[31m
+                          [0mtest title[0m
+                        [36m</p>[31m
+                      [36m</div>[31m
+                    [36m</div>[31m
+                    [36m<div[31m
+                      [33mdata-v-7bec0ac5[31m=[32m""[31m
+                    [36m>[31m
+                      [0m[0m
+                      [36m<svg[31m
+                        [33maria-hidden[31m=[32m"true"[31m
+                        [33mclass[31m=[32m"svg-inline--fa fa-star inline-block text-xs text-yellow-400"[31m
+                        [33mdata-icon[31m=[32m"star"[31m
+                        [33mdata-prefix[31m=[32m"fas"[31m
+                        [33mdata-v-7bec0ac5[31m=[32m""[31m
+                        [33mrole[31m=[32m"img"[31m
+                        [33mviewBox[31m=[32m"0 0 576 512"[31m
+                      [36m>[31m
+                        [36m<path[31m
+                          [33mclass[31m=[32m""[31m
+                          [33md[31m=[32m"M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"[31m
+                          [33mfill[31m=[32m"currentColor"[31m
+                        [36m/>[31m
+                      [36m</svg>[31m
+                      [36m<svg[31m
+                        [33maria-hidden[31m=[32m"true"[31m
+                        [33mclass[31m=[32m"svg-inline--fa fa-star inline-block text-xs text-yellow-400"[31m
+                        [33mdata-icon[31m=[32m"star"[31m
+                        [33mdata-prefix[31m=[32m"fas"[31m
+                        [33mdata-v-7bec0ac5[31m=[32m""[31m
+                        [33mrole[31m=[32m"img"[31m
+                        [33mviewBox[31m=[32m"0 0 576 512"[31m
+                      [36m>[31m
+                        [36m<path[31m
+                          [33mclass[31m=[32m""[31m
+                          [33md[31m=[32m"M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"[31m
+                          [33mfill[31m=[32m"currentColor"[31m
+                        [36m/>[31m
+                      [36m</svg>[31m
+                      [36m<svg[31m
+                        [33maria-hidden[31m=[32m"true"[31m
+                        [33mclass[31m=[32m"svg-inline--fa fa-star inline-block text-xs text-yellow-400"[31m
+                        [33mdata-icon[31m=[32m"star"[31m
+                        [33mdata-prefix[31m=[32m"fas"[31m
+                        [33mdata-v-7bec0ac5[31m=[32m""[31m
+                        [33mrole[31m=[32m"img"[31m
+                        [33mviewBox[31m=[32m"0 0 576 512"[31m
+                      [36m>[31m
+                        [36m<path[31m
+                          [33mclass[31m=[32m""[31m
+                          [33md[31m=[32m"M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556...[39m
+ [32m✓[39m resources/js/Tests/unit/Partials/About/recommendations.spec.ts[2m > [22mRecommendations[2m > [22mText toggles label when clicking read more/show less[32m 32[2mms[22m[39m
+ [31m×[39m resources/js/Tests/unit/Components/Common/base-side-bar.spec.ts[2m > [22mBaseSideBar[2m > [22mSidebar is visible when isOpen is true[32m 132[2mms[22m[39m
+[31m   → Unable to find an accessible element with the role "navigation"
+
+There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div />[31m
+  [36m<div>[31m
+    [0m[0m
+    [36m<nav[31m
+      [33manimate[31m=[32m"open"[31m
+      [33mclass[31m=[32m"nav container fixed left-0 top-0 z-[70] h-full w-full shadow-inner drop-shadow-xl"[31m
+      [33minitial[31m=[32m"closed"[31m
+      [33mstyle[31m=[32m"display: none;"[31m
+    [36m>[31m
+      [0m[0m
+      [36m<div[31m
+        [33mclass[31m=[32m"sidebar-main h-full transition-opacity duration-300"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mis-open[31m=[32m"true"[31m
+          [33mnav-items[31m=[32m"[object Object],[object Object],[object Object]"[31m
+        [36m>[31m
+          [0m[0m
+          [36m<ul[31m
+            [33mclass[31m=[32m"list"[31m
+            [33mvariants[31m=[32m"[object Object]"[31m
+          [36m>[31m
+            [0m[0m
+            [0m[0m
+            [36m<li[31m
+              [33mclass[31m=[32m"list-item"[31m
+              [33mvariants[31m=[32m"[object Object]"[31m
+              [33mwhile-press[31m=[32m"[object Object]"[31m
+            [36m>[31m
+              [0m[0m
+              [36m<a[31m
+                [33mclass[31m=[32m"nav-link flex w-full items-center justify-between pb-2 text-sm text-primary"[31m
+                [33mhref[31m=[32m"/"[31m
+              [36m>[31m
+                [36m<span>[31m
+                  [0mHome[0m
+                [36m</span>[31m
+                [36m<span>[31m
+                  [36m<svg[31m
+                    [33maria-hidden[31m=[32m"true"[31m
+                    [33mclass[31m=[32m"svg-inline--fa fa-house text-xs text-gray-200"[31m
+                    [33mdata-icon[31m=[32m"house"[31m
+                    [33mdata-prefix[31m=[32m"fas"[31m
+                    [33mrole[31m=[32m"img"[31m
+                    [33mviewBox[31m=[32m"0 0 512 512"[31m
+                  [36m>[31m
+                    [36m<path[31m
+                      [33mclass[31m=[32m""[31m
+                      [33md[31m=[32m"M277.8 8.6c-12.3-11.4-31.3-11.4-43.5 0l-224 208c-9.6 9-12.8 22.9-8 35.1S18.8 272 32 272l16 0 0 176c0 35.3 28.7 64 64 64l288 0c35.3 0 64-28.7 64-64l0-176 16 0c13.2 0 25-8.1 29.8-20.3s1.6-26.2-8-35.1l-224-208zM240 320l32 0c26.5 0 48 21.5 48 48l0 96-128 0 0-96c0-26.5 21.5-48 48-48z"[31m
+                      [33mfill[31m=[32m"currentColor"[31m
+                    [36m/>[31m
+                  [36m</svg>[31m
+                [36m</span>[31m
+              [36m</a>[31m
+              [0m[0m
+            [36m</li>[31m
+            [36m<li[31m
+              [33mclass[31m=[32m"list-item"[31m
+              [33mvariants[31m=[32m"[object Object]"[31m
+              [33mwhile-press[31m=[32m"[object Object]"[31m
+            [36m>[31m
+              [0m[0m
+              [36m<a[31m
+                [33mclass[31m=[32m"nav-link flex w-full items-center justify-between pb-2 text-sm text-primary"[31m
+                [33mhref[31m=[32m"/about"[31m
+              [36m>[31m
+                [36m<span>[31m
+                  [0mAbout[0m
+                [36m</span>[31m
+                [36m<span>[31m
+                  [36m<svg[31m
+                    [33maria-hidden[31m=[32m"true"[31m
+                    [33mclass[31m=[32m"svg-inline--fa fa-user text-xs text-gray-200"[31m
+                    [33mdata-icon[31m=[32m"user"[31m
+                    [33mdata-prefix[31m=[32m"fas"[31m
+                    [33mrole[31m=[32m"img"[31m
+                    [33mviewBox[31m=[32m"0 0 448 512"[31m
+                  [36m>[31m
+                    [36m<path[31m
+                      [33mclass[31m=[32m""[31m
+                      [33md[31m=[32m"M224 248a120 120 0 1 0 0-240 120 120 0 1 0 0 240zm-29.7 56C95.8 304 16 383.8 16 482.3 16 498.7 29.3 512 45.7 512l356.6 0c16.4 0 29.7-13.3 29.7-29.7 0-98.5-79.8-178.3-178.3-178.3l-59.4 0z"[31m
+                      [33mfill[31m=[32m"currentColor"[31m
+                    [36m/>[31m
+                  [36m</svg>[31m
+                [36m</span>[31m
+              [36m</a>[31m
+              [0m[0m
+            [36m</li>[31m
+            [36m<li[31m
+              [33mclass[31m=[32m"list-item"[31m
+              [33mvariants[31m=[32m"[object Object]"[31m
+              [33mwhile-press[31m=[32m"[object Object]"[31m
+            [36m>[31m
+              [0m[0m
+              [36m<a[31m
+                [33mclass[31m=[32m"nav-link flex w-full items-center justify-between pb-2 text-sm text-primary"[31m
+                [33mhref[31m=[32m"/story"[31m
+              [36m>[31m
+                [36m<span>[31m
+                  [0mStory[0m
+                [36m</span>[31m
+                [36m<span>[31m
+                  [36m<svg[31m
+                    [33maria-hidden[31m=[32m"true"[31m
+                    [33mclass[31m=[32m"svg-inline--fa fa-user text-xs text-gray-200"[31m
+                    [33mdata-icon[31m=[32m"user"[31m
+                    [33mdata-prefix[31m=[32m"fas"[31m
+                    [33mrole[31m=[32m"img"[31m
+                    [33mviewBox[31m=[32m"0 0 448 512"[31m
+                  [36m>[31m
+                    [36m<path[31m
+                      [33mclass[31m=[32m""[31m
+                      [33md[31m=[32m"M224 248a120 120 0 1 0 0-240 120 120 0 1 0 0 240zm-29.7 56C95.8 304 16 383.8 16 482.3 16 498.7 29.3 512 45.7 512l356.6 0c16.4 0 29.7-13.3 29.7-29.7 0-98.5-79.8-178.3-178.3-178.3l-59.4 0z"[31m
+                      [33mfill[31m=[32m"currentColor"[31m
+                    [36m/>[31m
+                  [36m</svg>[31m
+                [36m</span>[31m
+              [36m</a>[31m
+              [0m[0m
+            [36m</li>[31m
+            [0m[0m
+            [0m[0m
+          [36m</ul>[31m
+          [36m<ul[31m
+            [33mclass[31m=[32m"absolute bottom-5 right-10 z-50 flex w-full items-center justify-end gap-8 text-xl"[31m
+            [33mvariants[31m=[32m"[object Object]"[31m
+          [36m>[31m
+            [0m[0m
+            [0m[0m
+          [36m</ul>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"absolute left-0 top-0 flex w-full cursor-pointer items-center justify-center p-[6px_6px_6px_16px] text-xl"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"flex w-full items-center justify-between"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"h-[36px] w-[36px] sm:w-[44px]"[31m
+              [36m>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"block"[31m
+                  [33mdata-testid[31m=[32m"brand-logo"[31m
+                  [33mfor-light[31m=[32m""[31m
+                [36m/>[31m
+              [36m</div>[31m
+              [36m<div>[31m
+                [0m[0m
+                [36m<div[31m
+                  [33mclass[31m=[32m"p-3"[31m
+                  [33mdata-testid[31m=[32m"close-sidebar"[31m
+                [36m>[31m
+                  [36m<svg[31m
+                    [33maria-hidden[31m=[32m"true"[31m
+                    [33mclass[31m=[32m"svg-inline--fa fa-xmark text-primary"[31m
+                    [33mdata-icon[31m=[32m"xmark"[31m
+                    [33mdata-prefix[31m=[32m"fas"[31m
+                    [33mrole[31m=[32m"img"[31m
+                    [33mviewBox[31m=[32m"0 0 384 512"[31m
+                  [36m>[31m
+                    [36m<path[31m
+                      [33mclass[31m=[32m""[31m
+                      [33md[31m=[32m"M55.1 73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L147.2 256 9.9 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192.5 301.3 329.9 438.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.8 256 375.1 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192.5 210.7 55.1 73.4z"[31m
+                      [33mfill[31m=[32m"currentColor"[31m
+                    [36m/>[31m
+                  [36m</svg>[31m
+                [36m</div>[31m
+                [0m[0m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+          [0m[0m
+        [36m</div>[31m
+      [36m</div>[31m
+      [0m[0m
+    [36m</nav>[31m
+    [0m[0m
+  [36m</div>[31m
+[36m</body>[31m[39m
+ [32m✓[39m resources/js/Tests/unit/Components/Common/base-side-bar.spec.ts[2m > [22mBaseSideBar[2m > [22mNavigation items mounts properly[32m 7[2mms[22m[39m
+ [32m✓[39m resources/js/Tests/unit/Components/Common/base-side-bar.spec.ts[2m > [22mBaseSideBar[2m > [22mClicking a nav item navigates and closes sidebar[32m 51[2mms[22m[39m
+ [32m✓[39m resources/js/Tests/unit/Components/Common/base-side-bar.spec.ts[2m > [22mBaseSideBar[2m > [22mClicking close button closes sidebar[32m 22[2mms[22m[39m
+ [32m✓[39m resources/js/Tests/unit/Partials/About/random-facts.spec.ts[2m > [22mRandomFacts[2m > [22mComponent renders correctly[32m 18[2mms[22m[39m
+ [32m✓[39m resources/js/Tests/unit/Partials/About/random-facts.spec.ts[2m > [22mRandomFacts[2m > [22mTexts renders correctly[32m 8[2mms[22m[39m
+ [32m✓[39m resources/js/Tests/unit/Components/Common/safe-html.spec.ts[2m > [22mSafeHtml[2m > [22mrenders plain text correctly[32m 14[2mms[22m[39m
+ [32m✓[39m resources/js/Tests/unit/Components/Common/safe-html.spec.ts[2m > [22mSafeHtml[2m > [22mrenders text with <br /> correctly[32m 5[2mms[22m[39m
+ [32m✓[39m resources/js/Tests/unit/Components/Common/safe-html.spec.ts[2m > [22mSafeHtml[2m > [22mrenders text with multiple <br> tags correctly[32m 2[2mms[22m[39m
+ [32m✓[39m resources/js/Tests/unit/Components/Common/safe-html.spec.ts[2m > [22mSafeHtml[2m > [22mhandles null or undefined html gracefully[32m 1[2mms[22m[39m
+ [32m✓[39m resources/js/Tests/unit/Components/Common/base-header-nav.spec.ts[2m > [22mBaseHeaderNav[2m > [22mBase header component nav renders properly[32m 171[2mms[22m[39m
+ [32m✓[39m resources/js/Tests/unit/Components/Common/base-header-nav.spec.ts[2m > [22mBaseHeaderNav[2m > [22mGiven the default nav, the home link should be rendered[32m 14[2mms[22m[39m
+ [32m✓[39m resources/js/Tests/unit/Components/Common/base-header-nav.spec.ts[2m > [22mBaseHeaderNav[2m > [22mBrand logo should be rendered[32m 8[2mms[22m[39m
+ [32m✓[39m resources/js/Tests/unit/Components/Common/base-header-nav.spec.ts[2m > [22mBaseHeaderNav[2m > [22mClicking on brand logo should navigate to home[32m 27[2mms[22m[39m
+ [32m✓[39m resources/js/Tests/unit/Components/Common/base-header-nav.spec.ts[2m > [22mBaseHeaderNav[2m > [22mClicks to a nav link (about) should navigate to the correct route[32m 26[2mms[22m[39m
+ [32m✓[39m resources/js/Tests/unit/Partials/Home/hero-image-text-shard.spec.ts[2m > [22mHeroImageTextShard[2m > [22mRenders left and right texts correctly[32m 75[2mms[22m[39m
+ [32m✓[39m resources/js/Tests/unit/Partials/Home/hero-image-text-shard.spec.ts[2m > [22mHeroImageTextShard[2m > [22mComponent emits textHoverLeft when left shard is hovered[32m 14[2mms[22m[39m
+ [32m✓[39m resources/js/Tests/unit/Partials/Home/hero-image-text-shard.spec.ts[2m > [22mHeroImageTextShard[2m > [22mComponent emits textHoverRight when right shard is hovered[32m 9[2mms[22m[39m
+ [32m✓[39m resources/js/Tests/unit/Partials/Home/hero-image-text-shard.spec.ts[2m > [22mHeroImageTextShard[2m > [22mComponent emits textHoverLeave when mouse leaves shards[32m 10[2mms[22m[39m
+ [32m✓[39m resources/js/Tests/unit/Partials/Home/hero-animated-texts.spec.ts[2m > [22mHero animated texts[2m > [22mRenders skills texts correctly[32m 108[2mms[22m[39m
+ [32m✓[39m resources/js/Tests/unit/Pages/home.spec.ts[2m > [22mHomePage[2m > [22mDesktop view[2m > [22mafter rendering, toast shows up as a tip for "Hover" over texts[33m 1035[2mms[22m[39m
+ [32m✓[39m resources/js/Tests/unit/Pages/home.spec.ts[2m > [22mHomePage[2m > [22mMobile view[2m > [22mAfter rendering, toast shows up as a tip for "Tap" over texts[33m 1017[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 16 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m resources/js/Tests/unit/Pages/contact.spec.ts[2m > [22mContact Page[2m > [22mRenders the Contact page correctly
+[41m[1m FAIL [22m[49m resources/js/Tests/unit/Pages/contact.spec.ts[2m > [22mContact Page[2m > [22mRenders the Contact form partial
+[31m[1mError[22m: [🍍]: "getActivePinia()" was called but there was no active Pinia. Are you trying to use a store before calling "app.use(pinia)"?
+See https://pinia.vuejs.org/core-concepts/outside-component-usage.html for help.
+This will fail in production.[39m
+[90m [2m❯[22m useStore node_modules/pinia/dist/pinia.mjs:[2m1706:19[22m[39m
+[36m [2m❯[22m setup resources/js/Components/Pages/Contact/index.vue:[2m10:24[22m[39m
+    [90m  8|[39m   import ContactForm from '@/Components/Partials/Contact/Form.vue';
+    [90m  9|[39m
+    [90m 10|[39m   const contentStore = useContentStore();
+    [90m   |[39m                        [31m^[39m
+    [90m 11|[39m   const iconLinksStore = useIconLinksStore();
+    [90m 12|[39m
+[90m [2m❯[22m callWithErrorHandling node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m200:19[22m[39m
+[90m [2m❯[22m setupStatefulComponent node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m8066:25[22m[39m
+[90m [2m❯[22m setupComponent node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m8028:36[22m[39m
+[90m [2m❯[22m mountComponent node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m5953:7[22m[39m
+[90m [2m❯[22m processComponent node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m5919:9[22m[39m
+[90m [2m❯[22m patch node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m5429:11[22m[39m
+[90m [2m❯[22m ReactiveEffect.componentUpdateFn [as fn] node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m6067:11[22m[39m
+[90m [2m❯[22m ReactiveEffect.run node_modules/@vue/reactivity/dist/reactivity.cjs.js:[2m243:19[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/16]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m resources/js/Tests/unit/Pages/story.spec.ts[2m > [22mStory Page[2m > [22mRenders the Story page component correctly
+[41m[1m FAIL [22m[49m resources/js/Tests/unit/Pages/story.spec.ts[2m > [22mStory Page[2m > [22mRenders all images with correct alt text
+[31m[1mError[22m: [🍍]: "getActivePinia()" was called but there was no active Pinia. Are you trying to use a store before calling "app.use(pinia)"?
+See https://pinia.vuejs.org/core-concepts/outside-component-usage.html for help.
+This will fail in production.[39m
+[90m [2m❯[22m useStore node_modules/pinia/dist/pinia.mjs:[2m1706:19[22m[39m
+[36m [2m❯[22m setup resources/js/Components/Pages/Story/index.vue:[2m10:24[22m[39m
+    [90m  8|[39m   import WhyFrontend from '@/Components/Partials/Story/WhyFrontend.vue…
+    [90m  9|[39m
+    [90m 10|[39m   const contentStore = useContentStore();
+    [90m   |[39m                        [31m^[39m
+    [90m 11|[39m
+    [90m 12|[39m   contentStore.fetchContents();
+[90m [2m❯[22m callWithErrorHandling node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m200:19[22m[39m
+[90m [2m❯[22m setupStatefulComponent node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m8066:25[22m[39m
+[90m [2m❯[22m setupComponent node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m8028:36[22m[39m
+[90m [2m❯[22m mountComponent node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m5953:7[22m[39m
+[90m [2m❯[22m processComponent node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m5919:9[22m[39m
+[90m [2m❯[22m patch node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m5429:11[22m[39m
+[90m [2m❯[22m ReactiveEffect.componentUpdateFn [as fn] node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m6067:11[22m[39m
+[90m [2m❯[22m ReactiveEffect.run node_modules/@vue/reactivity/dist/reactivity.cjs.js:[2m243:19[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/16]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m resources/js/Tests/unit/Components/Common/base-footer.spec.ts[2m > [22mBaseFooter[2m > [22mRenders copyright with correct current year
+[41m[1m FAIL [22m[49m resources/js/Tests/unit/Components/Common/base-footer.spec.ts[2m > [22mBaseFooter[2m > [22mRenders navigation links when provided
+[41m[1m FAIL [22m[49m resources/js/Tests/unit/Components/Common/base-footer.spec.ts[2m > [22mBaseFooter[2m > [22mScrolls to top when chevron UP is clicked
+[31m[1mError[22m: [🍍]: "getActivePinia()" was called but there was no active Pinia. Are you trying to use a store before calling "app.use(pinia)"?
+See https://pinia.vuejs.org/core-concepts/outside-component-usage.html for help.
+This will fail in production.[39m
+[90m [2m❯[22m useStore node_modules/pinia/dist/pinia.mjs:[2m1706:19[22m[39m
+[36m [2m❯[22m setup resources/js/Components/Common/BaseFooter.vue:[2m16:26[22m[39m
+    [90m 14|[39m   });
+    [90m 15|[39m
+    [90m 16|[39m   const iconLinksStore = useIconLinksStore();
+    [90m   |[39m                          [31m^[39m
+    [90m 17|[39m   const iconLinks = computed(() => iconLinksStore.getIconLinks.filter(…
+    [90m 18|[39m
+[90m [2m❯[22m callWithErrorHandling node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m200:19[22m[39m
+[90m [2m❯[22m setupStatefulComponent node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m8066:25[22m[39m
+[90m [2m❯[22m setupComponent node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m8028:36[22m[39m
+[90m [2m❯[22m mountComponent node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m5953:7[22m[39m
+[90m [2m❯[22m processComponent node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m5919:9[22m[39m
+[90m [2m❯[22m patch node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m5429:11[22m[39m
+[90m [2m❯[22m ReactiveEffect.componentUpdateFn [as fn] node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m6067:11[22m[39m
+[90m [2m❯[22m ReactiveEffect.run node_modules/@vue/reactivity/dist/reactivity.cjs.js:[2m243:19[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/16]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m resources/js/Tests/unit/Components/Common/base-side-bar.spec.ts[2m > [22mBaseSideBar[2m > [22mSidebar is visible when isOpen is true
+[31m[1mTestingLibraryElementError[22m[39m: Unable to find an accessible element with the role "navigation"
+
+There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+  [36m<div>[39m
+    [0m[0m
+    [36m<nav[39m
+      [33manimate[39m=[32m"open"[39m
+      [33mclass[39m=[32m"nav container fixed left-0 top-0 z-[70] h-full w-full shadow-inner drop-shadow-xl"[39m
+      [33minitial[39m=[32m"closed"[39m
+      [33mstyle[39m=[32m"display: none;"[39m
+    [36m>[39m
+      [0m[0m
+      [36m<div[39m
+        [33mclass[39m=[32m"sidebar-main h-full transition-opacity duration-300"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mis-open[39m=[32m"true"[39m
+          [33mnav-items[39m=[32m"[object Object],[object Object],[object Object]"[39m
+        [36m>[39m
+          [0m[0m
+          [36m<ul[39m
+            [33mclass[39m=[32m"list"[39m
+            [33mvariants[39m=[32m"[object Object]"[39m
+          [36m>[39m
+            [0m[0m
+            [0m[0m
+            [36m<li[39m
+              [33mclass[39m=[32m"list-item"[39m
+              [33mvariants[39m=[32m"[object Object]"[39m
+              [33mwhile-press[39m=[32m"[object Object]"[39m
+            [36m>[39m
+              [0m[0m
+              [36m<a[39m
+                [33mclass[39m=[32m"nav-link flex w-full items-center justify-between pb-2 text-sm text-primary"[39m
+                [33mhref[39m=[32m"/"[39m
+              [36m>[39m
+                [36m<span>[39m
+                  [0mHome[0m
+                [36m</span>[39m
+                [36m<span>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"svg-inline--fa fa-house text-xs text-gray-200"[39m
+                    [33mdata-icon[39m=[32m"house"[39m
+                    [33mdata-prefix[39m=[32m"fas"[39m
+                    [33mrole[39m=[32m"img"[39m
+                    [33mviewBox[39m=[32m"0 0 512 512"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33mclass[39m=[32m""[39m
+                      [33md[39m=[32m"M277.8 8.6c-12.3-11.4-31.3-11.4-43.5 0l-224 208c-9.6 9-12.8 22.9-8 35.1S18.8 272 32 272l16 0 0 176c0 35.3 28.7 64 64 64l288 0c35.3 0 64-28.7 64-64l0-176 16 0c13.2 0 25-8.1 29.8-20.3s1.6-26.2-8-35.1l-224-208zM240 320l32 0c26.5 0 48 21.5 48 48l0 96-128 0 0-96c0-26.5 21.5-48 48-48z"[39m
+                      [33mfill[39m=[32m"currentColor"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                [36m</span>[39m
+              [36m</a>[39m
+              [0m[0m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"list-item"[39m
+              [33mvariants[39m=[32m"[object Object]"[39m
+              [33mwhile-press[39m=[32m"[object Object]"[39m
+            [36m>[39m
+              [0m[0m
+              [36m<a[39m
+                [33mclass[39m=[32m"nav-link flex w-full items-center justify-between pb-2 text-sm text-primary"[39m
+                [33mhref[39m=[32m"/about"[39m
+              [36m>[39m
+                [36m<span>[39m
+                  [0mAbout[0m
+                [36m</span>[39m
+                [36m<span>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"svg-inline--fa fa-user text-xs text-gray-200"[39m
+                    [33mdata-icon[39m=[32m"user"[39m
+                    [33mdata-prefix[39m=[32m"fas"[39m
+                    [33mrole[39m=[32m"img"[39m
+                    [33mviewBox[39m=[32m"0 0 448 512"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33mclass[39m=[32m""[39m
+                      [33md[39m=[32m"M224 248a120 120 0 1 0 0-240 120 120 0 1 0 0 240zm-29.7 56C95.8 304 16 383.8 16 482.3 16 498.7 29.3 512 45.7 512l356.6 0c16.4 0 29.7-13.3 29.7-29.7 0-98.5-79.8-178.3-178.3-178.3l-59.4 0z"[39m
+                      [33mfill[39m=[32m"currentColor"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                [36m</span>[39m
+              [36m</a>[39m
+              [0m[0m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"list-item"[39m
+              [33mvariants[39m=[32m"[object Object]"[39m
+              [33mwhile-press[39m=[32m"[object Object]"[39m
+            [36m>[39m
+              [0m[0m
+              [36m<a[39m
+                [33mclass[39m=[32m"nav-link flex w-full items-center justify-between pb-2 text-sm text-primary"[39m
+                [33mhref[39m=[32m"/story"[39m
+              [36m>[39m
+                [36m<span>[39m
+                  [0mStory[0m
+                [36m</span>[39m
+                [36m<span>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"svg-inline--fa fa-user text-xs text-gray-200"[39m
+                    [33mdata-icon[39m=[32m"user"[39m
+                    [33mdata-prefix[39m=[32m"fas"[39m
+                    [33mrole[39m=[32m"img"[39m
+                    [33mviewBox[39m=[32m"0 0 448 512"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33mclass[39m=[32m""[39m
+                      [33md[39m=[32m"M224 248a120 120 0 1 0 0-240 120 120 0 1 0 0 240zm-29.7 56C95.8 304 16 383.8 16 482.3 16 498.7 29.3 512 45.7 512l356.6 0c16.4 0 29.7-13.3 29.7-29.7 0-98.5-79.8-178.3-178.3-178.3l-59.4 0z"[39m
+                      [33mfill[39m=[32m"currentColor"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                [36m</span>[39m
+              [36m</a>[39m
+              [0m[0m
+            [36m</li>[39m
+            [0m[0m
+            [0m[0m
+          [36m</ul>[39m
+          [36m<ul[39m
+            [33mclass[39m=[32m"absolute bottom-5 right-10 z-50 flex w-full items-center justify-end gap-8 text-xl"[39m
+            [33mvariants[39m=[32m"[object Object]"[39m
+          [36m>[39m
+            [0m[0m
+            [0m[0m
+          [36m</ul>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"absolute left-0 top-0 flex w-full cursor-pointer items-center justify-center p-[6px_6px_6px_16px] text-xl"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex w-full items-center justify-between"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"h-[36px] w-[36px] sm:w-[44px]"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"block"[39m
+                  [33mdata-testid[39m=[32m"brand-logo"[39m
+                  [33mfor-light[39m=[32m""[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div>[39m
+                [0m[0m
+                [36m<div[39m
+                  [33mclass[39m=[32m"p-3"[39m
+                  [33mdata-testid[39m=[32m"close-sidebar"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"svg-inline--fa fa-xmark text-primary"[39m
+                    [33mdata-icon[39m=[32m"xmark"[39m
+                    [33mdata-prefix[39m=[32m"fas"[39m
+                    [33mrole[39m=[32m"img"[39m
+                    [33mviewBox[39m=[32m"0 0 384 512"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33mclass[39m=[32m""[39m
+                      [33md[39m=[32m"M55.1 73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L147.2 256 9.9 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192.5 301.3 329.9 438.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.8 256 375.1 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192.5 210.7 55.1 73.4z"[39m
+                      [33mfill[39m=[32m"currentColor"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                [36m</div>[39m
+                [0m[0m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [0m[0m
+        [36m</div>[39m
+      [36m</div>[39m
+      [0m[0m
+    [36m</nav>[39m
+    [0m[0m
+  [36m</div>[39m
+[36m</body>[39m
+[90m [2m❯[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m resources/js/Tests/unit/Components/Common/base-side-bar.spec.ts:[2m99:17[22m[39m
+    [90m 97|[39m     const { getByRole } = await renderBaseSideBar({ nav: defaultNav },…
+    [90m 98|[39m
+    [90m 99|[39m     [35mconst[39m nav [33m=[39m [34mgetByRole[39m([32m'navigation'[39m)[33m;[39m
+    [90m   |[39m                 [31m^[39m
+    [90m100|[39m     [34mexpect[39m(nav)[33m.[39m[34mtoBeVisible[39m()[33m;[39m
+    [90m101|[39m   })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/16]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m resources/js/Tests/unit/Partials/About/charted-skills.spec.ts[2m > [22mChartedSkills[2m > [22mRenders prop left texts correctly
+[31m[1mTestingLibraryElementError[22m: Unable to find an element with the text: test left title. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<section[31m
+      [33mclass[31m=[32m"shadow-bottom bg-gray-lighter shadow-custom-mid-inset"[31m
+      [33mdata-testid[31m=[32m"charted-skills"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"lg:max-w-screen-lg mx-auto px-4 xl:max-w-screen-xl xl:px-0 py-16 md:py-32"[31m
+      [36m>[31m
+        [0m[0m
+        [36m<div[31m
+          [33mclass[31m=[32m"align-center flex w-full flex-col items-start justify-between gap-8 md:flex-row md:gap-0"[31m
+        [36m>[31m
+          [36m<div>[31m
+            [36m<div[31m
+              [33manimate-once[31m=[32m"true"[31m
+              [33manimate-only-scroll-down[31m=[32m"false"[31m
+              [33mdirection[31m=[32m"right"[31m
+              [33mno-animation[31m=[32m"false"[31m
+            [36m>[31m
+              [0m[0m
+              [36m<h3[31m
+                [33mclass[31m=[32m"mb-5 font-proxima text-3xl font-light"[31m
+              [36m/>[31m
+              [36m<p[31m
+                [33mclass[31m=[32m"font-proxima font-light leading-snug text-tertiary"[31m
+              [36m>[31m
+                [0m[0m
+                [0m[0m
+                [0mrandom test text 1 [0m
+                [0m[0m
+                [0m[0m
+              [36m</p>[31m
+              [0m[0m
+            [36m</div>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33manimate-once[31m=[32m"true"[31m
+            [33manimate-only-scroll-down[31m=[32m"false"[31m
+            [33mdelay[31m=[32m"0.2"[31m
+            [33mdirection[31m=[32m"up"[31m
+            [33mno-animation[31m=[32m"false"[31m
+          [36m>[31m
+            [0m[0m
+            [36m<div[31m
+              [33mclass[31m=[32m"relative flex overflow-hidden rounded-full h-full w-full object-cover sm:h-[340px] sm:w-[340px]"[31m
+              [33mdata-testid[31m=[32m"base-image"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"skeleton absolute inset-0 z-10 h-full w-full rounded-full"[31m
+              [36m/>[31m
+              [36m<img[31m
+                [33malt[31m=[32m"kgallarin cart"[31m
+                [33mclass[31m=[32m"h-full w-full rounded-full object-cover opacity-0"[31m
+                [33msrc[31m=[32m"undefined/resources/images/me/kg_chart1.png"[31m
+              [36m/>[31m
+            [36m</div>[31m
+            [0m[0m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"w-full text-right md:w-auto"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33manimate-once[31m=[32m"true"[31m
+              [33manimate-only-scroll-down[31m=[32m"false"[31m
+              [33mdirection[31m=[32m"left"[31m
+              [33mno-animation[31m=[32m"false"[31m
+            [36m>[31m
+              [0m[0m
+              [36m<h3[31m
+                [33mclass[31m=[32m"mb-5 font-proxima text-3xl font-light"[31m
+              [36m/>[31m
+              [36m<p[31m
+                [33mclass[31m=[32m"text-tertiar font-proxima font-light leading-snug"[31m
+              [36m>[31m
+                [0m[0m
+                [0m[0m
+              [36m</p>[31m
+              [0m[0m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+        [0m[0m
+      [36m</div>[31m
+    [36m</section>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2m❯[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m resources/js/Tests/unit/Partials/About/charted-skills.spec.ts:[2m39:12[22m[39m
+    [90m 37|[39m     [35mconst[39m { getByText } [33m=[39m [35mawait[39m [34mrenderChartedSkills[39m()[33m;[39m
+    [90m 38|[39m
+    [90m 39|[39m     [34mexpect[39m([34mgetByText[39m([32m'test left title'[39m))[33m.[39m[34mtoBeInTheDocument[39m()[33m;[39m
+    [90m   |[39m            [31m^[39m
+    [90m 40|[39m
+    [90m 41|[39m     [34mexpect[39m([34mgetByText[39m([32m'test left content 1'[39m))[33m.[39m[34mtoBeInTheDocument[39m()[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/16]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m resources/js/Tests/unit/Partials/About/charted-skills.spec.ts[2m > [22mChartedSkills[2m > [22mRenders prop right texts correctly
+[31m[1mTestingLibraryElementError[22m: Unable to find an element with the text: test right title. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<section[31m
+      [33mclass[31m=[32m"shadow-bottom bg-gray-lighter shadow-custom-mid-inset"[31m
+      [33mdata-testid[31m=[32m"charted-skills"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"lg:max-w-screen-lg mx-auto px-4 xl:max-w-screen-xl xl:px-0 py-16 md:py-32"[31m
+      [36m>[31m
+        [0m[0m
+        [36m<div[31m
+          [33mclass[31m=[32m"align-center flex w-full flex-col items-start justify-between gap-8 md:flex-row md:gap-0"[31m
+        [36m>[31m
+          [36m<div>[31m
+            [36m<div[31m
+              [33manimate-once[31m=[32m"true"[31m
+              [33manimate-only-scroll-down[31m=[32m"false"[31m
+              [33mdirection[31m=[32m"right"[31m
+              [33mno-animation[31m=[32m"false"[31m
+            [36m>[31m
+              [0m[0m
+              [36m<h3[31m
+                [33mclass[31m=[32m"mb-5 font-proxima text-3xl font-light"[31m
+              [36m/>[31m
+              [36m<p[31m
+                [33mclass[31m=[32m"font-proxima font-light leading-snug text-tertiary"[31m
+              [36m>[31m
+                [0m[0m
+                [0m[0m
+                [0mrandom test text 1 [0m
+                [0m[0m
+                [0m[0m
+              [36m</p>[31m
+              [0m[0m
+            [36m</div>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33manimate-once[31m=[32m"true"[31m
+            [33manimate-only-scroll-down[31m=[32m"false"[31m
+            [33mdelay[31m=[32m"0.2"[31m
+            [33mdirection[31m=[32m"up"[31m
+            [33mno-animation[31m=[32m"false"[31m
+          [36m>[31m
+            [0m[0m
+            [36m<div[31m
+              [33mclass[31m=[32m"relative flex overflow-hidden rounded-full h-full w-full object-cover sm:h-[340px] sm:w-[340px]"[31m
+              [33mdata-testid[31m=[32m"base-image"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"skeleton absolute inset-0 z-10 h-full w-full rounded-full"[31m
+              [36m/>[31m
+              [36m<img[31m
+                [33malt[31m=[32m"kgallarin cart"[31m
+                [33mclass[31m=[32m"h-full w-full rounded-full object-cover opacity-0"[31m
+                [33msrc[31m=[32m"undefined/resources/images/me/kg_chart1.png"[31m
+              [36m/>[31m
+            [36m</div>[31m
+            [0m[0m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"w-full text-right md:w-auto"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33manimate-once[31m=[32m"true"[31m
+              [33manimate-only-scroll-down[31m=[32m"false"[31m
+              [33mdirection[31m=[32m"left"[31m
+              [33mno-animation[31m=[32m"false"[31m
+            [36m>[31m
+              [0m[0m
+              [36m<h3[31m
+                [33mclass[31m=[32m"mb-5 font-proxima text-3xl font-light"[31m
+              [36m/>[31m
+              [36m<p[31m
+                [33mclass[31m=[32m"text-tertiar font-proxima font-light leading-snug"[31m
+              [36m>[31m
+                [0m[0m
+                [0m[0m
+              [36m</p>[31m
+              [0m[0m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+        [0m[0m
+      [36m</div>[31m
+    [36m</section>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2m❯[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m resources/js/Tests/unit/Partials/About/charted-skills.spec.ts:[2m46:12[22m[39m
+    [90m 44|[39m     [35mconst[39m { getByText } [33m=[39m [35mawait[39m [34mrenderChartedSkills[39m()[33m;[39m
+    [90m 45|[39m
+    [90m 46|[39m     [34mexpect[39m([34mgetByText[39m([32m'test right title'[39m))[33m.[39m[34mtoBeInTheDocument[39m()[33m;[39m
+    [90m   |[39m            [31m^[39m
+    [90m 47|[39m
+    [90m 48|[39m     [34mexpect[39m([34mgetByText[39m([32m'test right content 1'[39m))[33m.[39m[34mtoBeInTheDocument[39m()[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/16]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m resources/js/Tests/unit/Partials/About/graphed-skill.spec.ts[2m > [22mGraphedSkill[2m > [22mRenders texts and chart component correctly
+[31m[1mTestingLibraryElementError[22m: Unable to find an element with the text: My Skills. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<section[31m
+      [33mclass[31m=[32m"skills-chart shadow-bottom bg-gray-lighter shadow-custom-mid-inset"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"lg:max-w-screen-lg mx-auto px-4 xl:max-w-screen-xl xl:px-0 px-0 py-12 pb-20 md:px-4 md:py-24 md:pb-24"[31m
+      [36m>[31m
+        [0m[0m
+        [36m<div[31m
+          [33mclass[31m=[32m"w-full text-right"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33manimate-once[31m=[32m"false"[31m
+            [33manimate-only-scroll-down[31m=[32m"false"[31m
+            [33mdirection[31m=[32m"right"[31m
+          [36m>[31m
+            [0m[0m
+            [36m<h2[31m
+              [33mclass[31m=[32m"font-proxima text-4xl font-light"[31m
+            [36m/>[31m
+            [36m<p[31m
+              [33mclass[31m=[32m"font-acumin text-xs font-light"[31m
+            [36m/>[31m
+            [0m[0m
+          [36m</div>[31m
+          [36m<div[31m
+            [33manimate-once[31m=[32m"false"[31m
+            [33manimate-only-scroll-down[31m=[32m"false"[31m
+            [33mdelay[31m=[32m"0.2"[31m
+            [33mdirection[31m=[32m"up"[31m
+          [36m>[31m
+            [0m[0m
+            [36m<div[31m
+              [33mclass[31m=[32m"w-full"[31m
+            [36m>[31m
+              [36m<div[31m
+                [33mdata-testid[31m=[32m"skill-chart"[31m
+              [36m>[31m
+                [0mSkill Chart[0m
+              [36m</div>[31m
+            [36m</div>[31m
+            [0m[0m
+          [36m</div>[31m
+        [36m</div>[31m
+        [0m[0m
+      [36m</div>[31m
+    [36m</section>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2m❯[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m resources/js/Tests/unit/Partials/About/graphed-skill.spec.ts:[2m29:12[22m[39m
+    [90m 27|[39m     const { container, getByText, getByTestId } = await renderGraphedS…
+    [90m 28|[39m
+    [90m 29|[39m     [34mexpect[39m([34mgetByText[39m([32m'My Skills'[39m))[33m.[39m[34mtoBeInTheDocument[39m()[33m;[39m
+    [90m   |[39m            [31m^[39m
+    [90m 30|[39m     [34mexpect[39m([34mgetByText[39m([32m'more or less'[39m))[33m.[39m[34mtoBeInTheDocument[39m()[33m;[39m
+    [90m 31|[39m     [34mexpect[39m([34mgetByTestId[39m([32m'skill-chart'[39m))[33m.[39m[34mtoBeInTheDocument[39m()[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/16]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m resources/js/Tests/unit/Partials/About/recommendations.spec.ts[2m > [22mRecommendations[2m > [22mRenders component correctly
+[31m[1mTestingLibraryElementError[22m[39m: Found multiple elements with the text: test title
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<p[39m
+  [33mclass[39m=[32m"text-xs"[39m
+  [33mdata-v-7bec0ac5[39m=[32m""[39m
+[36m>[39m
+  [0mtest title[0m
+[36m</p>[39m
+
+Ignored nodes: comments, script, style
+[36m<p[39m
+  [33mclass[39m=[32m"text-xs"[39m
+  [33mdata-v-7bec0ac5[39m=[32m""[39m
+[36m>[39m
+  [0mtest title[0m
+[36m</p>[39m
+
+Ignored nodes: comments, script, style
+[36m<p[39m
+  [33mclass[39m=[32m"text-xs"[39m
+  [33mdata-v-7bec0ac5[39m=[32m""[39m
+[36m>[39m
+  [0mtest title[0m
+[36m</p>[39m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"lg:max-w-screen-lg mx-auto px-4 xl:max-w-screen-xl xl:px-0 pb-24"[39m
+      [36m>[39m
+        [0m[0m
+        [36m<div[39m
+          [33manimate-once[39m=[32m"true"[39m
+          [33manimate-only-scroll-down[39m=[32m"false"[39m
+          [33mdirection[39m=[32m"up"[39m
+        [36m>[39m
+          [0m[0m
+          [36m<h2[39m
+            [33mclass[39m=[32m"pt-24 font-proxima text-4xl font-light"[39m
+          [36m>[39m
+            [0mtest-title[0m
+          [36m</h2>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"font-acumin text-xs font-light"[39m
+          [36m>[39m
+            [0mtest-subtitle[0m
+          [36m</p>[39m
+          [0m[0m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"hidden gap-6 pt-12 lg:flex"[39m
+        [36m>[39m
+          [0m[0m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-1 flex-col gap-6"[39m
+          [36m>[39m
+            [0m[0m
+            [36m<div[39m
+              [33manimate-once[39m=[32m"true"[39m
+              [33manimate-only-scroll-down[39m=[32m"false"[39m
+              [33mclass[39m=[32m"break-inside-avoid"[39m
+              [33mdelay[39m=[32m"0"[39m
+              [33mdirection[39m=[32m"up"[39m
+            [36m>[39m
+              [0m[0m
+              [36m<div[39m
+                [33mclass[39m=[32m"main-card relative flex flex-col rounded-md border border-gray-200 p-4 py-8 text-primary shadow-md h-[380px] w-full overflow-hidden pb-12"[39m
+                [33mdata-v-7bec0ac5[39m=[32m""[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"flex justify-between border-b border-gray-200 pb-4"[39m
+                  [33mdata-v-7bec0ac5[39m=[32m""[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"author flex flex-row items-center gap-3 leading-tight"[39m
+                    [33mdata-v-7bec0ac5[39m=[32m""[39m
+                  [36m>[39m
+                    [36m<img[39m
+                      [33malt[39m=[32m"test"[39m
+                      [33mclass[39m=[32m"h-12 w-12 object-contain"[39m
+                      [33mdata-v-7bec0ac5[39m=[32m""[39m
+                      [33mrounded[39m=[32m"rounded-full"[39m
+                    [36m/>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"flex flex-col text-left"[39m
+                      [33mdata-v-7bec0ac5[39m=[32m""[39m
+                    [36m>[39m
+                      [36m<p[39m
+                        [33mclass[39m=[32m"mb-0 leading-tight"[39m
+                        [33mdata-v-7bec0ac5[39m=[32m""[39m
+                      [36m>[39m
+                        [0mtest author[0m
+                      [36m</p>[39m
+                      [36m<p[39m
+                        [33mclass[39m=[32m"text-xs"[39m
+                        [33mdata-v-7bec0ac5[39m=[32m""[39m
+                      [36m>[39m
+                        [0mtest title[0m
+                      [36m</p>[39m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                  [36m<div[39m
+                    [33mdata-v-7bec0ac5[39m=[32m""[39m
+                  [36m>[39m
+                    [0m[0m
+                    [36m<svg[39m
+                      [33maria-hidden[39m=[32m"true"[39m
+                      [33mclass[39m=[32m"svg-inline--fa fa-star inline-block text-xs text-yellow-400"[39m
+                      [33mdata-icon[39m=[32m"star"[39m
+                      [33mdata-prefix[39m=[32m"fas"[39m
+                      [33mdata-v-7bec0ac5[39m=[32m""[39m
+                      [33mrole[39m=[32m"img"[39m
+                      [33mviewBox[39m=[32m"0 0 576 512"[39m
+                    [36m>[39m
+                      [36m<path[39m
+                        [33mclass[39m=[32m""[39m
+                        [33md[39m=[32m"M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"[39m
+                        [33mfill[39m=[32m"currentColor"[39m
+                      [36m/>[39m
+                    [36m</svg>[39m
+                    [36m<svg[39m
+                      [33maria-hidden[39m=[32m"true"[39m
+                      [33mclass[39m=[32m"svg-inline--fa fa-star inline-block text-xs text-yellow-400"[39m
+                      [33mdata-icon[39m=[32m"star"[39m
+                      [33mdata-prefix[39m=[32m"fas"[39m
+                      [33mdata-v-7bec0ac5[39m=[32m""[39m
+                      [33mrole[39m=[32m"img"[39m
+                      [33mviewBox[39m=[32m"0 0 576 512"[39m
+                    [36m>[39m
+                      [36m<path[39m
+                        [33mclass[39m=[32m""[39m
+                        [33md[39m=[32m"M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"[39m
+                        [33mfill[39m=[32m"currentColor"[39m
+                      [36m/>[39m
+                    [36m</svg>[39m
+                    [36m<svg[39m
+                      [33maria-hidden[39m=[32m"true"[39m
+                      [33mclass[39m=[32m"svg-inline--fa fa-star inline-block text-xs text-yellow-400"[39m
+                      [33mdata-icon[39m=[32m"star"[39m
+                      [33mdata-prefix[39m=[32m"fas"[39m
+                      [33mdata-v-7bec0ac5[39m=[32m""[39m
+                      [33mrole[39m=[32m"img"[39m
+                      [33mviewBox[39m=[32m"0 0 576 512"[39m
+                    [36m>[39m
+                      [36m<path[39m
+                        [33mclass[39m=[32m""[39m
+                        [33md[39m=[32m"M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"[39m
+                        [33mfill[39m=[32m"currentColor"[39m
+                      [36m/>[39m
+                    [36m</svg>[39m
+                    [36m<svg[39m
+                      [33mar...
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<section>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"lg:max-w-screen-lg mx-auto px-4 xl:max-w-screen-xl xl:px-0 pb-24"[39m
+        [36m>[39m
+          [0m[0m
+          [36m<div[39m
+            [33manimate-once[39m=[32m"true"[39m
+            [33manimate-only-scroll-down[39m=[32m"false"[39m
+            [33mdirection[39m=[32m"up"[39m
+          [36m>[39m
+            [0m[0m
+            [36m<h2[39m
+              [33mclass[39m=[32m"pt-24 font-proxima text-4xl font-light"[39m
+            [36m>[39m
+              [0mtest-title[0m
+            [36m</h2>[39m
+            [36m<p[39m
+              [33mclass[39m=[32m"font-acumin text-xs font-light"[39m
+            [36m>[39m
+              [0mtest-subtitle[0m
+            [36m</p>[39m
+            [0m[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"hidden gap-6 pt-12 lg:flex"[39m
+          [36m>[39m
+            [0m[0m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex flex-1 flex-col gap-6"[39m
+            [36m>[39m
+              [0m[0m
+              [36m<div[39m
+                [33manimate-once[39m=[32m"true"[39m
+                [33manimate-only-scroll-down[39m=[32m"false"[39m
+                [33mclass[39m=[32m"break-inside-avoid"[39m
+                [33mdelay[39m=[32m"0"[39m
+                [33mdirection[39m=[32m"up"[39m
+              [36m>[39m
+                [0m[0m
+                [36m<div[39m
+                  [33mclass[39m=[32m"main-card relative flex flex-col rounded-md border border-gray-200 p-4 py-8 text-primary shadow-md h-[380px] w-full overflow-hidden pb-12"[39m
+                  [33mdata-v-7bec0ac5[39m=[32m""[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"flex justify-between border-b border-gray-200 pb-4"[39m
+                    [33mdata-v-7bec0ac5[39m=[32m""[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"author flex flex-row items-center gap-3 leading-tight"[39m
+                      [33mdata-v-7bec0ac5[39m=[32m""[39m
+                    [36m>[39m
+                      [36m<img[39m
+                        [33malt[39m=[32m"test"[39m
+                        [33mclass[39m=[32m"h-12 w-12 object-contain"[39m
+                        [33mdata-v-7bec0ac5[39m=[32m""[39m
+                        [33mrounded[39m=[32m"rounded-full"[39m
+                      [36m/>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"flex flex-col text-left"[39m
+                        [33mdata-v-7bec0ac5[39m=[32m""[39m
+                      [36m>[39m
+                        [36m<p[39m
+                          [33mclass[39m=[32m"mb-0 leading-tight"[39m
+                          [33mdata-v-7bec0ac5[39m=[32m""[39m
+                        [36m>[39m
+                          [0mtest author[0m
+                        [36m</p>[39m
+                        [36m<p[39m
+                          [33mclass[39m=[32m"text-xs"[39m
+                          [33mdata-v-7bec0ac5[39m=[32m""[39m
+                        [36m>[39m
+                          [0mtest title[0m
+                        [36m</p>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      [33mdata-v-7bec0ac5[39m=[32m""[39m
+                    [36m>[39m
+                      [0m[0m
+                      [36m<svg[39m
+                        [33maria-hidden[39m=[32m"true"[39m
+                        [33mclass[39m=[32m"svg-inline--fa fa-star inline-block text-xs text-yellow-400"[39m
+                        [33mdata-icon[39m=[32m"star"[39m
+                        [33mdata-prefix[39m=[32m"fas"[39m
+                        [33mdata-v-7bec0ac5[39m=[32m""[39m
+                        [33mrole[39m=[32m"img"[39m
+                        [33mviewBox[39m=[32m"0 0 576 512"[39m
+                      [36m>[39m
+                        [36m<path[39m
+                          [33mclass[39m=[32m""[39m
+                          [33md[39m=[32m"M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"[39m
+                          [33mfill[39m=[32m"currentColor"[39m
+                        [36m/>[39m
+                      [36m</svg>[39m
+                      [36m<svg[39m
+                        [33maria-hidden[39m=[32m"true"[39m
+                        [33mclass[39m=[32m"svg-inline--fa fa-star inline-block text-xs text-yellow-400"[39m
+                        [33mdata-icon[39m=[32m"star"[39m
+                        [33mdata-prefix[39m=[32m"fas"[39m
+                        [33mdata-v-7bec0ac5[39m=[32m""[39m
+                        [33mrole[39m=[32m"img"[39m
+                        [33mviewBox[39m=[32m"0 0 576 512"[39m
+                      [36m>[39m
+                        [36m<path[39m
+                          [33mclass[39m=[32m""[39m
+                          [33md[39m=[32m"M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"[39m
+                          [33mfill[39m=[32m"currentColor"[39m
+                        [36m/>[39m
+                      [36m</svg>[39m
+                      [36m<svg[39m
+                        [33maria-hidden[39m=[32m"true"[39m
+                        [33mclass[39m=[32m"svg-inline--fa fa-star inline-block text-xs text-yellow-400"[39m
+                        [33mdata-icon[39m=[32m"star"[39m
+                        [33mdata-prefix[39m=[32m"fas"[39m
+                        [33mdata-v-7bec0ac5[39m=[32m""[39m
+                        [33mrole[39m=[32m"img"[39m
+                        [33mviewBox[39m=[32m"0 0 576 512"[39m
+                      [36m>[39m
+                        [36m<path[39m
+                          [33mclass[39m=[32m""[39m
+                          [33md[39m=[32m"M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556...
+[90m [2m❯[22m Proxy.waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:[2m163:27[22m[39m
+[36m [2m❯[22m resources/js/Tests/unit/Partials/About/recommendations.spec.ts:[2m69:11[22m[39m
+    [90m 67|[39m     })[33m;[39m
+    [90m 68|[39m
+    [90m 69|[39m     [35mawait[39m [34mwaitFor[39m(
+    [90m   |[39m           [31m^[39m
+    [90m 70|[39m       ()[33m:[39m [35mvoid[39m [33m=>[39m {
+    [90m 71|[39m         [34mexpect[39m([34mgetByText[39m([32m'test title'[39m))[33m.[39m[34mtoBeTruthy[39m()[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/16]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m resources/js/Tests/unit/Partials/About/whoami.spec.ts[2m > [22mWhoami[2m > [22mUses correct number of items shown for mobile
+[31m[1mAssertionError[22m: expected '2' to be '3' // Object.is equality[39m
+
+Expected: [32m"3"[39m
+Received: [31m"2"[39m
+
+[36m [2m❯[22m resources/js/Tests/unit/Partials/About/whoami.spec.ts:[2m66:56[22m[39m
+    [90m 64|[39m     [35mconst[39m { getByTestId } [33m=[39m [35mawait[39m [34mrenderWhoami[39m([35mfalse[39m)[33m;[39m
+    [90m 65|[39m     [35mconst[39m splider [33m=[39m [34mgetByTestId[39m([32m'splider-mock'[39m)[33m;[39m
+    [90m 66|[39m     [34mexpect[39m(splider[33m.[39m[34mgetAttribute[39m([32m'data-items-to-show'[39m))[33m.[39m[34mtoBe[39m([32m'3'[39m)[33m;[39m
+    [90m   |[39m                                                        [31m^[39m
+    [90m 67|[39m   })[33m;[39m
+    [90m 68|[39m })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/16]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m resources/js/Tests/unit/Partials/Contact/form.spec.ts[2m > [22mContactForm Partial[2m > [22mrenders all form fields correctly
+[41m[1m FAIL [22m[49m resources/js/Tests/unit/Partials/Contact/form.spec.ts[2m > [22mContactForm Partial[2m > [22mallows user to fill out the form
+[41m[1m FAIL [22m[49m resources/js/Tests/unit/Partials/Contact/form.spec.ts[2m > [22mContactForm Partial[2m > [22mhas required attributes on inputs
+[31m[1mError[22m: [🍍]: "getActivePinia()" was called but there was no active Pinia. Are you trying to use a store before calling "app.use(pinia)"?
+See https://pinia.vuejs.org/core-concepts/outside-component-usage.html for help.
+This will fail in production.[39m
+[90m [2m❯[22m useStore node_modules/pinia/dist/pinia.mjs:[2m1706:19[22m[39m
+[36m [2m❯[22m setup resources/js/Components/Partials/Contact/Form.vue:[2m13:24[22m[39m
+    [90m 11|[39m   import BaseInput from '@/Components/Common/BaseInput.vue';
+    [90m 12|[39m
+    [90m 13|[39m   const contactStore = useContactStore();
+    [90m   |[39m                        [31m^[39m
+    [90m 14|[39m
+    [90m 15|[39m   const form = useForm<ContactFormFields, ContactFormErrors>({
+[90m [2m❯[22m callWithErrorHandling node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m200:19[22m[39m
+[90m [2m❯[22m setupStatefulComponent node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m8066:25[22m[39m
+[90m [2m❯[22m setupComponent node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m8028:36[22m[39m
+[90m [2m❯[22m mountComponent node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m5953:7[22m[39m
+[90m [2m❯[22m processComponent node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m5919:9[22m[39m
+[90m [2m❯[22m patch node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m5429:11[22m[39m
+[90m [2m❯[22m ReactiveEffect.componentUpdateFn [as fn] node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:[2m6067:11[22m[39m
+[90m [2m❯[22m ReactiveEffect.run node_modules/@vue/reactivity/dist/reactivity.cjs.js:[2m243:19[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/16]⎯[22m[39m
+
+
+[2m  Snapshots [22m [1m[33m1 obsolete[39m[22m
+[2m            [22m [90m↳[39m [2mresources/js/Tests/unit/Partials/About/[22m[1mgraphed-skill[22m[2m.spec.ts[22m
+[2m            [22m   [90m·[39m GraphedSkill > Renders texts and chart component correctly 1
+
+[2m Test Files [22m [1m[31m9 failed[39m[22m[2m | [22m[1m[32m7 passed[39m[22m[90m (16)[39m
+[2m      Tests [22m [1m[31m16 failed[39m[22m[2m | [22m[1m[32m30 passed[39m[22m[90m (46)[39m
+[2m   Start at [22m 02:36:56
+[2m   Duration [22m 5.51s[2m (transform 5.60s, setup 5.42s, import 12.29s, tests 5.01s, environment 16.10s)[22m
+

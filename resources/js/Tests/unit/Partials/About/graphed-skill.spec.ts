@@ -16,7 +16,15 @@ vi.mock('@/Components/Partials/SkillChart/index.vue', (): { default: { template:
   },
 }));
 
-const renderGraphedSkills = async (props = {}): Promise<RenderResult> => {
+const mockContent = {
+  title: 'My Skills',
+  subtitle: 'more or less',
+  key: 'skills',
+  content: [],
+  heroImages: [],
+};
+
+const renderGraphedSkills = async (props = { content: mockContent }): Promise<RenderResult> => {
   return render(GraphedSkills, {
     props,
   });

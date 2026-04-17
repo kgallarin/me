@@ -21,11 +21,16 @@
 
 <template>
   <div class="mb-4">
-    <label v-if="label" class="mb-2 block font-proxima text-lg font-light text-primary">
+    <label
+      v-if="label"
+      :for="($attrs.id as string) || label"
+      class="mb-2 block font-proxima text-lg font-light text-primary"
+    >
       {{ label }}
     </label>
     <textarea
       v-if="type === 'textarea'"
+      :id="($attrs.id as string) || label"
       v-model="model as string"
       v-bind="$attrs"
       class="w-full rounded-md border px-4 py-2 text-primary placeholder:font-proxima placeholder:text-sm placeholder:font-thin placeholder:text-gray-300 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary"
@@ -33,6 +38,7 @@
     />
     <input
       v-else
+      :id="($attrs.id as string) || label"
       v-model="model"
       v-bind="$attrs"
       :type="type"

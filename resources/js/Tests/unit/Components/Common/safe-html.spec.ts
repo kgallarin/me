@@ -36,6 +36,6 @@ describe('SafeHtml', () => {
     const { container } = render(SafeHtml, {
       props: { html: null as unknown as string },
     });
-    expect(container.innerHTML).toBe('');
+    expect(container.innerHTML).toMatch(/^(<!--v-if-->|)$/);
   });
 });

@@ -23,7 +23,9 @@
   const iconLinksStore = useIconLinksStore();
 
   const openSidebar = appStore.openSidebar;
-  const iconLinks = computed(() => iconLinksStore.getIconLinks.filter((link) => link.name !== 'resume'));
+  const iconLinks = computed(() =>
+    iconLinksStore.getIconLinks.filter((link) => link.name === 'linkedIn' || link.name === 'github'),
+  );
 </script>
 
 <template>

@@ -44,7 +44,7 @@
               v-for="link in links"
               :key="link.name"
               :href="link.url"
-              :download="link.name === 'download my resume' ? 'resume.pdf' : undefined"
+              :download="link.name === 'resume' ? 'resume.pdf' : undefined"
               target="_blank"
               class="mb-4 flex flex-col items-center gap-2 text-center sm:flex-row"
               :class="[

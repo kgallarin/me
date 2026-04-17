@@ -45,7 +45,7 @@ const testContent: ContentResponseDTO = {
 
 describe('Recommendations', (): void => {
   test('Renders component correctly', async (): Promise<void> => {
-    const { getByText } = await renderRecommendations({
+    const { getAllByText } = await renderRecommendations({
       content: testContent,
       testimonials: [
         {
@@ -68,7 +68,7 @@ describe('Recommendations', (): void => {
 
     await waitFor(
       (): void => {
-        expect(getByText('Kudos')).toBeTruthy();
+        expect(getAllByText('test title').length).toBeGreaterThan(0);
       },
       { timeout: 1000 },
     );

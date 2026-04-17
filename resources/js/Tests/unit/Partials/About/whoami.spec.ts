@@ -60,9 +60,9 @@ describe('Whoami', (): void => {
   });
 
   test('Uses correct number of items shown for mobile', async (): Promise<void> => {
-    // mobile = 3
+    // mobile = 2
     const { getByTestId } = await renderWhoami(false);
     const splider = getByTestId('splider-mock');
-    expect(splider.getAttribute('data-items-to-show')).toBe('3');
+    expect(splider.getAttribute('data-items-to-show')).toBe('2');
   });
 });

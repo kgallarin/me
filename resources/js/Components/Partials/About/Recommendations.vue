@@ -45,7 +45,7 @@
 </script>
 
 <template>
-  <section>
+  <section ref="recommendations">
     <base-container class="pb-24">
       <scroll-reveal direction="up" :animate-once="animateOnce" :animate-only-scroll-down="animateOnlyScrollDown">
         <h2 class="pt-24 font-proxima text-4xl font-light">{{ content.title }}</h2>

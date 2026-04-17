@@ -53,6 +53,10 @@ class ContentSeeder extends Seeder
 					'social_images/thong_sen.jpg'      => 'Thailand Lady Elephant',
 					'social_images/thong_sen2.jpg'      => 'Thailand Lady Elephant',
 					'social_images/unicorn.png'     => 'Eldritch Unicorn',
+					'social_images/baby_elephant.jpg'     => 'Baby Elephant',
+					'social_images/coron3.jpg'     => 'Coron Palawan',
+					'social_images/libra.jpg'     => 'Elephant',
+					'social_images/slept.jpg'     => 'Elephant',
 				];
 
         $contents = [

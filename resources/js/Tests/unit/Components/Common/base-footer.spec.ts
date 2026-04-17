@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { createTestingPinia } from '@pinia/testing';
 import { userEvent } from '@testing-library/user-event';
 import { type RenderResult, render } from '@testing-library/vue';
 import { beforeEach, describe, expect, test, vi } from 'vitest';
@@ -10,8 +11,14 @@ import BaseFooter from '@/Components/Common/BaseFooter.vue';
 const renderBaseFooter = async (props: { nav?: NavLink[] } = {}): Promise<RenderResult> => {
   return render(BaseFooter, {
     global: {
+      plugins: [
+        createTestingPinia({
+          createSpy: vi.fn,
+        }),
+      ],
       stubs: {
         'fa-icon': FontAwesomeIcon,
+        'router-link': { template: '<a><slot /></a>' },
       },
     },
     props,
