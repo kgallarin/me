@@ -11,7 +11,7 @@ class SendContactEmail
     public function __invoke(mixed $_, array $args): array
     {
         $validator = Validator::make($args, [
-            'name'    => ['required', 'string', 'min:2', 'max:100'],
+            'name'    => ['required', 'string', 'min:3', 'max:100'],
             'email'   => ['required', 'email'],
             'message' => ['required', 'string', 'min:10', 'max:2000'],
         ]);
@@ -22,7 +22,7 @@ class SendContactEmail
 
         $key = 'contact-email:' . request()->ip();
 
-        if (RateLimiter::tooManyAttempts($key, 3)) {
+        if (RateLimiter::tooManyAttempts($key, 5)) {
             return ['success' => false, 'message' => 'Too many requests. Please try again later.'];
         }
 

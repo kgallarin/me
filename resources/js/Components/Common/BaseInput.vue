@@ -32,6 +32,7 @@
       v-if="type === 'textarea'"
       :id="($attrs.id as string) || label"
       v-model="model as string"
+      minlength="10"
       v-bind="$attrs"
       class="w-full rounded-md border px-4 py-2 text-primary placeholder:font-proxima placeholder:text-sm placeholder:font-thin placeholder:text-gray-300 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary"
       :class="error ? 'border-red-400' : 'border-gray-300'"
