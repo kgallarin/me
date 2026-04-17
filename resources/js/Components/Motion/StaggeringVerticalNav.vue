@@ -102,16 +102,3 @@
     <slot name="stagger-nav-slot" :variants="{ navVariants, itemVariants }" />
   </motion.div>
 </template>
-
-<style scoped lang="scss">
-  .bg-variant {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #ffffff;
-    z-index: -1;
-  }
-</style>
