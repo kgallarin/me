@@ -84,12 +84,12 @@ class ContentSeeder extends Seeder
 						],
 						[
 							'title'       => '$ touch',
-							'subtitle'    => 'Let\'s get in touch! 👋🏼',
+							'subtitle'    => "Let's get in touch! 👋🏼",
 							'key' => 'contact',
 							'content' => [
 								[
 									'title' => '',
-									'text' => "Let\'s connect and explore how we can work together. Whether you have a question, need assistance with a project, or just want to chat about design, development, or anything else, I\'m here to help. Feel free to reach out via the contact methods below, or send me an email and let\'s collaborate on your next project!",
+									'text' => "Let's connect and explore how we can work together. Whether you have a question, need assistance with a project, or just want to chat about design, development, or anything else, I'm here to help. Feel free to reach out via the contact methods below, or send me an email and let's collaborate on your next project!",
 								],
 							],
 							'hero_image' => ['social_images/krabi.png'],
@@ -118,7 +118,7 @@ class ContentSeeder extends Seeder
 							'content' => [
 								[
 									'title' => 'Perceptive side',
-									'text' => "Animation Fluidity<br /><br />Attention to details and typography<br /><br />Communicating with artist\'s perspective<br /><br />Design Feels<br /><br />Eye on design<br /><br />Finding beauty to everything<br /><br />User Experience",
+									'text' => "Animation Fluidity<br /><br />Attention to details and typography<br /><br />Communicating with artist's perspective<br /><br />Design Feels<br /><br />Eye on design<br /><br />Finding beauty to everything<br /><br />User Experience",
 								],
 								[
 									'title' => 'Developer side',
@@ -219,7 +219,7 @@ class ContentSeeder extends Seeder
 						'content' => [
 							[
 								'title' => '',
-								'text' => 'Since childhood, I\’ve been an avid gamer that was always curious how it works and how pixels move around with such a small number of controls. Then I started to explore the trends in the browser and got into Friendster from my older cousins and friends. I was amazed when they have different styles of profiles unlike mine that is completely boring.<br /><br />At the end of high school, I\'m really not sure what to take, but I have a school in mind that I really wanted to attend to because of their exceptional engineers. I wanted to be an Electrical Engineer but was overwhelmed by its Mathematical subjects and was afraid since my dad passed away too early to guide me through. Well yes, I never knew IT had a decent amount of maths too! We\'re not rich enough to pay for this school, but my brother trusted me with his limited support. After the freshman phase, I decided to take a gap year and continue work until I could make it to the internship.<br /><br />University was difficult, I was overwhelmed by the amount of work and the pressure to perform well in subjects due to my status as a working student. I was fortunate enough to be accepted into the university and surrounded by awesome and passionate classmates and friends that are advanced in using technologies that I\'m trying to study. With these people, they pushed my limits to try and learn front-end development. They call me "Kevin, the frontend" as if I was knowledgeable enough (but of course not enough, yet) on the skill, and that\'s one of the best parts I consider as a pillar of my career development.<br /><br />As I made it to internship, I left the job that supports my university education to pursue my passion for the web. My leaders are really awesome and fully understood the purpose of signing up for the job. I was lucky enough to get hooked up with my thesis mates in a startup company that has a great mind, culture, and environment. From that point on, I learned a lot of techniques and different problems to solve as I grow towards web development.',
+								'text' => 'Since childhood, I’ve been an avid gamer that was always curious how it works and how pixels move around with such a small number of controls. Then I started to explore the trends in the browser and got into Friendster from my older cousins and friends. I was amazed when they have different styles of profiles unlike mine that is completely boring.<br /><br />At the end of high school, I\'m really not sure what to take, but I have a school in mind that I really wanted to attend to because of their exceptional engineers. I wanted to be an Electrical Engineer but was overwhelmed by its Mathematical subjects and was afraid since my dad passed away too early to guide me through. Well yes, I never knew IT had a decent amount of maths too! We\'re not rich enough to pay for this school, but my brother trusted me with his limited support. After the freshman phase, I decided to take a gap year and continue work until I could make it to the internship.<br /><br />University was difficult, I was overwhelmed by the amount of work and the pressure to perform well in subjects due to my status as a working student. I was fortunate enough to be accepted into the university and surrounded by awesome and passionate classmates and friends that are advanced in using technologies that I\'m trying to study. With these people, they pushed my limits to try and learn front-end development. They call me "Kevin, the frontend" as if I was knowledgeable enough (but of course not enough, yet) on the skill, and that\'s one of the best parts I consider as a pillar of my career development.<br /><br />As I made it to internship, I left the job that supports my university education to pursue my passion for the web. My leaders are really awesome and fully understood the purpose of signing up for the job. I was lucky enough to get hooked up with my thesis mates in a startup company that has a great mind, culture, and environment. From that point on, I learned a lot of techniques and different problems to solve as I grow towards web development.',
 							],
 						],
 						'hero_image' => [],

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import { FontAwesomeIcon as FaIcon } from '@fortawesome/vue-fontawesome';
   import { SplideSlide } from '@splidejs/vue-splide';
 
   import { ProjectResponseDTO } from '@/Types/Responses';
@@ -51,7 +52,10 @@
             :drag="false"
           />
           <div class="relative bg-white p-4 text-primary">
-            <h2 class="mb-2 font-proxima text-lg font-medium text-primary">{{ project.title }}</h2>
+            <h2 class="mb-2 font-proxima text-lg font-medium text-primary">
+              {{ project.title }}
+              <fa-icon v-if="project.order === 1" :icon="['fab', 'github']" class="text-primary" />
+            </h2>
             <p class="inline font-acumin text-xs font-light">
               {{ project.description }}
             </p>
