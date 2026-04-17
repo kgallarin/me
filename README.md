@@ -98,7 +98,7 @@ To run this project, you will need to add the following environment variables to
 
 ## Acknowledgements
 
-Friends and colleagues who inspired me to build this website, allotted time for recommendations and feedback. You always inspire me and push me forward. 💐
+Friends and colleagues who inspired me to build this website, allotted time for recommendations and feedback. You always inspire and push me forward. 💐
 
 
 ## 🔗 Links
