@@ -32,7 +32,7 @@ class SendContactEmail
             Mail::raw(
                 "Name: {$args['name']}\nEmail: {$args['email']}\n\nMessage:\n{$args['message']}",
                 function ($mail) use ($args) {
-                    $mail->to(env('CONTACT_EMAIL'))
+                    $mail->to(config('mail.contact_email'))
                          ->subject("Portfolio Contact: {$args['name']}")
                          ->replyTo($args['email'], $args['name']);
                 }
