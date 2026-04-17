@@ -37,7 +37,7 @@ class SendContactEmail
                          ->replyTo($args['email'], $args['name']);
                 }
             );
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
             return ['success' => false, 'message' => 'Failed to send message. Please try again later.'];
         }
 
