@@ -1,10 +1,10 @@
 <script setup lang="ts">
+  import { ref } from 'vue';
+
   import kgArt1 from '@images/me/kg_art_1.png';
   import kgArt2 from '@images/me/kg_art_2.png';
   import kgArt3 from '@images/me/kg_art_3.png';
   import { motion } from 'motion-v';
-
-  import { ref } from 'vue';
 
   import HeroAnimatedTexts from '@/Components/Partials/Home/LandingHero/HeroAnimatedTexts/index.vue';
 

@@ -26,7 +26,7 @@
 </script>
 
 <template>
-  <div class="relative border border-t border-gray-secondary bg-gray-lighter p-8">
+  <div class="relative mt-auto border border-t border-gray-secondary bg-gray-lighter p-8">
     <a
       href="#"
       class="absolute -top-8 left-0 right-0 mx-auto flex h-16 w-16 items-center justify-center rounded-full border-t border-gray-secondary bg-gray-lighter md:-top-11 md:h-24 md:w-24"

@@ -8,7 +8,7 @@
 </script>
 
 <template>
-  <section class="flex min-h-svh w-full flex-col text-white">
+  <section class="flex min-h-screen w-full flex-col text-white">
     <div id="app-themeable" class="flex flex-1 flex-col" :class="`theme-${theme}`">
       <router-view />
     </div>

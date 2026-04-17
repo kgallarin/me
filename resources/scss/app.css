@@ -209,6 +209,9 @@
   p, span {
     @apply text-primary font-proxima font-light leading-loose;
   }
+  .hero-main {
+    box-shadow: inset 0 -2px 9px -4px #aaaaaa;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */

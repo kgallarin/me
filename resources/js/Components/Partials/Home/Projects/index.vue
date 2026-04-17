@@ -13,7 +13,7 @@
 </script>
 
 <template>
-  <base-container class="pb-24 lg:pb-16 lg:pt-6">
+  <base-container class="tall:lg:max-w-screen-md pb-24 lg:pb-16 lg:pt-6 xl:max-w-screen-xl">
     <div
       data-testid="projects-headers"
       class="headings font-lighter relative my-8 mt-10 border-t border-[#dddddd] text-center text-sm uppercase text-primary lg:mb-14 lg:mt-8"
@@ -33,8 +33,11 @@
       autoplay
       :drag="true"
       :breakpoints="{
-        1024: { perPage: 2 },
+        1280: { perPage: 3 },
+        1024: { perPage: 3 },
+        768: { perPage: 2 },
         640: { perPage: 1 },
+        '(min-height: 900px) and (min-width: 1024px)': { perPage: 2 },
       }"
     >
       <splide-slide v-for="project in projects" :key="project.title" class="pb-12">

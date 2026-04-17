@@ -38,23 +38,23 @@
 </script>
 
 <template>
-  <div class="flex flex-1 flex-col">
+  <div class="flex flex-1 flex-col bg-gray-lighter bg-[url('@images/backgrounds/leaves-4.png')] bg-blend-multiply">
     <base-toast
       :show="showToast"
       :message="`${isDesktop ? 'Hover' : 'Tap'} the texts behind me, to explore skills`"
       position="top"
       @close="showToast = false"
     />
-    <landing-hero
-      :is-hovered-right="isHoveredRight"
-      :is-hovered-left="isHoveredLeft"
-      @hover-right="handleHoverRight"
-      @hover-left="handleHoverLeft"
-      @hover-leave="handleHoverLeave"
-    />
-    <div
-      class="flex-1 bg-gray-lighter bg-[url('@images/backgrounds/leaves-4.png')] bg-blend-multiply shadow-custom-mid-inset"
-    >
+    <div class="bg-white/50 shadow-inner">
+      <landing-hero
+        :is-hovered-right="isHoveredRight"
+        :is-hovered-left="isHoveredLeft"
+        @hover-right="handleHoverRight"
+        @hover-left="handleHoverLeft"
+        @hover-leave="handleHoverLeave"
+      />
+    </div>
+    <div class="">
       <projects :projects="projectsData" />
     </div>
   </div>
