@@ -13,6 +13,7 @@ class ProjectSeeder extends Seeder
         $projects = [
             [
                 'title'       => 'kgallarin.com',
+                'link'        => 'https://github.com/kgallarin/me',
                 'description' => 'My personal website that I built from scratch to showcase my skills, technologies and myself. I plan to add more features and content as a diary since I do not much exposing myself to social media. Feel free to click here to view how it was coded so I can share my knowledge and experience by this simple website. Built with GraphQL API and yo, it has tests!',
                 'images'      => ['projects/kgdev.png', 'projects/kgdev2.png'],
                 'order'       => 1,
@@ -61,7 +62,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title'       => 'dating app',
-                'description' =>'A multiple templated website that allows users to create profiles, browse other profiles, and connect with others who share similar interests. Project includes heavy testing with Jest, Jasmine and Cypress for E2E',
+                'description' =>'A multiple templated website with localization, messaging, push notifications, and multiple payment gateway integrations. It allows users to create profiles, browse other profiles, and connect with others who share similar interests. Project includes heavy testing with Jest, Jasmine and Cypress for E2E',
 								'images'      => ['projects/dating-1.png', 'projects/dating-3.png'],
                 'order'       => 4,
                 'icon'        => [
@@ -115,7 +116,7 @@ class ProjectSeeder extends Seeder
 							],
 							'carousel_settings' => ['autoplay' => false, 'showIndicators' => false, 'showArrows' => false],
 						],
-					[
+						[
 						'title'       => 'fliptrip',
 						'description' => 'Simplifies booking travel to off-the-beaten-path destinations in the Philippines. It connects travelers with local providers for accommodation, transportation, and tours, promoting sustainable community-based tourism.',
 						'order'       => 8,
