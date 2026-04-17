@@ -29,4 +29,5 @@ export interface BaseImageProps {
   alt: string;
   showLoader?: boolean;
   rounded?: string;
+  objectFit?: string;
 }

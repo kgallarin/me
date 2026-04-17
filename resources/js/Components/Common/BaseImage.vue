@@ -8,6 +8,7 @@
     alt: '',
     showLoader: true,
     rounded: '',
+    objectFit: 'cover',
   });
 
   const isLoaded = ref(false);
@@ -37,9 +38,10 @@
       ref="imgRef"
       :src="props.src"
       :alt="props.alt"
-      class="object-inherit h-full w-full"
+      class="h-full w-full"
       :class="[
         props.rounded,
+        `object-${props.objectFit}`,
         {
           'opacity-0': !isLoaded && props.showLoader,
           'opacity-100 transition-opacity duration-300': isLoaded || !props.showLoader,
@@ -49,10 +51,3 @@
     />
   </div>
 </template>
-
-<style scoped>
-  .object-inherit {
-    object-fit: inherit;
-    object-position: inherit;
-  }
-</style>

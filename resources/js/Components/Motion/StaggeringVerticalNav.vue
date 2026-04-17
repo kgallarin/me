@@ -2,7 +2,7 @@
   import { PropType, computed, ref } from 'vue';
 
   import { useResizeObserver } from '@vueuse/core';
-  import { type MotionProps, motion, stagger, useDomRef } from 'motion-v';
+  import { type MotionProps, motion, useDomRef } from 'motion-v';
 
   import { NavLink } from '@/Types/Props';
 
@@ -33,10 +33,10 @@
 
   const navVariants: MotionProps['variants'] = {
     open: {
-      transition: { delayChildren: stagger(0.04, { startDelay: 0 }) },
+      transition: { staggerChildren: 0.07, delayChildren: 0.2 },
     },
     closed: {
-      transition: { delayChildren: stagger(0.5, { from: 'last' }) },
+      transition: { staggerChildren: 0.05, staggerDirection: -1 },
     },
   };
   const itemVariants = {
@@ -44,7 +44,7 @@
       y: 0,
       opacity: 1,
       transition: {
-        y: { stiffness: 1000, velocity: -100 },
+        y: { stiffness: 80, velocity: -100 },
       },
     },
     closed: {
@@ -57,39 +57,41 @@
   };
   const sidebarVariants: MotionProps['variants'] = {
     open: (custom?: unknown) => {
-      const height = typeof custom === 'number' && custom > 0 ? custom : 1000;
+      const height = typeof custom === 'number' && custom > 0 ? custom : 1200;
       return {
-        clipPath: `circle(${height * 2 + 100}px at 5px 5px)`,
+        clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
         transition: {
           type: 'spring',
           stiffness: 20,
-          damping: 20,
           restDelta: 2,
-          onComplete: () => emit('sidebar-animation-complete'),
         },
       };
     },
     closed: {
-      clipPath: 'circle(0px at 5px 5px)',
+      clipPath: 'circle(0px at 0px 0px)',
       transition: {
-        delay: 0.2,
+        delay: 0.5,
         type: 'spring',
         stiffness: 400,
         damping: 40,
       },
     },
   };
+
+  const onAnimationComplete = () => {
+    emit('sidebar-animation-complete');
+  };
 </script>
 
 <template>
   <motion.div
-    :initial="false"
+    :initial="'closed'"
     :animate="propsIsOpen ? 'open' : 'closed'"
     :custom="dimensions.height"
     ref="targetMain"
     class="relative h-full w-full"
   >
-    <motion.div class="bg-variant" :variants="sidebarVariants" />
+    <motion.div class="bg-variant" :variants="sidebarVariants" :on-animation-complete="onAnimationComplete" />
 
     <slot name="stagger-nav-slot" :variants="{ navVariants, itemVariants }" />
   </motion.div>
@@ -97,6 +99,6 @@
 
 <style scoped lang="scss">
   .bg-variant {
-    @apply absolute bottom-0 left-0 top-0 w-full bg-white;
+    @apply absolute bottom-0 left-0 right-0 top-0 w-full bg-white;
   }
 </style>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { PropType, computed, onBeforeUnmount, ref, watch } from 'vue';
 
+  import { onClickOutside } from '@vueuse/core';
   import { motion, stagger } from 'motion-v';
 
   import router from '@/Router';
@@ -17,11 +18,21 @@
   const appStore = useAppStore();
   const iconLinksStore = useIconLinksStore();
 
-  const isOpen = computed(() => appStore.isSidebarOpen);
+  const isSidebarOpen = computed(() => appStore.isSidebarOpen);
 
-  watch(isOpen, (newVal) => {
-    if (!newVal) {
-      isSidebarAnimationComplete.value = false;
+  let openTimeout: ReturnType<typeof setTimeout> | null = null;
+  watch(isSidebarOpen, (newVal) => {
+    if (newVal) {
+      if (openTimeout) clearTimeout(openTimeout);
+      openTimeout = setTimeout(() => {
+        isSidebarAnimationComplete.value = false;
+        openTimeout = null;
+      }, 500);
+    } else {
+      if (openTimeout) {
+        clearTimeout(openTimeout);
+        openTimeout = null;
+      }
     }
   });
 
@@ -42,11 +53,14 @@
     appStore.closeSidebar();
   };
 
-  const isSidebarAnimationComplete = ref(false);
-  const handleSidebarAnimation = () => {
-    isSidebarAnimationComplete.value = true;
-  };
+  const sidebarMain = ref(null);
+  onClickOutside(sidebarMain, () => {
+    if (isSidebarOpen.value) {
+      closeSidebar();
+    }
+  });
 
+  const isSidebarAnimationComplete = ref(!isSidebarOpen.value);
   const iconLinksContainerVariants = {
     closed: { opacity: 0 },
     open: {
@@ -64,22 +78,30 @@
 
   onBeforeUnmount(() => {
     closeSidebar();
+    if (openTimeout) clearTimeout(openTimeout);
     isSidebarAnimationComplete.value = false;
   });
+  const onSidebarAnimationComplete = () => {
+    if (!isSidebarOpen.value) {
+      isSidebarAnimationComplete.value = true;
+    }
+  };
 </script>
 
 <template>
   <!-- Only render when store asks to open; clicking header's openSidebar triggers this -->
   <motion.nav
-    v-show="isOpen"
-    class="nav container fixed left-0 top-0 z-[70] h-full w-11/12 bg-white shadow-inner drop-shadow-xl"
+    :initial="'closed'"
+    :animate="isSidebarOpen ? 'open' : 'closed'"
+    class="nav container fixed left-0 top-0 z-[70] h-full w-full"
+    :class="{ 'shadow-inner drop-shadow-xl': isSidebarOpen, 'pointer-events-none': !isSidebarOpen }"
   >
-    <div class="sidebar-main container h-full">
+    <div ref="sidebarMain" class="sidebar-main h-full transition-opacity duration-300">
       <staggering-vertical-nav
         :nav-items="nav"
-        :is-open="isOpen"
-        @sidebar-animation-complete="handleSidebarAnimation"
+        :is-open="isSidebarOpen"
         @close="closeSidebar"
+        @sidebar-animation-complete="onSidebarAnimationComplete"
       >
         <template #stagger-nav-slot="{ variants: { navVariants, itemVariants } }">
           <!-- Navigation (sample items) -->
@@ -119,19 +141,21 @@
               </a>
             </motion.li>
           </motion.ul>
-          <scales-on-press
-            class="absolute left-0 top-0 flex w-full cursor-pointer items-center justify-center p-4 text-xl"
+          <div
+            class="absolute left-0 top-0 flex w-full cursor-pointer items-center justify-center p-[6px_6px_6px_16px] text-xl"
           >
             <div class="flex w-full items-center justify-between">
-              <div class="h-[36px] w-[36px] sm:w-[44px]">
+              <div v-if="isSidebarOpen" class="h-[36px] w-[36px] sm:w-[44px]">
                 <brand-logo class="block" for-light />
               </div>
 
-              <div class="p-3" @click.prevent.stop="closeSidebar" data-testid="close-sidebar">
-                <fa-icon :icon="['fas', 'times']" class="text-primary" />
-              </div>
+              <scales-on-press>
+                <div v-if="isSidebarOpen" class="p-3" @click.prevent.stop="closeSidebar" data-testid="close-sidebar">
+                  <fa-icon :icon="['fas', 'times']" class="text-primary" />
+                </div>
+              </scales-on-press>
             </div>
-          </scales-on-press>
+          </div>
         </template>
       </staggering-vertical-nav>
     </div>

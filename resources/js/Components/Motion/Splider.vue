@@ -65,8 +65,9 @@
       <template v-else>
         <splide-slide v-for="(item, index) in items" :key="index" class="h-full w-full">
           <base-image
+            :object-fit="props.objectFit"
             :src="typeof item === 'string' ? item : item.url"
-            :class="[`object-${props.objectFit}`, 'h-full w-full']"
+            class="h-full w-full"
             :rounded="imageClasses"
             :alt="typeof item === 'string' ? '' : item.alt"
             show-loader
