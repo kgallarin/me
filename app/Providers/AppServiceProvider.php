@@ -26,8 +26,8 @@ class AppServiceProvider extends ServiceProvider
             $defaults = [
                 'locale' => app()->getLocale(),
                 'description' => '',
-                'title' => 'KGSPlayground',
-                'keywords' => 'kevin gallarin, kgdev, frontend, developer',
+                'title' => 'kgallarin',
+                'keywords' => 'kevin gallarin, kgdev, frontend, developer, kgallarin, kgallarin.com',
             ];
 
             $existing = $view->getData()['appHeaders'] ?? [];

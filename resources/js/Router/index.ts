@@ -14,6 +14,8 @@ const router: Router = createRouter({
   }),
 });
 
-// authGuard(router);
+router.beforeEach((to): void => {
+  document.title = `kgallarin | ${String(to.name || '')}`;
+});
 
 export default router;

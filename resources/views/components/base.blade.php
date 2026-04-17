@@ -13,7 +13,7 @@
 
     <meta name="theme-color" content="#ffffff">
 
-    <title>{{ $title ?? ($appHeaders['title'] ?? Config::get('app.name', 'loomberryliving')) }}</title>
+    <title>{{ $title ?? ($appHeaders['title'] ?? Config::get('app.name', 'kgallarin')) }}</title>
     @stack('styles')
 </head>
 <body class="touch-my">
