@@ -38,6 +38,7 @@ class SendContactEmail
                 }
             );
         } catch (\Throwable $e) {
+            \Log::error('SendContactEmail failed: ' . $e->getMessage());
             return ['success' => false, 'message' => 'Failed to send message. Please try again later.'];
         }
 
