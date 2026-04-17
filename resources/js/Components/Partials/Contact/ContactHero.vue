@@ -49,6 +49,8 @@
               class="mb-4 flex flex-col items-center gap-2 text-center sm:flex-row"
               :class="[
                 link.classColor,
+                { 'text-[#E4405F]': link.name === 'instagram' },
+                { 'text-[#006AFF]': link.name === 'facebook' },
                 {
                   'justify-center hover:underline': link.name === 'resume',
                 },
