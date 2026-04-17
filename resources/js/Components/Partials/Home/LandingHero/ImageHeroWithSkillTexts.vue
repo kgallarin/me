@@ -34,13 +34,13 @@
 
 <template>
   <div
-    class="align-center relative flex w-full flex-col justify-center overflow-hidden text-black xs:h-[285px] sm:h-[400px] md:h-auto lg:h-[800px]"
+    class="align-center relative flex h-[450px] w-full flex-col justify-center overflow-hidden text-black md:h-auto lg:h-[800px]"
   >
     <!-- Background Images for Split Effect -->
     <div class="pointer-events-none absolute inset-0 z-40 h-full w-full overflow-hidden">
       <!-- Perceptive -->
       <motion.div
-        class="absolute inset-0 h-full w-full bg-contain bg-center bg-no-repeat"
+        class="absolute inset-0 h-full w-full bg-cover bg-center bg-no-repeat md:bg-contain"
         :style="{ backgroundImage: `url(${kgArt2})` }"
         :animate="{
           clipPath:
@@ -55,7 +55,7 @@
 
       <!-- Coding -->
       <motion.div
-        class="absolute inset-0 h-full w-full bg-contain bg-center bg-no-repeat"
+        class="absolute inset-0 h-full w-full bg-cover bg-center bg-no-repeat md:bg-contain"
         :style="{ backgroundImage: `url(${kgArt1})` }"
         :animate="{
           clipPath:

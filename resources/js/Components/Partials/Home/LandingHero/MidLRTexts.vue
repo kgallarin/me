@@ -15,7 +15,7 @@
 
 <template>
   <div
-    class="absolute left-0 right-0 z-10 mx-auto flex h-full w-full items-center justify-between px-2 pb-28 text-black sm:px-4 md:px-8 lg:max-w-screen-lg xl:max-w-screen-xl"
+    class="absolute left-0 right-0 top-[35%] z-50 mx-auto flex h-auto w-full items-center justify-between p-0 text-black sm:px-4 md:top-auto md:z-10 md:h-full md:px-8 md:pb-28 lg:max-w-screen-lg xl:max-w-screen-xl"
   >
     <motion.div
       class="w-1/2 pr-[18%] text-center md:pr-[20%]"
