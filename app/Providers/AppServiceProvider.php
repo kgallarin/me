@@ -22,11 +22,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         View::composer('*', static function ($view) {
-        // TODO: make meta tags for SEO
             $defaults = [
                 'locale' => app()->getLocale(),
-                'description' => '',
-                'title' => 'kgallarin',
+                'description' => 'Frontend Developer, Front-end Engineer, Laravel/GraphQL Full-Stack Capable',
+                'title' => 'KGallarin - Frontend Developer',
                 'keywords' => 'kevin gallarin, kgdev, frontend, developer, kgallarin, kgallarin.com',
             ];
 

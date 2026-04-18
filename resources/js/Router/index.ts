@@ -15,7 +15,7 @@ const router: Router = createRouter({
 });
 
 router.beforeEach((to): void => {
-  document.title = `kgallarin | ${String(to.name || '')}`;
+  document.title = `Kevin Gallarin | ${String(to.name || '')}`;
 });
 
 export default router;
