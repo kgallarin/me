@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Models\User;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Telescope\IncomingEntry;
 use Laravel\Telescope\Telescope;
@@ -57,9 +56,11 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
     protected function gate(): void
     {
         Gate::define('viewTelescope', static function (User $user) {
-            $allowed = array_filter(explode(',', env('TELESCOPE_ALLOWED_EMAILS', '')));
-
-            return in_array($user->email, $allowed, true);
+//          uncomment if has auth/ for now:set to public ip
+//          $allowed = array_filter(explode(',', env('TELESCOPE_ALLOWED_EMAILS', '')));
+//
+//            return in_array($user->email, $allowed, true);
+					return true;
         });
     }
 }
