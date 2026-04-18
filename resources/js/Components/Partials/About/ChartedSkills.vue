@@ -1,8 +1,6 @@
 <script setup lang="ts">
   import { PropType, computed } from 'vue';
 
-  import kgChart1 from '@images/me/kg_chart1.png';
-
   import { ContentResponseDTO } from '@/Types/Responses';
 
   import BaseContainer from '@/Components/Common/BaseContainer.vue';
@@ -29,6 +27,7 @@
     },
   });
 
+  const chartImage = computed(() => props.content?.heroImages[0]);
   const perceptiveSide = computed(() => props.content.content[0]);
   const developerSide = computed(() => props.content.content[1]);
 </script>
@@ -60,8 +59,8 @@
         >
           <base-image
             class="h-full w-full object-cover sm:h-[340px] sm:w-[340px]"
-            :src="kgChart1"
-            alt="kgallarin cart"
+            :src="chartImage.url"
+            alt="kgallarin chart"
             rounded="rounded-full"
           />
         </scroll-reveal>

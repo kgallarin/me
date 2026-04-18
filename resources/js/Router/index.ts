@@ -1,5 +1,5 @@
 // import authGuard from '@/Router/v1/Hooks/AuthGuard';
-import { Router, createRouter, createWebHistory } from 'vue-router';
+import { RouteLocationNormalizedGeneric, Router, createRouter, createWebHistory } from 'vue-router';
 
 import routesV1 from '@/Router/v1/routes';
 
@@ -14,8 +14,8 @@ const router: Router = createRouter({
   }),
 });
 
-router.beforeEach((to): void => {
-  document.title = `Kevin Gallarin | ${String(to.name || '')}`;
+router.beforeEach((to: RouteLocationNormalizedGeneric): void => {
+  document.title = `KGallarin | ${String(to.name || '')}`;
 });
 
 export default router;

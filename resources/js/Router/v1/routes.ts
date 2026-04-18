@@ -19,7 +19,7 @@ const publicRoutes = [
         component: Home,
         meta: {
           guest: true,
-          title: 'Collection',
+          title: 'home',
         },
       },
       {
