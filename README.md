@@ -104,4 +104,8 @@ Friends and colleagues who inspired me to build this website, allotted time for 
 ## 🔗 Links
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](hhttps://www.linkedin.com/in/kmgallarin)
 
+## License
+
+MIT — see [LICENSE](LICENSE)
+
 
