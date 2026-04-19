@@ -16,6 +16,12 @@
       type: Boolean,
       default: false,
     },
+
+    appTheme: {
+      type: String,
+      required: false,
+      default: 'light',
+    },
   });
 
   const emit = defineEmits(['close', 'emit', 'sidebar-animation-complete']);
@@ -59,6 +65,7 @@
     open: (custom?: unknown) => {
       const height = typeof custom === 'number' && custom > 0 ? custom : 1200;
       return {
+        backgroundColor: props.appTheme === 'light' ? 'white' : 'black',
         clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
         transition: {
           type: 'spring',

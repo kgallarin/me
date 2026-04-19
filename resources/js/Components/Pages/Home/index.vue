@@ -27,6 +27,7 @@
 
   const appStore = useAppStore();
   const isDesktop = computed(() => appStore.isDesktop);
+  const appTheme = computed(() => (appStore.theme === 0 ? 'light' : 'dark'));
 
   const projectsStore = useProjectsStore();
 
@@ -44,6 +45,7 @@
       :message="`${isDesktop ? 'Hover' : 'Tap'} the texts behind me, to explore skills`"
       position="top"
       @close="showToast = false"
+      :theme="appTheme"
     />
     <div>
       <landing-hero
@@ -55,7 +57,7 @@
       />
     </div>
     <div class="">
-      <projects :projects="projectsData" />
+      <projects :projects="projectsData" :theme="appTheme" />
     </div>
   </div>
 </template>

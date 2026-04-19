@@ -99,6 +99,9 @@ const mutations = {
   toggleTheme(this: { theme: Theme }): void {
     this.theme = this.theme === 0 ? 1 : 0;
   },
+  setScrollPosition(this: { scrollPosition: AppState['scrollPosition'] }, x: number, y: number): void {
+    this.scrollPosition = { x, y };
+  },
   closeSidebar(this: { isSidebarOpen: boolean }): void {
     this.isSidebarOpen = false;
   },

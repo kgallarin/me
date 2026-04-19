@@ -59,13 +59,13 @@
               </a>
             </li>
 
-            <li class="pl-4">
+            <li class="theme-switcher pl-4">
               <button
                 class="theme-toggle flex items-center text-gray-300 transition-colors hover:text-white"
                 :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
                 @click="toggleTheme"
               >
-                <fa-icon :icon="['fas', isDark ? 'sun' : 'moon']" class="text-2xl" />
+                <fa-icon :icon="['fas', isDark ? 'sun' : 'moon']" class="text-2xl text-yellow-primary" />
               </button>
             </li>
           </ul>

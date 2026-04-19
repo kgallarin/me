@@ -1,4 +1,3 @@
-import DefaultLayout from '@/Layouts/Public/index.vue';
 import PublicLayout from '@/Layouts/Public/index.vue';
 
 import About from '@/Components/Pages/About/index.vue';

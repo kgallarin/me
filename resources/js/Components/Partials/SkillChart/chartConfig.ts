@@ -137,7 +137,7 @@ export const getChartOptions = (): ChartOptions<'bar'> & { plugins: { datalabels
           color: theme === 'dark' ? '#ffffff' : '#E5E4E2FF',
         },
         ticks: {
-          display: true,
+          display: false,
         },
       },
       y: {

@@ -40,13 +40,21 @@
 
   const closeSidebar = () => appStore.closeSidebar();
   const isDark = computed(() => appStore.theme === 1);
-  const toggleTheme = () => appStore.toggleTheme();
+  const toggleTheme = () => {
+    appStore.toggleTheme();
+    closeSidebar();
+  };
 
   defineProps({
     nav: {
       type: Array as PropType<NavLink[]>,
       required: false,
       default: () => [],
+    },
+    appTheme: {
+      type: String,
+      required: false,
+      default: 'light',
     },
   });
 
@@ -100,6 +108,7 @@
   >
     <div ref="sidebarMain" class="sidebar-main h-full transition-opacity duration-300">
       <staggering-vertical-nav
+        :app-theme="appTheme"
         :nav-items="nav"
         :is-open="isSidebarOpen"
         @close="closeSidebar"
@@ -118,7 +127,7 @@
               <router-link
                 :to="{ name: navItem.to || 'home' }"
                 @click.prevent.stop="navigateTo(navItem.to || 'home')"
-                class="nav-link flex w-full items-center justify-between pb-2 text-sm text-primary"
+                class="nav-link flex w-full items-center justify-between pb-2 text-sm text-secondary"
               >
                 <span>
                   {{ navItem.label }}
@@ -133,7 +142,7 @@
 
           <motion.ul
             ref="icon-links"
-            class="absolute bottom-5 right-10 z-50 flex w-full items-center justify-end gap-8 text-xl"
+            class="absolute bottom-5 right-5 z-50 flex w-full items-center justify-end gap-8 text-xl"
             :variants="iconLinksContainerVariants"
           >
             <motion.li v-for="link in iconLinks" :key="link.id" class="pl-0" :variants="iconLinksItemVariants">
@@ -146,7 +155,7 @@
             <motion.li class="pl-0" :variants="iconLinksItemVariants">
               <button
                 class="flex flex-col items-center text-primary"
-                :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
+                :aria-label="isDark ? 'let there be light' : 'come to the dark side, we have pizza'"
                 @click="toggleTheme"
               >
                 <fa-icon :icon="['fas', isDark ? 'sun' : 'moon']" class="text-2xl" />
@@ -159,7 +168,7 @@
           >
             <div class="flex w-full items-center justify-between">
               <div v-if="isSidebarOpen" class="h-[36px] w-[36px] sm:w-[44px]">
-                <brand-logo class="block" for-light />
+                <brand-logo class="block" :for-light="appTheme === 'light'" />
               </div>
 
               <scales-on-press>

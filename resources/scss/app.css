@@ -1,6 +1,13 @@
 @import "@splidejs/splide/dist/css/splide-core.min.css";
-#app-themeable {
-  transition: background-color 0.8s ease, color 0.8s ease;
+*,
+*::before,
+*::after {
+  transition: color 0.4s ease, background-color 0.4s ease, border-color 0.4s ease, fill 0.4s ease, stroke 0.4s ease;
+}
+
+.skeleton,
+.skeleton * {
+  transition: none;
 }
 
 @layer utilities {
@@ -97,6 +104,18 @@
   font-weight: 100;
   line-height: 1;
 }
+.base-header-nav-main li.theme-switcher {
+  position: relative;
+}
+.base-header-nav-main li.theme-switcher::before {
+  content: "|";
+  position: absolute;
+  left: -4px;
+  top: 1px;
+  font-size: 1.25rem;
+  font-weight: 100;
+  line-height: 1;
+}
 .base-header-nav-main li:nth-child(even) .nav-link.active {
   color: #99f6e4;
 }
@@ -143,7 +162,6 @@
   right: 0;
   bottom: 0;
   width: 100%;
-  background-color: #ffffff;
   z-index: -1;
 }
 

@@ -15,6 +15,10 @@
       type: String as () => 'top' | 'bottom',
       default: 'top',
     },
+    theme: {
+      type: String,
+      default: 'light',
+    },
   });
 
   const emit = defineEmits(['close']);
@@ -28,8 +32,9 @@
       :animate="{ opacity: 1, x: 0 }"
       :exit="{ opacity: 0, x: '100%' }"
       :class="[
-        'fixed right-1 z-[60] flex items-center gap-4 rounded-lg bg-secondary px-4 py-2 text-sm font-medium text-black shadow-lg ring-1 ring-black ring-opacity-5 sm:right-2 md:right-4',
+        'fixed right-1 z-[60] flex items-center gap-4 rounded-lg px-4 py-2 text-sm font-medium text-black shadow-lg ring-1 ring-black ring-opacity-5 sm:right-2 md:right-4',
         position === 'top' ? 'top-20' : 'bottom-10',
+        theme === 'light' ? 'bg-white' : 'bg-secondary-dark',
       ]"
     >
       <fa-icon :icon="['fas', 'bolt']" class="h-4 w-4 text-yellow-400" />
