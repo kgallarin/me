@@ -71,7 +71,7 @@ const getters = {
       }
       return mobileValue;
     },
-  getTheme: (state: AppState) => state.theme,
+  getTheme: (state: AppState): Theme => state.theme,
 };
 
 const mutations = {

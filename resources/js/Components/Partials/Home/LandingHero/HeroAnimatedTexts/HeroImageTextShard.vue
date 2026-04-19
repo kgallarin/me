@@ -58,9 +58,11 @@
   const getAnimatedColor = (isHovered: boolean) => {
     if (!isDarkTheme.value) {
       return isHovered || props.darken ? '#010303' : '#1f2a2d';
+    } else if (isDarkTheme.value) {
+      return isHovered ? '#010303' : '#fff';
+    } else {
+      return props.darken && !isHovered ? '#fefefe' : '#fff';
     }
-
-    return props.darken && !isHovered ? '#fefefe' : '#fff';
   };
 
   const handleMouseOverLeft = () => {

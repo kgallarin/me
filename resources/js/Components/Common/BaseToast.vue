@@ -34,7 +34,7 @@
       :class="[
         'fixed right-1 z-[60] flex items-center gap-4 rounded-lg px-4 py-2 text-sm font-medium text-black shadow-lg ring-1 ring-black ring-opacity-5 sm:right-2 md:right-4',
         position === 'top' ? 'top-20' : 'bottom-10',
-        theme === 'light' ? 'bg-white' : 'bg-secondary-dark',
+        theme === 'light' ? 'bg-white' : 'bg-secondary',
       ]"
     >
       <fa-icon :icon="['fas', 'bolt']" class="h-4 w-4 text-yellow-400" />
