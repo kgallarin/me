@@ -5,13 +5,14 @@ My personal website that I built from scratch. Sharing my ideas and experience b
 ## 🚀 About Me
 I'm a Senior Frontend Engineer (Full-Stack Capable with Laravel and GraphQL)
 
-## Demo
+## Live Link 
 
 https://kgallarin.com/
 
 ## Features
 
 - About Kevin Gallarin 
+- Dark Mode
 - Eye Candy
 - Animation Techniques
 - Tailwind setup
