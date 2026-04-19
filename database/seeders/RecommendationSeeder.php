@@ -22,7 +22,7 @@ class RecommendationSeeder extends Seeder
             ],
 						[
 							'author'   => 'Camille D.',
-							'title'    => 'Senior Graphics Designer, Fine Artist',
+							'title'    => 'Senior Graphic Designer, Fine Artist',
 							'rating' => 5,
 							'order' => 2,
 							'text'     => 'I had the opportunity to work with Kevin when he was just starting out, and it’s been impressive to see him grow into a skilled and reliable web developer. He has a strong eye for design, along with the discipline and patience to continuously learn and improve his craft.<br /><br />Kevin is not only talented but also fun and easy to work with. He brings a positive energy to the team and has a way of making complex tasks feel seamless through his work.<br /><br />Any company would be lucky to have him.',
