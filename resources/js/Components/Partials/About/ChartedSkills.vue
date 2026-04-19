@@ -27,7 +27,7 @@
     },
   });
 
-  const chartImage = computed(() => props.content?.heroImages[0]);
+  const chartImage = computed(() => props.content?.heroImages?.[0]);
   const perceptiveSide = computed(() => props.content.content[0]);
   const developerSide = computed(() => props.content.content[1]);
 </script>
@@ -59,7 +59,7 @@
         >
           <base-image
             class="h-full w-full object-cover sm:h-[340px] sm:w-[340px]"
-            :src="chartImage.url"
+            :src="chartImage?.url"
             alt="kgallarin chart"
             rounded="rounded-full"
           />

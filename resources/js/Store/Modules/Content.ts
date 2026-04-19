@@ -23,7 +23,7 @@ const getters = {
   getContentByKey:
     (state: ContentState) =>
     (key: string): ContentResponseDTO =>
-      state.contents.find((content) => content.key === key) || {
+      state.contents.find((content: ContentResponseDTO): boolean => content.key === key) || {
         title: '',
         key: '',
         content: [],

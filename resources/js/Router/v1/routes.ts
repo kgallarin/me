@@ -1,8 +1,10 @@
-import DefaultLayout from '@/Layouts/Default/index.vue';
+import DefaultLayout from '@/Layouts/Public/index.vue';
+import PublicLayout from '@/Layouts/Public/index.vue';
 
 import About from '@/Components/Pages/About/index.vue';
 import Contact from '@/Components/Pages/Contact/index.vue';
 import Home from '@/Components/Pages/Home/index.vue';
+import NotFound from '@/Components/Pages/NotFound/index.vue';
 import Story from '@/Components/Pages/Story/index.vue';
 
 // view:public routes
@@ -10,7 +12,7 @@ const publicRoutes = [
   {
     path: '/',
     redirect: { name: 'home' },
-    component: DefaultLayout,
+    component: PublicLayout,
     guest: true,
     children: [
       {
@@ -61,15 +63,14 @@ const publicRoutes = [
   //         title: 'Something went wrong',
   //     },
   // },
-  // {
-  //     path: '/:pathMatch(.*)*',
-  //     name: 'not-found',
-  //     component: PublicLayout,
-  //     // component: NotFound,
-  //     meta: {
-  //         mobileTitle: '404 Not Found',
-  //     },
-  // },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'Page not found',
+    component: NotFound,
+    meta: {
+      mobileTitle: '404 Not Found',
+    },
+  },
 ];
 
 export default [...publicRoutes];

@@ -33,7 +33,13 @@
 </script>
 
 <template>
+  <base-header-nav :nav="defaultNav" />
+  <!-- add more layout components if necessary -->
+  <base-side-bar :nav="defaultNav" />
+
   <div class="flex flex-1 flex-col">
     <router-view />
   </div>
+
+  <base-footer :nav="defaultNav" />
 </template>

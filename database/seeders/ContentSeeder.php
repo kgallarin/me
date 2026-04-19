@@ -266,6 +266,15 @@ class ContentSeeder extends Seeder
 							'hero_image' => [],
 							'social_images' => [],
 						],
+						[
+							'title'       => 'Page not found',
+							'subtitle'    => 'page you requested is either broken or does not exist',
+							'key' => 'page_not_found',
+							'content' => [],
+							'hero_image' => [
+								'me/not-found.png'
+							],
+						]
 				];
 
 				foreach($contents as $data) {

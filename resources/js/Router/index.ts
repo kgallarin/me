@@ -15,7 +15,10 @@ const router: Router = createRouter({
 });
 
 router.beforeEach((to: RouteLocationNormalizedGeneric): void => {
-  document.title = `KGallarin | ${String(to.name || '')}`;
+  const toCapitalized = (str: string): string => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+  document.title = `KGallarin | ${toCapitalized(String(to.name || ''))}`;
 });
 
 export default router;
