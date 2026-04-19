@@ -33,7 +33,7 @@
 </script>
 
 <template>
-  <section data-testid="charted-skills" class="shadow-bottom bg-gray-lighter shadow-custom-mid-inset">
+  <section data-testid="charted-skills" class="shadow-bottom bg-secondary shadow-custom-mid-inset">
     <base-container class="py-16 md:py-32">
       <div class="align-center flex w-full flex-col justify-between gap-8 md:flex-row md:gap-0">
         <div class="text-center md:text-left">

@@ -20,10 +20,10 @@
 </script>
 
 <template>
-  <section>
+  <section class="bg-gray-lighter">
     <base-container>
       <div
-        class="flex w-full flex-col items-center justify-between border-b border-gray-200 py-6 md:flex-row md:py-8 lg:py-16"
+        class="flex w-full flex-col items-center justify-between border-b border-secondary py-6 md:flex-row md:py-8 lg:py-16"
       >
         <div class="w-full text-balance text-primary md:w-5/12">
           <h1 class="mb-4 text-6xl lowercase tracking-tight text-tertiary">
@@ -64,7 +64,7 @@
 
         <div class="w-full justify-self-end pt-8 md:w-1/2">
           <base-image
-            class="object-cover shadow-lg"
+            class="object-cover"
             rounded="rounded-md"
             :src="contactHeroData?.heroImages[0]?.url"
             :alt="contactHeroData?.heroImages[0]?.alt"

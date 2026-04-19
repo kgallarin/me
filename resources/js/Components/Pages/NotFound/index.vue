@@ -1,13 +1,9 @@
 <script setup lang="ts">
   import { computed } from 'vue';
 
-  import { useRouter } from 'vue-router';
-
   import { useContentStore } from '@/Store/Modules/Content';
 
   import BaseImage from '@/Components/Common/BaseImage.vue';
-
-  const router = useRouter();
 
   const contentStore = useContentStore();
   contentStore.fetchContent('page_not_found');

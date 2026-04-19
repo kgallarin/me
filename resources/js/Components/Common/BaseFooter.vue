@@ -32,7 +32,7 @@
       class="absolute -top-8 left-0 right-0 mx-auto flex h-16 w-16 items-center justify-center rounded-full border-t border-gray-secondary bg-gray-lighter md:-top-11 md:h-24 md:w-24"
       @click.prevent="scrollToTop"
     >
-      <fa-icon :icon="['fa', 'chevron-up']" class="relative -top-2 text-4xl text-black/30 md:-top-5" />
+      <fa-icon :icon="['fa', 'chevron-up']" class="relative -top-2 text-4xl text-tertiary md:-top-5" />
     </a>
 
     <div class="inner mx-auto flex flex-col justify-center md:flex-row md:justify-between lg:max-w-screen-xl">

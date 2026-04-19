@@ -62,9 +62,9 @@
 
     <div
       v-if="!isExpanded"
-      class="absolute bottom-0 left-0 flex w-full justify-center bg-gradient-to-t from-white via-white/80 to-transparent pb-4 pt-12"
+      class="via-secondary/85 absolute bottom-0 left-0 flex w-full justify-center bg-gradient-to-t from-secondary to-transparent pb-4 pt-52"
     >
-      <button class="text-xs font-semibold text-blue-500 hover:underline" @click="toggleExpand">read more</button>
+      <button class="text-xs font-semibold text-tertiary hover:underline" @click="toggleExpand">read more</button>
     </div>
 
     <div v-else class="mt-auto flex justify-center pb-4">

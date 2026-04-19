@@ -26,7 +26,7 @@ export const getChartData = (): ChartData<'bar'> => ({
 
         switch (index) {
           case 0:
-            gradient.addColorStop(0, '#04d4ff');
+            gradient.addColorStop(0, '#336d80');
             gradient.addColorStop(1, '#9BDCE8FF');
             break;
           case 1:
@@ -66,7 +66,7 @@ export const getChartData = (): ChartData<'bar'> => ({
 
 export const getChartOptions = (): ChartOptions<'bar'> & { plugins: { datalabels?: unknown } } => {
   const appStore = useAppStore();
-
+  const theme = appStore.getTheme === 1 ? 'dark' : 'light';
   return {
     indexAxis: 'x' as const,
     responsive: true,
@@ -96,7 +96,7 @@ export const getChartOptions = (): ChartOptions<'bar'> & { plugins: { datalabels
               lineHeight: 'normal',
             },
             color: '#fff',
-            formatter: (_value: number, context: Context) => {
+            formatter: (_value: number, context: Context): string => {
               const label = context.chart.data.labels?.[context.dataIndex];
               return Array.isArray(label) ? (label[0] as string) : (label as string);
             },
@@ -132,10 +132,12 @@ export const getChartOptions = (): ChartOptions<'bar'> & { plugins: { datalabels
           display: false,
         },
         border: {
-          display: false,
+          display: true,
+
+          color: theme === 'dark' ? '#ffffff' : '#E5E4E2FF',
         },
         ticks: {
-          display: false,
+          display: true,
         },
       },
       y: {
@@ -147,6 +149,7 @@ export const getChartOptions = (): ChartOptions<'bar'> & { plugins: { datalabels
         },
         border: {
           display: true,
+          color: theme === 'dark' ? '#ffffff' : '#E5E4E2FF',
         },
         ticks: {
           display: appStore.isDesktop,
@@ -155,7 +158,7 @@ export const getChartOptions = (): ChartOptions<'bar'> & { plugins: { datalabels
             family: 'Proxima Nova, sans-serif, Helvetica Neue, Helvetica, Arial',
             size: appStore.queryBreakpoints(14, 14, 9),
           },
-          color: '#060606',
+          color: theme === 'dark' ? '#ffffff' : '#010303FF',
           callback: (value: string | number): string => {
             if (value === 100) return 'Seer';
             if (value === 80) return 'Magician';

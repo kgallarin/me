@@ -16,7 +16,7 @@
   <base-container class="tall:lg:max-w-screen-md pb-24 lg:pb-16 lg:pt-6 xl:max-w-screen-xl">
     <div
       data-testid="projects-headers"
-      class="headings font-lighter relative my-8 mt-10 border-t border-[#dddddd] text-center text-sm uppercase text-primary lg:mb-14 lg:mt-8"
+      class="headings font-lighter relative my-8 mt-10 border-t border-secondary text-center text-sm uppercase text-primary lg:mb-14 lg:mt-8"
     >
       <h3 class="font-xl relative mx-auto -mt-2.5 max-w-fit bg-gray-lighter px-12 font-proxima text-lg font-light">
         selected projects
@@ -43,7 +43,7 @@
       <splide-slide v-for="project in projects" :key="project.title" class="pb-12">
         <div
           data-testid="project-card"
-          class="card relative flex h-full flex-col rounded-md bg-white p-1 drop-shadow-md"
+          class="card relative flex h-full flex-col rounded-md bg-secondary p-1 drop-shadow-md"
         >
           <splider
             :items="project.images.map((img) => img.url)"
@@ -54,7 +54,7 @@
             :items-to-show="1"
             :drag="false"
           />
-          <div class="relative bg-white p-4 text-primary">
+          <div class="relative bg-secondary p-4 text-primary">
             <h2 class="mb-2 font-proxima text-lg font-medium text-primary">
               {{ project.title }}
               <fa-icon v-if="project.order === 1" :icon="['fab', 'github']" class="text-primary" />

@@ -35,10 +35,10 @@
 </script>
 
 <template>
-  <section class="border-b border-gray-100">
+  <section class="custom-shadow-inner border-b border-secondary">
     <base-container>
       <div
-        class="flex w-full flex-col items-center justify-between border-b border-gray-200 py-6 md:flex-row md:py-8 lg:py-16"
+        class="border-gray-primary/50 flex w-full flex-col items-center justify-between border-b py-6 md:flex-row md:py-8 lg:py-16"
       >
         <div class="w-full text-balance text-primary md:w-5/12">
           <scroll-reveal
@@ -84,6 +84,9 @@
             :show-arrows="false"
             :drag="true"
             :items-to-show="responsiveQueries"
+            image-classes="rounded-md overflow-hidden"
+            image-container-class="border border-gray-300 p-1"
+            rounded="rounded-md"
             fixed-height="100px"
             object-fit="cover"
           />
@@ -92,11 +95,3 @@
     </base-container>
   </section>
 </template>
-
-<style lang="scss">
-  .image-gallery {
-    img {
-      @apply rounded-sm border border-gray-300 p-1;
-    }
-  }
-</style>

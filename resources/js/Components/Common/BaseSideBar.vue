@@ -39,6 +39,8 @@
   const iconLinks = computed(() => iconLinksStore.getIconLinks.filter((link) => link.name !== 'resume'));
 
   const closeSidebar = () => appStore.closeSidebar();
+  const isDark = computed(() => appStore.theme === 1);
+  const toggleTheme = () => appStore.toggleTheme();
 
   defineProps({
     nav: {
@@ -139,6 +141,17 @@
                 <fa-icon :icon="link.icon" class="text-2xl text-primary" />
                 <span class="text-[6px]">{{ link.name }}</span>
               </a>
+            </motion.li>
+
+            <motion.li class="pl-0" :variants="iconLinksItemVariants">
+              <button
+                class="flex flex-col items-center text-primary"
+                :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
+                @click="toggleTheme"
+              >
+                <fa-icon :icon="['fas', isDark ? 'sun' : 'moon']" class="text-2xl" />
+                <span class="text-[6px]">{{ isDark ? 'light' : 'dark' }}</span>
+              </button>
             </motion.li>
           </motion.ul>
           <div

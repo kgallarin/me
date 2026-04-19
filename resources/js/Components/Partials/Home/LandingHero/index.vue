@@ -19,7 +19,7 @@
 
 <template>
   <div
-    class="hero-main relative flex justify-between overflow-hidden border-b border-gray-300 font-acumin"
+    class="hero-main relative flex justify-between overflow-hidden border-b border-secondary font-acumin"
     @click="emit('click')"
   >
     <!-- Background Layers -->

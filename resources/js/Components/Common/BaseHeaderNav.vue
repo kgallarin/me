@@ -26,6 +26,9 @@
   const iconLinks = computed(() =>
     iconLinksStore.getIconLinks.filter((link) => link.name === 'linkedIn' || link.name === 'github'),
   );
+
+  const isDark = computed(() => appStore.theme === 1);
+  const toggleTheme = () => appStore.toggleTheme();
 </script>
 
 <template>
@@ -54,6 +57,16 @@
               <a :href="link.url" target="_blank">
                 <fa-icon :icon="link.icon" class="text-2xl" />
               </a>
+            </li>
+
+            <li class="pl-4">
+              <button
+                class="theme-toggle flex items-center text-gray-300 transition-colors hover:text-white"
+                :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
+                @click="toggleTheme"
+              >
+                <fa-icon :icon="['fas', isDark ? 'sun' : 'moon']" class="text-2xl" />
+              </button>
             </li>
           </ul>
         </nav>

@@ -45,7 +45,7 @@
       position="top"
       @close="showToast = false"
     />
-    <div class="bg-white/50 shadow-inner">
+    <div>
       <landing-hero
         :is-hovered-right="isHoveredRight"
         :is-hovered-left="isHoveredLeft"

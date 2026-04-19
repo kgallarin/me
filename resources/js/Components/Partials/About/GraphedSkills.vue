@@ -25,7 +25,7 @@
 </script>
 
 <template>
-  <section class="skills-chart shadow-bottom bg-gray-lighter shadow-custom-mid-inset">
+  <section class="skills-chart shadow-bottom bg-secondary shadow-custom-mid-inset">
     <base-container class="px-0 py-12 pb-20 md:px-4 md:py-24 md:pb-24">
       <div class="w-full text-right">
         <scroll-reveal direction="right" :animate-once="animateOnce" :animate-only-scroll-down="animateOnlyScrollDown">

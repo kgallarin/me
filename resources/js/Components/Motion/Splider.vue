@@ -22,6 +22,8 @@
     drag?: boolean;
     breakpoints?: Record<string, unknown>;
     objectFit?: 'cover' | 'contain' | 'fill' | 'none' | 'scale-down';
+    rounded?: string;
+    imageContainerClass?: string;
   }
 
   const props = withDefaults(defineProps<Props>(), {
@@ -32,12 +34,14 @@
     showIndicators: true,
     aspectRatio: '',
     itemsToShow: 1,
-    imageClasses: 'rounded-md',
+    imageClasses: '',
+    imageContainerClass: '',
     gap: 8,
     fixedHeight: null,
     rewind: true,
     drag: false,
     objectFit: 'cover',
+    rounded: 'rounded-md',
     breakpoints: () => ({}),
   });
 
@@ -68,7 +72,9 @@
             :object-fit="props.objectFit"
             :src="typeof item === 'string' ? item : item.url"
             class="h-full w-full"
-            :rounded="imageClasses"
+            :image-class="props.imageClasses"
+            :image-container-class="props.imageContainerClass"
+            :rounded="rounded"
             :alt="typeof item === 'string' ? '' : item.alt"
             show-loader
           />

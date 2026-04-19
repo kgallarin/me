@@ -29,7 +29,7 @@
 </script>
 
 <template>
-  <div class="about-i">
+  <div class="about-i bg-gray-lighter">
     <whoami :content="whoamiContent" animate-once animate-only-scroll-down />
 
     <charted-skills

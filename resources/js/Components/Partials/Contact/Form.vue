@@ -80,7 +80,7 @@
         <button
           type="submit"
           :disabled="form.isProcessing"
-          class="hover:bg-primary-dark focus:ring-primary-dark w-full rounded-md bg-primary px-6 py-3 font-proxima text-lg font-medium text-white focus:border-transparent focus:outline-none focus:ring-2 disabled:opacity-50 md:w-fit"
+          class="focus:ring-primary-dark w-full rounded-md bg-primary px-6 py-3 font-proxima text-lg font-medium text-secondary hover:bg-secondary hover:text-primary focus:border-transparent focus:outline-none focus:ring-2 disabled:opacity-50 md:w-fit"
         >
           {{ form.isProcessing ? 'Sending...' : 'Send' }}
         </button>

@@ -1,0 +1,17 @@
+@use 'palette' as palette;
+
+.theme-dark {
+	--color-primary: #{palette.$bright-gray};
+	--color-secondary: #{palette.$charcoal};
+	--color-tertiary: #{palette.$spanish-gray};
+
+	--color-yellow-primary: #{palette.$lemon-yellow};
+
+	--color-teal-primary: #{palette.$bright-cyan};
+	--color-teal-secondary: #{palette.$pastel-green};
+
+	--color-gray-primary: #{palette.$spanish-gray};
+	--color-gray-secondary: #{palette.$charcoal};
+
+	--color-gray-lighter: #{palette.$onyx};
+}

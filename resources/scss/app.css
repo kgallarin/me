@@ -1,4 +1,8 @@
 @import "@splidejs/splide/dist/css/splide-core.min.css";
+#app-themeable {
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
 @layer utilities {
   .text-shadow-thickens {
     text-shadow: 0 0 0 rgb(0, 0, 0);
@@ -61,6 +65,18 @@
   --color-gray-primary: #969a9b;
   --color-gray-secondary: #e5e4e2;
   --color-gray-lighter: #f8f8f8 ;
+}
+
+.theme-dark {
+  --color-primary: #efefef;
+  --color-secondary: #1a1a1a;
+  --color-tertiary: #969a9b;
+  --color-yellow-primary: #fffa2a;
+  --color-teal-primary: #04d4ff;
+  --color-teal-secondary: #b3f4d5;
+  --color-gray-primary: #969a9b;
+  --color-gray-secondary: #1a1a1a;
+  --color-gray-lighter: #171717;
 }
 
 .base-header-nav-main .nav-link {

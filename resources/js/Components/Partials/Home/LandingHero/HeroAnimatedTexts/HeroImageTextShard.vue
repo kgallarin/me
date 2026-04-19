@@ -1,9 +1,11 @@
 <script setup lang="ts">
+  import { computed, ref } from 'vue';
+
   import { motion } from 'motion-v';
 
-  import { ref } from 'vue';
+  import { useAppStore } from '@/Store/Modules/App';
 
-  defineProps({
+  const props = defineProps({
     textLeft: {
       type: String,
       default: 'left',
@@ -49,6 +51,18 @@
   const isHoveredLeft = ref(false);
   const isHoveredRight = ref(false);
 
+  const appStore = useAppStore();
+
+  const isDarkTheme = computed(() => appStore.getTheme === 1);
+
+  const getAnimatedColor = (isHovered: boolean) => {
+    if (!isDarkTheme.value) {
+      return isHovered || props.darken ? '#010303' : '#1f2a2d';
+    }
+
+    return props.darken && !isHovered ? '#fefefe' : '#fff';
+  };
+
   const handleMouseOverLeft = () => {
     isHoveredLeft.value = true;
     emit('textHoverLeft');
@@ -82,11 +96,14 @@
       <motion.div
         data-testid="shard-text-left"
         :class="[textLeftClasses, 'justify-self-end', 'font-light']"
-        :style="{ webkitTextStroke: isHoveredLeft ? '0.4px currentColor' : darken ? '0.2px currentColor' : '0px currentColor', transition: '-webkit-text-stroke 0.8s ease-out' }"
+        :style="{
+          webkitTextStroke: isHoveredLeft ? '0.4px currentColor' : darken ? '0.2px currentColor' : '0px currentColor',
+          transition: '-webkit-text-stroke 0.8s ease-out',
+        }"
         :initial="{ x: 0, color: darken ? '#010303' : '#E5E4E2', fontWeight: 300, opacity: 1 }"
         :animate="{
           x: isHoveredLeft ? -animateLeftInPixels : 0,
-          color: isHoveredLeft ? '#010303' : darken ? '#010303' : '#1f2a2d',
+          color: getAnimatedColor(isHoveredLeft),
           fontWeight: isHoveredLeft ? 700 : darken ? 500 : 300,
           opacity: isAnyHoveredRight ? 0 : 1,
         }"
@@ -106,11 +123,14 @@
       <motion.div
         data-testid="shard-text-right"
         :class="[textRightClasses, 'justify-self-start', 'font-light']"
-        :style="{ webkitTextStroke: isHoveredRight ? '0.4px currentColor' : darken ? '0.2px currentColor' : '0px currentColor', transition: '-webkit-text-stroke 0.8s ease-out' }"
+        :style="{
+          webkitTextStroke: isHoveredRight ? '0.4px currentColor' : darken ? '0.2px currentColor' : '0px currentColor',
+          transition: '-webkit-text-stroke 0.8s ease-out',
+        }"
         :initial="{ x: 0, color: '#E5E4E2', fontWeight: 300, opacity: 1 }"
         :animate="{
           x: isHoveredRight ? animateRightInPixels : 0,
-          color: isHoveredRight ? '#010303' : darken ? '#010303' : '#1f2a2d',
+          color: getAnimatedColor(isHoveredRight),
           fontWeight: isHoveredRight ? 700 : darken ? 500 : 300,
           opacity: isAnyHoveredLeft ? 0 : 1,
         }"

@@ -9,6 +9,8 @@
     showLoader: true,
     rounded: '',
     objectFit: 'cover',
+    imageContainerClass: '',
+    imageClass: '',
   });
 
   const isLoaded = ref(false);
@@ -28,7 +30,11 @@
 </script>
 
 <template>
-  <div data-testid="base-image" class="relative flex overflow-hidden" :class="props.rounded">
+  <div
+    data-testid="base-image"
+    class="relative flex overflow-hidden"
+    :class="[props.imageContainerClass, props.rounded]"
+  >
     <div v-if="!isLoaded && props.showLoader" class="skeleton absolute inset-0 z-10 w-full" :class="props.rounded" />
     <img
       ref="imgRef"
@@ -36,6 +42,7 @@
       :alt="props.alt"
       class="w-full"
       :class="[
+        props.imageClass,
         props.rounded,
         `object-${props.objectFit}`,
         {

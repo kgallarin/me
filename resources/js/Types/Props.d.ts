@@ -30,4 +30,6 @@ export interface BaseImageProps {
   showLoader?: boolean;
   rounded?: string;
   objectFit?: string;
+  imageClass?: string;
+  imageContainerClass?: string;
 }
