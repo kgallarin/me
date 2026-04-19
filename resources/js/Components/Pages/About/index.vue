@@ -14,6 +14,7 @@
   const recommendationsStore = useRecommendationsStore();
   const contentStore = useContentStore();
   const appStore = useAppStore();
+  const theme = computed(() => (appStore.theme === 0 ? 'light' : 'dark'));
 
   recommendationsStore.fetchRecommendations();
   contentStore.fetchContents();
@@ -51,6 +52,7 @@
     <recommendations
       :content="recommendationsContent"
       :testimonials="recommendationsData"
+      :app-theme="theme"
       animate-once
       animate-only-scroll-down
     />

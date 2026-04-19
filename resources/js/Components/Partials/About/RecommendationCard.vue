@@ -10,6 +10,7 @@
 
   defineProps<{
     recommendation: RecommendationsResponseDTO;
+    appTheme?: string;
   }>();
 
   const cardRef = ref<HTMLElement | null>(null);
@@ -29,10 +30,15 @@
   <div
     ref="cardRef"
     class="main-card relative flex flex-col rounded-md border border-gray-200 p-4 py-8 text-primary shadow-md"
-    :class="isExpanded ? 'max-h-fit w-full' : 'h-[380px] w-full overflow-hidden pb-12'"
+    :class="isExpanded ? 'max-h-fit w-full' : 'h-[340px] w-full overflow-hidden pb-2'"
   >
-    <fa-icon v-if="recommendation.linkedIn" class="absolute right-3 top-3 text-[#0982c0]" :icon="['fab', 'linkedin']" />
-    <div class="flex justify-between border-b border-gray-200 pb-4">
+    <fa-icon
+      v-if="recommendation.linkedIn"
+      class="text-md absolute right-3 top-3 rounded-sm text-[#0982c0]"
+      :class="appTheme === 'dark' ? 'bg-white py-[1px]' : ''"
+      :icon="['fab', 'linkedin']"
+    />
+    <div class="mt-2 flex justify-between border-b border-gray-200 pb-4">
       <div class="author flex flex-row items-center gap-3 leading-tight">
         <base-image
           :src="recommendation.avatar ? recommendation.avatar.url : ''"

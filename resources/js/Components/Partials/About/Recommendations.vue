@@ -25,6 +25,10 @@
       type: Boolean,
       default: false,
     },
+    appTheme: {
+      type: String,
+      default: 'light',
+    },
   });
 
   const columnData = computed(() => {
@@ -64,7 +68,7 @@
             :animate-only-scroll-down="animateOnlyScrollDown"
             class="break-inside-avoid"
           >
-            <recommendation-card :recommendation="recommendation" />
+            <recommendation-card :recommendation="recommendation" :app-theme="appTheme" />
           </scroll-reveal>
         </div>
       </div>
@@ -81,7 +85,7 @@
             :animate-only-scroll-down="animateOnlyScrollDown"
             class="break-inside-avoid"
           >
-            <recommendation-card :recommendation="recommendation" />
+            <recommendation-card :recommendation="recommendation" :app-theme="appTheme" />
           </scroll-reveal>
         </div>
       </div>
@@ -97,7 +101,7 @@
           :animate-only-scroll-down="animateOnlyScrollDown"
           class="break-inside-avoid"
         >
-          <recommendation-card :recommendation="recommendation" />
+          <recommendation-card :recommendation="recommendation" :app-theme="appTheme" />
         </scroll-reveal>
       </div>
     </base-container>
