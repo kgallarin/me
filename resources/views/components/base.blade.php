@@ -13,6 +13,19 @@
 	<meta property="og:title" content="{{ $title ?? ($appHeaders['title'] ?? Config::get('app.name', 'KGallarin')) }}"/>
 	<meta property="og:description" content="{{ $description ?? ($appHeaders['description'] ?? '') }}"/>
 	<meta property="og:url" content="{{ url()->current() }}"/>
+	<meta property="og:image" content="{{ URL::asset('og-sharing.png') }}?v=1"/>
+	<meta property="og:image:secure_url" content="{{ URL::asset('og-sharing.png') }}?v=1"/>
+	<meta property="og:image:width" content="1200"/>
+	<meta property="og:image:height" content="630"/>
+	<meta property="og:image:type" content="image/png"/>
+	<meta property="og:image:alt" content="{{ $title ?? ($appHeaders['title'] ?? Config::get('app.name', 'KGallarin')) }}"/>
+	<meta property="og:site_name" content="{{ Config::get('app.name', 'KGallarin') }}"/>
+
+	{{-- twitter card links --}}
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="{{ $title ?? ($appHeaders['title'] ?? Config::get('app.name', 'KGallarin')) }}">
+	<meta name="twitter:description" content="{{ $description ?? ($appHeaders['description'] ?? '') }}">
+	<meta name="twitter:image" content="{{ URL::asset('og-sharing.png') }}?v=1">
 
 	{{-- me:kgallarin --}}
 	<link rel="me" href="https://github.com/kgallarin"/>
