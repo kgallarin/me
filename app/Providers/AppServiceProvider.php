@@ -24,8 +24,8 @@ class AppServiceProvider extends ServiceProvider
         View::composer('*', static function ($view) {
             $defaults = [
                 'locale' => app()->getLocale(),
-                'description' => 'Frontend Developer, Front-end Engineer, Laravel/GraphQL Full-Stack Capable',
-                'title' => 'KGallarin - Frontend Developer',
+                'description' => 'Web Developer, Front-end Engineer, Laravel/GraphQL Full-Stack Capable',
+                'title' => 'KGallarin - Web Developer',
                 'keywords' => 'kevin gallarin, kgdev, frontend, developer, kgallarin, kgallarin.com',
             ];
 
