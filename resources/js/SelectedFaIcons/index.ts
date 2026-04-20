@@ -1,0 +1,65 @@
+import { library } from '@fortawesome/fontawesome-svg-core';
+import {
+  faBootstrap,
+  faCss3,
+  faFacebook,
+  faGithub,
+  faHtml5,
+  faInstagram,
+  faJs,
+  faLaravel,
+  faLess,
+  faLinkedin,
+  faSass,
+  faTailwindCss,
+  faTypescript,
+  faVuejs,
+} from '@fortawesome/free-brands-svg-icons';
+import { faLightbulb } from '@fortawesome/free-regular-svg-icons';
+import {
+  faBars,
+  faBolt,
+  faChevronLeft,
+  faChevronRight,
+  faChevronUp,
+  faHeart,
+  faLaptopFile,
+  faMoon,
+  faSliders,
+  faStar,
+  faSun,
+  faTimes,
+} from '@fortawesome/free-solid-svg-icons';
+
+library.add(
+  // fas
+  faBars,
+  faBolt,
+  faChevronLeft,
+  faChevronRight,
+  faChevronUp,
+  faHeart,
+  faLaptopFile,
+  faMoon,
+  faSliders,
+  faStar,
+  faSun,
+  faTimes,
+  // far
+  faLightbulb,
+  // fab
+  faBootstrap,
+  faCss3,
+  faFacebook,
+  faGithub,
+  faHtml5,
+  faInstagram,
+  faJs,
+  faLaravel,
+  faLess,
+  faLinkedin,
+  faSass,
+  faTailwindCss,
+  faTypescript,
+  faVuejs,
+);

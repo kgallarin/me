@@ -1,11 +1,12 @@
 <script setup lang="ts">
-  import { PropType } from 'vue';
+  import { PropType, defineAsyncComponent } from 'vue';
 
   import { ContentResponseDTO } from '@/Types/Responses';
 
   import BaseContainer from '@/Components/Common/BaseContainer.vue';
   import ScrollReveal from '@/Components/Motion/ScrollReveal.vue';
-  import SkillChart from '@/Components/Partials/SkillChart/index.vue';
+
+  const SkillChart = defineAsyncComponent(() => import('@/Components/Partials/SkillChart/index.vue'));
 
   defineProps({
     content: {

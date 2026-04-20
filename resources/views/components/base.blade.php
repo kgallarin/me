@@ -41,6 +41,10 @@
 	<meta name="theme-color" content="#ffffff">
 
 	<title>{{ $title ?? ($appHeaders['title'] ?? Config::get('app.name', 'KGallarin')) }}</title>
+{{--	<x-vite-font-preloads :fonts="[--}}
+{{--		'resources/fonts/ProximaNova/woff2/proxima-nova-light-webfont.woff2',--}}
+{{--		'resources/fonts/ProximaNova/woff2/proxima-nova-regular-webfont.woff2',--}}
+{{--	]" />--}}
 	@stack('styles')
 </head>
 <body class="touch-my">
