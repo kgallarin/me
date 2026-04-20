@@ -87,10 +87,10 @@
           </ul>
         </nav>
 
-        <scales-on-press>
+        <scales-on-press class="md:hidden">
           <a
             href="#"
-            class="flex items-center justify-center text-2xl text-white focus:outline-none md:hidden"
+            class="flex items-center justify-center text-2xl text-white focus:outline-none"
             aria-label="Open menu"
             @click.prevent.stop="emit('openSidebar')"
           >

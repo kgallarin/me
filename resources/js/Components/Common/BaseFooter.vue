@@ -61,7 +61,7 @@
       <!-- nav starts-->
       <div class="flex flex-col items-center md:items-end">
         <button
-          class="theme-toggle flex items-center py-4 text-gray-300 transition-colors hover:text-white"
+          class="theme-toggle flex items-center py-4 text-gray-300 transition-colors hover:text-white md:hidden"
           :aria-label="theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
           @click="emit('toggleTheme')"
         >
