@@ -11,6 +11,7 @@
   import BaseFooter from '@/Components/Common/BaseFooter.vue';
   import BaseHeaderNav from '@/Components/Common/BaseHeaderNav.vue';
   import BaseSideBar from '@/Components/Common/BaseSideBar.vue';
+  import ScalesOnPress from '@/Components/Motion/ScalesOnPress.vue';
 
   const iconLinksStore = useIconLinksStore();
   iconLinksStore.fetchIconLinks();
@@ -77,15 +78,17 @@
       :transition="{ duration: 0.4 }"
       class="fixed -left-5 top-1/2 z-40 -translate-y-1/2 md:-left-12"
     >
-      <router-link
-        :to="{ name: prevPage }"
-        class="flex h-10 w-10 items-center justify-center rounded-full border-t bg-primary shadow-lg lg:h-20 lg:w-20"
-      >
-        <fa-icon
-          :icon="['fa', 'chevron-left']"
-          class="relative -right-2 text-xs text-secondary md:-right-5 md:text-xl"
-        />
-      </router-link>
+      <scales-on-press>
+        <router-link
+          :to="{ name: prevPage }"
+          class="flex h-10 w-10 items-center justify-center rounded-full border-t bg-primary shadow-lg lg:h-20 lg:w-20"
+        >
+          <fa-icon
+            :icon="['fa', 'chevron-left']"
+            class="relative -right-2 text-xs text-secondary md:-right-5 md:text-xl"
+          />
+        </router-link>
+      </scales-on-press>
     </motion.div>
   </AnimatePresence>
 
@@ -99,15 +102,17 @@
       :transition="{ duration: 0.4 }"
       class="fixed -right-5 top-1/2 z-40 -translate-y-1/2 md:-right-12"
     >
-      <router-link
-        :to="{ name: nextPage }"
-        class="flex h-10 w-10 items-center justify-center rounded-full border-t bg-primary lg:h-20 lg:w-20"
-      >
-        <fa-icon
-          :icon="['fa', 'chevron-right']"
-          class="relative -left-2 text-xs text-secondary md:-left-5 md:-right-2 md:text-xl"
-        />
-      </router-link>
+      <scales-on-press>
+        <router-link
+          :to="{ name: nextPage }"
+          class="flex h-10 w-10 items-center justify-center rounded-full border-t bg-primary lg:h-20 lg:w-20"
+        >
+          <fa-icon
+            :icon="['fa', 'chevron-right']"
+            class="relative -left-2 text-xs text-secondary md:-left-5 md:-right-2 md:text-xl"
+          />
+        </router-link>
+      </scales-on-press>
     </motion.div>
   </AnimatePresence>
 
