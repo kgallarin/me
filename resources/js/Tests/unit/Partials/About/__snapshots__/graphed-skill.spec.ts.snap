@@ -3,7 +3,7 @@
 exports[`GraphedSkill > Renders texts and chart component correctly 1`] = `
 <div>
   <section
-    class="skills-chart shadow-bottom bg-gray-lighter shadow-custom-mid-inset"
+    class="skills-chart shadow-bottom bg-secondary shadow-custom-mid-inset"
   >
     <div
       class="lg:max-w-screen-lg mx-auto px-4 xl:max-w-screen-xl xl:px-0 px-0 py-12 pb-20 md:px-4 md:py-24 md:pb-24"

@@ -1,3 +1,5 @@
+import { CarouselConfig, FaIconSingle, FontAwesomeIconObject } from '@/Types/General';
+
 export interface ImageDTO {
   url: string;
   alt: string;
@@ -9,15 +11,8 @@ export interface ProjectResponseDTO {
   description: string;
   link?: string;
   order: number;
-  icon: Array<{
-    icon: string[];
-    color: string;
-  }>;
-  carouselSettings: {
-    autoplay: boolean;
-    showIndicators: boolean;
-    showArrows: boolean;
-  };
+  icon: FontAwesomeIconObject[];
+  carouselSettings?: CarouselConfig;
   images: ImageDTO[];
 }
 
@@ -66,6 +61,6 @@ export interface IconLinkResponseDTO {
   id: string;
   name: string;
   url: string;
-  icon: string[];
+  icon: FaIconSingle;
   classColor: string;
 }

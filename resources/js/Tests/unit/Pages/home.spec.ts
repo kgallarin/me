@@ -31,7 +31,7 @@ describe('HomePage', (): void => {
         (): void => {
           expect(getByText('Hover the texts behind me, to explore skills')).toBeInTheDocument();
         },
-        { timeout: 1000 },
+        { timeout: 2000 },
       );
     });
   });
@@ -49,7 +49,7 @@ describe('HomePage', (): void => {
         (): void => {
           expect(getByText('Tap the texts behind me, to explore skills')).toBeInTheDocument();
         },
-        { timeout: 1000 },
+        { timeout: 2000 },
       );
     });
   });

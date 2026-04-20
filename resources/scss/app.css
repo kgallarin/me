@@ -165,6 +165,13 @@
   z-index: -1;
 }
 
+.footer-main li .nav-link {
+  @apply font-acumin text-primary;
+}
+.footer-main li .nav-link.active {
+  @apply text-gray-400;
+}
+
 .splide-main:hover .splide__arrows {
   opacity: 1;
 }

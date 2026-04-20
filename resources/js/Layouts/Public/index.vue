@@ -17,7 +17,13 @@
   iconLinksStore.fetchIconLinks();
 
   const appStore = useAppStore();
-  const theme = computed(() => appStore.getTheme);
+  const toggleTheme = () => {
+    appStore.toggleTheme();
+  };
+  const theme = computed(() => (appStore.getTheme === 0 ? 'light' : 'dark'));
+  const openSidebar = appStore.openSidebar;
+  const sidebarState = computed(() => appStore.isSidebarOpen);
+
   const { x: horizontalScrollPosition, y: verticalScrollPosition } = useScroll(window, {
     onScroll: () => appStore.setScrollPosition(horizontalScrollPosition.value, verticalScrollPosition.value),
   });
@@ -64,9 +70,15 @@
 </script>
 
 <template>
-  <base-header-nav :nav="defaultNav" />
+  <base-header-nav
+    :nav="defaultNav"
+    :sidebar-state="sidebarState"
+    :theme="theme"
+    @toggleTheme="toggleTheme"
+    @open-sidebar="openSidebar"
+  />
   <!-- add more layout components if necessary -->
-  <base-side-bar :nav="defaultNav" :app-theme="theme === 0 ? 'light' : 'dark'" />
+  <base-side-bar :nav="defaultNav" :app-theme="theme" />
 
   <AnimatePresence>
     <motion.div
@@ -120,5 +132,5 @@
     <router-view />
   </div>
 
-  <base-footer ref="footerRef" :nav="defaultNav" />
+  <base-footer ref="footerRef" :nav="defaultNav" :theme="theme" @toggleTheme="toggleTheme" />
 </template>

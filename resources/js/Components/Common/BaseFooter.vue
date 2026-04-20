@@ -11,6 +11,11 @@
       required: false,
       default: () => [],
     },
+    theme: {
+      type: String,
+      required: false,
+      default: 'light',
+    },
   });
 
   const iconLinksStore = useIconLinksStore();
@@ -23,10 +28,12 @@
       behavior: 'smooth',
     });
   };
+
+  const emit = defineEmits(['toggleTheme']);
 </script>
 
 <template>
-  <div class="relative mt-auto border border-t border-gray-secondary bg-gray-lighter p-8">
+  <div class="footer-main relative mt-auto border border-t border-gray-secondary bg-gray-lighter p-8">
     <a
       href="#"
       class="absolute -top-8 left-0 right-0 mx-auto flex h-16 w-16 items-center justify-center rounded-full border-t border-gray-secondary bg-gray-lighter md:-top-11 md:h-24 md:w-24"
@@ -52,7 +59,20 @@
       </div>
 
       <!-- nav starts-->
-      <div class="itemst-center flex flex-col md:items-end">
+      <div class="flex flex-col items-center md:items-end">
+        <button
+          class="theme-toggle flex items-center py-4 text-gray-300 transition-colors hover:text-white"
+          :aria-label="theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
+          @click="emit('toggleTheme')"
+        >
+          <fa-icon
+            :icon="['far', 'lightbulb']"
+            :class="[
+              theme !== 'dark' ? 'bg-black/80 text-yellow-400' : 'text-gray-500',
+              'h-5 w-5 rounded-full p-2 text-2xl',
+            ]"
+          />
+        </button>
         <nav class="hidden md:block">
           <ul class="text-md flex gap-8 text-primary">
             <li v-for="item in nav" :key="item.label">
@@ -63,24 +83,28 @@
                 {{ item.label }}
               </router-link>
             </li>
+            <li class="theme-switcher relative -top-2">
+              <button
+                class="theme-toggle flex items-center text-gray-300 transition-colors hover:text-white"
+                :aria-label="theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
+                @click="emit('toggleTheme')"
+              >
+                <fa-icon
+                  :icon="['far', 'lightbulb']"
+                  :class="[
+                    theme !== 'dark' ? 'bg-black/80 text-yellow-400' : 'text-gray-500',
+                    'h-5 w-5 rounded-full p-2 text-2xl',
+                  ]"
+                />
+              </button>
+            </li>
           </ul>
         </nav>
 
-        <p class="mt-4 text-center font-proxima text-xs">
+        <p class="mt-2 text-center font-proxima text-xs">
           Created with <fa-icon :icon="['fa', 'heart']" class="text-red-600 shadow-sm" />, KG
         </p>
       </div>
     </div>
   </div>
 </template>
-
-<style scoped lang="scss">
-  li {
-    .nav-link {
-      @apply font-acumin text-gray-500;
-      &.active {
-        @apply text-gray-400;
-      }
-    }
-  }
-</style>

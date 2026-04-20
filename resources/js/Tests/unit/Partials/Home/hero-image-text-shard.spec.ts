@@ -1,12 +1,18 @@
+import { createTestingPinia } from '@pinia/testing';
 import { RenderResult, fireEvent, render } from '@testing-library/vue';
-import { describe, expect, test } from 'vitest';
+import { describe, expect, test, vi } from 'vitest';
 
 import { HeroImageTextShardProps } from '@/Types/Props';
 
 import HeroImageTextShard from '@/Components/Partials/Home/LandingHero/HeroAnimatedTexts/HeroImageTextShard.vue';
 
 const renderHeroImageTextShard = async (props: HeroImageTextShardProps): Promise<RenderResult> => {
-  return render(HeroImageTextShard, { props });
+  return render(HeroImageTextShard, {
+    global: {
+      plugins: [createTestingPinia({ createSpy: vi.fn })],
+    },
+    props,
+  });
 };
 
 describe('HeroImageTextShard', (): void => {

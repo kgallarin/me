@@ -12,3 +12,7 @@ export const enum Theme {
   LIGHT = 0,
   DARK = 1,
 }
+
+export const BASE_TOAST_TOP_POS = ['top', 'top-right', 'top-left'] as const;
+
+export const BASE_TOAST_RIGHT_POS = ['top', 'bottom', 'top-right', 'bottom-right'] as const;

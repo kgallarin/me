@@ -83,9 +83,9 @@
               data-testid="project-icon"
               v-for="(ico, index) in project.icon"
               :key="index"
-              :icon="ico.icon"
+              :icon="ico?.icon"
               class="text-xl"
-              :class="ico.color"
+              :class="ico?.color"
             />
           </div>
         </div>

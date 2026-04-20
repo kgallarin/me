@@ -3,13 +3,13 @@
 
   import { FontAwesomeIcon as FaIcon } from '@fortawesome/vue-fontawesome';
 
-  import { useAppStore } from '@/Store/Modules/App';
   import { useIconLinksStore } from '@/Store/Modules/IconLinks';
 
   import { NavLink } from '@/Types/Props';
 
   import BaseContainer from '@/Components/Common/BaseContainer.vue';
   import BrandLogo from '@/Components/Motion/BrandLogo.vue';
+  import ScalesOnPress from '@/Components/Motion/ScalesOnPress.vue';
 
   defineProps({
     nav: {
@@ -17,18 +17,31 @@
       required: false,
       default: () => [],
     },
+    theme: {
+      type: String,
+      required: false,
+      default: 'light',
+    },
+    sidebarState: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   });
 
-  const appStore = useAppStore();
   const iconLinksStore = useIconLinksStore();
 
-  const openSidebar = appStore.openSidebar;
   const iconLinks = computed(() =>
     iconLinksStore.getIconLinks.filter((link) => link.name === 'linkedIn' || link.name === 'github'),
   );
 
-  const isDark = computed(() => appStore.theme === 1);
-  const toggleTheme = () => appStore.toggleTheme();
+  const emit = defineEmits<{
+    (e: 'toggleTheme'): void;
+    (e: 'openSidebar'): void;
+  }>();
+  const toggleTheme = () => {
+    emit('toggleTheme');
+  };
 </script>
 
 <template>
@@ -62,23 +75,28 @@
             <li class="theme-switcher pl-4">
               <button
                 class="theme-toggle flex items-center text-gray-300 transition-colors hover:text-white"
-                :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
+                :aria-label="theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
                 @click="toggleTheme"
               >
-                <fa-icon :icon="['fas', isDark ? 'sun' : 'moon']" class="text-2xl text-yellow-primary" />
+                <fa-icon
+                  :icon="['far', 'lightbulb']"
+                  :class="[theme !== 'dark' ? 'text-yellow-primary' : 'text-gray-500', 'text-2xl']"
+                />
               </button>
             </li>
           </ul>
         </nav>
 
-        <a
-          href="#"
-          class="text-2xl text-gray-400 focus:outline-none md:hidden"
-          aria-label="Open menu"
-          @click.prevent.stop="openSidebar"
-        >
-          <fa-icon :icon="['fas', 'bars']" />
-        </a>
+        <scales-on-press>
+          <a
+            href="#"
+            class="flex items-center justify-center text-2xl text-white focus:outline-none md:hidden"
+            aria-label="Open menu"
+            @click.prevent.stop="emit('openSidebar')"
+          >
+            <fa-icon :icon="['fas', sidebarState ? 'sliders' : 'bars']" />
+          </a>
+        </scales-on-press>
       </div>
     </base-container>
   </header>
