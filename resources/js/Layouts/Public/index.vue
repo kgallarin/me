@@ -75,7 +75,7 @@
       :animate="{ opacity: 1 }"
       :exit="{ opacity: 0 }"
       :transition="{ duration: 0.4 }"
-      class="fixed -left-6 top-1/2 z-40 -translate-y-1/2 md:-left-12"
+      class="fixed -left-5 top-1/2 z-40 -translate-y-1/2 md:-left-12"
     >
       <router-link
         :to="{ name: prevPage }"
@@ -83,7 +83,7 @@
       >
         <fa-icon
           :icon="['fa', 'chevron-left']"
-          class="relative -right-2 text-base text-secondary md:-right-5 md:text-xl"
+          class="relative -right-2 text-xs text-secondary md:-right-5 md:text-xl"
         />
       </router-link>
     </motion.div>
@@ -97,7 +97,7 @@
       :animate="{ opacity: 1 }"
       :exit="{ opacity: 0 }"
       :transition="{ duration: 0.4 }"
-      class="fixed -right-6 top-1/2 z-40 -translate-y-1/2 md:-right-12"
+      class="fixed -right-5 top-1/2 z-40 -translate-y-1/2 md:-right-12"
     >
       <router-link
         :to="{ name: nextPage }"
@@ -105,7 +105,7 @@
       >
         <fa-icon
           :icon="['fa', 'chevron-right']"
-          class="relative -left-2 text-base text-secondary md:-left-5 md:-right-2 md:text-xl"
+          class="relative -left-2 text-xs text-secondary md:-left-5 md:-right-2 md:text-xl"
         />
       </router-link>
     </motion.div>

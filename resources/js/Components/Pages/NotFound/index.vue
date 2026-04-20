@@ -13,7 +13,7 @@
 
 <template>
   <div
-    class="min-w-screen flex min-h-screen flex-col items-center justify-center bg-[url('@images/backgrounds/leaves-4.png')] px-4 text-center font-proxima text-primary bg-blend-multiply"
+    class="min-w-screen flex min-h-screen flex-col items-center justify-center bg-secondary bg-[url('@images/backgrounds/leaves-4.png')] px-4 text-center font-proxima bg-blend-multiply"
   >
     <base-image
       class="mb-4 h-[280px] w-[280px] object-cover"
@@ -22,13 +22,13 @@
       rounded="rounded-full"
     >
     </base-image>
-    <h1 class="text-4xl font-bold">404</h1>
+    <h1 class="text-4xl font-bold text-primary">404</h1>
 
-    <h2 class="text-2xl leading-loose">{{ pageNotFound?.title }}</h2>
-    <p class="mb-8 text-sm">{{ pageNotFound?.subtitle }}</p>
+    <h2 class="text-2xl leading-loose text-primary">{{ pageNotFound?.title }}</h2>
+    <p class="mb-8 text-sm text-primary">{{ pageNotFound?.subtitle }}</p>
 
     <button
-      class="hover:bg-primary/80 h-[40px] w-[260px] rounded-full bg-primary px-4 py-2 text-lg text-sm font-medium leading-none text-white"
+      class="hover:bg-primary/80 h-[40px] w-[260px] rounded-full bg-primary px-4 py-2 text-sm font-medium leading-none text-secondary"
       @click="$router.push({ name: 'home' })"
     >
       Back to home

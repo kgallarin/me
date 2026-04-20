@@ -28,7 +28,7 @@
       :items-to-show="3"
       :show-indicators="false"
       :show-arrows="false"
-      :gap="16"
+      :gap="3"
       :interval="8000"
       rewind
       autoplay
@@ -41,11 +41,11 @@
         '(min-height: 900px) and (min-width: 1024px)': { perPage: 2 },
       }"
     >
-      <splide-slide v-for="project in projects" :key="project.title" class="pb-12">
+      <splide-slide v-for="project in projects" :key="project.title" class="px-2 pb-12">
         <div
           data-testid="project-card"
-          class="card relative flex h-full flex-col rounded-md p-1 drop-shadow-md"
-          :class="[theme === 'light' ? 'bg-white' : 'bg-secondary-dark']"
+          class="card relative flex h-full flex-col rounded-md p-1 shadow-md"
+          :class="[theme === 'light' ? 'bg-white' : 'bg-gray-lighter shadow-white/5']"
         >
           <splider
             :items="project.images.map((img) => img.url)"
@@ -56,10 +56,14 @@
             :items-to-show="1"
             :drag="false"
           />
-          <div class="relative p-4 text-primary" :class="[theme === 'light' ? 'bg-white' : 'bg-secondary-dark']">
+          <div class="relative p-4 text-primary" :class="[theme === 'light' ? 'bg-white' : 'bg-gray-lighter']">
             <h2 class="mb-2 font-proxima text-lg font-medium text-primary">
               {{ project.title }}
-              <fa-icon v-if="project.order === 1" :icon="['fab', 'github']" class="text-primary" />
+              <fa-icon
+                v-if="project.order === 1"
+                :icon="['fab', 'github']"
+                :class="[theme === 'light' ? 'text-primary' : 'text-white']"
+              />
             </h2>
             <p class="inline font-acumin text-xs font-light">
               {{ project.description }}
