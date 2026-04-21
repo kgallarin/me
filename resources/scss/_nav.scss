@@ -1,6 +1,7 @@
 .base-header-nav-main {
   .nav-link {
     color: #ffffff;
+		cursor: pointer;
   }
 
   li {
@@ -44,8 +45,6 @@
 
 }
 
-
-
 .sidebar-main {
 	.list {
 		position: absolute;
@@ -57,10 +56,8 @@
 	}
 
 	.list-item {
-		margin: 0;
 		margin-bottom: 0.5rem;
 		display: flex;
-		cursor: pointer;
 		list-style: none;
 		align-items: center;
 		justify-content: flex-start;

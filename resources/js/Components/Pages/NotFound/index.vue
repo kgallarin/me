@@ -34,6 +34,17 @@
       Back to home
     </button>
   </div>
+
+  <div>
+    <p>
+      One of the pillars on my design taste that I have ever worked with. A real artist. Camille Dadal has an
+      exceptional ideas and concepts that matches every detail of the requirements on the project. I admire their skill
+      to create a unique, memorable and on-point designs that will be a pleasure to use not only on the aesthetic parts
+      but also on the UX dynamics. I have also seen how they make their sketches and drawings come to life by digitizing
+      it that completely amazed me and witness their true artistic nature. These abilities are truly exceptional and I
+      am grateful to have had the opportunity to work with them that brings my website design taste to the next level!
+    </p>
+  </div>
 </template>
 
 <style scoped lang="scss"></style>

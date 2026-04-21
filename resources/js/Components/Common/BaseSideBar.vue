@@ -142,17 +142,19 @@
 
           <motion.ul
             ref="icon-links"
-            class="absolute bottom-5 right-5 z-50 flex w-full items-center justify-end gap-8 text-xl"
+            class="absolute bottom-5 left-0 z-50 flex w-full justify-between gap-8 text-xl"
             :variants="iconLinksContainerVariants"
           >
-            <motion.li v-for="link in iconLinks" :key="link.id" class="pl-0" :variants="iconLinksItemVariants">
-              <a :href="link.url" target="_blank" class="flex flex-col items-center">
-                <fa-icon :icon="link.icon" class="text-2xl text-primary" />
-                <span class="text-[6px]">{{ link.name }}</span>
-              </a>
-            </motion.li>
+            <div class="flex gap-4 pl-5">
+              <motion.li v-for="link in iconLinks" :key="link.id" class="pl-0" :variants="iconLinksItemVariants">
+                <a :href="link.url" target="_blank" class="flex flex-col items-center">
+                  <fa-icon :icon="link.icon" class="text-2xl text-primary" />
+                  <span class="text-[6px]">{{ link.name }}</span>
+                </a>
+              </motion.li>
+            </div>
 
-            <motion.li class="pl-0" :variants="iconLinksItemVariants">
+            <motion.li class="bottom mr-5" :variants="iconLinksItemVariants">
               <button
                 class="flex flex-col items-center text-primary"
                 :aria-label="isDark ? 'let there be light' : 'come to the dark side, we have pizza'"

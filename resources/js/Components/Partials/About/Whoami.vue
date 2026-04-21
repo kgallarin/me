@@ -80,7 +80,7 @@
             :items="socialImages"
             :autoplay="true"
             :interval="8000"
-            :show-indicators="true"
+            :show-indicators="false"
             :show-arrows="false"
             :drag="true"
             :items-to-show="responsiveQueries"
