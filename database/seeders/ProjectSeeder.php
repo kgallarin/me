@@ -54,7 +54,6 @@ class ProjectSeeder extends Seeder
 									[ 'icon' => ['fab', 'html5'], 'color' => 'text-orange-400' ],
 									[ 'icon' => ['fab', 'sass'], 'color' => 'text-pink-400' ],
 									[ 'icon' => ['fab', 'css3'], 'color' => 'text-blue-500' ],
-									[ 'icon' => ['fab', 'laravel'], 'color' => 'text-red-500' ],
 									[ 'icon' => ['fab', 'js'], 'color' => 'text-yellow-400' ],
 									[ 'icon' => ['fab', 'vuejs'], 'color' => 'text-green-500' ],
 								],
