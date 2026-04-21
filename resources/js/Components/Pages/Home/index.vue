@@ -39,7 +39,9 @@
 </script>
 
 <template>
-  <div class="flex flex-1 flex-col bg-gray-lighter bg-[url('@images/backgrounds/leaves-4.png')] bg-blend-multiply">
+  <div
+    class="flex flex-1 flex-col bg-gray-lighter bg-[url('@images/backgrounds/webp/leaves-4.webp')] bg-blend-multiply"
+  >
     <!-- slotted toast, dont miss the offset -->
     <!--    <base-toast-->
     <!--      :show="showToast"-->

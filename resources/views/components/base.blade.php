@@ -33,7 +33,6 @@
 
 	<link rel="icon" type="image/png" href="{{ URL::asset('favicon-96x96.png') }}?v=2" sizes="96x96"/>
 	<link rel="icon" type="image/svg+xml" href="{{ URL::asset('favicon.svg') }}?v=2"/>
-	<link rel="shortcut icon" href="{{ URL::asset('favicon.ico') }}?v=2"/>
 	<link rel="apple-touch-icon" sizes="180x180" href="{{ URL::asset('apple-touch-icon.png') }}?v=2"/>
 	<meta name="apple-mobile-web-app-title" content="KGallarin"/>
 	<link rel="manifest" href="{{ URL::asset('site.webmanifest') }}?v=2"/>

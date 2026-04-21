@@ -1,12 +1,16 @@
-import router from '@/Router/index';
 import { initializeViewportToDesktop } from '@/Tests/unit/SetupFiles/store-breakpoints-helper';
 import { userEvent } from '@testing-library/user-event';
 import { type RenderResult, render } from '@testing-library/vue';
-import { beforeAll, describe, expect, test, vi } from 'vitest';
+import { flushPromises } from '@vue/test-utils';
+import { afterEach, beforeAll, describe, expect, test, vi } from 'vitest';
+
+import router from '@/Router/index';
 
 import { NavLink } from '@/Types/Props';
 
 import BaseHeaderNav from '@/Components/Common/BaseHeaderNav.vue';
+
+import '@/Tests/unit/SetupFiles/mock-router-pages';
 
 const renderBaseHeaderNav = async (props: { nav?: NavLink[] }): Promise<RenderResult> => {
   initializeViewportToDesktop(true);
@@ -34,8 +38,12 @@ const defaultNav: NavLink[] = [
 ];
 
 describe('BaseHeaderNav', (): void => {
-  beforeAll(() => {
+  beforeAll((): void => {
     window.scrollTo = vi.fn();
+  });
+
+  afterEach(async (): Promise<void> => {
+    await flushPromises();
   });
 
   test('Base header component nav renders properly', async (): Promise<void> => {
@@ -80,6 +88,7 @@ describe('BaseHeaderNav', (): void => {
 
     const aboutLink = getByText('about');
     await userEvent.click(aboutLink);
+    await flushPromises();
 
     expect(router.currentRoute.value.path).toBe('/about');
   });

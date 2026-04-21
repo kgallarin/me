@@ -25,8 +25,8 @@
     <!-- Background Layers -->
     <swoosh-layered-bg
       container-classes="pointer-events-none absolute inset-0 z-0"
-      first-bg-classes="absolute inset-0 bg-[url('@images/backgrounds/swoosh_gray.png')] bg-right bg-no-repeat"
-      second-bg-classes="absolute inset-0 bg-[url('@images/backgrounds/swoosh_blue.png')] bg-right bg-no-repeat"
+      first-bg-classes="absolute inset-0 bg-[url('@images/backgrounds/webp/swoosh_gray.webp')] bg-right bg-no-repeat"
+      second-bg-classes="absolute inset-0 bg-[url('@images/backgrounds/webp/swoosh_blue.webp')] bg-right bg-no-repeat"
       :is-hovered-right="isHoveredRight"
       :is-hovered-left="isHoveredLeft"
       :animate-prop-bg1="{
@@ -41,8 +41,8 @@
 
     <swoosh-layered-bg
       container-classes="pointer-events-none absolute inset-0 z-0"
-      first-bg-classes="absolute inset-0 bg-[url('@images/backgrounds/swoosh_green.png')] bg-left bg-no-repeat"
-      second-bg-classes="absolute inset-0 bg-[url('@images/backgrounds/swoosh_yellow.png')] bg-left bg-no-repeat"
+      first-bg-classes="absolute inset-0 bg-[url('@images/backgrounds/webp/swoosh_green.webp')] bg-left bg-no-repeat"
+      second-bg-classes="absolute inset-0 bg-[url('@images/backgrounds/webp/swoosh_yellow.webp')] bg-left bg-no-repeat"
       :is-hovered-right="isHoveredRight"
       :is-hovered-left="isHoveredLeft"
       :animate-prop-bg1="{

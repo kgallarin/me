@@ -1,9 +1,12 @@
 import { initializeViewportToDesktop } from '@/Tests/unit/SetupFiles/store-breakpoints-helper';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { createTestingPinia } from '@pinia/testing';
+import { flushPromises } from '@vue/test-utils';
 import { userEvent } from '@testing-library/user-event';
 import { type RenderResult, render } from '@testing-library/vue';
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
+
+import '@/Tests/unit/SetupFiles/mock-router-pages';
 
 import router from '@/Router/index';
 
@@ -114,6 +117,7 @@ describe('BaseSideBar', (): void => {
 
     const homeLink = getByText('Story');
     await userEvent.click(homeLink);
+    await flushPromises();
 
     expect(router.currentRoute.value.name).toBe('story');
     expect(appStore.closeSidebar).toHaveBeenCalled();
