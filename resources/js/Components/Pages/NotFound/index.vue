@@ -13,7 +13,7 @@
 
 <template>
   <div
-    class="min-w-screen flex min-h-screen flex-col items-center justify-center bg-secondary bg-[url('@images/backgrounds/leaves-4.png')] px-4 text-center font-proxima bg-blend-multiply"
+    class="min-w-screen flex min-h-screen flex-col items-center justify-center bg-secondary bg-[url('@images/backgrounds/webp/leaves-4.webp')] px-4 text-center font-proxima bg-blend-multiply"
   >
     <base-image
       class="mb-4 h-[280px] w-[280px] object-cover"
