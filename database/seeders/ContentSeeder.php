@@ -51,6 +51,7 @@ class ContentSeeder extends Seeder
 					'social_images/webp/max.webp'     => 'max the ninja',
 					'social_images/webp/dev5.webp'     => 'work from home 2',
 					'social_images/webp/pepper.webp'      => 'Pepper my love',
+					'social_images/webp/wigged.webp'      => 'just a wig',
 					'social_images/webp/moeb.webp'         => 'moebius dev',
 					'social_images/webp/moebdev.webp'     => 'coworker travel',
 					'social_images/webp/ranong2.webp'      => 'Ranong Lens',
