@@ -31,11 +31,11 @@
       :is-hovered-left="isHoveredLeft"
       :animate-prop-bg1="{
         opacity: isHoveredRight ? 1 : 0,
-        x: isHoveredRight ? 0 : 50,
+        x: isHoveredRight ? 0 : 10,
       }"
       :animate-prop-bg2="{
         opacity: isHoveredRight ? 1 : 0,
-        x: isHoveredRight ? 0 : 50,
+        x: isHoveredRight ? 0 : 10,
       }"
     />
 
@@ -47,11 +47,11 @@
       :is-hovered-left="isHoveredLeft"
       :animate-prop-bg1="{
         opacity: isHoveredLeft ? 1 : 0,
-        x: isHoveredLeft ? 0 : 50,
+        x: isHoveredLeft ? 0 : 10,
       }"
       :animate-prop-bg2="{
         opacity: isHoveredLeft ? 1 : 0,
-        x: isHoveredLeft ? 0 : 50,
+        x: isHoveredLeft ? 0 : 10,
       }"
     />
 

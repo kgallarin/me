@@ -35,7 +35,7 @@
 
 <template>
   <div :class="containerClasses">
-    <!-- Gray Swoosh (Last Layer) -->
+    <!-- Last Layer -->
     <motion.div
       :class="firstBgClasses"
       :animate="animatePropBg1"
@@ -46,7 +46,7 @@
       }"
     />
 
-    <!-- Blue Swoosh (First Layer) -->
+    <!-- First Layer -->
     <motion.div
       :class="secondBgClasses"
       :animate="animatePropBg2"
