@@ -45,6 +45,7 @@ jobs:
             set -e
             cd /var/www/kgdev
 
+            git checkout -- package-lock.json
             git pull origin main
 
             composer install --no-dev --optimize-autoloader --no-interaction
