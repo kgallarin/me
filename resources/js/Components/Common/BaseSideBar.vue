@@ -141,6 +141,7 @@
           </motion.ul>
 
           <motion.ul
+            v-if="iconLinks.length > 0"
             ref="icon-links"
             class="absolute bottom-5 left-0 z-50 flex w-full justify-between gap-8 text-xl"
             :variants="iconLinksContainerVariants"

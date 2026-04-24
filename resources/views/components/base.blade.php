@@ -45,16 +45,16 @@
 	{{--	]" />--}}
 
 	<title>{{ $title ?? ($appHeaders['title'] ?? Config::get('app.name', 'KGallarin')) }}</title>
-	@if(request()->is('/'))
-		<x-vite-preload
-			:assets="[
-				'resources/images/me/kg_art_1.webp',
-				'resources/images/me/kg_art_2.webp',
-			]"
-			as="image"
-			fetchpriority="high"
-		/>
-	@endif
+{{--	@if(request()->is('/'))--}}
+{{--		<x-vite-preload--}}
+{{--			:assets="[--}}
+{{--				'resources/images/me/kg_art_1.webp',--}}
+{{--				'resources/images/me/kg_art_2.webp',--}}
+{{--			]"--}}
+{{--			as="image"--}}
+{{--			fetchpriority="high"--}}
+{{--		/>--}}
+{{--	@endif--}}
 	@stack('styles')
 </head>
 <body class="touch-my">

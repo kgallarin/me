@@ -14,7 +14,10 @@
   import ScalesOnPress from '@/Components/Motion/ScalesOnPress.vue';
 
   const iconLinksStore = useIconLinksStore();
-  iconLinksStore.fetchIconLinks();
+  const iconLinksReady = ref(false);
+  iconLinksStore.fetchIconLinks().finally(() => {
+    iconLinksReady.value = true;
+  });
 
   const appStore = useAppStore();
   const toggleTheme = () => {
@@ -82,7 +85,7 @@
 
   <AnimatePresence>
     <motion.div
-      v-if="prevPage && showLeftAndRightNavigators"
+      v-if="iconLinksReady && prevPage && showLeftAndRightNavigators"
       key="nav-prev"
       :initial="{ opacity: 0 }"
       :animate="{ opacity: 1 }"
@@ -106,7 +109,7 @@
 
   <AnimatePresence>
     <motion.div
-      v-if="nextPage && showLeftAndRightNavigators"
+      v-if="iconLinksReady && nextPage && showLeftAndRightNavigators"
       key="nav-next"
       :initial="{ opacity: 0 }"
       :animate="{ opacity: 1 }"

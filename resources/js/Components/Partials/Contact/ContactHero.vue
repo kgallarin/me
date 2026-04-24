@@ -16,6 +16,10 @@
       type: Array as PropType<IconLinkResponseDTO[]>,
       default: () => [],
     },
+    theme: {
+      type: String as PropType<'light' | 'dark'>,
+      default: 'light',
+    },
   });
 </script>
 
@@ -48,17 +52,17 @@
               target="_blank"
               class="mb-4 flex flex-col items-center gap-2 text-center sm:flex-row"
               :class="[
-                link.classColor,
-                { 'text-[#E4405F]': link.name === 'instagram' },
-                { 'text-[#006AFF]': link.name === 'facebook' },
+                { [link.classColor]: link.name === 'linkedIn' && theme === 'light' },
                 {
                   'justify-center hover:underline': link.name === 'resume',
                 },
               ]"
             >
-              <fa-icon :icon="link.icon" class="mr-2 text-6xl" />
-              <p class="capitalize leading-tight">{{ link.name === 'resume' ? 'Download my resume' : link.name }}</p>
-            </a>
+              <fa-icon :icon="link.icon" class="mr-2 text-6xl">
+                />
+                <p class="capitalize leading-tight">{{ link.name === 'resume' ? 'Download my resume' : link.name }}</p>
+              </fa-icon></a
+            >
           </div>
         </div>
 

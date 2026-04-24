@@ -23,7 +23,7 @@
 
 <x-base :app-headers="$appHeaders">
     <div class="parent-div">
-        <div id="app" v-cloak />
+        <div id="app" v-cloak></div>
         @vite('resources/js/app.ts')
     </div>
 </x-base>
