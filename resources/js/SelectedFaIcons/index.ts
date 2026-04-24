@@ -15,7 +15,7 @@ import {
   faTypescript,
   faVuejs,
 } from '@fortawesome/free-brands-svg-icons';
-import { faLightbulb } from '@fortawesome/free-regular-svg-icons';
+import { faClock, faLightbulb } from '@fortawesome/free-regular-svg-icons';
 import {
   faBars,
   faBolt,
@@ -47,6 +47,7 @@ library.add(
   faTimes,
   // far
   faLightbulb,
+  faClock,
   // fab
   faBootstrap,
   faCss3,

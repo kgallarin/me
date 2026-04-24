@@ -56,6 +56,11 @@
       required: false,
       default: 'light',
     },
+    timeNow: {
+      type: String,
+      required: false,
+      default: '',
+    },
   });
 
   const navigateTo = (to: string) => {
@@ -143,7 +148,7 @@
           <motion.ul
             v-if="iconLinks.length > 0"
             ref="icon-links"
-            class="absolute bottom-5 left-0 z-50 flex w-full justify-between gap-8 text-xl"
+            class="absolute bottom-12 left-0 z-50 flex w-full justify-between gap-8 text-xl"
             :variants="iconLinksContainerVariants"
           >
             <div class="flex gap-4 pl-5">
@@ -155,7 +160,7 @@
               </motion.li>
             </div>
 
-            <motion.li class="bottom mr-5" :variants="iconLinksItemVariants">
+            <motion.li class="mr-5" :variants="iconLinksItemVariants">
               <button
                 class="flex flex-col items-center text-primary"
                 :aria-label="isDark ? 'let there be light' : 'come to the dark side, we have pizza'"
@@ -164,6 +169,13 @@
                 <fa-icon :icon="['fas', isDark ? 'sun' : 'moon']" class="text-2xl" />
                 <span class="text-[6px]">{{ isDark ? 'light' : 'dark' }}</span>
               </button>
+            </motion.li>
+
+            <motion.li class="absolute -bottom-7 right-5" :variants="iconLinksItemVariants">
+              <p class="flex items-center pt-2 font-proxima text-sm font-light text-primary">
+                <fa-icon :icon="['far', 'clock']" class="mr-1 text-sm" />
+                {{ timeNow }}
+              </p>
             </motion.li>
           </motion.ul>
           <div

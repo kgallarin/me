@@ -16,12 +16,20 @@
       required: false,
       default: 'light',
     },
+    yearNow: {
+      type: Number,
+      required: false,
+      default: 0,
+    },
+    timeNow: {
+      type: String,
+      required: false,
+      default: '',
+    },
   });
 
-  const iconLinksStore = useIconLinksStore();
-  const iconLinks = computed(() => iconLinksStore.getIconLinks.filter((link) => link.name !== 'resume'));
+  const emit = defineEmits(['toggleTheme']);
 
-  const year = new Date().getFullYear();
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -29,7 +37,8 @@
     });
   };
 
-  const emit = defineEmits(['toggleTheme']);
+  const iconLinksStore = useIconLinksStore();
+  const iconLinks = computed(() => iconLinksStore.getIconLinks.filter((link) => link.name !== 'resume'));
 </script>
 
 <template>
@@ -44,7 +53,7 @@
 
     <div class="inner mx-auto flex flex-col justify-center md:flex-row md:justify-between lg:max-w-screen-xl">
       <div class="flex flex-col items-center gap-4 md:items-start">
-        <p class="font-proxima text-sm font-light text-primary">&copy; {{ year }} Kevin Gallarin</p>
+        <p class="font-proxima text-sm font-light text-primary">&copy; {{ yearNow }} Kevin Gallarin</p>
         <div class="flex gap-4">
           <a
             v-for="link in iconLinks"
@@ -100,9 +109,12 @@
             </li>
           </ul>
         </nav>
-
         <p class="mt-2 text-center font-proxima text-xs">
           Created with <fa-icon :icon="['fa', 'heart']" class="text-red-600 shadow-sm" />, KG
+        </p>
+        <p class="flex items-center pt-2 font-proxima text-sm font-light text-primary">
+          <fa-icon :icon="['far', 'clock']" class="mr-1 text-sm" />
+          {{ timeNow }}
         </p>
       </div>
     </div>

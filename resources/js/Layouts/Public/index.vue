@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { ComponentPublicInstance, computed, ref } from 'vue';
+  import { ComponentPublicInstance, computed, onUnmounted, ref } from 'vue';
 
   import { useScroll } from '@vueuse/core';
   import { AnimatePresence, motion } from 'motion-v';
@@ -70,6 +70,27 @@
   const nextPage = computed(() =>
     currentIndex.value < pageOrder.length - 1 ? pageOrder[currentIndex.value + 1] : null,
   );
+
+  const dateNow = ref(new Date());
+  const yearNow = computed(() => dateNow.value.getFullYear());
+  // time
+  const timeWithFormat = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Asia/Singapore',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: true,
+  });
+  const timeNow = computed(() => timeWithFormat.format(dateNow.value));
+
+  let liveTime;
+
+  liveTime = setInterval(() => {
+    dateNow.value = new Date();
+  }, 1000);
+
+  onUnmounted(() => {
+    clearInterval(liveTime);
+  });
 </script>
 
 <template>
@@ -81,7 +102,7 @@
     @open-sidebar="openSidebar"
   />
   <!-- add more layout components if necessary -->
-  <base-side-bar :nav="defaultNav" :app-theme="theme" />
+  <base-side-bar :nav="defaultNav" :app-theme="theme" :time-now="timeNow" />
 
   <AnimatePresence>
     <motion.div
@@ -135,5 +156,12 @@
     <router-view />
   </div>
 
-  <base-footer ref="footerRef" :nav="defaultNav" :theme="theme" @toggleTheme="toggleTheme" />
+  <base-footer
+    ref="footerRef"
+    :nav="defaultNav"
+    :theme="theme"
+    @toggleTheme="toggleTheme"
+    :year-now="yearNow"
+    :time-now="timeNow"
+  />
 </template>
