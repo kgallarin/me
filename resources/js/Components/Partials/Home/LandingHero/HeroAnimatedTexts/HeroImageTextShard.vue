@@ -88,7 +88,7 @@
 
 <template>
   <div class="text-shard mb-2 grid grid-cols-2 justify-items-stretch gap-4">
-    <div class="relative cursor-pointer">
+    <div class="relative flex cursor-pointer">
       <div
         data-testid="shard-hoverable-left"
         class="hover-me-baby absolute inset-0 z-10"
@@ -97,7 +97,7 @@
       ></div>
       <motion.div
         data-testid="shard-text-left"
-        :class="[textLeftClasses, 'justify-self-end', 'font-light']"
+        :class="[textLeftClasses, 'ml-auto', 'font-light']"
         :style="{
           webkitTextStroke: isHoveredLeft ? '0.4px currentColor' : darken ? '0.2px currentColor' : '0px currentColor',
           transition: '-webkit-text-stroke 0.8s ease-out',
@@ -114,7 +114,7 @@
         {{ textLeft }}
       </motion.div>
     </div>
-    <div class="relative cursor-pointer">
+    <div class="relative flex cursor-pointer">
       <div
         data-testid="shard-hoverable-right"
         class="hover-me-baby absolute inset-0 z-40"
@@ -124,7 +124,7 @@
 
       <motion.div
         data-testid="shard-text-right"
-        :class="[textRightClasses, 'justify-self-start', 'font-light']"
+        :class="[textRightClasses, 'font-light']"
         :style="{
           webkitTextStroke: isHoveredRight ? '0.4px currentColor' : darken ? '0.2px currentColor' : '0px currentColor',
           transition: '-webkit-text-stroke 0.8s ease-out',
