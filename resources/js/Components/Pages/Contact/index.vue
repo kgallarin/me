@@ -23,7 +23,7 @@
 
 <template>
   <contact-hero :links="iconLinks" :contact-hero-data="contactHeroData" :theme="theme" />
-  <div class="flex flex-col">
+  <div class="flex flex-1 flex-col">
     <section class="shadow-bottom flex-1 bg-gray-lighter shadow-custom-mid-inset">
       <!--	form starts-->
       <contact-form />
