@@ -58,11 +58,9 @@
                 },
               ]"
             >
-              <fa-icon :icon="link.icon" class="mr-2 text-6xl">
-                />
-                <p class="capitalize leading-tight">{{ link.name === 'resume' ? 'Download my resume' : link.name }}</p>
-              </fa-icon></a
-            >
+              <fa-icon :icon="link.icon" class="text-6xl md:mr-2" />
+              <p class="capitalize leading-tight">{{ link.name === 'resume' ? 'Download my resume' : link.name }}</p>
+            </a>
           </div>
         </div>
 

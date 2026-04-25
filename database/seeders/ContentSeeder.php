@@ -204,7 +204,7 @@ class ContentSeeder extends Seeder
 							],
 							[
 								'title' => 'Education',
-								'text' => 'Bachelor of Science in Information Technology, Specialized in Web Application Development, online tutorials, mentors, and self-learning.',
+								'text' => 'BS in Information Technology (Web Application Development), FEU Institute Of Technology — Enhanced by online tutorials, mentors, and self-learning.',
 							],
 							[
 								'title' => 'Specialties',
