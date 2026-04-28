@@ -5,7 +5,6 @@
         "color-function-notation": "modern",
         "alpha-value-notation": "percentage",
         "no-descending-specificity": null,
-        "at-rule-no-unknown": null,
         "scss/at-rule-no-unknown": [true, { "ignoreAtRules": ["tailwind"] }],
         "scss/dollar-variable-pattern": null,
         "scss/percent-placeholder-pattern": null,
@@ -166,10 +165,6 @@
     },
     "overrides": [
         {
-            "files": ["**/*.scss"],
-            "customSyntax": "postcss-scss"
-        },
-        {
             "files": ["**/*.vue"],
             "customSyntax": "postcss-html"
         }
@@ -180,15 +175,6 @@
         "vendor/**/*",
         "public/**/*",
         "storage/**/*",
-        "node_modules/",
-        "vendor/",
-        "public/",
-        "storage/",
-        "resources/scss/app.css",
-        "**/*.min.css",
-        "*.log",
-        ".stylelintcache",
-        ".DS_Store"
+        "resources/scss/app.css"
     ]
 }
-
