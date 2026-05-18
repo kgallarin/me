@@ -24,10 +24,6 @@ export interface AppState {
     [key: string]: string | null;
   } | null;
   routeFrom: string | null;
-  windowSize: {
-    width: number;
-    height: number;
-  } | null;
   scrollPosition: {
     x: number;
     y: number;
@@ -39,7 +35,6 @@ export interface AppState {
 const state = (): AppState => ({
   breakpoints: useBreakpoints(breakpointsTailwind),
   responsiveDataListRows: 2,
-  windowSize: null,
   scrollPosition: {
     x: 0,
     y: 0,
@@ -75,21 +70,8 @@ const getters = {
 };
 
 const mutations = {
-  refreshBreakpoints(this: { breakpoints: IBreakpoints }): void {
-    this.breakpoints = useBreakpoints(breakpointsTailwind) as IBreakpoints;
-  },
-
   setActiveModal(this: { hasActiveModal: boolean }, flag: boolean): void {
     this.hasActiveModal = flag;
-  },
-
-  setWindowSize(
-    this: { windowSize: { width: number; height: number } | null; breakpoints: IBreakpoints },
-    width: number,
-    height: number,
-  ): void {
-    this.windowSize = { width, height };
-    this.breakpoints = useBreakpoints(breakpointsTailwind) as IBreakpoints;
   },
 
   setTheme(this: { theme: Theme }, theme: Theme): void {
