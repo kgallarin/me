@@ -55,6 +55,10 @@
 {{--			fetchpriority="high"--}}
 {{--		/>--}}
 {{--	@endif--}}
+	{{-- Critical CSS inlined first: zero network requests, unblocks first paint --}}
+	<x-critical-css />
+
+	{{-- Full stylesheet loaded below (deferred in production via index.blade.php) --}}
 	@stack('styles')
 </head>
 <body class="touch-my">
