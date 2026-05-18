@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
+    "build:critical": "vite build && node scripts/generate-critical.mjs",
     "dev": "vite",
     "test:unit": "npx vitest watch"
   },
@@ -21,6 +22,7 @@
     "autoprefixer": "^10.4.27",
     "axios": "^1.11.0",
     "concurrently": "^9.0.1",
+    "critical": "^8.0.0",
     "dayjs": "^1.11.20",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-vue": "^10.8.0",
