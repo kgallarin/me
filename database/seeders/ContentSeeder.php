@@ -58,7 +58,7 @@ class ContentSeeder extends Seeder
 							'content' => [
 								[
 									'title' => '',
-									'text' => "Since childhood, I've been fascinated by video games, and web UIs that transformed the way we interact with technology. I have used social media such as Friendster that you can modify its UI that could impress your friends. Apparently, it was all part of front-end development! <br /><br />When starting my education journey, I was fortunate to meet my mentor(s), who introduced me to the world of frontend development that are mostly knowledgeable in both worlds (backend). It was like finding a hidden treasure, and tried my best to cope up with the different kinds of challenging problems that I can apply until today.",
+									'text' => "Since childhood, I've been fascinated by video games, and web UIs that transformed the way we interact with technology. I have used social media such as Friendster that you can modify its UI that could impress your friends. Apparently, it was all part of front-end development! <br /><br />When starting my education journey, I was fortunate to meet people who are really smart in the areas I wanted to improve, who introduced me to the world of frontend development that are mostly knowledgeable in both worlds (backend). It was like finding a hidden treasure, and tried my best to cope up with the different kinds of challenging problems that I can apply until today.",
 								],
 							],
 							'hero_image' => ['me/webp/how-me.webp'],
@@ -176,7 +176,7 @@ class ContentSeeder extends Seeder
 							],
 							[
 								'title' => 'Education',
-								'text' => 'BS in Information Technology (Web Application Development), FEU Institute Of Technology — Enhanced by online tutorials, mentors, and self-learning.',
+								'text' => 'BS in Information Technology (Web Application Development), FEU Institute Of Technology — Enhanced by online tutorials, and self-learning.',
 							],
 							[
 								'title' => 'Specialties',
