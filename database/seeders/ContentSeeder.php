@@ -58,7 +58,7 @@ class ContentSeeder extends Seeder
 							'content' => [
 								[
 									'title' => '',
-									'text' => "In my childhood, I've been fascinated by video games and web UIs that transformed the way we interact with technology. I have used social media such as Friendster that you can modify its UI that could impress your friends. Apparently, it was all part of front-end development!<br /> <br />I've always been a fan of how websites and both User Interface and User Experience work. With my curiosity and eye on design, also seeing people how get information and create branding on the web; I always thrive for simplicity, usability, maintainability, functionality and improvement.",
+									'text' => "In my childhood, I've been fascinated by video games and web UIs that transformed the way we interact with technology. I have used social media such as Friendster that you can modify its UI that could impress your friends. Apparently, it was all part of front-end development!<br /> <br />I've always been a fan of how websites and both User Interface and User Experience work. With my curiosity and eye on design, also seeing people how to get information and create branding on the web with different styles and cultures, I always thrive on simplicity, usability, maintainability, functionality and improvement.",
 								],
 							],
 							'hero_image' => ['me/webp/how-me.webp'],
@@ -100,7 +100,7 @@ class ContentSeeder extends Seeder
 							'content' => [
 								[
 									'title' => 'Perceptive side',
-									'text' => "Animation Fluidity<br /><br />Attention to details and typography<br /><br />Communicating with artist's perspective<br /><br />Design Feels<br /><br />Eye on design<br /><br />Finding beauty to everything<br /><br />User Experience",
+									'text' => "Animation Fluidity<br /><br />Attention to details and typography<br /><br />Communicating with an artist's perspective<br /><br />Design Feels<br /><br />Eye on design<br /><br />Finding beauty in everything<br /><br />User Experience",
 								],
 								[
 									'title' => 'Developer side',
