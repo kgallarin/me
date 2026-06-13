@@ -61,7 +61,7 @@ class ProjectSeeder extends Seeder
             ],
             [
                 'title'       => 'dating app',
-                'description' =>'A multiple templated website with localization, messaging, push notifications, and multiple payment gateway integrations. It allows users to create profiles, browse other profiles, and connect with others who share similar interests. Project includes heavy testing with Jest, Jasmine and Cypress for E2E',
+                'description' =>'A complex multiple templated website with localization, with thousands of users, messaging, push notifications, and multiple payment gateway integrations. It allows users to create profiles, browse other profiles, and connect with others who share similar interests. Project includes heavy testing with Jest, Jasmine and Cypress for E2E',
 								'images'      => ['projects/webp/dating-1.webp', 'projects/webp/dating-3.webp'],
                 'order'       => 4,
                 'icon'        => [
