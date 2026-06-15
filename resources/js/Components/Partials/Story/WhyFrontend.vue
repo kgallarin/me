@@ -29,7 +29,7 @@
 <template>
 	<section class="bg-gray-lighter">
 		<base-container>
-			<div class="flex w-full flex-col items-start justify-between py-6 md:flex-row-reverse md:py-8 lg:py-16">
+			<div class="flex w-full flex-col items-center justify-between py-6 md:flex-row-reverse md:py-8 lg:py-16">
 				<div class="w-full text-balance pt-8 text-primary md:w-5/12">
 					<scroll-reveal direction="left" :animate-once="true" :animate-only-scroll-down="true">
 						<h1 class="mb-4 text-4xl capitalize tracking-tight text-tertiary md:text-4xl xl:text-6xl">
@@ -51,7 +51,7 @@
 						</div>
 					</scroll-reveal>
 				</div>
-				<div class="w-full justify-self-end pt-8 md:w-1/2">
+				<div class="w-full pt-8 md:w-1/2">
 					<scroll-reveal direction="right" :animate-once="true" :animate-only-scroll-down="true">
 						<base-image
 							class="object-cover shadow-lg"
