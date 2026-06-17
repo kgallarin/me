@@ -1,3 +1,4 @@
+import '@/Tests/unit/SetupFiles/mock-router-pages';
 import { initializeViewportToDesktop } from '@/Tests/unit/SetupFiles/store-breakpoints-helper';
 import { userEvent } from '@testing-library/user-event';
 import { type RenderResult, render } from '@testing-library/vue';
@@ -10,86 +11,89 @@ import { NavLink } from '@/Types/Props';
 
 import BaseHeaderNav from '@/Components/Common/BaseHeaderNav.vue';
 
-import '@/Tests/unit/SetupFiles/mock-router-pages';
-
 const renderBaseHeaderNav = async (props: { nav?: NavLink[] }): Promise<RenderResult> => {
-  initializeViewportToDesktop(true);
+	initializeViewportToDesktop(true);
 
-  return render(BaseHeaderNav, {
-    global: {
-      plugins: [router],
-      mocks: {},
-    },
-    props,
-  });
+	return render(BaseHeaderNav, {
+		global: {
+			plugins: [router],
+			mocks: {},
+		},
+		props,
+	});
 };
 
 const defaultNav: NavLink[] = [
-  {
-    label: 'home',
-    to: '',
-    icon: 'chevron-right',
-  },
-  {
-    label: 'about',
-    to: 'about',
-    icon: 'chevron-right',
-  },
+	{
+		label: 'home',
+		to: '',
+		icon: 'chevron-right',
+	},
+	{
+		label: 'about',
+		to: 'about',
+		icon: 'chevron-right',
+	},
+	{
+		label: 'me',
+		to: 'me',
+		icon: 'chevron-right',
+	},
 ];
 
 describe('BaseHeaderNav', (): void => {
-  beforeAll((): void => {
-    window.scrollTo = vi.fn();
-  });
+	beforeAll((): void => {
+		window.scrollTo = vi.fn();
+	});
 
-  afterEach(async (): Promise<void> => {
-    await flushPromises();
-  });
+	afterEach(async (): Promise<void> => {
+		await flushPromises();
+	});
 
-  test('Base header component nav renders properly', async (): Promise<void> => {
-    const { getByTestId } = await renderBaseHeaderNav({
-      nav: defaultNav,
-    });
+	test('Base header component nav renders properly', async (): Promise<void> => {
+		const { getByTestId } = await renderBaseHeaderNav({
+			nav: defaultNav,
+		});
 
-    expect(getByTestId('base-header-nav')).toBeInTheDocument();
-  });
+		expect(getByTestId('base-header-nav')).toBeInTheDocument();
+	});
 
-  test('Given the default nav, the home link should be rendered', async (): Promise<void> => {
-    const { getByTestId } = await renderBaseHeaderNav({
-      nav: defaultNav,
-    });
+	test('Given the default nav, the home link should be rendered', async (): Promise<void> => {
+		const { getByTestId } = await renderBaseHeaderNav({
+			nav: defaultNav,
+		});
 
-    expect(getByTestId('base-header-nav')).toHaveTextContent('home');
-  });
+		expect(getByTestId('base-header-nav')).toHaveTextContent('home');
+	});
 
-  test('Brand logo should be rendered', async (): Promise<void> => {
-    const { getByTestId } = await renderBaseHeaderNav({
-      nav: defaultNav,
-    });
+	test('Brand logo should be rendered', async (): Promise<void> => {
+		const { getByTestId } = await renderBaseHeaderNav({
+			nav: defaultNav,
+		});
 
-    expect(getByTestId('brand-logo')).toBeInTheDocument();
-  });
+		expect(getByTestId('brand-logo')).toBeInTheDocument();
+	});
 
-  test('Clicking on brand logo should navigate to home', async (): Promise<void> => {
-    const { getByTestId } = await renderBaseHeaderNav({
-      nav: defaultNav,
-    });
+	test('Clicking on brand logo should navigate to home', async (): Promise<void> => {
+		const { getByTestId } = await renderBaseHeaderNav({
+			nav: defaultNav,
+		});
 
-    const brandLogo = getByTestId('brand-logo');
-    await userEvent.click(brandLogo);
+		const brandLogo = getByTestId('brand-logo');
+		await userEvent.click(brandLogo);
 
-    expect(router.currentRoute.value.path).toBe('/');
-  });
+		expect(router.currentRoute.value.path).toBe('/');
+	});
 
-  test('Clicks to a nav link (about) should navigate to the correct route', async (): Promise<void> => {
-    const { getByText } = await renderBaseHeaderNav({
-      nav: defaultNav,
-    });
+	test('Clicks to a nav link (about) should navigate to the correct route', async (): Promise<void> => {
+		const { getByText } = await renderBaseHeaderNav({
+			nav: defaultNav,
+		});
 
-    const aboutLink = getByText('about');
-    await userEvent.click(aboutLink);
-    await flushPromises();
+		const meLink = getByText('me');
+		await userEvent.click(meLink);
+		await flushPromises();
 
-    expect(router.currentRoute.value.path).toBe('/about');
-  });
+		expect(router.currentRoute.value.path).toBe('/me');
+	});
 });
