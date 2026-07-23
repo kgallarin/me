@@ -23,7 +23,7 @@
 <template>
 	<div class="container relative flex h-full min-h-[44px] w-full min-w-[44px] items-center justify-center rounded-lg">
 		<motion.div
-			:class="`absolute h-full w-full rounded-full border-2 border-solid will-change-transform ${props.spinnerColorBorder} ${props.spinnerTrailColor}`"
+			:class="`absolute h-full min-h-[44px] w-full min-w-[44px] rounded-full border-2 border-solid will-change-transform ${props.spinnerColorBorder} ${props.spinnerTrailColor}`"
 			:animate="{ transform: 'rotate(360deg)' }"
 			:transition="{
 				duration: 14.5,

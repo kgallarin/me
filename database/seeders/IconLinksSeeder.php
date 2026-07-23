@@ -20,12 +20,12 @@ class IconLinksSeeder extends Seeder
                 'icon' => ['fab', 'linkedin'],
                 'class_color' => 'text-[#0982c0]',
             ],
-						[
-							'name' => 'github',
-							'url' => 'https://github.com/kgallarin',
-							'icon' => ['fab', 'github'],
-							'class_color' => 'text-primary-500',
-						],
+            [
+                'name' => 'github',
+                'url' => 'https://github.com/kgallarin',
+                'icon' => ['fab', 'github'],
+                'class_color' => 'text-primary-500',
+            ],
 //            [
 //                'name' => 'facebook',
 //                'url' => 'https://www.facebook.com/kevin.gallarin/',
