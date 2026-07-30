@@ -76,7 +76,6 @@
 </script>
 
 <template>
-	<!-- Only render when store asks to open; clicking header's openSidebar triggers this -->
 	<motion.nav
 		initial="closed"
 		:animate="isSidebarOpen ? 'open' : 'closed'"
