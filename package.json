@@ -3,11 +3,11 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"build": "vite build",
 		"tsc": "tsc --noEmit",
 		"lint": "eslint . --fix",
 		"build:critical": "vite build && node scripts/generate-critical.mjs",
 		"dev": "vite",
+		"build": "vite build",
 		"test:unit": "npx vitest watch"
 	},
 	"devDependencies": {
@@ -35,6 +35,7 @@
 		"prettier": "^3.8.1",
 		"prettier-plugin-tailwindcss": "^0.7.2",
 		"react": "^19.2.5",
+		"rollup-plugin-visualizer": "^7.0.1",
 		"sass-embedded": "^1.98.0",
 		"stylelint": "^17.4.0",
 		"stylelint-config-prettier-scss": "^1.0.0",
