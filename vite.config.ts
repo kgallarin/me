@@ -29,12 +29,14 @@ export default ({ mode }: { mode: string }): ViteUserConfig => {
 			checker({
 				vueTsc: true,
 			}),
-			visualizer({
-				open: true, // Automatically open the report in your browser after build
-				filename: 'bundle-report.html', // Output filename
-				gzipSize: true, // Show gzipped sizes
-				brotliSize: true, // Show brotli sizes
-			}),
+			process.env.ANALYZE
+				? visualizer({
+						open: true,
+						filename: 'bundle-report.html',
+						gzipSize: true,
+						brotliSize: true,
+					})
+				: [],
 		],
 		server: {
 			watch: {
