@@ -12,6 +12,22 @@ class ProjectSeeder extends Seeder
     {
         $projects = [
             [
+                'title'       => 'Headless Shopify Template',
+                'link'        => 'https://github.com/kgallarin/me',
+                'description' => 'Nuxt headless Shopify template with cart, auth 2.0 management ready for production with SEO built with Nuxt with Backend For Frontend approach',
+                'images'      => [''],
+                'order'       => 1,
+                'icon' => [
+                    [ 'icon' => ['fab', 'html5'], 'color' => 'text-orange-400' ],
+                    [ 'icon' => ['fab', 'vuejs'], 'color' => 'text-green-500' ],
+                    [ 'icon' => ['fab', 'js'], 'color' => 'text-yellow-400' ],
+                    [ 'icon' => ['fab', 'typescript'], 'color' => 'text-blue-500' ],
+                    [ 'icon' => ['fab', 'tailwind-css'], 'color' => 'text-teal-400' ],
+                    [ 'icon' => ['fab', 'sass'], 'color' => 'text-pink-400' ],
+                ],
+                'carousel_settings' => ['autoplay' => true, 'showIndicators' => true, 'showArrows' => true],
+            ],
+            [
                 'title'       => 'kgallarin.com',
                 'link'        => 'https://github.com/kgallarin/me',
                 'description' => 'My personal website that I built from scratch to showcase my skills, technologies and myself. I plan to add more features and content whenever available to share some ideas and some of my experiences. Built with GraphQL API and yo, it has tests!',
