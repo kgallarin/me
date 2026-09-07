@@ -2,8 +2,8 @@
 
 My personal website that I built from scratch. Sharing my ideas and experience by this simple website.
 
-## 🚀 About Me
-I'm a Senior Frontend Engineer (Full-Stack Capable with Laravel and GraphQL)
+## 👋🏼 About Me
+I'm a Frontend Web Developer with experience in Laravel and GraphQL
 
 ## Live Link 
 
