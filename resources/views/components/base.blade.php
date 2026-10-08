@@ -39,9 +39,9 @@
 
 	<meta name="theme-color" content="#ffffff">
 
-    <!-- Cloudflare Web Analytics -->
-    <script defer src="/beacon.min.js" data-cf-beacon='{"token": "dfd0156748f34fc9b6e3e777df0929c0"}'></script>
-    <!-- End Cloudflare Web Analytics -->
+	<!-- Cloudflare Web Analytics -->
+	<script defer src="/beacon.min.js" data-cf-beacon='{"token": "dfd0156748f34fc9b6e3e777df0929c0", "send": {"to": "/cdn-cgi/rum"}}'></script>
+	<!-- End Cloudflare Web Analytics -->
 	{{--	<x-vite-font-preloads :fonts="[--}}
 	{{--		'resources/fonts/ProximaNova/woff2/proxima-nova-light-webfont.woff2',--}}
 	{{--		'resources/fonts/ProximaNova/woff2/proxima-nova-regular-webfont.woff2',--}}
