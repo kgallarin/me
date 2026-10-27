@@ -35,10 +35,12 @@ jobs:
       - name: Install PHP dependencies
         run: composer install --no-dev --optimize-autoloader --no-interaction
 
-      - name: Set up Cloudflare Tunnel on Runner
-        uses: cloudflare/cloudflared-action@master
-        with:
-          protocol: ctl
+      - name: Install Cloudflare Tunnel CLI on Runner
+        run: |
+          curl -L --output cloudflared https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
+          chmod +x cloudflared
+          sudo mv cloudflared /usr/local/bin/cloudflared
+          cloudflared --version
 
       - name: Configure SSH to use Cloudflare Tunnel
         run: |
@@ -60,4 +62,23 @@ jobs:
             git checkout -- package-lock.json
             git pull origin main
 
-            composer install --no-dev --optimize-autoloader --
+            composer install --no-dev --optimize-autoloader --no-interaction
+
+            php artisan migrate --force
+
+            php artisan config:cache
+            php artisan route:cache
+            php artisan view:cache
+            php artisan event:cache
+
+            sudo supervisorctl restart laravel-worker:*
+
+      - name: Sync built assets to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: tunnel.kgallarin.com
+          username: ${{ secrets.LIGHTSAIL_USER }}
+          key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+          source: 'public/build'
+          target: '/var/www/kgdev'
+          overwrite: true
