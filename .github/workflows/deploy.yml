@@ -41,7 +41,6 @@ jobs:
           chmod +x cloudflared
           sudo mv cloudflared /usr/local/bin/cloudflared
           cloudflared --version
-
       - name: Deploy to server via SSH
         run: |
             mkdir -p ~/.ssh
@@ -51,7 +50,7 @@ jobs:
             ssh -v \
               -o UserKnownHostsFile=/dev/null \
               -o StrictHostKeyChecking=no \
-              -o ProxyCommand="/usr/local/bin/cloudflared access ssh --hostname tunnel.kgallarin.com --edge-ip-version 4" \
+              -o ProxyCommand="/usr/local/bin/cloudflared access ssh --hostname tunnel.kgallarin.com" \
               -i ~/.ssh/id_rsa \
               ${{ secrets.LIGHTSAIL_USER }}@tunnel.kgallarin.com \
               "set -e && cd /var/www/kgdev && git checkout -- package-lock.json && git pull origin main && composer install --no-dev --optimize-autoloader --no-interaction && php artisan migrate --force && php artisan config:cache && php artisan route:cache && php artisan view:cache && php artisan event:cache && sudo supervisorctl restart laravel-worker:*"
