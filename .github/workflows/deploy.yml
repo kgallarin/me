@@ -36,16 +36,20 @@ jobs:
         run: composer install --no-dev --optimize-autoloader --no-interaction
 
       - name: Deploy to server via SSH
+        env:
+          LIGHTSAIL_HOST: ${{ secrets.LIGHTSAIL_HOST }}
+          LIGHTSAIL_USER: ${{ secrets.LIGHTSAIL_USER }}
+          LIGHTSAIL_SSH_KEY: ${{ secrets.LIGHTSAIL_SSH_KEY }}
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.LIGHTSAIL_SSH_KEY }}" > ~/.ssh/id_rsa
+          echo "$LIGHTSAIL_SSH_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           
           ssh -v \
             -o UserKnownHostsFile=/dev/null \
             -o StrictHostKeyChecking=no \
             -i ~/.ssh/id_rsa \
-            ${{ secrets.LIGHTSAIL_USER }}@[${{ secrets.LIGHTSAIL_HOST }}] \
+            "${LIGHTSAIL_USER}@[${LIGHTSAIL_HOST}]" \
             "set -e && cd /var/www/kgdev && git checkout -- package-lock.json && git pull origin main && composer install --no-dev --optimize-autoloader --no-interaction && php artisan migrate --force && php artisan config:cache && php artisan route:cache && php artisan view:cache && php artisan event:cache && sudo supervisorctl restart laravel-worker:*"
 
       - name: Sync built assets to server
