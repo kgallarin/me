@@ -49,7 +49,7 @@ jobs:
             -o StrictHostKeyChecking=no \
             -i ~/.ssh/id_rsa \
             ${LIGHTSAIL_USER}@2406:da18:1c7c:5300:ab31:27ee:2b70:5ead \
-            "set -e && cd /var/www/kgdev && git checkout -- package-lock.json && git pull origin main && composer install --no-dev --optimize-autoloader --no-interaction && php artisan migrate --force && php artisan config:cache && php artisan route:cache && php artisan view:cache && php artisan event:cache && sudo supervisorctl restart laravel-worker:*"
+            "set -e && cd /var/www/kgpersonal && git checkout -- package-lock.json && git pull origin main && composer install --no-dev --optimize-autoloader --no-interaction && php artisan migrate --force && php artisan config:cache && php artisan route:cache && php artisan view:cache && php artisan event:cache && sudo supervisorctl restart laravel-worker:*"
 
       - name: Sync built assets to server
         uses: appleboy/scp-action@v0.1.7
@@ -58,5 +58,5 @@ jobs:
           username: ${{ secrets.LIGHTSAIL_USER }}
           key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
           source: 'public/build'
-          target: '/var/www/kgdev'
+          target: '/var/www/kgpersonal'
           overwrite: true
