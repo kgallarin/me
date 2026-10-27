@@ -37,7 +37,6 @@ jobs:
 
       - name: Deploy to server via SSH
         env:
-          LIGHTSAIL_HOST: ${{ secrets.LIGHTSAIL_HOST }}
           LIGHTSAIL_USER: ${{ secrets.LIGHTSAIL_USER }}
           LIGHTSAIL_SSH_KEY: ${{ secrets.LIGHTSAIL_SSH_KEY }}
         run: |
@@ -49,13 +48,13 @@ jobs:
             -o UserKnownHostsFile=/dev/null \
             -o StrictHostKeyChecking=no \
             -i ~/.ssh/id_rsa \
-            "${LIGHTSAIL_USER}@[${LIGHTSAIL_HOST}]" \
+            "${LIGHTSAIL_USER}@[2406:da18:1c7c:5300:ab31:27ee:2b70:5ead]" \
             "set -e && cd /var/www/kgdev && git checkout -- package-lock.json && git pull origin main && composer install --no-dev --optimize-autoloader --no-interaction && php artisan migrate --force && php artisan config:cache && php artisan route:cache && php artisan view:cache && php artisan event:cache && sudo supervisorctl restart laravel-worker:*"
 
       - name: Sync built assets to server
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: "[${{ secrets.LIGHTSAIL_HOST }}]"
+          host: "[2406:da18:1c7c:5300:ab31:27ee:2b70:5ead]"
           username: ${{ secrets.LIGHTSAIL_USER }}
           key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
           source: 'public/build'
