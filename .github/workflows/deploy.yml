@@ -59,7 +59,7 @@ jobs:
       - name: Deploy to server via SSH & rsync/scp
         run: |
           # Run deployment commands via tunneled SSH
-          ssh tunnel.kgallarin.com 'set -e && cd /var/www/kgdev && git checkout -- package-lock.json && git pull origin main && composer install --no-dev --optimize-autoloader --no-interaction && php artisan migrate --force && php artisan config:cache && php artisan route:cache && php artisan view:cache && php artisan event:cache && sudo supervisorctl restart laravel-worker:*'
+          ssh -v ssh tunnel.kgallarin.com 'set -e && cd /var/www/kgdev && git checkout -- package-lock.json && git pull origin main && composer install --no-dev --optimize-autoloader --no-interaction && php artisan migrate --force && php artisan config:cache && php artisan route:cache && php artisan view:cache && php artisan event:cache && sudo supervisorctl restart laravel-worker:*'
 
           # Sync built frontend assets using scp over the tunnel
           scp -r public/build tunnel.kgallarin.com:/var/www/kgdev/public/
