@@ -48,12 +48,10 @@ jobs:
             echo "${{ secrets.LIGHTSAIL_SSH_KEY }}" > ~/.ssh/id_rsa
             chmod 600 ~/.ssh/id_rsa
             
-            export TUNNEL_EDGETLS_IP_VERSION=4
-            
             ssh -v \
               -o UserKnownHostsFile=/dev/null \
               -o StrictHostKeyChecking=no \
-              -o ProxyCommand="/usr/local/bin/cloudflared access ssh --hostname tunnel.kgallarin.com" \
+              -o ProxyCommand="env TUNNEL_EDGETLS_IP_VERSION=4 /usr/local/bin/cloudflared access ssh --hostname tunnel.kgallarin.com" \
               -i ~/.ssh/id_rsa \
               ${{ secrets.LIGHTSAIL_USER }}@tunnel.kgallarin.com \
               "set -e && cd /var/www/kgdev && git checkout -- package-lock.json && git pull origin main && composer install --no-dev --optimize-autoloader --no-interaction && php artisan migrate --force && php artisan config:cache && php artisan route:cache && php artisan view:cache && php artisan event:cache && sudo supervisorctl restart laravel-worker:*"
