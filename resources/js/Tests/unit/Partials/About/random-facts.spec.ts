@@ -1,45 +1,44 @@
+import RandomFacts from '@/Partials/About/RandomFacts.vue';
 import { type RenderResult, render } from '@testing-library/vue';
 import { describe, expect, test, vi } from 'vitest';
 
 import { ContentResponseDTO } from '@/Types/Responses';
 
-import RandomFacts from '@/Components/Partials/About/RandomFacts.vue';
-
 vi.mock('@/Components/Motion/ScrollReveal.vue', (): { default: { template: string } } => ({
-  default: {
-    template: '<div><slot /></div>',
-  },
+	default: {
+		template: '<div><slot /></div>',
+	},
 }));
 
 const renderRandomFacts = async (content: ContentResponseDTO): Promise<RenderResult> => {
-  return render(RandomFacts, {
-    props: { content, animateOnce: true, animateOnlyScrollDown: false },
-  });
+	return render(RandomFacts, {
+		props: { content, animateOnce: true, animateOnlyScrollDown: false },
+	});
 };
 
 const defaultProps: ContentResponseDTO = {
-  title: 'test nugget',
-  content: [
-    {
-      title: '',
-      text: 'random test text 1',
-    },
-  ],
-  key: 'test-key',
-  heroImages: [],
-  socialImages: [],
+	title: 'test nugget',
+	content: [
+		{
+			title: '',
+			text: 'random test text 1',
+		},
+	],
+	key: 'test-key',
+	heroImages: [],
+	socialImages: [],
 };
 describe('RandomFacts', (): void => {
-  test('Component renders correctly', async (): Promise<void> => {
-    const { getByTestId } = await renderRandomFacts(defaultProps);
+	test('Component renders correctly', async (): Promise<void> => {
+		const { getByTestId } = await renderRandomFacts(defaultProps);
 
-    expect(getByTestId('random-facts')).toBeInTheDocument();
-  });
+		expect(getByTestId('random-facts')).toBeInTheDocument();
+	});
 
-  test('Texts renders correctly', async (): Promise<void> => {
-    const { getByText } = await renderRandomFacts(defaultProps);
+	test('Texts renders correctly', async (): Promise<void> => {
+		const { getByText } = await renderRandomFacts(defaultProps);
 
-    expect(getByText('test nugget')).toBeInTheDocument();
-    expect(getByText('random test text 1')).toBeInTheDocument();
-  });
+		expect(getByText('test nugget')).toBeInTheDocument();
+		expect(getByText('random test text 1')).toBeInTheDocument();
+	});
 });

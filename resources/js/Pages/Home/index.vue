@@ -1,12 +1,13 @@
 <script setup lang="ts">
 	import { computed, ref } from 'vue';
 
+	import LandingHero from '@/Partials/Home/LandingHero/index.vue';
+	import Projects from '@/Partials/Home/Projects/index.vue';
+
 	import { useAppStore } from '@/Store/Modules/App';
 	import { useProjectsStore } from '@/Store/Modules/Projects';
 
 	import BaseToast from '@/Components/Common/BaseToast.vue';
-	import LandingHero from '@/Components/Partials/Home/LandingHero/index.vue';
-	import Projects from '@/Components/Partials/Home/Projects/index.vue';
 
 	const isHoveredRight = ref(false);
 	const isHoveredLeft = ref(false);

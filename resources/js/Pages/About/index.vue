@@ -1,0 +1,60 @@
+<script setup lang="ts">
+	import { computed } from 'vue';
+
+	import ChartedSkills from '@/Partials/About/ChartedSkills.vue';
+	import GraphedSkills from '@/Partials/About/GraphedSkills.vue';
+	import RandomFacts from '@/Partials/About/RandomFacts.vue';
+	import Recommendations from '@/Partials/About/Recommendations.vue';
+	import Whoami from '@/Partials/About/Whoami.vue';
+
+	import { useAppStore } from '@/Store/Modules/App';
+	import { useContentStore } from '@/Store/Modules/Content';
+	import { useRecommendationsStore } from '@/Store/Modules/Recommendations';
+
+	const recommendationsStore = useRecommendationsStore();
+	const contentStore = useContentStore();
+	const appStore = useAppStore();
+	const theme = computed(() => (appStore.theme === 0 ? 'light' : 'dark'));
+
+	recommendationsStore.fetchRecommendations();
+	contentStore.fetchContents();
+
+	const queryBreakpoints = computed(() => appStore.queryBreakpoints);
+
+	const whoamiContent = computed(() => contentStore.getContentByKey('whoami'));
+	const randomFactsContent = computed(() => contentStore.getContentByKey('random_facts'));
+	const chartedSkillsContent = computed(() => contentStore.getContentByKey('charted_skills'));
+	const graphedSkillsContent = computed(() => contentStore.getContentByKey('graphed_skills'));
+	const recommendationsContent = computed(() => contentStore.getContentByKey('recommendations'));
+	const recommendationsData = computed(() => recommendationsStore.recommendations);
+</script>
+
+<template>
+	<div class="about-i bg-gray-lighter">
+		<whoami :content="whoamiContent" animate-once animate-only-scroll-down />
+
+		<charted-skills
+			:no-animation="queryBreakpoints(false, false, true, true)"
+			:content="chartedSkillsContent"
+			animate-once
+			animate-only-scroll-down
+		/>
+
+		<random-facts
+			:content="randomFactsContent"
+			animate-once
+			animate-only-scroll-down
+			:no-animation="queryBreakpoints(false, false, true, true)"
+		/>
+
+		<graphed-skills :content="graphedSkillsContent" animate-once animate-only-scroll-down />
+
+		<recommendations
+			:content="recommendationsContent"
+			:testimonials="recommendationsData"
+			:app-theme="theme"
+			animate-once
+			animate-only-scroll-down
+		/>
+	</div>
+</template>

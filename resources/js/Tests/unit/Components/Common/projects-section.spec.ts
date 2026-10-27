@@ -1,70 +1,69 @@
+import ProjectsSection from '@/Partials/Home/Projects/index.vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { type RenderResult, render } from '@testing-library/vue';
 import { describe, expect, test } from 'vitest';
 
 import { ProjectResponseDTO } from '@/Types/Responses';
 
-import ProjectsSection from '@/Components/Partials/Home/Projects/index.vue';
-
 const projects: ProjectResponseDTO[] = [
-  {
-    id: 'test-id',
-    title: 'test project',
-    description: 'test description',
-    order: 1,
-    images: [
-      {
-        url: 'test.png',
-        alt: 'test alt',
-      },
-    ],
-    icon: [{ icon: ['fab', 'html5'], color: 'text-orange-400' }],
-    carouselSettings: {
-      autoplay: true,
-      showArrows: true,
-      showIndicators: true,
-    },
-  },
+	{
+		id: 'test-id',
+		title: 'test project',
+		description: 'test description',
+		order: 1,
+		images: [
+			{
+				url: 'test.png',
+				alt: 'test alt',
+			},
+		],
+		icon: [{ icon: ['fab', 'html5'], color: 'text-orange-400' }],
+		carouselSettings: {
+			autoplay: true,
+			showArrows: true,
+			showIndicators: true,
+		},
+	},
 ];
 
 const renderProjectSection = async (props: Record<string, unknown> = {}): Promise<RenderResult> => {
-  return render(ProjectsSection, {
-    props,
-    global: {
-      stubs: {
-        'fa-icon': FontAwesomeIcon,
-      },
-      mocks: {},
-    },
-  });
+	return render(ProjectsSection, {
+		props,
+		global: {
+			stubs: {
+				'fa-icon': FontAwesomeIcon,
+			},
+			mocks: {},
+		},
+	});
 };
 
 describe('ProjectsSection', (): void => {
-  test('Projects headings renders properly', async (): Promise<void> => {
-    const { getByTestId } = await renderProjectSection();
+	test('Projects headings renders properly', async (): Promise<void> => {
+		const { getByTestId } = await renderProjectSection();
 
-    expect(getByTestId('projects-headers')).toBeInTheDocument();
-  });
+		expect(getByTestId('projects-headers')).toBeInTheDocument();
+	});
 
-  test('Project headings has correct text', async (): Promise<void> => {
-    const { getByText } = await renderProjectSection();
+	test('Project headings has correct text', async (): Promise<void> => {
+		const { getByText } = await renderProjectSection();
 
-    expect(getByText('selected projects')).toBeInTheDocument();
-  });
+		expect(getByText('selected projects')).toBeInTheDocument();
+	});
 
-  test('Project cards renders properly', async (): Promise<void> => {
-    const { getByTestId, getByText } = await renderProjectSection({ projects });
+	test('Project cards renders properly', async (): Promise<void> => {
+		const { getByTestId, getByText } = await renderProjectSection({ projects });
 
-    expect(getByTestId('project-card')).toBeInTheDocument();
-    expect(getByText('test project')).toBeInTheDocument();
-    expect(getByText('test description')).toBeInTheDocument();
-  });
+		expect(getByTestId('project-card')).toBeInTheDocument();
+		expect(getByText('test project')).toBeInTheDocument();
+		expect(getByText('test description')).toBeInTheDocument();
+	});
 
-  test('Icon length count is correct', async (): Promise<void> => {
-    const { getAllByTestId } = await renderProjectSection({ projects });
+	test('Icon length count is correct', async (): Promise<void> => {
+		const { getAllByTestId } = await renderProjectSection({ projects });
 
-    const icons = getAllByTestId('project-icon');
-    expect(icons.length).toBe(1);
-    expect(icons[0]).toHaveClass('text-orange-400');
-  });
+		const icons = getAllByTestId('project-icon');
+		expect(icons.length).toBe(1);
+		expect(icons[0]).toHaveClass('text-orange-400');
+	});
 });

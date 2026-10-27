@@ -1,15 +1,10 @@
 const PublicLayout = (): Promise<typeof import('@/Layouts/Public/index.vue')> => import('@/Layouts/Public/index.vue');
 
-const About = (): Promise<typeof import('@/Components/Pages/About/index.vue')> =>
-	import('@/Components/Pages/About/index.vue');
-const Contact = (): Promise<typeof import('@/Components/Pages/Contact/index.vue')> =>
-	import('@/Components/Pages/Contact/index.vue');
-const Home = (): Promise<typeof import('@/Components/Pages/Home/index.vue')> =>
-	import('@/Components/Pages/Home/index.vue');
-const NotFound = (): Promise<typeof import('@/Components/Pages/NotFound/index.vue')> =>
-	import('@/Components/Pages/NotFound/index.vue');
-const Story = (): Promise<typeof import('@/Components/Pages/Story/index.vue')> =>
-	import('@/Components/Pages/Story/index.vue');
+const About = (): Promise<typeof import('@/Pages/About/index.vue')> => import('@/Pages/About/index.vue');
+const Contact = (): Promise<typeof import('@/Pages/Contact/index.vue')> => import('@/Pages/Contact/index.vue');
+const Home = (): Promise<typeof import('@/Pages/Home/index.vue')> => import('@/Pages/Home/index.vue');
+const NotFound = (): Promise<typeof import('@/Pages/NotFound/index.vue')> => import('@/Pages/NotFound/index.vue');
+const Story = (): Promise<typeof import('@/Pages/Story/index.vue')> => import('@/Pages/Story/index.vue');
 
 // view:public routes
 const publicRoutes = [

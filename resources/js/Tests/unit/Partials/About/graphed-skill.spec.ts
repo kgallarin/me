@@ -1,43 +1,42 @@
+import GraphedSkills from '@/Partials/About/GraphedSkills.vue';
 import { type RenderResult, render } from '@testing-library/vue';
 import { describe, expect, test, vi } from 'vitest';
 
-import GraphedSkills from '@/Components/Partials/About/GraphedSkills.vue';
-
 vi.mock('@/Components/Motion/ScrollReveal.vue', (): { default: { template: string } } => ({
-  default: {
-    template: '<div><slot /></div>',
-  },
+	default: {
+		template: '<div><slot /></div>',
+	},
 }));
 
-vi.mock('@/Components/Partials/SkillChart/index.vue', (): { default: { template: string; props: string[] } } => ({
-  default: {
-    template: '<div data-testid="skill-chart">Skill Chart</div>',
-    props: ['animateOnce', 'animateOnlyScrollDown'],
-  },
+vi.mock('@/Partials/SkillChart/index.vue', (): { default: { template: string; props: string[] } } => ({
+	default: {
+		template: '<div data-testid="skill-chart">Skill Chart</div>',
+		props: ['animateOnce', 'animateOnlyScrollDown'],
+	},
 }));
 
 const mockContent = {
-  title: 'My Skills',
-  subtitle: 'more or less',
-  key: 'skills',
-  content: [],
-  heroImages: [],
+	title: 'My Skills',
+	subtitle: 'more or less',
+	key: 'skills',
+	content: [],
+	heroImages: [],
 };
 
 const renderGraphedSkills = async (props = { content: mockContent }): Promise<RenderResult> => {
-  return render(GraphedSkills, {
-    props,
-  });
+	return render(GraphedSkills, {
+		props,
+	});
 };
 
 describe('GraphedSkill', (): void => {
-  test('Renders texts and chart component correctly', async (): Promise<void> => {
-    const { container, getByText, getByTestId } = await renderGraphedSkills();
+	test('Renders texts and chart component correctly', async (): Promise<void> => {
+		const { container, getByText, getByTestId } = await renderGraphedSkills();
 
-    expect(getByText('My Skills')).toBeInTheDocument();
-    expect(getByText('more or less')).toBeInTheDocument();
-    expect(getByTestId('skill-chart')).toBeInTheDocument();
+		expect(getByText('My Skills')).toBeInTheDocument();
+		expect(getByText('more or less')).toBeInTheDocument();
+		expect(getByTestId('skill-chart')).toBeInTheDocument();
 
-    expect(container).toMatchSnapshot();
-  });
+		expect(container).toMatchSnapshot();
+	});
 });
