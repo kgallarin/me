@@ -35,23 +35,36 @@ jobs:
       - name: Install PHP dependencies
         run: composer install --no-dev --optimize-autoloader --no-interaction
 
-      - name: Install Cloudflare Tunnel CLI on Runner
-        run: |
-          curl -L --output cloudflared https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
-          chmod +x cloudflared
-          sudo mv cloudflared /usr/local/bin/cloudflared
-          cloudflared --version
+      - name: Deploy to server
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.LIGHTSAIL_HOST }}
+          username: ${{ secrets.LIGHTSAIL_USER }}
+          key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+          script: |
+            set -e
+            cd /var/www/kgdev
 
-      - name: Deploy to server via SSH
-        run: |
-            mkdir -p ~/.ssh
-            echo "${{ secrets.LIGHTSAIL_SSH_KEY }}" > ~/.ssh/id_rsa
-            chmod 600 ~/.ssh/id_rsa
-            
-            ssh -v \
-              -o UserKnownHostsFile=/dev/null \
-              -o StrictHostKeyChecking=no \
-              -o ProxyCommand="env TUNNEL_EDGETLS_IP_VERSION=4 /usr/local/bin/cloudflared access ssh --hostname tunnel.kgallarin.com" \
-              -i ~/.ssh/id_rsa \
-              ${{ secrets.LIGHTSAIL_USER }}@tunnel.kgallarin.com \
-              "set -e && cd /var/www/kgdev && git checkout -- package-lock.json && git pull origin main && composer install --no-dev --optimize-autoloader --no-interaction && php artisan migrate --force && php artisan config:cache && php artisan route:cache && php artisan view:cache && php artisan event:cache && sudo supervisorctl restart laravel-worker:*"
+            git checkout -- package-lock.json
+            git pull origin main
+
+            composer install --no-dev --optimize-autoloader --no-interaction
+
+            php artisan migrate --force
+
+            php artisan config:cache
+            php artisan route:cache
+            php artisan view:cache
+            php artisan event:cache
+
+            sudo supervisorctl restart laravel-worker:*
+
+      - name: Sync built assets to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.LIGHTSAIL_HOST }}
+          username: ${{ secrets.LIGHTSAIL_USER }}
+          key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+          source: 'public/build'
+          target: '/var/www/kgdev'
+          overwrite: true
