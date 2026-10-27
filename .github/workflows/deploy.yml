@@ -42,45 +42,24 @@ jobs:
           sudo mv cloudflared /usr/local/bin/cloudflared
           cloudflared --version
 
-      - name: Configure Cloudflare SSH Proxy
+      - name: Configure SSH and Private Key
         run: |
           mkdir -p ~/.ssh
+          echo "${{ secrets.LIGHTSAIL_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          
           echo "Host tunnel.kgallarin.com" >> ~/.ssh/config
+          echo "  HostName tunnel.kgallarin.com" >> ~/.ssh/config
+          echo "  User ${{ secrets.LIGHTSAIL_USER }}" >> ~/.ssh/config
+          echo "  IdentityFile ~/.ssh/id_rsa" >> ~/.ssh/config
           echo "  ProxyCommand /usr/local/bin/cloudflared access ssh --hostname %h" >> ~/.ssh/config
+          echo "  StrictHostKeyChecking no" >> ~/.ssh/config
           chmod 600 ~/.ssh/config
-          # Test configuration generation
-          cloudflared access ssh-config --hostname tunnel.kgallarin.com --mail N/A || true
 
-      - name: Deploy to server
-        uses: appleboy/ssh-action@v1
-        with:
-          host: tunnel.kgallarin.com
-          username: ${{ secrets.LIGHTSAIL_USER }}
-          key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
-          script: |
-            set -e
-            cd /var/www/kgdev
+      - name: Deploy to server via SSH & rsync/scp
+        run: |
+          # Run deployment commands via tunneled SSH
+          ssh tunnel.kgallarin.com 'set -e && cd /var/www/kgdev && git checkout -- package-lock.json && git pull origin main && composer install --no-dev --optimize-autoloader --no-interaction && php artisan migrate --force && php artisan config:cache && php artisan route:cache && php artisan view:cache && php artisan event:cache && sudo supervisorctl restart laravel-worker:*'
 
-            git checkout -- package-lock.json
-            git pull origin main
-
-            composer install --no-dev --optimize-autoloader --no-interaction
-
-            php artisan migrate --force
-
-            php artisan config:cache
-            php artisan route:cache
-            php artisan view:cache
-            php artisan event:cache
-
-            sudo supervisorctl restart laravel-worker:*
-
-      - name: Sync built assets to server
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: tunnel.kgallarin.com
-          username: ${{ secrets.LIGHTSAIL_USER }}
-          key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
-          source: 'public/build'
-          target: '/var/www/kgdev'
-          overwrite: true
+          # Sync built frontend assets using scp over the tunnel
+          scp -r public/build tunnel.kgallarin.com:/var/www/kgdev/public/
